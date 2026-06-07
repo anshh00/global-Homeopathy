@@ -20,7 +20,7 @@ function ResearchPage() {
         <div className="hero-list">
           <span>Explore Research</span>
           <span>Publications</span>
-          <span>Submit Research</span>
+          <span>Collaboration</span>
         </div>
       </PageHero>
 
@@ -54,8 +54,8 @@ function ResearchPage() {
             documentation, publications, and collaboration.
           </p>
           <p>
-            Detailed research content can later link to OxfordBurnettResearch.org so WorldHomeopathy.org
-            remains the global overview platform.
+            Detailed research content can connect with OxfordBurnettResearch.org while
+            WorldHomeopathy.org remains the global overview platform.
           </p>
           <a
             className="inline-link"
@@ -71,7 +71,7 @@ function ResearchPage() {
       <section className="section publications-section">
         <div className="section-heading">
           <p className="eyebrow">Research publications</p>
-          <h2>A future searchable library for papers, journals, and case studies.</h2>
+          <h2>A structured library for papers, journals, and case studies.</h2>
         </div>
         <div className="publication-table">
           {samplePublications.map((item) => (
@@ -88,10 +88,10 @@ function ResearchPage() {
       <section className="section submit-panel">
         <div>
           <Upload size={32} />
-          <h2>Submit Research</h2>
+          <h2>Research Collaboration</h2>
           <p>
-            A future form can accept papers, case studies, articles, conference notes, and institutional
-            research submissions after editorial review rules are finalized.
+            Researchers, institutions, and summit contributors can share papers, case studies,
+            articles, conference notes, and collaboration proposals through an editorial review process.
           </p>
         </div>
       </section>

@@ -1,118 +1,101 @@
 import React from "react";
-import { ArrowRight, Award, Building2, ExternalLink, FileText, Globe2, MapPinned, Microscope, Newspaper, PlayCircle, ShieldCheck, Users, Video } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Globe2, MapPinned, Microscope, Newspaper, PlayCircle, ShieldCheck, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import AnimatedSection from "../components/AnimatedSection.jsx";
 import BrandMark from "../components/BrandMark.jsx";
-import { exploreCards, leaders, mediaItems } from "../data/siteData.js";
 
 const InteractiveGlobe = React.lazy(() => import("../components/InteractiveGlobe.jsx"));
-
-const impactStats = [
-  { value: "75+", label: "Countries connected to homeopathy practice and education" },
-  { value: "500+", label: "Delegates, guests, speakers, and summit participants" },
-  { value: "4+", label: "World summit chapters across major global destinations" },
-  { value: "100+", label: "Leaders, institutions, press stories, and knowledge references" },
-];
 
 const heroProofs = [
   {
     icon: Globe2,
     label: "Global authority",
-    text: "A neutral platform for worldwide homeopathy knowledge.",
+    text: "A neutral front door for worldwide homeopathy knowledge.",
   },
   {
     icon: Microscope,
     label: "Research focus",
-    text: "Case documentation, publications, and academic collaboration.",
+    text: "A pathway into evidence, publications, and academic dialogue.",
   },
   {
     icon: Users,
     label: "Summit network",
-    text: "International dialogue through visible global events.",
+    text: "International events connected into one global movement.",
   },
+];
+
+const impactStats = [
+  { value: "75+", label: "Countries connected to homeopathy practice and education" },
+  { value: "4+", label: "World summit chapters across global destinations" },
+  { value: "500+", label: "Delegates, guests, speakers, and summit participants" },
+  { value: "100+", label: "Leaders, institutions, press stories, and knowledge references" },
 ];
 
 const impactLocations = ["Dubai", "Germany", "London", "India", "Goa"];
 
-const storySteps = [
+const pageGateways = [
   {
-    title: "Mission",
-    text: "Position homeopathy through education, research, and international collaboration.",
+    icon: BookOpen,
+    title: "Explore Homeopathy",
+    text: "History, principles, Hahnemann, World Homeopathy Day, and public education.",
+    path: "/explore",
+    action: "Open knowledge hub",
   },
   {
-    title: "Understanding",
-    text: "Help visitors learn the history, principles, founder legacy, and global growth.",
+    icon: PlayCircle,
+    title: "World Summit",
+    text: "Dubai, Germany, London, and upcoming summit chapters with galleries and coverage.",
+    path: "/summit",
+    action: "View summit journey",
   },
-  {
-    title: "Research",
-    text: "Organize evidence-focused initiatives, publications, case studies, and partnerships.",
-  },
-  {
-    title: "Summit",
-    text: "Connect Dubai, Germany, London, Goa, and future chapters into one global story.",
-  },
-  {
-    title: "Leadership",
-    text: "Feature historical voices and modern contributors with a balanced international lens.",
-  },
-];
-
-const presencePoints = [
-  "Country-wise education and public awareness resources",
-  "International summit chapters connected into one journey",
-  "Research, media, and institutional references in one platform",
-  "Global leaders presented with historical and modern balance",
-];
-
-const researchStreams = [
   {
     icon: Microscope,
-    title: "Evidence and Case Documentation",
-    text: "A modern research interface for structured case studies, conference notes, and evidence-focused discussions.",
+    title: "Research Center",
+    text: "Publications, case studies, collaborations, and evidence-focused initiatives.",
+    path: "/research",
+    action: "Enter research center",
   },
   {
-    icon: FileText,
-    title: "Publications and Knowledge Library",
-    text: "A future searchable library organized by topic, author, country, year, and publication type.",
+    icon: Users,
+    title: "Global Leaders",
+    text: "Historical and modern contributors presented with a balanced international lens.",
+    path: "/leaders",
+    action: "Meet the leaders",
   },
   {
-    icon: Building2,
-    title: "Academic Collaboration",
-    text: "A platform for institutional cooperation, research groups, universities, and international exchanges.",
+    icon: MapPinned,
+    title: "World Map",
+    text: "Country-wise resources, organizations, events, institutions, and directory references.",
+    path: "/directory",
+    action: "Explore map",
+  },
+  {
+    icon: Newspaper,
+    title: "Media",
+    text: "External coverage, press references, summit articles, and institutional visibility.",
+    path: "/media",
+    action: "Read coverage",
   },
 ];
 
-const summitShowcase = [
-  {
-    city: "Dubai",
-    year: "2024",
-    image: "/images/summit-recognition.jpg",
-    title: "International visibility, delegates, awards, and media attention.",
-  },
-  {
-    city: "Germany",
-    year: "2025",
-    image: "/images/summit-global-stage.jpg",
-    title: "A historically meaningful chapter connected to Hahnemann's European legacy.",
-  },
-  {
-    city: "London",
-    year: "2026",
-    image: "/images/dr-nitish-podium.jpg",
-    title: "Institutional dialogue, research conversations, and global leadership presence.",
-  },
+const authoritySignals = [
+  "Independent global platform identity",
+  "Burnett Homeopathy referenced through real summit and research contributions",
+  "Research, leaders, media, and countries organized into dedicated pages",
+  "Clear visitor journey from global mission to detailed resources",
 ];
-
-const mediaLogos = ["Faculty of Homeopathy", "Republic World", "Express Healthcare", "ThePrint", "Business Standard"];
 
 function HomePage() {
-  const featuredLeader = leaders.find((leader) => leader.featured) || leaders[leaders.length - 1];
-  const leaderPreview = leaders.filter((leader) => leader.name !== featuredLeader.name).slice(0, 4);
-
   return (
-    <main className="home-redesign home-movement">
+    <main className="home-redesign home-movement structured-home font-sans">
       <section className="hero institution-hero">
+        <div className="hero-ambient" aria-hidden="true">
+          <span className="hero-spotlight spotlight-primary"></span>
+          <span className="hero-spotlight spotlight-secondary"></span>
+          <span className="hero-grid-glow"></span>
+        </div>
+
         <motion.div
           className="hero-content"
           initial={{ opacity: 0, y: 30 }}
@@ -131,12 +114,12 @@ function HomePage() {
             <span>Leadership.</span>
           </div>
           <p>
-            Across continents. Across generations. Across borders. A global platform for knowledge,
-            summits, research, leadership, media, and institutional collaboration.
+            A worldwide platform for education, research, innovation, leadership, and
+            international collaboration in homeopathy.
           </p>
           <div className="hero-actions">
             <Link className="button primary" to="/explore">
-              Explore Homeopathy <ArrowRight size={18} />
+              Start Exploring <ArrowRight size={18} />
             </Link>
             <Link className="button secondary" to="/summit">
               World Summit <PlayCircle size={18} />
@@ -147,21 +130,36 @@ function HomePage() {
           </div>
         </motion.div>
 
-        <div className="hero-network hero-story-visual">
-          <div className="hero-image-feature" role="img" aria-label="International homeopathy summit visual">
-            <div className="hero-image-copy">
-              <span>Global Network</span>
-              <h2>A visual centerpiece for the worldwide homeopathy network.</h2>
-              <p>Summits, research conversations, leadership visibility, and international collaboration in one global platform.</p>
+        <motion.div
+          className="hero-network hero-story-visual"
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.18, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="hero-signal-stage" role="img" aria-label="Animated global homeopathy network">
+            <div className="hero-world-disc">
+              <span className="map-shape map-shape-one"></span>
+              <span className="map-shape map-shape-two"></span>
+              <span className="map-shape map-shape-three"></span>
+              <span className="signal-ring signal-ring-one"></span>
+              <span className="signal-ring signal-ring-two"></span>
+              <span className="signal-ring signal-ring-three"></span>
+              <span className="signal-path signal-path-one"></span>
+              <span className="signal-path signal-path-two"></span>
+              <span className="signal-path signal-path-three"></span>
+              <span className="signal-dot signal-dubai">Dubai</span>
+              <span className="signal-dot signal-germany">Germany</span>
+              <span className="signal-dot signal-london">London</span>
+              <span className="signal-dot signal-india">India</span>
+              <span className="hero-disc-mark"><BrandMark compact /></span>
             </div>
-            <div className="hero-image-meta">
-              <span>Dubai</span>
-              <span>Germany</span>
-              <span>London</span>
-              <span>India</span>
+            <div className="hero-visual-caption">
+              <span>WorldHomeopathy Atlas</span>
+              <strong>A visual centerpiece for the worldwide homeopathy network.</strong>
+              <p>Education, summits, research, media, and country presence connected into one global movement.</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section className="home-proof-strip" aria-label="Platform highlights">
@@ -177,7 +175,24 @@ function HomePage() {
         })}
       </section>
 
-      <AnimatedSection className="impact-section">
+      <AnimatedSection className="section home-intent">
+        <div>
+          <p className="eyebrow">Global Mission</p>
+          <h2>A calm, credible entry point for the worldwide homeopathy community.</h2>
+        </div>
+        <div className="home-intent-copy">
+          <p>
+            The platform opens with education first: a clear path for students, practitioners,
+            media, institutions, and the public to understand homeopathy in a global context.
+          </p>
+          <p>
+            From there, visitors can move into summit chapters, research initiatives, leadership
+            profiles, country references, and verified media coverage without losing the global story.
+          </p>
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection className="impact-section structured-impact">
         <div className="impact-story">
           <div className="impact-globe-card" aria-label="Animated worldwide homeopathy network">
             <React.Suspense fallback={<div className="interactive-globe-canvas globe-fallback"></div>}>
@@ -187,10 +202,10 @@ function HomePage() {
           </div>
           <div className="impact-heading">
             <p className="eyebrow">Global Impact</p>
-            <h2>Built around the scale of a worldwide movement, not a local campaign.</h2>
+            <h2>One international movement, organized into clear destinations.</h2>
             <p>
-              Animated country flags open real summit and research coverage, showing how
-              key locations connect into one international homeopathy movement.
+              Summit locations, research conversations, country participation, and leadership
+              visibility connect into one international movement.
             </p>
             <Link className="text-link" to="/directory">
               Open world map <MapPinned size={16} />
@@ -218,215 +233,73 @@ function HomePage() {
         </div>
       </AnimatedSection>
 
-      <section className="home-journey" aria-label="Global platform journey">
-        <div className="journey-copy">
-          <p className="eyebrow">Global Platform Journey</p>
-          <h2>A clear global pathway: mission, impact, knowledge, research, summit, leadership.</h2>
-        </div>
-        <div className="journey-steps">
-          {storySteps.map((step, index) => (
-            <span key={step.title}>
-              <strong>{String(index + 1).padStart(2, "0")}</strong>
-              <b>{step.title}</b>
-              {step.text}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      <AnimatedSection className="section mission-band">
-        <div className="section-intro">
-          <p className="eyebrow">Global Mission</p>
-          <h2>A global digital headquarters for homeopathy knowledge, research, and collaboration.</h2>
-        </div>
-        <div className="mission-text">
+      <AnimatedSection className="section platform-gateway">
+        <div className="gateway-heading">
+          <p className="eyebrow">Explore The Platform</p>
+          <h2>Every visitor gets a focused path into the global story.</h2>
           <p>
-            WorldHomeopathy.org presents homeopathy through a wider international lens: education,
-            public awareness, research discussion, country-wise resources, global leaders, and summit
-            visibility.
-          </p>
-          <p>
-            Burnett Homeopathy appears naturally through summit organization, research initiatives,
-            leadership visibility, and media coverage while the platform remains independent in tone
-            and global in identity.
+            Students can begin with fundamentals. Delegates can follow the summit journey.
+            Researchers, media teams, and institutions can move directly into their areas.
           </p>
         </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="section global-presence">
-        <div className="presence-visual" aria-label="Global presence map">
-          <div className="presence-map-grid">
-            <span className="presence-dot p-india">India</span>
-            <span className="presence-dot p-dubai">Dubai</span>
-            <span className="presence-dot p-germany">Germany</span>
-            <span className="presence-dot p-london">London</span>
-            <span className="presence-arc arc-one"></span>
-            <span className="presence-arc arc-two"></span>
-            <span className="presence-arc arc-three"></span>
-          </div>
-        </div>
-        <div className="presence-copy">
-          <p className="eyebrow">Global Presence</p>
-          <h2>One map for countries, organizations, research centers, and summit locations.</h2>
-          <p>
-            The homepage needs to show visitors that this is a worldwide platform from the first few
-            scrolls. The map layer turns scattered content into a connected international system.
-          </p>
-          <div className="presence-list">
-            {presencePoints.map((point) => (
-              <span key={point}>
-                <ShieldCheck size={18} />
-                {point}
-              </span>
-            ))}
-          </div>
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="section understanding-section">
-        <div className="section-intro wide">
-          <p className="eyebrow">Explore Homeopathy</p>
-          <h2>Begin with the foundations of global homeopathy.</h2>
-        </div>
-        <div className="knowledge-lines">
-          {exploreCards.map((card, index) => {
-            const Icon = card.icon;
+        <div className="gateway-list">
+          {pageGateways.map((item, index) => {
+            const Icon = item.icon;
             return (
-              <Link className="knowledge-line" to={card.path} key={card.title}>
-                <span className="knowledge-index">{String(index + 1).padStart(2, "0")}</span>
-                <Icon size={25} />
-                <div>
-                  <strong>{card.title}</strong>
-                  <p>{card.text}</p>
-                </div>
-                <ArrowRight size={18} />
+              <Link className="gateway-row" to={item.path} key={item.title}>
+                <span className="gateway-number">{String(index + 1).padStart(2, "0")}</span>
+                <span className="gateway-icon"><Icon size={24} /></span>
+                <span className="gateway-text">
+                  <strong>{item.title}</strong>
+                  <small>{item.text}</small>
+                </span>
+                <span className="gateway-action">
+                  {item.action} <ArrowRight size={16} />
+                </span>
               </Link>
             );
           })}
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="summit-showcase">
-        <div className="summit-showcase-heading">
-          <p className="eyebrow">World Homeopathy Summit</p>
-          <h2>Dubai, Germany, London, and the next international chapter.</h2>
-          <Link className="text-link" to="/summit">
-            Explore summit journey <ArrowRight size={16} />
-          </Link>
+      <AnimatedSection className="section homepage-authority">
+        <div className="authority-photo" aria-label="World Homeopathy Summit institutional visual">
+          <img src="/images/summit-global-stage.jpg" alt="World Homeopathy Summit stage and delegates" />
         </div>
-        <div className="summit-photo-grid">
-          {summitShowcase.map((summit) => (
-            <Link className="summit-photo-card" to="/summit" key={summit.city}>
-              <img src={summit.image} alt={`${summit.city} World Homeopathy Summit`} />
-              <span>{summit.year}</span>
-              <strong>{summit.city} Summit</strong>
-              <p>{summit.title}</p>
-            </Link>
-          ))}
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="section research-story">
-        <div className="research-photo-panel">
-          <img src="/images/summit-global-stage.jpg" alt="Academic discussion and summit presentation" />
-        </div>
-        <div className="research-editorial">
-          <p className="eyebrow">Research Center</p>
-          <h2>Research should feel like institutional dialogue, not an empty text page.</h2>
+        <div className="authority-copy">
+          <p className="eyebrow">Authority Signal</p>
+          <h2>A global platform identity with credible contributors.</h2>
           <p>
-            The homepage now introduces research through conference outcomes, publications, case
-            documentation, academic collaboration, and evidence-focused initiatives.
+            WorldHomeopathy.org presents homeopathy through education, research, summits, leaders,
+            country presence, and media. Burnett Homeopathy appears where it contributes through
+            summit organization, research activity, and leadership visibility.
           </p>
-          <div className="research-streams">
-            {researchStreams.map((item) => {
-              const Icon = item.icon;
-              return (
-                <article key={item.title}>
-                  <Icon size={24} />
-                  <div>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-          <Link className="text-link" to="/research">
-            Explore research center <ArrowRight size={16} />
-          </Link>
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="section leaders-editorial">
-        <div className="leader-feature">
-          <img src={featuredLeader.image} alt={featuredLeader.name} />
-          <div>
-            <p className="eyebrow">Global Leaders</p>
-            <h2>{featuredLeader.name}</h2>
-            <span>{featuredLeader.role}</span>
-            <p>{featuredLeader.text}</p>
-            <Link className="text-link" to="/leaders">
-              View global leaders <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-        <div className="leader-roster">
-          {leaderPreview.map((leader) => (
-            <Link to="/leaders" key={leader.name}>
-              <img src={leader.image} alt={leader.name} />
-              <span>{leader.role}</span>
-              <strong>{leader.name}</strong>
-            </Link>
-          ))}
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="section media-coverage">
-        <div className="media-wall">
-          <p className="eyebrow">Media Coverage</p>
-          <h2>Featured coverage creates authority beyond the platform itself.</h2>
-          <div className="media-logo-wall" aria-label="Featured media logos">
-            {mediaLogos.map((logo) => (
-              <span key={logo}>{logo}</span>
-            ))}
-          </div>
-          <div className="news-list">
-            {mediaItems.map((item) => (
-              <a href={item.link} target="_blank" rel="noreferrer" key={item.title}>
-                <Newspaper size={22} />
-                <span>{item.tag}</span>
-                <strong>{item.title}</strong>
-                <p>{item.source}</p>
-                <ExternalLink size={16} />
-              </a>
+          <div className="authority-list">
+            {authoritySignals.map((signal) => (
+              <span key={signal}>
+                <ShieldCheck size={18} />
+                {signal}
+              </span>
             ))}
           </div>
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="video-feature">
-        <div className="video-copy">
-          <p className="eyebrow">Summit Highlights</p>
-          <h2>World Homeopathy Summit Highlights</h2>
-          <p>
-            This section is ready for the official YouTube highlight film. Once the final video link is
-            shared, it can be embedded directly here without changing the homepage layout.
-          </p>
+      <AnimatedSection className="home-final-cta">
+        <div>
+          <p className="eyebrow">Start Here</p>
+          <h2>Explore the platform without losing the global story.</h2>
+        </div>
+        <div className="final-actions">
+          <Link className="button primary" to="/explore">
+            Explore Homeopathy <BookOpen size={17} />
+          </Link>
           <Link className="button secondary" to="/summit">
-            Watch the journey <PlayCircle size={16} />
+            World Summit <PlayCircle size={17} />
           </Link>
-        </div>
-        <div className="video-frame">
-          <div className="video-placeholder">
-            <Video size={44} />
-            <strong>Official highlight video</strong>
-            <span>Embed YouTube link here</span>
-          </div>
-          <div className="video-metrics">
-            <span><Award size={16} /> Summit chapters</span>
-            <span><Building2 size={16} /> Institutional venues</span>
-            <span><Users size={16} /> Global delegates</span>
-          </div>
+          <Link className="button ghost" to="/media">
+            Media Coverage <FileText size={17} />
+          </Link>
         </div>
       </AnimatedSection>
     </main>

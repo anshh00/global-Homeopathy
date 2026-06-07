@@ -18,7 +18,7 @@ function SummitPage() {
       <PageHero
         eyebrow="World Homeopathy Summit"
         title="Uniting the world through homeopathy."
-        text="The official summit area for destinations, delegates, highlights, outcomes, media, galleries, and future registrations."
+        text="The summit area for destinations, delegates, highlights, outcomes, media, galleries, and international participation."
       >
         <div className="hero-list">
           <span>View Summit Journey</span>
@@ -76,11 +76,11 @@ function SummitPage() {
       <section className="section split">
         <div>
           <p className="eyebrow">Summit outcomes</p>
-          <h2>The summit should feel purposeful, not just event photos.</h2>
+          <h2>Summit outcomes connect events with research, institutions, and global dialogue.</h2>
         </div>
         <div className="rich-copy">
           <p>
-            Outcomes can include research initiatives, international collaborations, healthcare dialogues,
+            Outcomes include research initiatives, international collaborations, healthcare dialogues,
             academic discussions, country chapter growth, and partner announcements.
           </p>
           <p>

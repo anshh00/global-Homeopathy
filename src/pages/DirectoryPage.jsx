@@ -12,7 +12,7 @@ function DirectoryPage() {
       <PageHero
         eyebrow="Country Directory"
         title="A world map for homeopathy organizations, events, institutions, and growth."
-        text="This can become one of the strongest long-term features of the website: country-wise data for students, practitioners, journalists, and institutions."
+        text="Country-wise data for students, practitioners, journalists, and institutions, organized through a global directory view."
       >
         <div className="hero-list">
           <span>India</span>
@@ -53,7 +53,7 @@ function DirectoryPage() {
             ))}
           </div>
           <Link to="/contact">
-            Add country data <ArrowRight size={16} />
+            Share country data <ArrowRight size={16} />
           </Link>
         </article>
       </section>

@@ -52,7 +52,7 @@ export const exploreCards = [
   {
     icon: Globe2,
     title: "Homeopathy Around the World",
-    text: "Country-wise organizations, events, institutions, research activity, and future directory data.",
+    text: "Country-wise organizations, events, institutions, research activity, and global directory references.",
     path: "/directory",
   },
   {
@@ -130,11 +130,11 @@ export const summits = [
     link: "https://www.expresshealthcare.in/news/burnett-homoeopathy-hosts-4th-world-homoeopathy-summit-2026/453433/",
   },
   {
-    city: "Future Summit",
+    city: "Next Summit Chapter",
     year: "2027",
     title: "Next Global Chapter",
-    text: "A future destination for delegates, partners, speaker sessions, media galleries, and international collaboration.",
-    details: ["Destination to be announced", "Delegate interest", "Partner opportunities", "Media kit"],
+    text: "A planning area for delegates, partners, speaker sessions, media galleries, and international collaboration.",
+    details: ["Destination planning", "Delegate interest", "Partner opportunities", "Media kit"],
   },
 ];
 
@@ -186,7 +186,7 @@ export const researchCategories = [
   {
     title: "Research Library",
     icon: Search,
-    text: "A searchable future collection for research papers, case studies, journals, clinical references, and conference proceedings.",
+    text: "A searchable collection for research papers, case studies, journals, clinical references, and conference proceedings.",
     items: ["Clinical Research", "Case Studies", "Healthcare Innovation", "Academic Papers"],
   },
   {
@@ -237,13 +237,13 @@ export const countries = [
   {
     name: "Brazil",
     position: { top: "68%", left: "33%" },
-    details: "Country directory placeholder for organizations, events, practitioners, and research references.",
+    details: "Country directory area for organizations, events, practitioners, and research references.",
     sections: ["Organizations", "Events", "Institutions", "Public resources"],
   },
   {
     name: "USA",
     position: { top: "43%", left: "22%" },
-    details: "Directory placeholder for history, organizations, educational activity, and public resources.",
+    details: "Directory area for history, organizations, educational activity, and public resources.",
     sections: ["History", "Organizations", "Education", "Resources"],
   },
 ];

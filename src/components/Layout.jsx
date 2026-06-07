@@ -68,7 +68,7 @@ function Layout() {
 
         <div className="footer-newsletter">
           <strong>Global Updates</strong>
-          <p>Receive future summit, research, media, and country chapter updates.</p>
+          <p>Receive summit, research, media, and country chapter updates.</p>
           <div className="newsletter-control">
             <Mail size={17} />
             <span>newsletter@worldhomeopathy.org</span>

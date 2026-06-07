@@ -14,8 +14,8 @@ const faqItems = [
     a: "Practice varies by country, with different institutions, associations, educational systems, and regulatory contexts.",
   },
   {
-    q: "What will this knowledge hub include later?",
-    a: "The hub can grow into timelines, country pages, organizations, research references, media, FAQs, and leader profiles.",
+    q: "How is this knowledge hub organized?",
+    a: "The hub connects timelines, founder history, principles, organizations, research references, media, and leader profiles in one learning path.",
   },
 ];
 
@@ -89,15 +89,15 @@ function ExplorePage() {
           <p className="eyebrow">Samuel Hahnemann</p>
           <h2>Founder profile and legacy.</h2>
           <p>
-            A future dedicated page can include biography, contributions, historical photos, timeline, major
-            texts, and the link between his birthday and World Homeopathy Day.
+            Biography, contributions, historical context, major texts, and the link between his
+            birthday and World Homeopathy Day are presented as part of the global foundation.
           </p>
         </article>
         <article className="content-card">
           <p className="eyebrow">World Homeopathy Day</p>
           <h2>April 10 as a global awareness moment.</h2>
           <p>
-            This can become a gallery and event page for messages, celebrations, conferences, awareness
+            A global awareness moment for messages, celebrations, conferences, educational
             activities, and country participation.
           </p>
         </article>

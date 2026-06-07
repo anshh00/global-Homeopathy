@@ -9,7 +9,7 @@ function ContactPage() {
       <PageHero
         eyebrow="Contact & participation"
         title="Join the global homeopathy movement."
-        text="A future contact page for delegates, institutions, media partners, country chapters, researchers, speakers, and summit collaborators."
+        text="A direct participation channel for delegates, institutions, media partners, country chapters, researchers, speakers, and summit collaborators."
       >
         <div className="hero-list">
           <span>Become a Delegate</span>
