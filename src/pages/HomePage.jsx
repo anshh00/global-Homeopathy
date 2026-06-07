@@ -34,6 +34,37 @@ const impactStats = [
 
 const impactLocations = ["Dubai", "Germany", "London", "India", "Goa"];
 
+const growthMilestones = [
+  {
+    year: "1980",
+    country: "India + Europe",
+    conference: "Intl. exchange",
+    education: "Teaching networks",
+    research: "Case records",
+  },
+  {
+    year: "1995",
+    country: "United Kingdom",
+    conference: "Prof. forums",
+    education: "Practitioner education",
+    research: "Clinical discussion",
+  },
+  {
+    year: "2015",
+    country: "Global institutes",
+    conference: "Academic collaboration",
+    education: "Digital learning",
+    research: "Evidence dialogue",
+  },
+  {
+    year: "Present",
+    country: "UAE / Germany / UK",
+    conference: "Summit network",
+    education: "Open knowledge",
+    research: "Research platform",
+  },
+];
+
 const pageGateways = [
   {
     icon: BookOpen,
@@ -136,26 +167,71 @@ function HomePage() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.18, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="hero-signal-stage" role="img" aria-label="Animated global homeopathy network">
-            <div className="hero-world-disc">
-              <span className="map-shape map-shape-one"></span>
-              <span className="map-shape map-shape-two"></span>
-              <span className="map-shape map-shape-three"></span>
-              <span className="signal-ring signal-ring-one"></span>
-              <span className="signal-ring signal-ring-two"></span>
-              <span className="signal-ring signal-ring-three"></span>
-              <span className="signal-path signal-path-one"></span>
-              <span className="signal-path signal-path-two"></span>
-              <span className="signal-path signal-path-three"></span>
-              <span className="signal-dot signal-dubai">Dubai</span>
-              <span className="signal-dot signal-germany">Germany</span>
-              <span className="signal-dot signal-london">London</span>
-              <span className="signal-dot signal-india">India</span>
+          <div className="growth-story" aria-label="The Growth of Global Homeopathy timeline">
+            <div className="growth-map-watermark" aria-hidden="true">
+              <span className="continent continent-one"></span>
+              <span className="continent continent-two"></span>
+              <span className="continent continent-three"></span>
             </div>
-            <div className="hero-visual-caption">
-              <span>WorldHomeopathy Atlas</span>
-              <strong>Worldwide homeopathy network</strong>
-              <p>Education, summits, research, media, and country presence connected into one global movement.</p>
+            <div className="growth-story-heading">
+              <span>Global Storyline</span>
+              <h2>The Growth of Global Homeopathy</h2>
+              <p>From education networks to summit chapters, research visibility, and country-by-country participation.</p>
+            </div>
+            <div className="growth-timeline">
+              <motion.svg
+                className="growth-curve"
+                viewBox="0 0 1100 240"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <motion.path
+                  d="M 40 132 C 168 32 284 32 406 132 S 640 232 760 132 S 970 32 1060 132"
+                  fill="none"
+                  stroke="rgba(14, 107, 80, 0.22)"
+                  strokeWidth="18"
+                  strokeLinecap="round"
+                />
+                <motion.path
+                  d="M 40 132 C 168 32 284 32 406 132 S 640 232 760 132 S 970 32 1060 132"
+                  fill="none"
+                  stroke="url(#growthGold)"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  initial={{ pathLength: 0 }}
+                  whileInView={{ pathLength: 1 }}
+                  viewport={{ once: true, amount: 0.55 }}
+                  transition={{ duration: 1.4, ease: "easeOut" }}
+                />
+                <defs>
+                  <linearGradient id="growthGold" x1="0%" x2="100%" y1="0%" y2="0%">
+                    <stop offset="0%" stopColor="#0E6B50" />
+                    <stop offset="48%" stopColor="#C8A64D" />
+                    <stop offset="100%" stopColor="#0B2C4D" />
+                  </linearGradient>
+                </defs>
+              </motion.svg>
+              <div className="growth-milestones">
+                {growthMilestones.map((milestone, index) => (
+                  <motion.article
+                    className="growth-milestone"
+                    key={milestone.year}
+                    initial={{ opacity: 0, y: 22 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.45 }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                  >
+                    <span className="growth-year">{milestone.year}</span>
+                    <small>Country entered</small>
+                    <strong>{milestone.country}</strong>
+                    <ul>
+                      <li><b>Conference</b>{milestone.conference}</li>
+                      <li><b>Education</b>{milestone.education}</li>
+                      <li><b>Research</b>{milestone.research}</li>
+                    </ul>
+                  </motion.article>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
