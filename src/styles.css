@@ -3926,3 +3926,129 @@ p {
     font-size: 0.84rem;
   }
 }
+
+/* Hero globe cleanup: keep the visual clean, not text-heavy */
+.hero-signal-stage {
+  align-content: center;
+  gap: clamp(14px, 2vw, 24px);
+  min-height: clamp(500px, 55svh, 660px);
+}
+
+.hero-world-disc {
+  width: min(42vw, 560px);
+  min-width: 360px;
+}
+
+.hero-world-disc::before {
+  opacity: 0.58;
+}
+
+.map-shape {
+  opacity: 0.54;
+}
+
+.signal-ring {
+  border-color: rgba(250, 250, 248, 0.32);
+}
+
+.signal-ring-two {
+  border-color: rgba(200, 166, 77, 0.28);
+}
+
+.signal-path {
+  opacity: 0.44;
+}
+
+.signal-dot {
+  z-index: 8;
+}
+
+.signal-germany {
+  top: 18%;
+  left: 3%;
+}
+
+.signal-dubai {
+  top: 30%;
+  right: -1%;
+}
+
+.signal-india {
+  bottom: 35%;
+  left: -2%;
+}
+
+.signal-london {
+  right: 11%;
+  bottom: 20%;
+}
+
+.hero-disc-mark {
+  display: none;
+}
+
+.hero-visual-caption {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  z-index: 9;
+  width: min(100%, 520px);
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 14px 18px;
+  text-align: center;
+  background: rgba(250, 250, 248, 0.78);
+  border: 1px solid rgba(14, 107, 80, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 20px 54px rgba(6, 42, 77, 0.09);
+  backdrop-filter: blur(18px);
+}
+
+.hero-visual-caption span {
+  margin-bottom: 6px;
+  font-size: 0.68rem;
+}
+
+.hero-visual-caption strong {
+  color: var(--navy);
+  font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+  line-height: 1.18;
+}
+
+.hero-visual-caption p {
+  max-width: 430px;
+  margin: 7px auto 0;
+  color: rgba(11, 44, 77, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 1180px) {
+  .hero-signal-stage {
+    min-height: auto;
+  }
+
+  .hero-world-disc {
+    width: min(74vw, 500px);
+    min-width: 0;
+  }
+}
+
+@media (max-width: 780px) {
+  .hero-signal-stage {
+    min-height: auto;
+  }
+
+  .hero-world-disc {
+    width: min(76vw, 300px);
+  }
+
+  .hero-visual-caption {
+    display: block;
+    padding: 11px 13px;
+  }
+
+  .hero-visual-caption p {
+    display: none;
+  }
+}

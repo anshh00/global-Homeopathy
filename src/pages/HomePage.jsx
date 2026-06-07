@@ -151,11 +151,10 @@ function HomePage() {
               <span className="signal-dot signal-germany">Germany</span>
               <span className="signal-dot signal-london">London</span>
               <span className="signal-dot signal-india">India</span>
-              <span className="hero-disc-mark"><BrandMark compact /></span>
             </div>
             <div className="hero-visual-caption">
               <span>WorldHomeopathy Atlas</span>
-              <strong>A visual centerpiece for the worldwide homeopathy network.</strong>
+              <strong>Worldwide homeopathy network</strong>
               <p>Education, summits, research, media, and country presence connected into one global movement.</p>
             </div>
           </div>
