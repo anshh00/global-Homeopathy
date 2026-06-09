@@ -11,7 +11,14 @@ function Layout() {
     <>
       <header className="site-header">
         <NavLink className="brand" to="/" onClick={() => setMenuOpen(false)} aria-label="WorldHomeopathy.org home">
-          <BrandMark compact />
+          <span className="header-emblem" aria-hidden="true">
+            <span className="emblem-ring"></span>
+            <span className="emblem-line line-a"></span>
+            <span className="emblem-line line-b"></span>
+            <span className="emblem-node node-a"></span>
+            <span className="emblem-node node-b"></span>
+            <span className="emblem-node node-c"></span>
+          </span>
           <span>
             <strong>WorldHomeopathy.org</strong>
             <small>Global digital headquarters of homeopathy</small>

@@ -211,11 +211,28 @@ p {
   min-height: 104px;
   padding: 16px max(4.8vw, calc((100vw - var(--max)) / 2));
   background:
-    linear-gradient(90deg, rgba(250, 250, 248, 0.98), rgba(255, 255, 255, 0.92) 46%, rgba(234, 248, 245, 0.86));
-  border-bottom: 1px solid rgba(6, 42, 77, 0.08);
-  box-shadow: 0 12px 34px rgba(6, 42, 77, 0.06);
-  backdrop-filter: blur(22px);
+    radial-gradient(circle at 9% 50%, rgba(14, 138, 106, 0.16), transparent 18rem),
+    radial-gradient(circle at 82% 42%, rgba(91, 171, 139, 0.18), transparent 22rem),
+    linear-gradient(90deg, rgba(250, 252, 248, 0.9), rgba(234, 248, 245, 0.78) 58%, rgba(221, 237, 231, 0.86));
+  border-bottom: 1px solid rgba(14, 107, 80, 0.12);
+  box-shadow: 0 18px 58px rgba(6, 42, 77, 0.08);
+  backdrop-filter: blur(26px) saturate(1.25);
   isolation: isolate;
+}
+
+.site-header::before {
+  position: absolute;
+  inset: 12px max(3.2vw, calc((100vw - var(--max)) / 2)) auto;
+  height: 58px;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent, rgba(14, 138, 106, 0.2), transparent),
+    radial-gradient(circle at 20% 50%, rgba(200, 166, 77, 0.14), transparent 18rem);
+  border-radius: 999px;
+  filter: blur(24px);
+  opacity: 0.72;
+  animation: headerGlow 5.6s ease-in-out infinite alternate;
 }
 
 .site-header::after {
@@ -229,15 +246,17 @@ p {
 }
 
 .brand {
+  position: relative;
+  z-index: 1;
   display: inline-flex;
   align-items: center;
   gap: 14px;
   min-width: 0;
-  padding: 7px 16px 7px 8px;
-  background: rgba(255, 255, 255, 0.62);
-  border: 1px solid rgba(6, 42, 77, 0.08);
+  padding: 8px 18px 8px 10px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(14, 107, 80, 0.13);
   border-radius: 999px;
-  box-shadow: 0 18px 48px rgba(6, 42, 77, 0.08);
+  box-shadow: 0 24px 62px rgba(6, 42, 77, 0.09);
   transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
 }
 
@@ -248,6 +267,65 @@ p {
   transform: translateY(-1px);
   outline: none;
 }
+
+.header-emblem {
+  position: relative;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.96), transparent 20%),
+    linear-gradient(135deg, #0e8a6a, #0a4d43);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 999px;
+  box-shadow: 0 16px 36px rgba(14, 107, 80, 0.24), inset 0 0 0 7px rgba(255, 255, 255, 0.08);
+}
+
+.header-emblem::before {
+  position: absolute;
+  inset: 9px;
+  content: "";
+  border: 1px solid rgba(221, 237, 231, 0.7);
+  border-radius: inherit;
+  animation: emblemPulse 3.2s ease-in-out infinite;
+}
+
+.emblem-ring {
+  position: absolute;
+  width: 31px;
+  height: 31px;
+  border: 2px solid rgba(200, 166, 77, 0.86);
+  border-radius: 999px;
+}
+
+.emblem-line {
+  position: absolute;
+  width: 34px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  transform-origin: center;
+}
+
+.emblem-line.line-a { transform: rotate(30deg); }
+.emblem-line.line-b { transform: rotate(-36deg); }
+
+.emblem-node {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: #f6dc7d;
+  border: 2px solid rgba(255, 255, 255, 0.86);
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(246, 220, 125, 0.7);
+}
+
+.emblem-node.node-a { top: 15px; left: 19px; }
+.emblem-node.node-b { right: 15px; top: 25px; }
+.emblem-node.node-c { bottom: 15px; left: 25px; }
 
 .brand-system {
   display: grid;
@@ -359,14 +437,16 @@ p {
 }
 
 .site-nav {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 3px;
   padding: 7px;
-  background: rgba(255, 255, 255, 0.62);
-  border: 1px solid rgba(6, 42, 77, 0.08);
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(14, 107, 80, 0.14);
   border-radius: 999px;
-  box-shadow: 0 18px 48px rgba(6, 42, 77, 0.07);
+  box-shadow: 0 24px 62px rgba(6, 42, 77, 0.08);
 }
 
 .site-nav a {
@@ -381,10 +461,20 @@ p {
 .site-nav a:hover,
 .site-nav a:focus-visible,
 .site-nav a.active {
-  color: var(--navy);
-  background: linear-gradient(135deg, var(--aqua), rgba(221, 237, 231, 0.8));
+  color: #063f34;
+  background: linear-gradient(135deg, rgba(221, 237, 231, 0.98), rgba(234, 248, 245, 0.86));
   outline: none;
   transform: translateY(-1px);
+}
+
+@keyframes headerGlow {
+  from { transform: translateX(-18px); opacity: 0.42; }
+  to { transform: translateX(18px); opacity: 0.82; }
+}
+
+@keyframes emblemPulse {
+  0%, 100% { transform: scale(0.92); opacity: 0.54; }
+  50% { transform: scale(1.08); opacity: 0.9; }
 }
 
 .menu-toggle {
