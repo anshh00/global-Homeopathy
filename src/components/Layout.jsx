@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Mail, Send } from "lucide-react";
+import { Mail, Search, Send } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import BrandMark from "./BrandMark.jsx";
 import { navItems } from "../data/siteData.js";
@@ -37,6 +37,9 @@ function Layout() {
               {item.label}
             </NavLink>
           ))}
+          <button className="nav-search" type="button" aria-label="Search WorldHomeopathy.org">
+            <Search size={21} />
+          </button>
         </nav>
       </header>
 

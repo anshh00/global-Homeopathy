@@ -1,5 +1,22 @@
 import React from "react";
-import { ArrowRight, BookOpen, FileText, Globe2, MapPinned, Microscope, Newspaper, PlayCircle, ShieldCheck, Users } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  CalendarDays,
+  FileText,
+  FlaskConical,
+  Globe2,
+  GraduationCap,
+  Handshake,
+  Leaf,
+  Lightbulb,
+  MapPinned,
+  Microscope,
+  Newspaper,
+  PlayCircle,
+  ShieldCheck,
+  Users,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import AnimatedSection from "../components/AnimatedSection.jsx";
@@ -34,34 +51,149 @@ const impactStats = [
 
 const impactLocations = ["Dubai", "Germany", "London", "India", "Goa"];
 
-const growthMilestones = [
+const heroValues = [
   {
-    year: "1980",
-    country: "India + Europe",
-    conference: "Intl. exchange",
-    education: "Teaching networks",
-    research: "Case records",
+    icon: Leaf,
+    text: "Evidence-based research and clinical excellence",
   },
   {
-    year: "1995",
-    country: "United Kingdom",
-    conference: "Prof. forums",
-    education: "Practitioner education",
-    research: "Clinical discussion",
+    icon: GraduationCap,
+    text: "Quality education and professional training",
   },
   {
-    year: "2015",
-    country: "Global institutes",
-    conference: "Academic collaboration",
-    education: "Digital learning",
-    research: "Evidence dialogue",
+    icon: Users,
+    text: "Global collaboration and knowledge exchange",
   },
   {
-    year: "Present",
-    country: "UAE / Germany / UK",
-    conference: "Summit network",
-    education: "Open knowledge",
-    research: "Research platform",
+    icon: Globe2,
+    text: "Promoting natural, safe, and holistic healthcare",
+  },
+];
+
+const heroNetworkCards = [
+  {
+    icon: Microscope,
+    title: "Research Center",
+    text: "Advancing global research through studies, trials, and publications.",
+    action: "Explore Research",
+    path: "/research",
+    position: "research",
+  },
+  {
+    icon: Users,
+    title: "Global Leaders",
+    text: "Uniting visionary leaders and experts shaping the future of homeopathy.",
+    action: "Meet Leaders",
+    path: "/leaders",
+    position: "leaders",
+  },
+  {
+    icon: Globe2,
+    title: "World Summit",
+    text: "International conferences and events that inspire, connect, and create impact.",
+    action: "Discover Summit",
+    path: "/summit",
+    position: "summit",
+  },
+  {
+    icon: GraduationCap,
+    title: "Education Network",
+    text: "Empowering learners through courses, training programs, and academic excellence.",
+    action: "Explore Education",
+    path: "/explore",
+    position: "education",
+  },
+  {
+    icon: Newspaper,
+    title: "Media Hub",
+    text: "News, interviews, insights, and updates from the global homeopathy community.",
+    action: "Visit Media",
+    path: "/media",
+    position: "media",
+  },
+  {
+    icon: BookOpen,
+    title: "Publications",
+    text: "Journals, articles, case studies, and resources for evidence-based practice.",
+    action: "View Publications",
+    path: "/research",
+    position: "publications",
+  },
+  {
+    icon: Handshake,
+    title: "Partner Associations",
+    text: "Strengthening ties with leading organizations and institutions worldwide.",
+    action: "Our Partners",
+    path: "/directory",
+    position: "partners",
+  },
+  {
+    icon: Lightbulb,
+    title: "Innovation Hub",
+    text: "Encouraging new ideas, technologies, and approaches to advance homeopathy.",
+    action: "Explore Innovation",
+    path: "/research",
+    position: "innovation",
+  },
+];
+
+const heroNews = [
+  {
+    icon: FileText,
+    title: "New Research Published",
+    text: "Clinical study and case documentation updates",
+    time: "2 hours ago",
+  },
+  {
+    icon: Users,
+    title: "New Leader Joined",
+    text: "International advisory visibility expanded",
+    time: "5 hours ago",
+  },
+  {
+    icon: CalendarDays,
+    title: "Upcoming Summit",
+    text: "World Homeopathy Summit network planning",
+    time: "May 20-22, 2025",
+  },
+  {
+    icon: Globe2,
+    title: "Global Community",
+    text: "New partnerships and country participation",
+    time: "1 day ago",
+  },
+];
+
+const heroStats = [
+  {
+    icon: Globe2,
+    value: "50+",
+    label: "Countries Connected",
+  },
+  {
+    icon: Users,
+    value: "5000+",
+    label: "Practitioners Worldwide",
+  },
+  {
+    icon: BookOpen,
+    value: "120+",
+    label: "Research Articles",
+  },
+  {
+    icon: CalendarDays,
+    value: "100+",
+    label: "Summits & Conferences",
+  },
+  {
+    icon: Handshake,
+    value: "40+",
+    label: "Partner Associations",
+  },
+  {
+    icon: FlaskConical,
+    value: "25+",
+    label: "Years of Global Impact",
   },
 ];
 
@@ -119,7 +251,7 @@ const authoritySignals = [
 
 function HomePage() {
   return (
-    <main className="home-redesign home-movement structured-home font-sans">
+    <main className="home-redesign home-movement structured-home reference-home font-sans">
       <section className="hero institution-hero">
         <div className="hero-ambient" aria-hidden="true">
           <span className="hero-spotlight spotlight-primary"></span>
@@ -134,20 +266,26 @@ function HomePage() {
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="mission-kicker">
-            <BrandMark compact />
             <span>Global digital headquarters of homeopathy</span>
           </div>
           <h1>Connecting the Global Homeopathy Community</h1>
-          <div className="hero-mantra" aria-label="Platform focus">
-            <span>Research.</span>
-            <span>Innovation.</span>
-            <span>Education.</span>
-            <span>Leadership.</span>
-          </div>
           <p>
-            A worldwide platform for education, research, innovation, leadership, and
-            international collaboration in homeopathy.
+            A worldwide platform for education, research, innovation, leadership, and international
+            collaboration in homeopathy. Uniting practitioners, researchers, institutions, and
+            supporters to <strong>advance the science, practice, and awareness of homeopathy</strong>{" "}
+            for a healthier world.
           </p>
+          <div className="hero-value-list">
+            {heroValues.map((item) => {
+              const Icon = item.icon;
+              return (
+                <span key={item.text}>
+                  <Icon size={22} />
+                  {item.text}
+                </span>
+              );
+            })}
+          </div>
           <div className="hero-actions">
             <Link className="button primary" to="/explore">
               Start Exploring <ArrowRight size={18} />
@@ -167,73 +305,82 @@ function HomePage() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.18, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="growth-story" aria-label="The Growth of Global Homeopathy timeline">
-            <div className="growth-map-watermark" aria-hidden="true">
-              <span className="continent continent-one"></span>
-              <span className="continent continent-two"></span>
-              <span className="continent continent-three"></span>
+          <div className="hero-hub-system" aria-label="WorldHomeopathy.org global platform network">
+            <div className="hero-world-watermark" aria-hidden="true"></div>
+            <div className="hub-orbit" aria-hidden="true">
+              <span className="orbit orbit-a"></span>
+              <span className="orbit orbit-b"></span>
+              <span className="orbit orbit-c"></span>
             </div>
-            <div className="growth-story-heading">
-              <span>Global Storyline</span>
-              <h2>The Growth of Global Homeopathy</h2>
-              <p>From education networks to summit chapters, research visibility, and country-by-country participation.</p>
+            <div className="central-hub">
+              <span>WorldHomeopathy.org</span>
+              <strong>Global Digital Headquarters of Homeopathy</strong>
             </div>
-            <div className="growth-timeline">
-              <motion.svg
-                className="growth-curve"
-                viewBox="0 0 1100 240"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <motion.path
-                  d="M 40 132 C 168 32 284 32 406 132 S 640 232 760 132 S 970 32 1060 132"
-                  fill="none"
-                  stroke="rgba(14, 107, 80, 0.22)"
-                  strokeWidth="18"
-                  strokeLinecap="round"
-                />
-                <motion.path
-                  d="M 40 132 C 168 32 284 32 406 132 S 640 232 760 132 S 970 32 1060 132"
-                  fill="none"
-                  stroke="url(#growthGold)"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true, amount: 0.55 }}
-                  transition={{ duration: 1.4, ease: "easeOut" }}
-                />
-                <defs>
-                  <linearGradient id="growthGold" x1="0%" x2="100%" y1="0%" y2="0%">
-                    <stop offset="0%" stopColor="#0E6B50" />
-                    <stop offset="48%" stopColor="#C8A64D" />
-                    <stop offset="100%" stopColor="#0B2C4D" />
-                  </linearGradient>
-                </defs>
-              </motion.svg>
-              <div className="growth-milestones">
-                {growthMilestones.map((milestone, index) => (
-                  <motion.article
-                    className="growth-milestone"
-                    key={milestone.year}
-                    initial={{ opacity: 0, y: 22 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.45 }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                  >
-                    <span className="growth-year">{milestone.year}</span>
-                    <small>Country entered</small>
-                    <strong>{milestone.country}</strong>
-                    <ul>
-                      <li><b>Conference</b>{milestone.conference}</li>
-                      <li><b>Education</b>{milestone.education}</li>
-                      <li><b>Research</b>{milestone.research}</li>
-                    </ul>
-                  </motion.article>
-                ))}
-              </div>
-            </div>
+            {heroNetworkCards.map((card, index) => {
+              const Icon = card.icon;
+              return (
+                <motion.article
+                  className={`network-card ${card.position}`}
+                  key={card.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.25 + index * 0.06, duration: 0.45 }}
+                >
+                  <span className="network-icon"><Icon size={28} /></span>
+                  <h3>{card.title}</h3>
+                  <p>{card.text}</p>
+                  <Link to={card.path}>
+                    {card.action} <ArrowRight size={15} />
+                  </Link>
+                </motion.article>
+              );
+            })}
           </div>
+        </motion.div>
+
+        <motion.div
+          className="hero-news-panel"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35, duration: 0.65 }}
+        >
+          <div className="news-heading">
+            <strong>What's Happening Now</strong>
+            <span>Live</span>
+          </div>
+          <div className="news-items">
+            {heroNews.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article key={item.title}>
+                  <Icon size={20} />
+                  <div>
+                    <strong>{item.title}</strong>
+                    <p>{item.text}</p>
+                    <small>{item.time}</small>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="hero-stats-panel"
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.65 }}
+        >
+          {heroStats.map((stat) => {
+            const Icon = stat.icon;
+            return (
+              <article key={stat.label}>
+                <span><Icon size={31} /></span>
+                <strong>{stat.value}</strong>
+                <p>{stat.label}</p>
+              </article>
+            );
+          })}
         </motion.div>
       </section>
 
