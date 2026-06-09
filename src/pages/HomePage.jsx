@@ -2,14 +2,10 @@ import React from "react";
 import {
   ArrowRight,
   BookOpen,
-  CalendarDays,
   FileText,
-  FlaskConical,
   Globe2,
   GraduationCap,
-  Handshake,
   Leaf,
-  Lightbulb,
   MapPinned,
   Microscope,
   Newspaper,
@@ -74,126 +70,44 @@ const heroNetworkCards = [
   {
     icon: Microscope,
     title: "Research Center",
-    text: "Advancing global research through studies, trials, and publications.",
+    text: "Advancing global research",
     action: "Explore Research",
     path: "/research",
-    position: "research",
   },
   {
     icon: Users,
     title: "Global Leaders",
-    text: "Uniting visionary leaders and experts shaping the future of homeopathy.",
+    text: "Uniting visionary leaders",
     action: "Meet Leaders",
     path: "/leaders",
-    position: "leaders",
   },
   {
     icon: Globe2,
     title: "World Summit",
-    text: "International conferences and events that inspire, connect, and create impact.",
+    text: "International events",
     action: "Discover Summit",
     path: "/summit",
-    position: "summit",
   },
   {
     icon: GraduationCap,
     title: "Education Network",
-    text: "Empowering learners through courses, training programs, and academic excellence.",
+    text: "Empowering education",
     action: "Explore Education",
     path: "/explore",
-    position: "education",
   },
   {
     icon: Newspaper,
     title: "Media Hub",
-    text: "News, interviews, insights, and updates from the global homeopathy community.",
+    text: "News and interviews",
     action: "Visit Media",
     path: "/media",
-    position: "media",
   },
   {
     icon: BookOpen,
     title: "Publications",
-    text: "Journals, articles, case studies, and resources for evidence-based practice.",
+    text: "Journals and articles",
     action: "View Publications",
     path: "/research",
-    position: "publications",
-  },
-  {
-    icon: Handshake,
-    title: "Partner Associations",
-    text: "Strengthening ties with leading organizations and institutions worldwide.",
-    action: "Our Partners",
-    path: "/directory",
-    position: "partners",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation Hub",
-    text: "Encouraging new ideas, technologies, and approaches to advance homeopathy.",
-    action: "Explore Innovation",
-    path: "/research",
-    position: "innovation",
-  },
-];
-
-const heroNews = [
-  {
-    icon: FileText,
-    title: "New Research Published",
-    text: "Clinical study and case documentation updates",
-    time: "2 hours ago",
-  },
-  {
-    icon: Users,
-    title: "New Leader Joined",
-    text: "International advisory visibility expanded",
-    time: "5 hours ago",
-  },
-  {
-    icon: CalendarDays,
-    title: "Upcoming Summit",
-    text: "World Homeopathy Summit network planning",
-    time: "May 20-22, 2025",
-  },
-  {
-    icon: Globe2,
-    title: "Global Community",
-    text: "New partnerships and country participation",
-    time: "1 day ago",
-  },
-];
-
-const heroStats = [
-  {
-    icon: Globe2,
-    value: "50+",
-    label: "Countries Connected",
-  },
-  {
-    icon: Users,
-    value: "5000+",
-    label: "Practitioners Worldwide",
-  },
-  {
-    icon: BookOpen,
-    value: "120+",
-    label: "Research Articles",
-  },
-  {
-    icon: CalendarDays,
-    value: "100+",
-    label: "Summits & Conferences",
-  },
-  {
-    icon: Handshake,
-    value: "40+",
-    label: "Partner Associations",
-  },
-  {
-    icon: FlaskConical,
-    value: "25+",
-    label: "Years of Global Impact",
   },
 ];
 
@@ -305,22 +219,12 @@ function HomePage() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.18, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="hero-hub-system" aria-label="WorldHomeopathy.org global platform network">
-            <div className="hero-world-watermark" aria-hidden="true"></div>
-            <div className="hub-orbit" aria-hidden="true">
-              <span className="orbit orbit-a"></span>
-              <span className="orbit orbit-b"></span>
-              <span className="orbit orbit-c"></span>
-            </div>
-            <div className="central-hub">
-              <span>WorldHomeopathy.org</span>
-              <strong>Global Digital Headquarters of Homeopathy</strong>
-            </div>
+          <div className="hero-feature-grid" aria-label="WorldHomeopathy.org platform features">
             {heroNetworkCards.map((card, index) => {
               const Icon = card.icon;
               return (
                 <motion.article
-                  className={`network-card ${card.position}`}
+                  className="network-card"
                   key={card.title}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -336,51 +240,6 @@ function HomePage() {
               );
             })}
           </div>
-        </motion.div>
-
-        <motion.div
-          className="hero-news-panel"
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.35, duration: 0.65 }}
-        >
-          <div className="news-heading">
-            <strong>What's Happening Now</strong>
-            <span>Live</span>
-          </div>
-          <div className="news-items">
-            {heroNews.map((item) => {
-              const Icon = item.icon;
-              return (
-                <article key={item.title}>
-                  <Icon size={20} />
-                  <div>
-                    <strong>{item.title}</strong>
-                    <p>{item.text}</p>
-                    <small>{item.time}</small>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="hero-stats-panel"
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.45, duration: 0.65 }}
-        >
-          {heroStats.map((stat) => {
-            const Icon = stat.icon;
-            return (
-              <article key={stat.label}>
-                <span><Icon size={31} /></span>
-                <strong>{stat.value}</strong>
-                <p>{stat.label}</p>
-              </article>
-            );
-          })}
         </motion.div>
       </section>
 
