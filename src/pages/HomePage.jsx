@@ -182,7 +182,16 @@ function HomePage() {
           <div className="mission-kicker">
             <span>Global digital headquarters of homeopathy</span>
           </div>
-          <h1>Connecting the Global Homeopathy Community</h1>
+          <h1>
+            <span>Connecting the Global</span>
+            <span>Homeopathy Community</span>
+          </h1>
+          <div className="hero-scope-line" aria-label="Platform focus areas">
+            <span>Research</span>
+            <span>Education</span>
+            <span>World Summits</span>
+            <span>Leadership</span>
+          </div>
           <p>
             A worldwide platform for education, research, innovation, leadership, and international
             collaboration in homeopathy. Uniting practitioners, researchers, institutions, and
