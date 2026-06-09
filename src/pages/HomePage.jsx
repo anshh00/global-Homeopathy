@@ -322,7 +322,9 @@ function HomePage() {
           </div>
         </div>
         <div className="mission-visual-panel" aria-label="Worldwide homeopathy mission visual">
-          <div className="mission-reference-art" aria-hidden="true"></div>
+          <div className="mission-reference-art" aria-hidden="true">
+            <img src="/images/mission-globe-generated.png" alt="" loading="lazy" />
+          </div>
         </div>
       </AnimatedSection>
 
