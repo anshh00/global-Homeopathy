@@ -11,11 +11,18 @@ import ResearchPage from "./pages/ResearchPage.jsx";
 import SummitPage from "./pages/SummitPage.jsx";
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   React.useEffect(() => {
+    if (hash) {
+      window.setTimeout(() => {
+        document.querySelector(hash)?.scrollIntoView({ block: "start" });
+      }, 0);
+      return;
+    }
+
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 }

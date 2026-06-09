@@ -10,7 +10,7 @@ const sectionVariants = {
   },
 };
 
-function AnimatedSection({ as = "section", className = "", children, delay = 0 }) {
+function AnimatedSection({ as = "section", className = "", children, delay = 0, ...props }) {
   const MotionTag = motion[as] || motion.section;
 
   return (
@@ -21,6 +21,7 @@ function AnimatedSection({ as = "section", className = "", children, delay = 0 }
       whileInView="visible"
       viewport={{ once: true, amount: 0.18 }}
       transition={{ delay }}
+      {...props}
     >
       {children}
     </MotionTag>

@@ -163,6 +163,29 @@ const authoritySignals = [
   "Clear visitor journey from global mission to detailed resources",
 ];
 
+const missionPillars = [
+  {
+    icon: GraduationCap,
+    label: "Education",
+    text: "A clear path for learning",
+  },
+  {
+    icon: Microscope,
+    label: "Research",
+    text: "Evidence for better outcomes",
+  },
+  {
+    icon: Users,
+    label: "Leadership",
+    text: "Profiles that inspire trust",
+  },
+  {
+    icon: Globe2,
+    label: "Global Reach",
+    text: "One story, many nations",
+  },
+];
+
 function HomePage() {
   return (
     <main className="home-redesign home-movement structured-home reference-home font-sans">
@@ -265,20 +288,41 @@ function HomePage() {
         })}
       </section>
 
-      <AnimatedSection className="section home-intent">
-        <div>
+      <AnimatedSection id="global-mission" className="section home-intent mission-showcase">
+        <div className="mission-showcase-copy">
           <p className="eyebrow">Global Mission</p>
           <h2>A calm, credible entry point for the worldwide homeopathy community.</h2>
+          <div className="mission-leaf-divider" aria-hidden="true">
+            <Leaf size={18} />
+            <span></span>
+          </div>
+          <div className="mission-body">
+            <p>
+              The platform opens with <strong>education</strong> first: a clear path for students,
+              practitioners, media, institutions, and the public to understand homeopathy in a
+              global context.
+            </p>
+            <p>
+              From there, visitors can move into summit chapters, <strong>research</strong>{" "}
+              initiatives, leadership profiles, country references, and verified{" "}
+              <strong>media coverage</strong> without losing the global story.
+            </p>
+          </div>
+          <div className="mission-pillars" aria-label="Global mission pillars">
+            {missionPillars.map((pillar) => {
+              const Icon = pillar.icon;
+              return (
+                <article key={pillar.label}>
+                  <span><Icon size={29} /></span>
+                  <strong>{pillar.label}</strong>
+                  <p>{pillar.text}</p>
+                </article>
+              );
+            })}
+          </div>
         </div>
-        <div className="home-intent-copy">
-          <p>
-            The platform opens with education first: a clear path for students, practitioners,
-            media, institutions, and the public to understand homeopathy in a global context.
-          </p>
-          <p>
-            From there, visitors can move into summit chapters, research initiatives, leadership
-            profiles, country references, and verified media coverage without losing the global story.
-          </p>
+        <div className="mission-visual-panel" aria-label="Worldwide homeopathy mission visual">
+          <div className="mission-reference-art" aria-hidden="true"></div>
         </div>
       </AnimatedSection>
 
