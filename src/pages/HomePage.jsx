@@ -481,7 +481,7 @@ function HomePage() {
 
       <AnimatedSection className="section homepage-authority">
         <div className="authority-photo" aria-label="World Homeopathy Summit institutional visual">
-          <img src="/images/summit-global-stage.jpg" alt="World Homeopathy Summit stage and delegates" />
+          <img src="/images/summit-dubai-authority.jpg" alt="World Homeopathy Summit 2 at Burj Al Arab, Dubai" />
         </div>
         <div className="authority-copy">
           <p className="eyebrow">Authority Signal</p>
