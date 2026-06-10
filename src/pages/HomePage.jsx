@@ -505,19 +505,41 @@ function HomePage() {
       </AnimatedSection>
 
       <AnimatedSection className="home-final-cta">
-        <div>
+        <div className="final-cta-copy">
           <p className="eyebrow">Start Here</p>
           <h2>Explore the platform without losing the global story.</h2>
+          <p>
+            Choose the route that matches your purpose. Each pathway opens a dedicated
+            section while keeping education, summits, research, and media connected.
+          </p>
         </div>
-        <div className="final-actions">
-          <Link className="button primary" to="/explore">
-            Explore Homeopathy <BookOpen size={17} />
+        <div className="final-pathways" aria-label="Homepage next-step routes">
+          <Link className="final-pathway" to="/explore">
+            <span className="final-pathway-number">01</span>
+            <span className="final-pathway-icon"><BookOpen size={22} /></span>
+            <span className="final-pathway-copy">
+              <strong>Knowledge Hub</strong>
+              <small>Start with history, principles, education, and global context.</small>
+            </span>
+            <span className="final-pathway-link">Open hub <ArrowRight size={16} /></span>
           </Link>
-          <Link className="button secondary" to="/summit">
-            World Summit <PlayCircle size={17} />
+          <Link className="final-pathway" to="/summit">
+            <span className="final-pathway-number">02</span>
+            <span className="final-pathway-icon"><PlayCircle size={22} /></span>
+            <span className="final-pathway-copy">
+              <strong>Summit Trail</strong>
+              <small>Follow Dubai, Germany, London, and future summit chapters.</small>
+            </span>
+            <span className="final-pathway-link">View journey <ArrowRight size={16} /></span>
           </Link>
-          <Link className="button ghost" to="/media">
-            Media Coverage <FileText size={17} />
+          <Link className="final-pathway" to="/media">
+            <span className="final-pathway-number">03</span>
+            <span className="final-pathway-icon"><FileText size={22} /></span>
+            <span className="final-pathway-copy">
+              <strong>Media Desk</strong>
+              <small>Read external coverage, references, and institutional visibility.</small>
+            </span>
+            <span className="final-pathway-link">Read coverage <ArrowRight size={16} /></span>
           </Link>
         </div>
       </AnimatedSection>
