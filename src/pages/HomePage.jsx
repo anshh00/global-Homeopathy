@@ -18,8 +18,6 @@ import { Link } from "react-router-dom";
 import AnimatedSection from "../components/AnimatedSection.jsx";
 import BrandMark from "../components/BrandMark.jsx";
 
-const InteractiveGlobe = React.lazy(() => import("../components/InteractiveGlobe.jsx"));
-
 const heroProofs = [
   {
     icon: Globe2,
@@ -37,15 +35,6 @@ const heroProofs = [
     text: "International events connected into one global movement.",
   },
 ];
-
-const impactStats = [
-  { value: "75+", label: "Countries connected to homeopathy practice and education" },
-  { value: "4+", label: "World summit chapters across global destinations" },
-  { value: "500+", label: "Delegates, guests, speakers, and summit participants" },
-  { value: "100+", label: "Leaders, institutions, press stories, and knowledge references" },
-];
-
-const impactLocations = ["Dubai", "Germany", "London", "India", "Goa"];
 
 const heroValues = [
   {
@@ -325,47 +314,6 @@ function HomePage() {
           <div className="mission-reference-art" aria-hidden="true">
             <img src="/images/mission-globe-generated.png" alt="" loading="lazy" />
           </div>
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="impact-section structured-impact">
-        <div className="impact-story">
-          <div className="impact-globe-card" aria-label="Animated worldwide homeopathy network">
-            <React.Suspense fallback={<div className="interactive-globe-canvas globe-fallback"></div>}>
-              <InteractiveGlobe />
-            </React.Suspense>
-            <span className="globe-interaction-hint">Drag to rotate</span>
-          </div>
-          <div className="impact-heading">
-            <p className="eyebrow">Global Impact</p>
-            <h2>One international movement, organized into clear destinations.</h2>
-            <p>
-              Summit locations, research conversations, country participation, and leadership
-              visibility connect into one international movement.
-            </p>
-            <Link className="text-link" to="/directory">
-              Open world map <MapPinned size={16} />
-            </Link>
-          </div>
-        </div>
-        <div className="impact-counters">
-          {impactStats.map((stat, index) => (
-            <motion.article
-              key={stat.label}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ delay: index * 0.08, duration: 0.55 }}
-            >
-              <strong>{stat.value}</strong>
-              <span>{stat.label}</span>
-            </motion.article>
-          ))}
-        </div>
-        <div className="impact-locations" aria-label="Summit and presence locations">
-          {impactLocations.map((location) => (
-            <span key={location}>{location}</span>
-          ))}
         </div>
       </AnimatedSection>
 
