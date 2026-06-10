@@ -3097,31 +3097,32 @@ p {
 
 .platform-gateway {
   display: grid;
-  grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
-  gap: clamp(36px, 6vw, 100px);
+  grid-template-columns: 1fr;
+  gap: clamp(26px, 4vw, 54px);
   align-items: start;
 }
 
 .gateway-heading {
-  position: sticky;
-  top: 132px;
   display: grid;
-  gap: 22px;
+  grid-template-columns: 1fr;
+  gap: clamp(12px, 1.8vw, 20px);
+  padding-bottom: clamp(24px, 3vw, 38px);
+  border-bottom: 1px solid var(--line);
 }
 
 .gateway-heading h2 {
-  font-size: clamp(2.2rem, 4vw, 4.6rem);
+  max-width: 1180px;
+  font-size: clamp(2.5rem, 4.9vw, 5.6rem);
 }
 
 .gateway-heading p:not(.eyebrow) {
-  max-width: 560px;
+  max-width: 900px;
   color: var(--muted);
   font-size: clamp(1.03rem, 1.3vw, 1.18rem);
 }
 
 .gateway-list {
   display: grid;
-  border-top: 1px solid var(--line);
 }
 
 .gateway-row {
@@ -4040,6 +4041,12 @@ p {
 .authority-copy h2 {
   font-size: clamp(1.85rem, 3.1vw, 3.55rem);
   line-height: 1.04;
+}
+
+.platform-gateway .gateway-heading h2 {
+  max-width: 1180px;
+  font-size: clamp(2.5rem, 4.9vw, 5.6rem);
+  line-height: 0.98;
 }
 
 .timeline-card,
