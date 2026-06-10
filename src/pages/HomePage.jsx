@@ -42,14 +42,14 @@ const heroProofs = [
 const platformStats = [
   {
     icon: Globe2,
-    value: 50,
+    value: 75,
     suffix: "+",
     label: "Countries",
     detail: "Connected",
   },
   {
     icon: Users,
-    value: 5000,
+    value: 95000,
     suffix: "+",
     label: "Practitioners",
     detail: "Worldwide",
