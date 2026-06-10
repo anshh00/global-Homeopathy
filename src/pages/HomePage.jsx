@@ -378,6 +378,48 @@ function HomePage() {
         })}
       </section>
 
+      <AnimatedSection id="global-mission" className="section home-intent mission-showcase">
+        <div className="mission-showcase-copy">
+          <p className="eyebrow">Global Mission</p>
+          <h2>A calm, credible entry point for the worldwide homeopathy community.</h2>
+          <div className="mission-leaf-divider" aria-hidden="true">
+            <Leaf size={18} />
+            <span></span>
+          </div>
+          <div className="mission-body">
+            <p>
+              The platform opens with <strong>education</strong> first: a clear path for students,
+              practitioners, media, institutions, and the public to understand homeopathy in a
+              global context.
+            </p>
+            <p>
+              From there, visitors can move into summit chapters, <strong>research</strong>{" "}
+              initiatives, leadership profiles, country references, and verified{" "}
+              <strong>media coverage</strong> without losing the global story. Each path keeps
+              learning, evidence, leadership, and international participation connected inside
+              one credible global platform.
+            </p>
+          </div>
+          <div className="mission-pillars" aria-label="Global mission pillars">
+            {missionPillars.map((pillar) => {
+              const Icon = pillar.icon;
+              return (
+                <article key={pillar.label}>
+                  <span><Icon size={29} /></span>
+                  <strong>{pillar.label}</strong>
+                  <p>{pillar.text}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+        <div className="mission-visual-panel" aria-label="Worldwide homeopathy mission visual">
+          <div className="mission-reference-art" aria-hidden="true">
+            <img src="/images/mission-globe-generated.png" alt="" loading="lazy" />
+          </div>
+        </div>
+      </AnimatedSection>
+
       <section className="home-stat-ribbon" aria-label="WorldHomeopathy platform numbers">
         {platformStats.map((stat, index) => {
           const Icon = stat.icon;
@@ -409,46 +451,6 @@ function HomePage() {
           );
         })}
       </section>
-
-      <AnimatedSection id="global-mission" className="section home-intent mission-showcase">
-        <div className="mission-showcase-copy">
-          <p className="eyebrow">Global Mission</p>
-          <h2>A calm, credible entry point for the worldwide homeopathy community.</h2>
-          <div className="mission-leaf-divider" aria-hidden="true">
-            <Leaf size={18} />
-            <span></span>
-          </div>
-          <div className="mission-body">
-            <p>
-              The platform opens with <strong>education</strong> first: a clear path for students,
-              practitioners, media, institutions, and the public to understand homeopathy in a
-              global context.
-            </p>
-            <p>
-              From there, visitors can move into summit chapters, <strong>research</strong>{" "}
-              initiatives, leadership profiles, country references, and verified{" "}
-              <strong>media coverage</strong> without losing the global story.
-            </p>
-          </div>
-          <div className="mission-pillars" aria-label="Global mission pillars">
-            {missionPillars.map((pillar) => {
-              const Icon = pillar.icon;
-              return (
-                <article key={pillar.label}>
-                  <span><Icon size={29} /></span>
-                  <strong>{pillar.label}</strong>
-                  <p>{pillar.text}</p>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-        <div className="mission-visual-panel" aria-label="Worldwide homeopathy mission visual">
-          <div className="mission-reference-art" aria-hidden="true">
-            <img src="/images/mission-globe-generated.png" alt="" loading="lazy" />
-          </div>
-        </div>
-      </AnimatedSection>
 
       <AnimatedSection className="section platform-gateway">
         <div className="gateway-heading">

@@ -6452,10 +6452,10 @@ p {
   margin: 0 !important;
   opacity: 1 !important;
   transform: none !important;
-  grid-template-columns: minmax(440px, 0.82fr) minmax(560px, 1.18fr) !important;
-  gap: clamp(26px, 4vw, 62px) !important;
+  grid-template-columns: minmax(620px, 1.14fr) minmax(420px, 0.86fr) !important;
+  gap: clamp(10px, 2.2vw, 34px) !important;
   min-height: clamp(540px, 48vw, 670px);
-  padding: clamp(30px, 3.2vw, 46px) max(4.8vw, calc((100vw - var(--max)) / 2)) clamp(18px, 2.4vw, 32px) !important;
+  padding: clamp(30px, 3.2vw, 46px) max(4.8vw, calc((100vw - var(--max)) / 2)) clamp(28px, 3vw, 44px) !important;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0 38%, rgba(234, 248, 245, 0.42) 58%, rgba(234, 248, 245, 0.86) 100%) !important;
   border: 0 !important;
@@ -6464,7 +6464,7 @@ p {
 }
 
 .mission-showcase h2 {
-  max-width: 580px;
+  max-width: 760px;
   color: #071b3a;
   font-size: clamp(2.65rem, 3.3vw, 4.3rem);
   line-height: 1.02;
@@ -6496,11 +6496,12 @@ p {
 }
 
 .mission-body {
-  max-width: 600px;
+  max-width: 780px;
   margin-top: clamp(14px, 1.8vw, 20px);
 }
 
 .mission-showcase .mission-pillars {
+  max-width: 850px;
   margin-top: clamp(16px, 2vw, 24px);
 }
 
