@@ -4,6 +4,9 @@ dist/
 npm-debug.log*
 vite-dev.*.log
 tmp-images/
+.codex-remote-attachments/
+domdump.html
+/*.png
 .env
 .env.*
 !.env.example
