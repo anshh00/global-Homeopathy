@@ -2,9 +2,12 @@ import React from "react";
 import {
   ArrowRight,
   BookOpen,
+  CalendarDays,
   FileText,
+  FlaskConical,
   Globe2,
   GraduationCap,
+  Handshake,
   Leaf,
   MapPinned,
   Microscope,
@@ -33,6 +36,51 @@ const heroProofs = [
     icon: Users,
     label: "Summit network",
     text: "International events connected into one global movement.",
+  },
+];
+
+const platformStats = [
+  {
+    icon: Globe2,
+    value: 50,
+    suffix: "+",
+    label: "Countries",
+    detail: "Connected",
+  },
+  {
+    icon: Users,
+    value: 5000,
+    suffix: "+",
+    label: "Practitioners",
+    detail: "Worldwide",
+  },
+  {
+    icon: BookOpen,
+    value: 120,
+    suffix: "+",
+    label: "Research Articles",
+    detail: "",
+  },
+  {
+    icon: CalendarDays,
+    value: 100,
+    suffix: "+",
+    label: "Summits &",
+    detail: "Conferences",
+  },
+  {
+    icon: Handshake,
+    value: 40,
+    suffix: "+",
+    label: "Partner",
+    detail: "Associations",
+  },
+  {
+    icon: FlaskConical,
+    value: 25,
+    suffix: "+",
+    label: "Years of Global",
+    detail: "Impact",
   },
 ];
 
@@ -175,6 +223,59 @@ const missionPillars = [
   },
 ];
 
+function AnimatedNumber({ value, suffix = "" }) {
+  const ref = React.useRef(null);
+  const [displayValue, setDisplayValue] = React.useState(0);
+
+  React.useEffect(() => {
+    const node = ref.current;
+    if (!node) return undefined;
+
+    let frameId = 0;
+    let hasAnimated = false;
+    const duration = 1200;
+
+    const runCounter = () => {
+      const startTime = performance.now();
+      const tick = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setDisplayValue(Math.round(value * eased));
+
+        if (progress < 1) {
+          frameId = requestAnimationFrame(tick);
+        }
+      };
+
+      frameId = requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+          runCounter();
+        }
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(node);
+
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frameId);
+    };
+  }, [value]);
+
+  return (
+    <strong ref={ref}>
+      {displayValue.toLocaleString()}
+      {suffix}
+    </strong>
+  );
+}
+
 function HomePage() {
   return (
     <main className="home-redesign home-movement structured-home reference-home font-sans">
@@ -273,6 +374,38 @@ function HomePage() {
               <strong>{proof.label}</strong>
               {proof.text}
             </span>
+          );
+        })}
+      </section>
+
+      <section className="home-stat-ribbon" aria-label="WorldHomeopathy platform numbers">
+        {platformStats.map((stat, index) => {
+          const Icon = stat.icon;
+          return (
+            <motion.article
+              className="home-stat-item"
+              key={stat.label}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ delay: index * 0.07, duration: 0.5 }}
+            >
+              <span className="home-stat-icon">
+                <Icon size={28} />
+              </span>
+              <div>
+                <AnimatedNumber value={stat.value} suffix={stat.suffix} />
+                <p>
+                  {stat.label}
+                  {stat.detail ? (
+                    <>
+                      <br />
+                      {stat.detail}
+                    </>
+                  ) : null}
+                </p>
+              </div>
+            </motion.article>
           );
         })}
       </section>
