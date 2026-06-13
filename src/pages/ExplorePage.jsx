@@ -260,17 +260,12 @@ function ExplorePage() {
         <div className="explore-faq-heading">
           <p className="eyebrow">Knowledge Questions</p>
           <h2 className="explore-faq-title" aria-label="Frequently Asked Questions About Homeopathy">
-            <span>Frequently Asked</span>
-            <span className="explore-faq-marquee" aria-hidden="true">
-              <span className="explore-faq-marquee-track">
-                <span>Questions</span>
-                <span>Answers</span>
-                <span>Insights</span>
-                <span>Guidance</span>
-                <span>Questions</span>
-              </span>
+            <span className="explore-faq-title-track" aria-hidden="true">
+              <span>Frequently Asked Questions About Homeopathy</span>
+              <span>Frequently Asked Questions About Homeopathy</span>
+              <span>Frequently Asked Questions About Homeopathy</span>
+              <span>Frequently Asked Questions About Homeopathy</span>
             </span>
-            <span>About Homeopathy</span>
           </h2>
           <p>
             Clear answers for students, practitioners, media teams, and visitors who

@@ -7167,57 +7167,47 @@ p {
 }
 
 .explore-faq-title {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.14em 0.28em;
-}
-
-.explore-faq-marquee {
-  display: inline-grid;
-  height: 1.08em;
-  min-width: 4.75em;
+  display: block;
+  width: min(100%, 980px);
+  max-width: 980px;
   overflow: hidden;
-  color: var(--emerald);
-  vertical-align: bottom;
+  white-space: nowrap;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%);
 }
 
-.explore-faq-marquee-track {
-  display: grid;
-  animation: faqVerticalMarquee 7s ease-in-out infinite;
+.explore-faq-title-track {
+  display: inline-flex;
+  width: max-content;
+  animation: faqFullLineMarquee 28s linear infinite;
   will-change: transform;
 }
 
-.explore-faq-marquee-track span {
-  display: block;
-  height: 1.08em;
-  line-height: 1.08;
+.explore-faq-title-track span {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding-right: clamp(30px, 4vw, 62px);
 }
 
-@keyframes faqVerticalMarquee {
-  0%,
-  16% {
-    transform: translateY(0);
+.explore-faq-title-track span::after {
+  width: 0.18em;
+  height: 0.18em;
+  margin-left: clamp(30px, 4vw, 62px);
+  content: "";
+  background: var(--gold);
+  border-radius: 999px;
+  box-shadow: 0 0 18px rgba(200, 166, 77, 0.34);
+}
+
+@keyframes faqFullLineMarquee {
+  0% {
+    transform: translateX(0);
   }
 
-  22%,
-  38% {
-    transform: translateY(-20%);
-  }
-
-  44%,
-  60% {
-    transform: translateY(-40%);
-  }
-
-  66%,
-  82% {
-    transform: translateY(-60%);
-  }
-
-  88%,
   100% {
-    transform: translateY(-80%);
+    transform: translateX(-50%);
   }
 }
 
