@@ -7166,6 +7166,61 @@ p {
   line-height: 1.04;
 }
 
+.explore-faq-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.14em 0.28em;
+}
+
+.explore-faq-marquee {
+  display: inline-grid;
+  height: 1.08em;
+  min-width: 4.75em;
+  overflow: hidden;
+  color: var(--emerald);
+  vertical-align: bottom;
+}
+
+.explore-faq-marquee-track {
+  display: grid;
+  animation: faqVerticalMarquee 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.explore-faq-marquee-track span {
+  display: block;
+  height: 1.08em;
+  line-height: 1.08;
+}
+
+@keyframes faqVerticalMarquee {
+  0%,
+  16% {
+    transform: translateY(0);
+  }
+
+  22%,
+  38% {
+    transform: translateY(-20%);
+  }
+
+  44%,
+  60% {
+    transform: translateY(-40%);
+  }
+
+  66%,
+  82% {
+    transform: translateY(-60%);
+  }
+
+  88%,
+  100% {
+    transform: translateY(-80%);
+  }
+}
+
 .explore-faq-heading p:not(.eyebrow) {
   max-width: 760px;
   color: #536578;

@@ -259,7 +259,19 @@ function ExplorePage() {
       <section className="explore-faq-section">
         <div className="explore-faq-heading">
           <p className="eyebrow">Knowledge Questions</p>
-          <h2>Frequently Asked Question About Homeopathy</h2>
+          <h2 className="explore-faq-title" aria-label="Frequently Asked Questions About Homeopathy">
+            <span>Frequently Asked</span>
+            <span className="explore-faq-marquee" aria-hidden="true">
+              <span className="explore-faq-marquee-track">
+                <span>Questions</span>
+                <span>Answers</span>
+                <span>Insights</span>
+                <span>Guidance</span>
+                <span>Questions</span>
+              </span>
+            </span>
+            <span>About Homeopathy</span>
+          </h2>
           <p>
             Clear answers for students, practitioners, media teams, and visitors who
             want a quick understanding of the global homeopathy story.
