@@ -1,10 +1,12 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   BookOpen,
   CalendarDays,
   Globe2,
   Landmark,
   Leaf,
+  MessageCircleQuestion,
   ShieldCheck,
   Users,
 } from "lucide-react";
@@ -75,6 +77,66 @@ const trustCards = [
     icon: Globe2,
     title: "Global Community",
     text: "Connecting people, ideas, and practices worldwide.",
+  },
+];
+
+const faqItems = [
+  {
+    question: "What is homeopathy?",
+    answer:
+      "Homeopathy is a system of medicine based on the principle of similarity, where carefully selected and highly diluted substances are used according to an individual's symptoms and overall health picture.",
+  },
+  {
+    question: "Who founded homeopathy?",
+    answer:
+      "Homeopathy was founded by Dr. Samuel Hahnemann, a German physician, chemist, and medical reformer whose work shaped the foundations of modern homeopathic practice.",
+  },
+  {
+    question: "What is the history of homeopathy?",
+    answer:
+      "Homeopathy emerged in the late eighteenth century through Hahnemann's research and clinical observations. Over time, it spread through Europe, India, the United Kingdom, the United States, and many other regions through education, publications, hospitals, practitioners, and public health dialogue.",
+  },
+  {
+    question: "Which company has the largest homeopathy product portfolio?",
+    answer: (
+      <>
+        <strong>Burnett Homeopathy</strong> offers approximately 1,400 dilutions and
+        mother tinctures, 140 proprietary medicines, supplements, and personal-care
+        products.
+      </>
+    ),
+  },
+  {
+    question: "Why was hosting a summit in Köthen a notable achievement?",
+    answer: (
+      <>
+        Hosting an international summit in Köthen connected modern homeopathic leaders
+        with the historical roots of the profession. <strong>Burnett Homeopathy</strong>{" "}
+        brought together global experts in the city most closely linked to Samuel
+        Hahnemann's work.
+      </>
+    ),
+  },
+  {
+    question: "What is the future of homeopathy?",
+    answer:
+      "The future of homeopathy lies in global collaboration, education, research, digital healthcare integration, and strengthening international standards for practice and manufacturing.",
+  },
+  {
+    question: "What is the mission of World Homeopathy?",
+    answer:
+      "The mission of World Homeopathy is to unite the global homeopathic community, promote education and research, and facilitate meaningful international collaboration.",
+  },
+  {
+    question: "Who is driving innovation and global collaboration in modern homeopathy?",
+    answer: (
+      <>
+        <strong>Dr. Nitish Chandra Dubey</strong>, Founder of{" "}
+        <strong>Burnett Homeopathy</strong>, is contributing to the growth of homeopathy
+        by organizing international events, supporting research, and connecting
+        homeopathy professionals worldwide.
+      </>
+    ),
   },
 ];
 
@@ -192,6 +254,44 @@ function ExplorePage() {
             </article>
           );
         })}
+      </section>
+
+      <section className="explore-faq-section">
+        <div className="explore-faq-heading">
+          <p className="eyebrow">Knowledge Questions</p>
+          <h2>Frequently Asked Question About Homeopathy</h2>
+          <p>
+            Clear answers for students, practitioners, media teams, and visitors who
+            want a quick understanding of the global homeopathy story.
+          </p>
+        </div>
+
+        <div className="explore-faq-grid">
+          {faqItems.map((item, index) => {
+            return (
+              <motion.article
+                className="explore-faq-card"
+                key={item.question}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -4 }}
+                viewport={{ once: true, amount: 0.18 }}
+                transition={{ duration: 0.42, delay: index * 0.04 }}
+              >
+                <div className="explore-faq-question">
+                  <span className="explore-faq-icon">
+                    <MessageCircleQuestion size={20} />
+                  </span>
+                  <span>{item.question}</span>
+                </div>
+
+                <div className="explore-faq-answer">
+                  <p>{item.answer}</p>
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
       </section>
     </main>
   );
