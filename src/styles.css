@@ -510,7 +510,273 @@ p {
 
 /* Homepage */
 .home-redesign {
+  position: relative;
+  isolation: isolate;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 14% 9%, rgba(221, 237, 231, 0.94), transparent 30%),
+    radial-gradient(circle at 88% 22%, rgba(14, 138, 106, 0.11), transparent 32%),
+    linear-gradient(180deg, #fbfdfb 0%, #f7fbf8 50%, #fbfcfa 100%);
+}
+
+.home-redesign > section {
+  position: relative;
+  z-index: 1;
+}
+
+.home-dynamic-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home-dynamic-bg::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-image:
+    linear-gradient(rgba(14, 107, 80, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 107, 80, 0.045) 1px, transparent 1px);
+  background-size: 104px 104px;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 8%, #000 90%, transparent 100%);
+}
+
+.home-aurora-river,
+.home-pulse-ring,
+.home-drift-light {
+  position: absolute;
+  display: block;
+}
+
+.home-aurora-river {
+  width: min(1200px, 92vw);
+  height: clamp(360px, 40vw, 620px);
+  border-radius: 999px;
+  background:
+    linear-gradient(115deg, transparent 0 18%, rgba(14, 138, 106, 0.16) 32%, rgba(200, 166, 77, 0.1) 47%, rgba(221, 237, 231, 0.24) 64%, transparent 78%),
+    radial-gradient(closest-side at 58% 48%, rgba(14, 138, 106, 0.16), transparent 72%);
+  filter: blur(4px);
+  opacity: 0.82;
+  animation: homeAuroraRiver 16s ease-in-out infinite alternate;
+}
+
+.home-aurora-river::before {
+  position: absolute;
+  inset: 12%;
+  content: "";
+  border-radius: inherit;
+  background-image:
+    repeating-linear-gradient(126deg, transparent 0 54px, rgba(14, 107, 80, 0.13) 55px 57px, transparent 58px 108px);
+  opacity: 0.32;
+  animation: homeAuroraTexture 12s linear infinite;
+}
+
+.home-aurora-river-one {
+  top: 2%;
+  right: -18vw;
+}
+
+.home-aurora-river-two {
+  top: 36%;
+  left: -22vw;
+  opacity: 0.56;
+  animation-delay: -7s;
+}
+
+.home-aurora-river-three {
+  bottom: 3%;
+  right: -20vw;
+  opacity: 0.64;
+  animation-delay: -12s;
+}
+
+.home-pulse-ring {
+  border: 1px solid rgba(14, 107, 80, 0.16);
+  border-radius: 999px;
+  box-shadow: 0 0 58px rgba(14, 138, 106, 0.1);
+  animation: homePulseRing 6.4s ease-in-out infinite;
+}
+
+.home-pulse-ring-one {
+  top: 8%;
+  right: 11vw;
+  width: clamp(220px, 26vw, 460px);
+  aspect-ratio: 1;
+}
+
+.home-pulse-ring-two {
+  top: 48%;
+  left: 7vw;
+  width: clamp(260px, 30vw, 520px);
+  aspect-ratio: 1;
+  animation-delay: -2.4s;
+}
+
+.home-pulse-ring-three {
+  bottom: 8%;
+  right: 18vw;
+  width: clamp(180px, 22vw, 390px);
+  aspect-ratio: 1;
+  animation-delay: -4.8s;
+}
+
+.home-drift-light {
+  width: 9px;
+  height: 9px;
+  background: rgba(200, 166, 77, 0.72);
+  border-radius: 999px;
+  box-shadow: 0 0 30px rgba(200, 166, 77, 0.38);
+  animation: homeDriftLight 7.2s ease-in-out infinite;
+}
+
+.home-drift-light-one {
+  top: 21%;
+  left: 45%;
+}
+
+.home-drift-light-two {
+  top: 57%;
+  right: 23%;
+  animation-delay: -2.2s;
+}
+
+.home-drift-light-three {
+  bottom: 15%;
+  left: 63%;
+  animation-delay: -4.4s;
+}
+
+.home-redesign :is(.home-proof-strip, .home-stat-ribbon, .platform-gateway, .homepage-authority, .home-final-cta) {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.home-redesign :is(.home-proof-strip, .home-stat-ribbon, .platform-gateway, .homepage-authority, .home-final-cta)::after {
+  position: absolute;
+  inset: -30% -18%;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(118deg, transparent 0 22%, rgba(14, 138, 106, 0.1) 35%, rgba(200, 166, 77, 0.07) 50%, transparent 68%),
+    radial-gradient(ellipse at 72% 44%, rgba(14, 138, 106, 0.12), transparent 42%);
+  opacity: 0.72;
+  transform: rotate(-4deg);
+  animation: homeSectionSheen 12s ease-in-out infinite alternate;
+}
+
+.home-redesign :is(.home-proof-strip, .home-stat-ribbon, .platform-gateway, .homepage-authority, .home-final-cta) > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-final-cta::after {
+  opacity: 0.28;
+  background:
+    linear-gradient(118deg, transparent 0 22%, rgba(234, 248, 245, 0.14) 36%, rgba(200, 166, 77, 0.08) 52%, transparent 70%),
+    radial-gradient(ellipse at 74% 48%, rgba(14, 138, 106, 0.28), transparent 42%);
+}
+
+@keyframes homeAuroraRiver {
+  from {
+    transform: translate3d(0, 0, 0) rotate(-8deg) scale(1);
+  }
+
+  to {
+    transform: translate3d(-74px, 26px, 0) rotate(-2deg) scale(1.06);
+  }
+}
+
+@keyframes homeAuroraTexture {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(108px);
+  }
+}
+
+@keyframes homePulseRing {
+  0%,
+  100% {
+    opacity: 0.14;
+    transform: scale(0.94);
+  }
+
+  48% {
+    opacity: 0.5;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes homeDriftLight {
+  0%,
+  100% {
+    opacity: 0.24;
+    transform: translate3d(0, 0, 0) scale(0.86);
+  }
+
+  45% {
+    opacity: 0.82;
+    transform: translate3d(18px, -22px, 0) scale(1.28);
+  }
+}
+
+@keyframes homeSectionSheen {
+  from {
+    transform: translate3d(-5%, 0, 0) rotate(-4deg);
+  }
+
+  to {
+    transform: translate3d(8%, 2%, 0) rotate(2deg);
+  }
+}
+
+@media (max-width: 780px) {
+  .home-aurora-river {
+    width: 120vw;
+    opacity: 0.5;
+  }
+
+  .home-aurora-river-one {
+    top: 1%;
+    right: -56vw;
+  }
+
+  .home-aurora-river-two {
+    top: 42%;
+    left: -62vw;
+  }
+
+  .home-aurora-river-three {
+    right: -58vw;
+    bottom: 4%;
+  }
+
+  .home-pulse-ring {
+    opacity: 0.38;
+  }
+
+  .home-pulse-ring-one {
+    right: -12vw;
+  }
+
+  .home-pulse-ring-two {
+    left: -28vw;
+  }
+
+  .home-pulse-ring-three {
+    right: -8vw;
+  }
+
+  .home-drift-light {
+    opacity: 0.56;
+  }
 }
 
 .institution-hero {
@@ -6109,6 +6375,7 @@ p {
   background-size: 7px 7px, 86px 86px, 86px 86px;
   mask-image: radial-gradient(ellipse at 74% 45%, #000 0 34%, transparent 70%);
   opacity: 0.72;
+  animation: homeMissionGridDrift 16s linear infinite;
 }
 
 .mission-showcase::after {
@@ -6123,6 +6390,17 @@ p {
     radial-gradient(ellipse at 72% 80%, rgba(14, 138, 106, 0.2), transparent 48%),
     linear-gradient(172deg, transparent 0 42%, rgba(14, 138, 106, 0.12) 43% 63%, rgba(221, 237, 231, 0.54) 64% 100%);
   border-radius: 48% 52% 0 0;
+  animation: homeSectionSheen 14s ease-in-out infinite alternate;
+}
+
+@keyframes homeMissionGridDrift {
+  from {
+    background-position: 0 0, 0 0, 0 0;
+  }
+
+  to {
+    background-position: 42px 42px, 86px 0, 0 86px;
+  }
 }
 
 .mission-showcase-copy {
@@ -6868,6 +7146,25 @@ p {
   animation: exploreAuroraDrift 12s ease-in-out infinite alternate;
 }
 
+.explore-aurora-wave-mid {
+  top: 42%;
+  right: auto;
+  left: -24vw;
+  opacity: 0.62;
+  transform: rotate(8deg);
+  animation-delay: -5s;
+  animation-duration: 15s;
+}
+
+.explore-aurora-wave-bottom {
+  top: auto;
+  right: -22vw;
+  bottom: 3%;
+  opacity: 0.68;
+  animation-delay: -9s;
+  animation-duration: 18s;
+}
+
 .explore-aurora-wave::before {
   position: absolute;
   inset: 12%;
@@ -6900,6 +7197,22 @@ p {
   width: clamp(240px, 30vw, 460px);
   aspect-ratio: 1;
   animation-delay: -2.6s;
+}
+
+.explore-pulse-ring-three {
+  top: 50%;
+  left: 8vw;
+  width: clamp(220px, 25vw, 430px);
+  aspect-ratio: 1;
+  animation-delay: -3.8s;
+}
+
+.explore-pulse-ring-four {
+  right: 16vw;
+  bottom: 10%;
+  width: clamp(180px, 22vw, 380px);
+  aspect-ratio: 1;
+  animation-delay: -5s;
 }
 
 .explore-ambient-orb,
@@ -7063,6 +7376,13 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .home-aurora-river,
+  .home-aurora-river::before,
+  .home-pulse-ring,
+  .home-drift-light,
+  .home-redesign :is(.home-proof-strip, .home-stat-ribbon, .platform-gateway, .homepage-authority, .home-final-cta)::after,
+  .mission-showcase::before,
+  .mission-showcase::after,
   .explore-aurora-wave,
   .explore-aurora-wave::before,
   .explore-pulse-ring,
@@ -7590,6 +7910,16 @@ p {
     opacity: 0.58;
   }
 
+  .explore-aurora-wave-mid {
+    top: 46%;
+    left: -64vw;
+  }
+
+  .explore-aurora-wave-bottom {
+    right: -58vw;
+    bottom: 5%;
+  }
+
   .explore-pulse-ring {
     opacity: 0.42;
   }
@@ -7602,6 +7932,16 @@ p {
   .explore-pulse-ring-two {
     top: 245px;
     right: -18vw;
+  }
+
+  .explore-pulse-ring-three {
+    top: 54%;
+    left: -20vw;
+  }
+
+  .explore-pulse-ring-four {
+    right: -12vw;
+    bottom: 11%;
   }
 
   .explore-drift-leaf {

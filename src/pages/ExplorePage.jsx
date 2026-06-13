@@ -145,8 +145,12 @@ function ExplorePage() {
     <main className="explore-reference-page">
       <div className="explore-dynamic-bg" aria-hidden="true">
         <span className="explore-aurora-wave"></span>
+        <span className="explore-aurora-wave explore-aurora-wave-mid"></span>
+        <span className="explore-aurora-wave explore-aurora-wave-bottom"></span>
         <span className="explore-pulse-ring explore-pulse-ring-one"></span>
         <span className="explore-pulse-ring explore-pulse-ring-two"></span>
+        <span className="explore-pulse-ring explore-pulse-ring-three"></span>
+        <span className="explore-pulse-ring explore-pulse-ring-four"></span>
         <span className="explore-ambient-orb explore-ambient-orb-one"></span>
         <span className="explore-ambient-orb explore-ambient-orb-two"></span>
         <span className="explore-ambient-orb explore-ambient-orb-three"></span>

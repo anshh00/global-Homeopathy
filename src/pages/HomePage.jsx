@@ -279,6 +279,18 @@ function AnimatedNumber({ value, suffix = "" }) {
 function HomePage() {
   return (
     <main className="home-redesign home-movement structured-home reference-home font-sans">
+      <div className="home-dynamic-bg" aria-hidden="true">
+        <span className="home-aurora-river home-aurora-river-one"></span>
+        <span className="home-aurora-river home-aurora-river-two"></span>
+        <span className="home-aurora-river home-aurora-river-three"></span>
+        <span className="home-pulse-ring home-pulse-ring-one"></span>
+        <span className="home-pulse-ring home-pulse-ring-two"></span>
+        <span className="home-pulse-ring home-pulse-ring-three"></span>
+        <span className="home-drift-light home-drift-light-one"></span>
+        <span className="home-drift-light home-drift-light-two"></span>
+        <span className="home-drift-light home-drift-light-three"></span>
+      </div>
+
       <section className="hero institution-hero">
         <div className="hero-ambient" aria-hidden="true">
           <span className="hero-spotlight spotlight-primary"></span>
