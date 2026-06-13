@@ -143,6 +143,18 @@ const faqItems = [
 function ExplorePage() {
   return (
     <main className="explore-reference-page">
+      <div className="explore-dynamic-bg" aria-hidden="true">
+        <span className="explore-ambient-orb explore-ambient-orb-one"></span>
+        <span className="explore-ambient-orb explore-ambient-orb-two"></span>
+        <span className="explore-ambient-orb explore-ambient-orb-three"></span>
+        <span className="explore-drift-leaf explore-drift-leaf-one"></span>
+        <span className="explore-drift-leaf explore-drift-leaf-two"></span>
+        <span className="explore-drift-leaf explore-drift-leaf-three"></span>
+        <span className="explore-spark explore-spark-one"></span>
+        <span className="explore-spark explore-spark-two"></span>
+        <span className="explore-spark explore-spark-three"></span>
+      </div>
+
       <section className="explore-reference-hero">
         <div className="explore-reference-leaves explore-reference-leaves-left" aria-hidden="true">
           <span></span>

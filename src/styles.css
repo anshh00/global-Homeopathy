@@ -6814,10 +6814,176 @@ p {
 
 /* Explore page exact-reference rebuild */
 .explore-reference-page {
+  position: relative;
+  isolation: isolate;
   display: grid;
   gap: 0;
   padding: 20px 0 76px;
   overflow-x: clip;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(221, 237, 231, 0.92), transparent 30%),
+    radial-gradient(circle at 90% 18%, rgba(234, 248, 245, 0.78), transparent 34%),
+    linear-gradient(180deg, #fbfdfb 0%, #f7fbf8 45%, #fbfcfa 100%);
+}
+
+.explore-reference-page > section {
+  position: relative;
+  z-index: 1;
+}
+
+.explore-dynamic-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.explore-dynamic-bg::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-image:
+    linear-gradient(rgba(14, 107, 80, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 107, 80, 0.035) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
+}
+
+.explore-ambient-orb,
+.explore-drift-leaf,
+.explore-spark {
+  position: absolute;
+  display: block;
+}
+
+.explore-ambient-orb {
+  width: clamp(240px, 30vw, 520px);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  filter: blur(28px);
+  opacity: 0.48;
+  animation: exploreAmbientFloat 22s ease-in-out infinite alternate;
+}
+
+.explore-ambient-orb-one {
+  top: 4%;
+  left: -8%;
+  background: rgba(14, 138, 106, 0.16);
+}
+
+.explore-ambient-orb-two {
+  top: 24%;
+  right: -10%;
+  background: rgba(221, 237, 231, 0.92);
+  animation-delay: -6s;
+  animation-duration: 26s;
+}
+
+.explore-ambient-orb-three {
+  bottom: 2%;
+  left: 28%;
+  width: clamp(180px, 24vw, 400px);
+  background: rgba(200, 166, 77, 0.11);
+  animation-delay: -12s;
+  animation-duration: 30s;
+}
+
+.explore-drift-leaf {
+  width: clamp(42px, 5vw, 86px);
+  height: clamp(88px, 10vw, 156px);
+  border-radius: 72% 0 72% 0;
+  background: linear-gradient(145deg, rgba(14, 107, 80, 0.09), rgba(221, 237, 231, 0.08));
+  transform: rotate(28deg);
+  animation: exploreLeafDrift 18s ease-in-out infinite alternate;
+}
+
+.explore-drift-leaf-one {
+  top: 16%;
+  left: 5%;
+}
+
+.explore-drift-leaf-two {
+  top: 44%;
+  right: 6%;
+  width: clamp(56px, 6vw, 98px);
+  height: clamp(110px, 11vw, 178px);
+  animation-delay: -5s;
+}
+
+.explore-drift-leaf-three {
+  bottom: 10%;
+  left: 10%;
+  opacity: 0.72;
+  animation-delay: -10s;
+}
+
+.explore-spark {
+  width: 8px;
+  height: 8px;
+  background: rgba(200, 166, 77, 0.58);
+  border-radius: 999px;
+  box-shadow: 0 0 28px rgba(200, 166, 77, 0.4);
+  animation: exploreSparkPulse 4.8s ease-in-out infinite;
+}
+
+.explore-spark-one {
+  top: 18%;
+  left: 46%;
+}
+
+.explore-spark-two {
+  top: 58%;
+  right: 19%;
+  animation-delay: -1.8s;
+}
+
+.explore-spark-three {
+  bottom: 18%;
+  left: 61%;
+  animation-delay: -3.1s;
+}
+
+@keyframes exploreAmbientFloat {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(34px, -26px, 0) scale(1.08);
+  }
+}
+
+@keyframes exploreLeafDrift {
+  from {
+    transform: translate3d(0, 0, 0) rotate(28deg);
+  }
+
+  to {
+    transform: translate3d(18px, -32px, 0) rotate(40deg);
+  }
+}
+
+@keyframes exploreSparkPulse {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.82);
+  }
+
+  45% {
+    opacity: 0.86;
+    transform: scale(1.24);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explore-ambient-orb,
+  .explore-drift-leaf,
+  .explore-spark {
+    animation: none;
+  }
 }
 
 .explore-reference-hero {
@@ -7324,6 +7490,18 @@ p {
 @media (max-width: 780px) {
   .explore-reference-page {
     padding: 8px 0 44px;
+  }
+
+  .explore-ambient-orb {
+    opacity: 0.34;
+  }
+
+  .explore-drift-leaf {
+    opacity: 0.42;
+  }
+
+  .explore-spark {
+    opacity: 0.48;
   }
 
   .explore-reference-hero,
