@@ -6821,8 +6821,9 @@ p {
   padding: 20px 0 76px;
   overflow-x: clip;
   background:
-    radial-gradient(circle at 12% 8%, rgba(221, 237, 231, 0.92), transparent 30%),
-    radial-gradient(circle at 90% 18%, rgba(234, 248, 245, 0.78), transparent 34%),
+    radial-gradient(circle at 12% 8%, rgba(221, 237, 231, 0.98), transparent 30%),
+    radial-gradient(circle at 90% 18%, rgba(14, 138, 106, 0.12), transparent 34%),
+    radial-gradient(circle at 68% 34%, rgba(200, 166, 77, 0.08), transparent 24%),
     linear-gradient(180deg, #fbfdfb 0%, #f7fbf8 45%, #fbfcfa 100%);
 }
 
@@ -6844,11 +6845,61 @@ p {
   inset: 0;
   content: "";
   background-image:
-    linear-gradient(rgba(14, 107, 80, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(14, 107, 80, 0.035) 1px, transparent 1px);
+    linear-gradient(rgba(14, 107, 80, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 107, 80, 0.055) 1px, transparent 1px);
   background-size: 96px 96px;
   mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
+}
+
+.explore-aurora-wave {
+  position: absolute;
+  top: 86px;
+  right: -16vw;
+  width: min(1060px, 82vw);
+  height: clamp(360px, 38vw, 560px);
+  border-radius: 999px;
+  background:
+    linear-gradient(112deg, transparent 0 15%, rgba(14, 138, 106, 0.18) 27%, rgba(200, 166, 77, 0.11) 42%, rgba(221, 237, 231, 0.22) 58%, transparent 74%),
+    radial-gradient(closest-side at 62% 45%, rgba(14, 138, 106, 0.2), transparent 70%);
+  filter: blur(3px);
+  opacity: 0.96;
+  transform: rotate(-8deg);
+  animation: exploreAuroraDrift 12s ease-in-out infinite alternate;
+}
+
+.explore-aurora-wave::before {
+  position: absolute;
+  inset: 12%;
+  content: "";
+  border-radius: inherit;
+  background-image:
+    repeating-linear-gradient(128deg, transparent 0 46px, rgba(14, 107, 80, 0.16) 47px 49px, transparent 50px 92px);
+  opacity: 0.38;
+  animation: exploreAuroraTexture 9s linear infinite;
+}
+
+.explore-pulse-ring {
+  position: absolute;
+  border: 1px solid rgba(14, 107, 80, 0.2);
+  border-radius: 999px;
+  box-shadow: 0 0 48px rgba(14, 138, 106, 0.11);
+  animation: explorePulseRing 5.8s ease-in-out infinite;
+}
+
+.explore-pulse-ring-one {
+  top: 150px;
+  right: 18vw;
+  width: clamp(180px, 22vw, 340px);
+  aspect-ratio: 1;
+}
+
+.explore-pulse-ring-two {
+  top: 215px;
+  right: 10vw;
+  width: clamp(240px, 30vw, 460px);
+  aspect-ratio: 1;
+  animation-delay: -2.6s;
 }
 
 .explore-ambient-orb,
@@ -6863,20 +6914,20 @@ p {
   aspect-ratio: 1;
   border-radius: 999px;
   filter: blur(28px);
-  opacity: 0.48;
+  opacity: 0.62;
   animation: exploreAmbientFloat 22s ease-in-out infinite alternate;
 }
 
 .explore-ambient-orb-one {
   top: 4%;
   left: -8%;
-  background: rgba(14, 138, 106, 0.16);
+  background: rgba(14, 138, 106, 0.22);
 }
 
 .explore-ambient-orb-two {
   top: 24%;
   right: -10%;
-  background: rgba(221, 237, 231, 0.92);
+  background: rgba(190, 226, 211, 0.96);
   animation-delay: -6s;
   animation-duration: 26s;
 }
@@ -6885,7 +6936,7 @@ p {
   bottom: 2%;
   left: 28%;
   width: clamp(180px, 24vw, 400px);
-  background: rgba(200, 166, 77, 0.11);
+  background: rgba(200, 166, 77, 0.16);
   animation-delay: -12s;
   animation-duration: 30s;
 }
@@ -6922,7 +6973,7 @@ p {
 .explore-spark {
   width: 8px;
   height: 8px;
-  background: rgba(200, 166, 77, 0.58);
+  background: rgba(200, 166, 77, 0.76);
   border-radius: 999px;
   box-shadow: 0 0 28px rgba(200, 166, 77, 0.4);
   animation: exploreSparkPulse 4.8s ease-in-out infinite;
@@ -6943,6 +6994,39 @@ p {
   bottom: 18%;
   left: 61%;
   animation-delay: -3.1s;
+}
+
+@keyframes exploreAuroraDrift {
+  from {
+    transform: translate3d(0, 0, 0) rotate(-8deg) scale(1);
+  }
+
+  to {
+    transform: translate3d(-70px, 22px, 0) rotate(-2deg) scale(1.06);
+  }
+}
+
+@keyframes exploreAuroraTexture {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(92px);
+  }
+}
+
+@keyframes explorePulseRing {
+  0%,
+  100% {
+    opacity: 0.16;
+    transform: scale(0.94);
+  }
+
+  48% {
+    opacity: 0.58;
+    transform: scale(1.08);
+  }
 }
 
 @keyframes exploreAmbientFloat {
@@ -6979,6 +7063,9 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .explore-aurora-wave,
+  .explore-aurora-wave::before,
+  .explore-pulse-ring,
   .explore-ambient-orb,
   .explore-drift-leaf,
   .explore-spark {
@@ -7494,6 +7581,27 @@ p {
 
   .explore-ambient-orb {
     opacity: 0.34;
+  }
+
+  .explore-aurora-wave {
+    top: 105px;
+    right: -42vw;
+    width: 116vw;
+    opacity: 0.58;
+  }
+
+  .explore-pulse-ring {
+    opacity: 0.42;
+  }
+
+  .explore-pulse-ring-one {
+    top: 170px;
+    right: 4vw;
+  }
+
+  .explore-pulse-ring-two {
+    top: 245px;
+    right: -18vw;
   }
 
   .explore-drift-leaf {
