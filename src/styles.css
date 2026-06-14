@@ -524,12 +524,20 @@ p {
   z-index: 1;
 }
 
+.home-redesign > section:not(.institution-hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: 720px;
+}
+
 .home-dynamic-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
+  height: 100svh;
   z-index: 0;
+  contain: layout paint style;
   overflow: hidden;
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 .home-dynamic-bg::before {
@@ -549,6 +557,10 @@ p {
 .home-drift-light {
   position: absolute;
   display: block;
+  backface-visibility: hidden;
+  contain: paint;
+  transform: translateZ(0);
+  will-change: transform, opacity;
 }
 
 .home-aurora-river {
@@ -558,7 +570,7 @@ p {
   background:
     linear-gradient(115deg, transparent 0 18%, rgba(14, 138, 106, 0.16) 32%, rgba(200, 166, 77, 0.1) 47%, rgba(221, 237, 231, 0.24) 64%, transparent 78%),
     radial-gradient(closest-side at 58% 48%, rgba(14, 138, 106, 0.16), transparent 72%);
-  filter: blur(4px);
+  filter: blur(2px);
   opacity: 0.82;
   animation: homeAuroraRiver 16s ease-in-out infinite alternate;
 }
@@ -571,6 +583,8 @@ p {
   background-image:
     repeating-linear-gradient(126deg, transparent 0 54px, rgba(14, 107, 80, 0.13) 55px 57px, transparent 58px 108px);
   opacity: 0.32;
+  transform: translateZ(0);
+  will-change: transform;
   animation: homeAuroraTexture 12s linear infinite;
 }
 
@@ -653,11 +667,12 @@ p {
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  contain: paint;
 }
 
 .home-redesign :is(.home-proof-strip, .home-stat-ribbon, .platform-gateway, .homepage-authority, .home-final-cta)::after {
   position: absolute;
-  inset: -30% -18%;
+  inset: -18% -10%;
   z-index: 0;
   pointer-events: none;
   content: "";
@@ -666,6 +681,7 @@ p {
     radial-gradient(ellipse at 72% 44%, rgba(14, 138, 106, 0.12), transparent 42%);
   opacity: 0.72;
   transform: rotate(-4deg);
+  will-change: transform;
   animation: homeSectionSheen 12s ease-in-out infinite alternate;
 }
 
@@ -6364,7 +6380,7 @@ p {
 
 .mission-showcase::before {
   position: absolute;
-  inset: 0;
+  inset: -6%;
   z-index: -2;
   pointer-events: none;
   content: "";
@@ -6375,6 +6391,7 @@ p {
   background-size: 7px 7px, 86px 86px, 86px 86px;
   mask-image: radial-gradient(ellipse at 74% 45%, #000 0 34%, transparent 70%);
   opacity: 0.72;
+  will-change: transform;
   animation: homeMissionGridDrift 16s linear infinite;
 }
 
@@ -6390,16 +6407,17 @@ p {
     radial-gradient(ellipse at 72% 80%, rgba(14, 138, 106, 0.2), transparent 48%),
     linear-gradient(172deg, transparent 0 42%, rgba(14, 138, 106, 0.12) 43% 63%, rgba(221, 237, 231, 0.54) 64% 100%);
   border-radius: 48% 52% 0 0;
+  will-change: transform;
   animation: homeSectionSheen 14s ease-in-out infinite alternate;
 }
 
 @keyframes homeMissionGridDrift {
   from {
-    background-position: 0 0, 0 0, 0 0;
+    transform: translate3d(-2%, -1%, 0);
   }
 
   to {
-    background-position: 42px 42px, 86px 0, 0 86px;
+    transform: translate3d(2%, 1%, 0);
   }
 }
 
@@ -7110,12 +7128,20 @@ p {
   z-index: 1;
 }
 
+.explore-reference-page > section:not(.explore-reference-hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: 680px;
+}
+
 .explore-dynamic-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
+  height: 100svh;
   z-index: 0;
+  contain: layout paint style;
   overflow: hidden;
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 .explore-dynamic-bg::before {
@@ -7140,9 +7166,12 @@ p {
   background:
     linear-gradient(112deg, transparent 0 15%, rgba(14, 138, 106, 0.18) 27%, rgba(200, 166, 77, 0.11) 42%, rgba(221, 237, 231, 0.22) 58%, transparent 74%),
     radial-gradient(closest-side at 62% 45%, rgba(14, 138, 106, 0.2), transparent 70%);
-  filter: blur(3px);
+  filter: blur(1px);
   opacity: 0.96;
   transform: rotate(-8deg);
+  backface-visibility: hidden;
+  contain: paint;
+  will-change: transform, opacity;
   animation: exploreAuroraDrift 12s ease-in-out infinite alternate;
 }
 
@@ -7173,6 +7202,8 @@ p {
   background-image:
     repeating-linear-gradient(128deg, transparent 0 46px, rgba(14, 107, 80, 0.16) 47px 49px, transparent 50px 92px);
   opacity: 0.38;
+  transform: translateZ(0);
+  will-change: transform;
   animation: exploreAuroraTexture 9s linear infinite;
 }
 
@@ -7181,6 +7212,10 @@ p {
   border: 1px solid rgba(14, 107, 80, 0.2);
   border-radius: 999px;
   box-shadow: 0 0 48px rgba(14, 138, 106, 0.11);
+  backface-visibility: hidden;
+  contain: paint;
+  transform: translateZ(0);
+  will-change: transform, opacity;
   animation: explorePulseRing 5.8s ease-in-out infinite;
 }
 
@@ -7226,8 +7261,12 @@ p {
   width: clamp(240px, 30vw, 520px);
   aspect-ratio: 1;
   border-radius: 999px;
-  filter: blur(28px);
+  filter: blur(14px);
   opacity: 0.62;
+  backface-visibility: hidden;
+  contain: paint;
+  transform: translateZ(0);
+  will-change: transform, opacity;
   animation: exploreAmbientFloat 22s ease-in-out infinite alternate;
 }
 
@@ -7260,6 +7299,9 @@ p {
   border-radius: 72% 0 72% 0;
   background: linear-gradient(145deg, rgba(14, 107, 80, 0.09), rgba(221, 237, 231, 0.08));
   transform: rotate(28deg);
+  backface-visibility: hidden;
+  contain: paint;
+  will-change: transform;
   animation: exploreLeafDrift 18s ease-in-out infinite alternate;
 }
 
@@ -7289,6 +7331,9 @@ p {
   background: rgba(200, 166, 77, 0.76);
   border-radius: 999px;
   box-shadow: 0 0 28px rgba(200, 166, 77, 0.4);
+  backface-visibility: hidden;
+  contain: paint;
+  will-change: transform, opacity;
   animation: exploreSparkPulse 4.8s ease-in-out infinite;
 }
 
