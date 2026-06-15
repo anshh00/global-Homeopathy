@@ -8174,7 +8174,7 @@ p {
 .summit-reference-hero {
   position: relative;
   display: block;
-  min-height: clamp(420px, 39vw, 540px);
+  min-height: clamp(470px, 42vw, 650px);
   overflow: hidden;
   padding: clamp(34px, 4.2vw, 60px) max(4vw, calc((100vw - var(--max)) / 2));
   border-bottom: 1px solid rgba(14, 107, 80, 0.12);
@@ -8186,21 +8186,21 @@ p {
 .summit-hero-copy {
   position: relative;
   z-index: 3;
-  max-width: 570px;
+  max-width: min(760px, 44vw);
 }
 
 .summit-hero-copy h1 {
-  max-width: 500px;
+  max-width: 760px;
   color: #0a2b26;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.75rem, 4.25vw, 4.9rem);
+  font-size: clamp(3.2rem, 4.85vw, 6.2rem);
   font-weight: 700;
   line-height: 0.98;
   letter-spacing: -0.02em;
 }
 
 .summit-hero-copy > p:not(.eyebrow) {
-  max-width: 480px;
+  max-width: 650px;
   margin-top: 20px;
   color: #39546a;
   font-size: clamp(0.98rem, 1vw, 1.08rem);
@@ -8212,6 +8212,71 @@ p {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 26px;
+}
+
+.summit-route-marquee {
+  position: relative;
+  width: min(740px, 100%);
+  margin-top: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(14, 107, 80, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: 0 18px 46px rgba(6, 42, 77, 0.08);
+}
+
+.summit-route-marquee::before,
+.summit-route-marquee::after {
+  position: absolute;
+  z-index: 2;
+  content: "";
+  pointer-events: none;
+}
+
+.summit-route-marquee::before {
+  top: 0;
+  left: -36%;
+  width: 34%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(200, 166, 77, 0.22), transparent);
+  animation: summitRouteSweep 4.8s ease-in-out infinite;
+}
+
+.summit-route-marquee::after {
+  inset: auto 18px 9px 18px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(14, 107, 80, 0.22), transparent);
+}
+
+.summit-route-marquee > div {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+  padding: 11px 18px 12px;
+}
+
+.summit-route-marquee span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #0b4f3b;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.summit-route-marquee span::before {
+  width: 9px;
+  height: 9px;
+  content: "";
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 14px rgba(200, 166, 77, 0.75);
 }
 
 .summit-hero-actions a,
@@ -8240,7 +8305,7 @@ p {
 
 .summit-map-visual {
   position: absolute;
-  inset: 0 0 0 40%;
+  inset: 0 0 0 31%;
   z-index: 1;
   height: auto;
   min-height: 0;
@@ -8253,9 +8318,9 @@ p {
   position: absolute;
   inset: 0 auto 0 0;
   z-index: 2;
-  width: 48%;
+  width: 30%;
   content: "";
-  background: linear-gradient(90deg, var(--summit-ivory) 0%, rgba(251, 251, 246, 0.86) 36%, rgba(251, 251, 246, 0.28) 72%, transparent 100%);
+  background: linear-gradient(90deg, var(--summit-ivory) 0%, rgba(251, 251, 246, 0.52) 42%, transparent 100%);
   pointer-events: none;
 }
 
@@ -8269,7 +8334,15 @@ p {
   pointer-events: none;
 }
 
-.summit-map-visual > img,
+.summit-map-visual > img {
+  width: 122%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  transform: translateX(-18%) scale(1.01);
+}
+
 .summit-next-map > img {
   width: 100%;
   height: 100%;
@@ -8341,10 +8414,10 @@ p {
   font-weight: 800;
 }
 
-.pin-germany { top: 18%; left: 28%; }
-.pin-dubai { top: 44%; left: 51%; }
-.pin-goa { top: 59%; left: 63%; }
-.pin-london { top: 25%; left: 79%; }
+.pin-london { top: 24%; left: 32%; }
+.pin-germany { top: 33%; left: 42%; }
+.pin-dubai { top: 50%; left: 51%; }
+.pin-goa { top: 55%; left: 58%; }
 
 .summit-journey-panel {
   position: relative;
@@ -8775,6 +8848,26 @@ p {
   }
 }
 
+@keyframes summitRouteMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes summitRouteSweep {
+  0%, 30% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(430%);
+  }
+}
+
 @media (max-width: 1200px) {
   .summit-reference-hero {
     min-height: 500px;
@@ -8814,10 +8907,15 @@ p {
     margin: 26px -5vw 0;
   }
 
-  .pin-germany { top: 16%; left: 25%; }
-  .pin-dubai { top: 43%; left: 46%; }
-  .pin-goa { top: 58%; left: 58%; }
-  .pin-london { top: 24%; left: 72%; }
+  .summit-map-visual > img {
+    width: 118%;
+    transform: translateX(-14%) scale(1.01);
+  }
+
+  .pin-london { top: 23%; left: 30%; }
+  .pin-germany { top: 33%; left: 41%; }
+  .pin-dubai { top: 49%; left: 52%; }
+  .pin-goa { top: 56%; left: 59%; }
 
   .summit-panel-heading {
     display: block;
@@ -8856,7 +8954,31 @@ p {
   }
 
   .summit-map-visual {
-    min-height: 320px;
+    min-height: 340px;
+  }
+
+  .summit-route-marquee {
+    border-radius: 18px;
+  }
+
+  .summit-route-marquee > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+    padding: 12px 14px;
+  }
+
+  .summit-route-marquee span {
+    gap: 7px;
+    font-size: 0.66rem;
+    line-height: 1.2;
+    white-space: normal;
+  }
+
+  .summit-route-marquee span::before {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 auto;
   }
 
   .summit-map-pin {

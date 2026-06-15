@@ -16,10 +16,18 @@ import {
 } from "lucide-react";
 
 const summitHeroPins = [
+  { city: "London", country: "UK", className: "pin-london", image: "/images/dr-nitish-podium.jpg" },
   { city: "Germany", country: "Köthen", className: "pin-germany", image: "/images/summit-recognition.jpg" },
   { city: "Dubai", country: "UAE", className: "pin-dubai", image: "/images/summit-dubai-authority.jpg" },
   { city: "Goa", country: "India", className: "pin-goa", image: "/images/summit-global-stage.jpg" },
-  { city: "London", country: "UK", className: "pin-london", image: "/images/dr-nitish-podium.jpg" },
+];
+
+const summitTicker = [
+  "Dubai 2024",
+  "Köthen 2025",
+  "Goa Research Summit 2025",
+  "London 2026",
+  "Next destination coming soon",
 ];
 
 const summitJourney = [
@@ -104,8 +112,16 @@ function SummitPage() {
           <h1>Uniting the world through homeopathy</h1>
           <p>
             Building the world's largest collaborative movement in homeopathy through
-            summits, research, education, leadership, and international dialogue.
+            summits, research, education, leadership, international dialogue, and
+            country chapters connected across continents.
           </p>
+          <div className="summit-route-marquee" aria-label="Summit route highlights">
+            <div>
+              {summitTicker.map((item, index) => (
+                <span key={`${item}-${index}`}>{item}</span>
+              ))}
+            </div>
+          </div>
           <div className="summit-hero-actions">
             <a href="#summit-journey">Explore Summits <ArrowRight size={16} /></a>
             <a href="#summit-impact">About the Summit <Sparkles size={16} /></a>
