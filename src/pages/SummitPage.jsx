@@ -83,11 +83,47 @@ const summitImpact = [
   { value: "20+", label: "Years of Impact", icon: CalendarDays },
 ];
 
+const impactTrail = ["Dubai", "Köthen", "Goa", "London"];
+
 const collaboration = [
-  { icon: Microscope, title: "Research & Evidence" },
-  { icon: GraduationCap, title: "Education & Training" },
-  { icon: Lightbulb, title: "Innovation & Technology" },
-  { icon: Handshake, title: "Global Partnerships" },
+  {
+    icon: Microscope,
+    title: "Research & Evidence",
+    text: "Clinical dialogue, publications, and evidence-led sessions that strengthen credibility.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Education & Training",
+    text: "Learning pathways, practitioner development, and summit-based academic exchange.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Innovation & Technology",
+    text: "Modern communication, new platforms, and sharper global visibility for the field.",
+  },
+  {
+    icon: Handshake,
+    title: "Global Partnerships",
+    text: "Institutions, delegates, and country chapters connected through one summit network.",
+  },
+];
+
+const nextSignals = [
+  {
+    icon: MapPin,
+    title: "Host city in review",
+    text: "The next chapter is being shaped around stronger global access, institutional relevance, and destination visibility.",
+  },
+  {
+    icon: Microscope,
+    title: "Research-first programming",
+    text: "Future editions will deepen academic dialogue, evidence-based sessions, and summit-led knowledge exchange.",
+  },
+  {
+    icon: Users,
+    title: "Wider international reach",
+    text: "Delegates, educators, media voices, and country chapters continue to expand with each new summit chapter.",
+  },
 ];
 
 const nextStops = [
@@ -115,6 +151,18 @@ function SummitPage() {
             summits, research, education, leadership, international dialogue, and
             country chapters connected across continents.
           </p>
+          <div className="summit-hero-narrative">
+            <p>
+              Each summit chapter is built to do more than host an event. It connects
+              delegates, educators, institutions, and research voices into one visible
+              international platform.
+            </p>
+            <p>
+              From keynote sessions and evidence-led discussions to media coverage and
+              future destinations, the summit story stays clear, structured, and easy
+              to explore.
+            </p>
+          </div>
           <div className="summit-route-marquee" aria-label="Summit route highlights">
             <div>
               {summitTicker.map((item, index) => (
@@ -151,11 +199,25 @@ function SummitPage() {
 
       <section className="summit-journey-panel" id="summit-journey">
         <div className="summit-panel-heading">
-          <p className="eyebrow">The Summit Journey</p>
-          <h2>Four landmark chapters, one international movement.</h2>
+          <div className="summit-panel-intro">
+            <p className="eyebrow">The Summit Journey</p>
+            <span>Global chapters mapped through research, education, delegates, and international visibility.</span>
+            <div className="summit-panel-markers" aria-label="Summit timeline overview">
+              <span>2024 to 2026</span>
+              <span>4 major chapters</span>
+            </div>
+          </div>
+          <div className="summit-panel-copy">
+            <h2>Four landmark chapters, one international movement.</h2>
+            <p>
+              The journey is organized chapter by chapter so visitors can follow how
+              each summit expanded global reach, strengthened evidence-led dialogue,
+              and connected homeopathy to institutions, practitioners, and public
+              visibility.
+            </p>
+          </div>
         </div>
 
-        <div className="summit-journey-line" aria-hidden="true"></div>
         <div className="summit-journey-cards">
           {summitJourney.map((item, index) => (
             <motion.article
@@ -195,7 +257,14 @@ function SummitPage() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
         >
-          <p className="eyebrow">Summit Impact</p>
+          <div className="summit-impact-heading">
+            <p className="eyebrow">Summit Impact</p>
+            <h2>Measured growth across chapters, countries, and evidence.</h2>
+            <p>
+              Each summit adds new delegates, stronger international visibility, and a
+              wider base for research, partnerships, and professional exchange.
+            </p>
+          </div>
           <div className="summit-impact-grid">
             {summitImpact.map((stat) => {
               const Icon = stat.icon;
@@ -207,6 +276,14 @@ function SummitPage() {
                 </div>
               );
             })}
+          </div>
+          <div className="summit-impact-trail" aria-label="Summit route">
+            <span>From chapter to chapter</span>
+            <div>
+              {impactTrail.map((item) => (
+                <b key={item}>{item}</b>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -223,14 +300,18 @@ function SummitPage() {
             Each chapter connects researchers, educators, practitioners, institutions, and
             public voices into a more organized global homeopathy movement.
           </p>
-          <div>
-            {collaboration.map((item) => {
+          <div className="summit-collaboration-list">
+            {collaboration.map((item, index) => {
               const Icon = item.icon;
               return (
-                <span key={item.title}>
+                <article key={item.title}>
+                  <em>{String(index + 1).padStart(2, "0")}</em>
                   <Icon size={24} />
-                  {item.title}
-                </span>
+                  <div>
+                    <strong>{item.title}</strong>
+                    <p>{item.text}</p>
+                  </div>
+                </article>
               );
             })}
           </div>
@@ -245,26 +326,53 @@ function SummitPage() {
             A new chapter of knowledge, collaboration, and transformation is on the
             horizon. Stay connected for official summit updates.
           </p>
+          <div className="summit-next-signals">
+            {nextSignals.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article key={item.title}>
+                  <Icon size={22} />
+                  <div>
+                    <strong>{item.title}</strong>
+                    <p>{item.text}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
           <a href="mailto:info@worldhomeopathy.org">
             <Bell size={17} />
             Stay Updated
           </a>
         </div>
 
-        <div className="summit-next-map">
-          <img src="/images/summit-world-map-hero-4k.jpg" alt="" />
-          <div className="summit-next-arc"></div>
-          {nextStops.map((stop) => (
-            <span className={`summit-next-pin ${stop.className}`} key={stop.label}>
-              <strong>{stop.label}</strong>
-              <small>{stop.sub}</small>
-            </span>
-          ))}
+        <div className="summit-next-visual">
+          <img src="/images/summit-future-chapter.png" alt="Future world homeopathy summit chapter visual" />
+          <div className="summit-next-overlay">
+            <p className="eyebrow">Future Chapter Signal</p>
+            <h3>The route expands toward a new international destination.</h3>
+            <p>
+              A forward-looking summit teaser built around global visibility,
+              collaboration, and the momentum of the next chapter.
+            </p>
+            <div className="summit-next-beacon">
+              <span></span>
+              Destination announcement in development
+            </div>
+          </div>
+          <div className="summit-next-waypoints" aria-hidden="true">
+            {nextStops.map((stop) => (
+              <span key={stop.label}>
+                <b>{stop.label}</b>
+                <small>{stop.sub}</small>
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="summit-quote-strip">
-        <span>“</span>
+        <span>"</span>
         <p>
           The World Homeopathy Summits are more than events; they are a global
           movement shaping the future of holistic healthcare.
