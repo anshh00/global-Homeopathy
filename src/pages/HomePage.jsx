@@ -9,7 +9,6 @@ import {
   GraduationCap,
   Handshake,
   Leaf,
-  MapPinned,
   Microscope,
   Newspaper,
   PlayCircle,
@@ -176,13 +175,6 @@ const pageGateways = [
     text: "Historical and modern contributors presented with a balanced international lens.",
     path: "/leaders",
     action: "Meet the leaders",
-  },
-  {
-    icon: MapPinned,
-    title: "World Map",
-    text: "Country-wise resources, organizations, events, institutions, and directory references.",
-    path: "/directory",
-    action: "Explore map",
   },
   {
     icon: Newspaper,

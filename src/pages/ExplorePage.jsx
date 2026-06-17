@@ -80,6 +80,24 @@ const trustCards = [
   },
 ];
 
+const purposeLinks = [
+  {
+    icon: BookOpen,
+    label: "Foundations",
+    text: "History, principles, and public education",
+  },
+  {
+    icon: ShieldCheck,
+    label: "Evidence",
+    text: "Research context and responsible learning",
+  },
+  {
+    icon: Globe2,
+    label: "Global View",
+    text: "Country chapters and international relevance",
+  },
+];
+
 const faqItems = [
   {
     question: "What is homeopathy?",
@@ -196,6 +214,19 @@ function ExplorePage() {
               A structured learning area for beginners, students, doctors, researchers,
               journalists, and the public.
             </p>
+          </div>
+
+          <div className="explore-purpose-rail" aria-label="Explore page purpose shortcuts">
+            {purposeLinks.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article key={item.label}>
+                  <Icon size={20} />
+                  <span>{item.label}</span>
+                  <small>{item.text}</small>
+                </article>
+              );
+            })}
           </div>
         </div>
 

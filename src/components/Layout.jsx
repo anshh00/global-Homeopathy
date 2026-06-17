@@ -70,7 +70,6 @@ function Layout() {
 
         <nav aria-label="Footer community links">
           <strong>Community</strong>
-          <NavLink to="/directory">World Map</NavLink>
           <NavLink to="/media">Media</NavLink>
           <NavLink to="/contact">Contact</NavLink>
           <a href="mailto:info@worldhomeopathy.org">Institutional Enquiry</a>

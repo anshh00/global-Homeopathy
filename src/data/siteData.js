@@ -19,7 +19,6 @@ export const navItems = [
   { label: "Summit", path: "/summit" },
   { label: "Research", path: "/research" },
   { label: "Leaders", path: "/leaders" },
-  { label: "World Map", path: "/directory" },
   { label: "Media", path: "/media" },
 ];
 
@@ -48,12 +47,6 @@ export const exploreCards = [
     title: "Principles",
     text: "Like cures like, minimum dose, individualized treatment, and holistic care explained in clean visual sections.",
     path: "/explore",
-  },
-  {
-    icon: Globe2,
-    title: "Homeopathy Around the World",
-    text: "Country-wise organizations, events, institutions, research activity, and global directory references.",
-    path: "/directory",
   },
   {
     icon: Users,

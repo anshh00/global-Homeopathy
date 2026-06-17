@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
-import DirectoryPage from "./pages/DirectoryPage.jsx";
 import ExplorePage from "./pages/ExplorePage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import LeadersPage from "./pages/LeadersPage.jsx";
@@ -38,7 +37,6 @@ function App() {
           <Route path="/summit" element={<SummitPage />} />
           <Route path="/research" element={<ResearchPage />} />
           <Route path="/leaders" element={<LeadersPage />} />
-          <Route path="/directory" element={<DirectoryPage />} />
           <Route path="/media" element={<MediaPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
