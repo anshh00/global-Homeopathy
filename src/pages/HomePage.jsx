@@ -3,550 +3,340 @@ import {
   ArrowRight,
   BookOpen,
   CalendarDays,
+  CheckCircle2,
   FileText,
   FlaskConical,
   Globe2,
   GraduationCap,
-  Handshake,
-  Leaf,
+  Landmark,
   Microscope,
   Newspaper,
-  PlayCircle,
+  Search,
   ShieldCheck,
+  Sparkles,
   Users,
 } from "lucide-react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import AnimatedSection from "../components/AnimatedSection.jsx";
-import BrandMark from "../components/BrandMark.jsx";
 
-const heroProofs = [
-  {
-    icon: Globe2,
-    label: "Global authority",
-    text: "A neutral front door for worldwide homeopathy knowledge.",
-  },
-  {
-    icon: Microscope,
-    label: "Research focus",
-    text: "A pathway into evidence, publications, and academic dialogue.",
-  },
-  {
-    icon: Users,
-    label: "Summit network",
-    text: "International events connected into one global movement.",
-  },
-];
-
-const platformStats = [
-  {
-    icon: Globe2,
-    value: 75,
-    suffix: "+",
-    label: "Countries",
-    detail: "Connected",
-  },
-  {
-    icon: Users,
-    value: 95000,
-    suffix: "+",
-    label: "Practitioners",
-    detail: "Worldwide",
-  },
-  {
-    icon: BookOpen,
-    value: 120,
-    suffix: "+",
-    label: "Research Articles",
-    detail: "",
-  },
-  {
-    icon: CalendarDays,
-    value: 100,
-    suffix: "+",
-    label: "Summits &",
-    detail: "Conferences",
-  },
-  {
-    icon: Handshake,
-    value: 40,
-    suffix: "+",
-    label: "Partner",
-    detail: "Associations",
-  },
+const heroCards = [
   {
     icon: FlaskConical,
-    value: 25,
-    suffix: "+",
-    label: "Years of Global",
-    detail: "Impact",
-  },
-];
-
-const heroValues = [
-  {
-    icon: Leaf,
-    text: "Evidence-based research and clinical excellence",
-  },
-  {
-    icon: GraduationCap,
-    text: "Quality education and professional training",
-  },
-  {
-    icon: Users,
-    text: "Global collaboration and knowledge exchange",
-  },
-  {
-    icon: Globe2,
-    text: "Promoting natural, safe, and holistic healthcare",
-  },
-];
-
-const heroNetworkCards = [
-  {
-    icon: Microscope,
     title: "Research Center",
-    text: "Advancing global research",
-    action: "Explore Research",
-    path: "/research",
+    text: "A gateway into evidence, studies, and research discussions.",
+    action: "Explore",
+    to: "/research",
+    tone: "teal",
   },
   {
     icon: Users,
     title: "Global Leaders",
-    text: "Uniting visionary leaders",
+    text: "Leadership profiles and contributors shaping global homeopathy.",
     action: "Meet Leaders",
-    path: "/leaders",
+    to: "/leaders",
+    tone: "navy",
   },
   {
     icon: Globe2,
     title: "World Summit",
-    text: "International events",
-    action: "Discover Summit",
-    path: "/summit",
-  },
-  {
-    icon: GraduationCap,
-    title: "Education Network",
-    text: "Empowering education",
-    action: "Explore Education",
-    path: "/explore",
-  },
-  {
-    icon: Newspaper,
-    title: "Media Hub",
-    text: "News and interviews",
-    action: "Visit Media",
-    path: "/media",
+    text: "International summit chapters, archives, and media coverage.",
+    action: "Discover",
+    to: "/summit",
+    tone: "gold",
   },
   {
     icon: BookOpen,
     title: "Publications",
-    text: "Journals and articles",
-    action: "View Publications",
-    path: "/research",
+    text: "Articles, media references, and future publication resources.",
+    action: "View Library",
+    to: "/media",
+    tone: "olive",
   },
 ];
 
-const pageGateways = [
+const platformStats = [
+  { value: "75+", label: "Countries" },
+  { value: "95k+", label: "Practitioners" },
+  { value: "120+", label: "Research Articles" },
+];
+
+const researchItems = [
   {
-    icon: BookOpen,
-    title: "Explore Homeopathy",
-    text: "History, principles, Hahnemann, World Homeopathy Day, and public education.",
-    path: "/explore",
-    action: "Open knowledge hub",
+    label: "Evidence Desk",
+    title: "Clinical outcome research and evidence summaries",
+    text: "Reserved for verified studies, databases, and source-led research notes.",
+    meta: "Research library",
   },
   {
-    icon: PlayCircle,
-    title: "World Summit",
-    text: "Dubai, Germany, London, and upcoming summit chapters with galleries and coverage.",
-    path: "/summit",
-    action: "View summit journey",
+    label: "Summit Research",
+    title: "Burnett Goa Evidence-Based Research Summit",
+    text: "A dedicated space for the Goa 2025 evidence initiative and related coverage.",
+    meta: "Burnett Homeopathy Pvt. Ltd.",
+  },
+  {
+    label: "Public Guidance",
+    title: "Responsible education for public understanding",
+    text: "Clear references, balanced language, and links to future source material.",
+    meta: "Education desk",
+  },
+];
+
+const newsroomItems = [
+  {
+    tag: "Summit Desk",
+    title: "World Homeopathy Summit archive",
+    text: "A central place for summit chapters, speaker references, galleries, and media links.",
+    image: "/images/summit-global-stage.jpg",
+  },
+  {
+    tag: "Platform Update",
+    title: "Research and publication pages",
+    text: "Content placeholders are ready for verified papers, citations, and future uploads.",
+  },
+  {
+    tag: "Media Desk",
+    title: "External coverage and press references",
+    text: "A clean archive for articles, interviews, event coverage, and announcements.",
+  },
+];
+
+const calendarItems = [
+  { date: "15", label: "Summit calendar slot", note: "Awaiting confirmed schedule" },
+  { date: "08", label: "Research update slot", note: "Awaiting verified source" },
+  { date: "22", label: "Education release slot", note: "Awaiting final content" },
+];
+
+const infrastructurePoints = [
+  "State-of-the-art manufacturing and quality-focused operations",
+  "Global logistics and summit-led international visibility",
+  "Research, education, and media contribution across the platform",
+];
+
+const governanceAreas = [
+  {
+    icon: ShieldCheck,
+    title: "Ethics Committee",
+    text: "A future area for responsible language, public guidance, and editorial standards.",
+    action: "Documents",
   },
   {
     icon: Microscope,
-    title: "Research Center",
-    text: "Publications, case studies, collaborations, and evidence-focused initiatives.",
-    path: "/research",
-    action: "Enter research center",
+    title: "Research Board",
+    text: "A future area for verified studies, citations, databases, and evidence summaries.",
+    action: "Research",
+    featured: true,
   },
-  {
-    icon: Users,
-    title: "Global Leaders",
-    text: "Historical and modern contributors presented with a balanced international lens.",
-    path: "/leaders",
-    action: "Meet the leaders",
-  },
-  {
-    icon: Newspaper,
-    title: "Media",
-    text: "External coverage, press references, summit articles, and institutional visibility.",
-    path: "/media",
-    action: "Read coverage",
-  },
-];
-
-const authoritySignals = [
-  "Independent global platform identity",
-  "Burnett Homeopathy referenced through real summit and research contributions",
-  "Research, leaders, media, and countries organized into dedicated pages",
-  "Clear visitor journey from global mission to detailed resources",
-];
-
-const missionPillars = [
   {
     icon: GraduationCap,
-    label: "Education",
-    text: "A clear path for learning",
-  },
-  {
-    icon: Microscope,
-    label: "Research",
-    text: "Evidence for better outcomes",
-  },
-  {
-    icon: Users,
-    label: "Leadership",
-    text: "Profiles that inspire trust",
-  },
-  {
-    icon: Globe2,
-    label: "Global Reach",
-    text: "One story, many nations",
+    title: "Education Council",
+    text: "A future area for learning paths, public education, and professional resources.",
+    action: "Curriculum",
   },
 ];
 
-function AnimatedNumber({ value, suffix = "" }) {
-  const ref = React.useRef(null);
-  const [displayValue, setDisplayValue] = React.useState(0);
+function IconPanel({ icon: Icon, children, className = "" }) {
+  return (
+    <span className={`stitch-icon-panel ${className}`} aria-hidden="true">
+      <Icon size={20} />
+      {children}
+    </span>
+  );
+}
 
-  React.useEffect(() => {
-    const node = ref.current;
-    if (!node) return undefined;
-
-    let frameId = 0;
-    let hasAnimated = false;
-    const duration = 1200;
-
-    const runCounter = () => {
-      const startTime = performance.now();
-      const tick = (now) => {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        setDisplayValue(Math.round(value * eased));
-
-        if (progress < 1) {
-          frameId = requestAnimationFrame(tick);
-        }
-      };
-
-      frameId = requestAnimationFrame(tick);
-    };
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          hasAnimated = true;
-          runCounter();
-        }
-      },
-      { threshold: 0.35 },
-    );
-
-    observer.observe(node);
-
-    return () => {
-      observer.disconnect();
-      cancelAnimationFrame(frameId);
-    };
-  }, [value]);
+function HeroCard({ card }) {
+  const Icon = card.icon;
 
   return (
-    <strong ref={ref}>
-      {displayValue.toLocaleString()}
-      {suffix}
-    </strong>
+    <Link className={`stitch-hero-card is-${card.tone}`} to={card.to}>
+      <IconPanel icon={Icon} />
+      <h2>{card.title}</h2>
+      <p>{card.text}</p>
+      <span>
+        {card.action} <ArrowRight size={14} />
+      </span>
+    </Link>
+  );
+}
+
+function ResearchArticle({ item }) {
+  return (
+    <article className="stitch-research-card">
+      <span>{item.label}</span>
+      <h3>{item.title}</h3>
+      <p>{item.text}</p>
+      <small>
+        <FileText size={13} />
+        {item.meta}
+      </small>
+    </article>
   );
 }
 
 function HomePage() {
   return (
-    <main className="home-redesign home-movement structured-home reference-home font-sans">
-      <div className="home-dynamic-bg" aria-hidden="true">
-        <span className="home-aurora-river home-aurora-river-one"></span>
-        <span className="home-aurora-river home-aurora-river-two"></span>
-        <span className="home-aurora-river home-aurora-river-three"></span>
-        <span className="home-pulse-ring home-pulse-ring-one"></span>
-        <span className="home-pulse-ring home-pulse-ring-two"></span>
-        <span className="home-pulse-ring home-pulse-ring-three"></span>
-        <span className="home-drift-light home-drift-light-one"></span>
-        <span className="home-drift-light home-drift-light-two"></span>
-        <span className="home-drift-light home-drift-light-three"></span>
-      </div>
-
-      <section className="hero institution-hero">
-        <div className="hero-ambient" aria-hidden="true">
-          <span className="hero-spotlight spotlight-primary"></span>
-          <span className="hero-spotlight spotlight-secondary"></span>
-          <span className="hero-grid-glow"></span>
-        </div>
-
-        <motion.div
-          className="hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="mission-kicker">
-            <span>Global digital headquarters of homeopathy</span>
+    <main className="stitch-home">
+      <section className="stitch-hero">
+        <div className="stitch-hero-copy">
+          <div className="stitch-breadcrumb">
+            <span>Home</span>
+            <span>Global Platform</span>
+            <span>Research Hub</span>
           </div>
-          <h1>
-            <span>Connecting the Global</span>
-            <span>Homeopathy Community</span>
-          </h1>
-          <div className="hero-scope-line" aria-label="Platform focus areas">
-            <span>Research</span>
-            <span>Education</span>
-            <span>World Summits</span>
-            <span>Leadership</span>
-          </div>
+
+          <h1>Connecting the Global Homeopathy Community</h1>
           <p>
-            A worldwide platform for education, research, innovation, leadership, and international
-            collaboration in homeopathy. Uniting practitioners, researchers, institutions, and
-            supporters to <strong>advance the science, practice, and awareness of homeopathy</strong>{" "}
-            for a healthier world.
+            A worldwide platform for education, research, innovation, leadership, and
+            international collaboration in homeopathy. Uniting practitioners, researchers,
+            institutions, and supporters to <strong>advance the science and practice</strong> for
+            a healthier world.
           </p>
-          <div className="hero-value-list">
-            {heroValues.map((item) => {
-              const Icon = item.icon;
-              return (
-                <span key={item.text}>
-                  <Icon size={22} />
-                  {item.text}
-                </span>
-              );
-            })}
-          </div>
-          <div className="hero-actions">
-            <Link className="button primary" to="/explore">
-              Start Exploring <ArrowRight size={18} />
+
+          <div className="stitch-hero-actions">
+            <Link className="stitch-button primary" to="/explore">
+              Start Exploring <ArrowRight size={16} />
             </Link>
-            <Link className="button secondary" to="/summit">
-              World Summit <PlayCircle size={18} />
-            </Link>
-            <Link className="button ghost" to="/research">
-              Research Center <Microscope size={18} />
+            <Link className="stitch-button secondary" to="/summit">
+              <Sparkles size={15} />
+              World Summit
             </Link>
           </div>
-        </motion.div>
 
-        <motion.div
-          className="hero-network hero-story-visual"
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.18, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <div className="hero-feature-grid" aria-label="WorldHomeopathy.org platform features">
-            {heroNetworkCards.map((card, index) => {
-              const Icon = card.icon;
-              return (
-                <motion.article
-                  className="network-card"
-                  key={card.title}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.25 + index * 0.06, duration: 0.45 }}
-                >
-                  <span className="network-icon"><Icon size={28} /></span>
-                  <h3>{card.title}</h3>
-                  <p>{card.text}</p>
-                  <Link to={card.path}>
-                    {card.action} <ArrowRight size={15} />
-                  </Link>
-                </motion.article>
-              );
-            })}
-          </div>
-        </motion.div>
-      </section>
-
-      <section className="home-proof-strip" aria-label="Platform highlights">
-        {heroProofs.map((proof) => {
-          const Icon = proof.icon;
-          return (
-            <span key={proof.label}>
-              <Icon size={20} />
-              <strong>{proof.label}</strong>
-              {proof.text}
-            </span>
-          );
-        })}
-      </section>
-
-      <AnimatedSection id="global-mission" className="section home-intent mission-showcase">
-        <div className="mission-showcase-copy">
-          <p className="eyebrow">Global Mission</p>
-          <h2>A calm, credible entry point for the worldwide homeopathy community.</h2>
-          <div className="mission-leaf-divider" aria-hidden="true">
-            <Leaf size={18} />
-            <span></span>
-          </div>
-          <div className="mission-body">
-            <p>
-              The platform opens with <strong>education</strong> first: a clear path for students,
-              practitioners, media, institutions, and the public to understand homeopathy in a
-              global context.
-            </p>
-            <p>
-              From there, visitors can move into summit chapters, <strong>research</strong>{" "}
-              initiatives, leadership profiles, country references, and verified{" "}
-              <strong>media coverage</strong> without losing the global story. Each path keeps
-              learning, evidence, leadership, and international participation connected inside
-              one credible global platform.
-            </p>
-          </div>
-          <div className="mission-pillars" aria-label="Global mission pillars">
-            {missionPillars.map((pillar) => {
-              const Icon = pillar.icon;
-              return (
-                <article key={pillar.label}>
-                  <span><Icon size={29} /></span>
-                  <strong>{pillar.label}</strong>
-                  <p>{pillar.text}</p>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-        <div className="mission-visual-panel" aria-label="Worldwide homeopathy mission visual">
-          <div className="mission-reference-art" aria-hidden="true">
-            <img src="/images/mission-globe-generated.png" alt="" loading="lazy" />
-          </div>
-        </div>
-      </AnimatedSection>
-
-      <section className="home-stat-ribbon" aria-label="WorldHomeopathy platform numbers">
-        {platformStats.map((stat, index) => {
-          const Icon = stat.icon;
-          return (
-            <motion.article
-              className="home-stat-item"
-              key={stat.label}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ delay: index * 0.07, duration: 0.5 }}
-            >
-              <span className="home-stat-icon">
-                <Icon size={28} />
-              </span>
-              <div>
-                <AnimatedNumber value={stat.value} suffix={stat.suffix} />
-                <p>
-                  {stat.label}
-                  {stat.detail ? (
-                    <>
-                      <br />
-                      {stat.detail}
-                    </>
-                  ) : null}
-                </p>
-              </div>
-            </motion.article>
-          );
-        })}
-      </section>
-
-      <AnimatedSection className="section platform-gateway">
-        <div className="gateway-heading">
-          <p className="eyebrow">Explore The Platform</p>
-          <h2>Every visitor gets a focused path into the global story.</h2>
-          <p>
-            Students can begin with fundamentals. Delegates can follow the summit journey.
-            Researchers, media teams, and institutions can move directly into their areas.
-          </p>
-        </div>
-        <div className="gateway-list">
-          {pageGateways.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <Link className="gateway-row" to={item.path} key={item.title}>
-                <span className="gateway-number">{String(index + 1).padStart(2, "0")}</span>
-                <span className="gateway-icon"><Icon size={24} /></span>
-                <span className="gateway-text">
-                  <strong>{item.title}</strong>
-                  <small>{item.text}</small>
-                </span>
-                <span className="gateway-action">
-                  {item.action} <ArrowRight size={16} />
-                </span>
-              </Link>
-            );
-          })}
-        </div>
-      </AnimatedSection>
-
-      <AnimatedSection className="section homepage-authority">
-        <div className="authority-photo" aria-label="World Homeopathy Summit institutional visual">
-          <img src="/images/summit-dubai-authority.jpg" alt="World Homeopathy Summit 2 at Burj Al Arab, Dubai" />
-        </div>
-        <div className="authority-copy">
-          <p className="eyebrow">Authority Signal</p>
-          <h2>A global platform identity with credible contributors.</h2>
-          <p>
-            WorldHomeopathy.org presents homeopathy through education, research, summits, leaders,
-            country presence, and media. Burnett Homeopathy appears where it contributes through
-            summit organization, research activity, and leadership visibility.
-          </p>
-          <div className="authority-list">
-            {authoritySignals.map((signal) => (
-              <span key={signal}>
-                <ShieldCheck size={18} />
-                {signal}
-              </span>
+          <div className="stitch-stat-row" aria-label="Platform highlights">
+            {platformStats.map((stat) => (
+              <article key={stat.label}>
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </article>
             ))}
           </div>
         </div>
-      </AnimatedSection>
 
-      <AnimatedSection className="home-final-cta">
-        <div className="final-cta-copy">
-          <p className="eyebrow">Start Here</p>
-          <h2>Explore the platform without losing the global story.</h2>
+        <div className="stitch-hero-grid" aria-label="Homepage platform gateways">
+          {heroCards.map((card) => (
+            <HeroCard card={card} key={card.title} />
+          ))}
+        </div>
+      </section>
+
+      <section className="stitch-section stitch-repository" aria-labelledby="repository-heading">
+        <div className="stitch-section-head">
+          <div>
+            <p className="stitch-kicker">Global Research Repository</p>
+            <h2 id="repository-heading">Critical notes and research placeholders.</h2>
+          </div>
+          <Link to="/research">
+            View Archive <ArrowRight size={14} />
+          </Link>
+        </div>
+
+        <div className="stitch-research-grid">
+          {researchItems.map((item) => (
+            <ResearchArticle item={item} key={item.title} />
+          ))}
+        </div>
+      </section>
+
+      <section className="stitch-section stitch-newsroom" aria-labelledby="newsroom-heading">
+        <h2 id="newsroom-heading">Foundation Newsroom</h2>
+
+        <div className="stitch-news-layout">
+          <div className="stitch-news-main">
+            <img src="/images/summit-global-stage.jpg" alt="World Homeopathy Summit delegates" />
+            <div>
+              <span>Global Desk</span>
+              <h3>World Homeopathy Summit media and event archive</h3>
+              <p>
+                A structured editorial space for summit coverage, verified media references,
+                and future public updates.
+              </p>
+              <Link to="/media">
+                Explore archive <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+
+          <div className="stitch-news-small-grid">
+            {newsroomItems.slice(1).map((item) => (
+              <article key={item.title}>
+                <span>{item.tag}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <Link to="/media">
+                  Read Story <ArrowRight size={13} />
+                </Link>
+              </article>
+            ))}
+          </div>
+
+          <aside className="stitch-calendar" aria-label="Events calendar">
+            <div className="stitch-calendar-head">
+              <strong>Events Calendar</strong>
+              <CalendarDays size={18} />
+            </div>
+            {calendarItems.map((item) => (
+              <article key={item.date}>
+                <time>{item.date}</time>
+                <div>
+                  <strong>{item.label}</strong>
+                  <span>{item.note}</span>
+                </div>
+              </article>
+            ))}
+            <Link to="/summit">
+              Full Calendar <ArrowRight size={13} />
+            </Link>
+          </aside>
+        </div>
+      </section>
+
+      <section className="stitch-burnett-band">
+        <div className="stitch-burnett-visual">
+          <img src="/images/summit-world-map-hero-4k.jpg" alt="Global homeopathy summit network map" />
+        </div>
+        <div className="stitch-burnett-copy">
+          <p className="stitch-kicker">Founder Technical Partner</p>
+          <h2>Burnett Homeopathy: Setting Global Infrastructure Standards</h2>
           <p>
-            Choose the route that matches your purpose. Each pathway opens a dedicated
-            section while keeping education, summits, research, and media connected.
+            Burnett Homeopathy Pvt. Ltd. is positioned on this platform through real summit
+            organization, research activity, education support, and international visibility.
+          </p>
+          <div className="stitch-burnett-points">
+            {infrastructurePoints.map((point) => (
+              <span key={point}>
+                <CheckCircle2 size={16} />
+                {point}
+              </span>
+            ))}
+          </div>
+          <Link className="stitch-button light" to="/summit">
+            Partnership Details
+          </Link>
+        </div>
+      </section>
+
+      <section className="stitch-section stitch-governance" aria-labelledby="governance-heading">
+        <div className="stitch-centered-head">
+          <h2 id="governance-heading">Foundation Governance</h2>
+          <p>
+            A placeholder framework for future editorial, research, and education governance.
           </p>
         </div>
-        <div className="final-pathways" aria-label="Homepage next-step routes">
-          <Link className="final-pathway" to="/explore">
-            <span className="final-pathway-number">01</span>
-            <span className="final-pathway-icon"><BookOpen size={22} /></span>
-            <span className="final-pathway-copy">
-              <strong>Knowledge Hub</strong>
-              <small>Start with history, principles, education, and global context.</small>
-            </span>
-            <span className="final-pathway-link">Open hub <ArrowRight size={16} /></span>
-          </Link>
-          <Link className="final-pathway" to="/summit">
-            <span className="final-pathway-number">02</span>
-            <span className="final-pathway-icon"><PlayCircle size={22} /></span>
-            <span className="final-pathway-copy">
-              <strong>Summit Trail</strong>
-              <small>Follow Dubai, Germany, London, and future summit chapters.</small>
-            </span>
-            <span className="final-pathway-link">View journey <ArrowRight size={16} /></span>
-          </Link>
-          <Link className="final-pathway" to="/media">
-            <span className="final-pathway-number">03</span>
-            <span className="final-pathway-icon"><FileText size={22} /></span>
-            <span className="final-pathway-copy">
-              <strong>Media Desk</strong>
-              <small>Read external coverage, references, and institutional visibility.</small>
-            </span>
-            <span className="final-pathway-link">Read coverage <ArrowRight size={16} /></span>
-          </Link>
+
+        <div className="stitch-governance-grid">
+          {governanceAreas.map((item) => {
+            const Icon = item.icon;
+            return (
+              <article className={item.featured ? "is-featured" : ""} key={item.title}>
+                <IconPanel icon={Icon} />
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <span>
+                  {item.action} <ArrowRight size={13} />
+                </span>
+              </article>
+            );
+          })}
         </div>
-      </AnimatedSection>
+      </section>
     </main>
   );
 }
