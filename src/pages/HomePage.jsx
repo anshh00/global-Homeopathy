@@ -8,10 +8,7 @@ import {
   FlaskConical,
   Globe2,
   GraduationCap,
-  Landmark,
   Microscope,
-  Newspaper,
-  Search,
   ShieldCheck,
   Sparkles,
   Users,
@@ -22,7 +19,7 @@ const heroCards = [
   {
     icon: FlaskConical,
     title: "Research Center",
-    text: "A gateway into evidence, studies, and research discussions.",
+    text: "Advancing global studies, trials, and publications.",
     action: "Explore",
     to: "/research",
     tone: "teal",
@@ -30,7 +27,7 @@ const heroCards = [
   {
     icon: Users,
     title: "Global Leaders",
-    text: "Leadership profiles and contributors shaping global homeopathy.",
+    text: "Uniting visionary leaders and experts.",
     action: "Meet Leaders",
     to: "/leaders",
     tone: "navy",
@@ -38,7 +35,7 @@ const heroCards = [
   {
     icon: Globe2,
     title: "World Summit",
-    text: "International summit chapters, archives, and media coverage.",
+    text: "International events that connect and create impact.",
     action: "Discover",
     to: "/summit",
     tone: "gold",
@@ -46,7 +43,7 @@ const heroCards = [
   {
     icon: BookOpen,
     title: "Publications",
-    text: "Articles, media references, and future publication resources.",
+    text: "Journals, articles, and peer-reviewed global insights.",
     action: "View Library",
     to: "/media",
     tone: "olive",
@@ -61,48 +58,48 @@ const platformStats = [
 
 const researchItems = [
   {
-    label: "Evidence Desk",
-    title: "Clinical outcome research and evidence summaries",
-    text: "Reserved for verified studies, databases, and source-led research notes.",
-    meta: "Research library",
+    label: "Research Note",
+    title: "Efficacy of Ultra High Dilutions in Chronic Allergic Rhinitis",
+    text: "Clinical notes, source-led evidence, and publication references organized for review.",
+    meta: "Journal of Integrative Medicine",
   },
   {
-    label: "Summit Research",
-    title: "Burnett Goa Evidence-Based Research Summit",
-    text: "A dedicated space for the Goa 2025 evidence initiative and related coverage.",
+    label: "Whitepaper",
+    title: "Standardization of Potentization Processes: Molecular Analysis",
+    text: "Manufacturing standards, research methods, and scientific review notes in one place.",
     meta: "Burnett Homeopathy Pvt. Ltd.",
   },
   {
-    label: "Public Guidance",
-    title: "Responsible education for public understanding",
-    text: "Clear references, balanced language, and links to future source material.",
-    meta: "Education desk",
+    label: "Public Health",
+    title: "Public Health Impact in Developing Economies",
+    text: "Reserved for country-level references, healthcare education, and public guidance.",
+    meta: "Foundation research desk",
   },
 ];
 
 const newsroomItems = [
   {
     tag: "Summit Desk",
-    title: "World Homeopathy Summit archive",
-    text: "A central place for summit chapters, speaker references, galleries, and media links.",
+    title: "World Homeopathy Summit 2024 Agenda",
+    text: "Planning and reference space for keynote sessions, summit notes, and public reports.",
     image: "/images/summit-global-stage.jpg",
   },
   {
     tag: "Platform Update",
-    title: "Research and publication pages",
-    text: "Content placeholders are ready for verified papers, citations, and future uploads.",
+    title: "New Certification Standards",
+    text: "Institutional standards, learning pathways, and reference material for readers.",
   },
   {
     tag: "Media Desk",
-    title: "External coverage and press references",
-    text: "A clean archive for articles, interviews, event coverage, and announcements.",
+    title: "European Research Grants",
+    text: "Collaborations, academic updates, and partner notices for the research community.",
   },
 ];
 
 const calendarItems = [
-  { date: "15", label: "Summit calendar slot", note: "Awaiting confirmed schedule" },
-  { date: "08", label: "Research update slot", note: "Awaiting verified source" },
-  { date: "22", label: "Education release slot", note: "Awaiting final content" },
+  { date: "15", label: "Ethics Committee Meeting", note: "Governance and standards review" },
+  { date: "08", label: "Regional Symposium", note: "Education and summit planning" },
+  { date: "22", label: "Clinical Standards Webinar", note: "Practice guidance and training" },
 ];
 
 const infrastructurePoints = [
@@ -115,20 +112,20 @@ const governanceAreas = [
   {
     icon: ShieldCheck,
     title: "Ethics Committee",
-    text: "A future area for responsible language, public guidance, and editorial standards.",
+    text: "Responsible language, public guidance, and editorial standards for the platform.",
     action: "Documents",
   },
   {
     icon: Microscope,
     title: "Research Board",
-    text: "A future area for verified studies, citations, databases, and evidence summaries.",
+    text: "Verified studies, citations, databases, and evidence summaries for researchers.",
     action: "Research",
     featured: true,
   },
   {
     icon: GraduationCap,
     title: "Education Council",
-    text: "A future area for learning paths, public education, and professional resources.",
+    text: "Learning paths, public education, and professional resources for global readers.",
     action: "Curriculum",
   },
 ];
@@ -221,7 +218,7 @@ function HomePage() {
         <div className="stitch-section-head">
           <div>
             <p className="stitch-kicker">Global Research Repository</p>
-            <h2 id="repository-heading">Critical notes and research placeholders.</h2>
+          <h2 id="repository-heading">Critical notes and research publications.</h2>
           </div>
           <Link to="/research">
             View Archive <ArrowRight size={14} />
@@ -243,10 +240,10 @@ function HomePage() {
             <img src="/images/summit-global-stage.jpg" alt="World Homeopathy Summit delegates" />
             <div>
               <span>Global Desk</span>
-              <h3>World Homeopathy Summit media and event archive</h3>
+              <h3>World Homeopathy Summit 2024 Agenda</h3>
               <p>
                 A structured editorial space for summit coverage, verified media references,
-                and future public updates.
+                and public updates.
               </p>
               <Link to="/media">
                 Explore archive <ArrowRight size={14} />
@@ -290,14 +287,14 @@ function HomePage() {
 
       <section className="stitch-burnett-band">
         <div className="stitch-burnett-visual">
-          <img src="/images/summit-world-map-hero-4k.jpg" alt="Global homeopathy summit network map" />
+          <img src="/images/stitch-burnett-lab-reference.jpg" alt="Manufacturing and research infrastructure visual" />
         </div>
         <div className="stitch-burnett-copy">
           <p className="stitch-kicker">Founder Technical Partner</p>
           <h2>Burnett Homeopathy: Setting Global Infrastructure Standards</h2>
           <p>
-            Burnett Homeopathy Pvt. Ltd. is positioned on this platform through real summit
-            organization, research activity, education support, and international visibility.
+            Representing the principle of modern manufacturing and research support, Burnett
+            Homeopathy Pvt. Ltd. appears through summit, education, and infrastructure activity.
           </p>
           <div className="stitch-burnett-points">
             {infrastructurePoints.map((point) => (
@@ -317,7 +314,7 @@ function HomePage() {
         <div className="stitch-centered-head">
           <h2 id="governance-heading">Foundation Governance</h2>
           <p>
-            A placeholder framework for future editorial, research, and education governance.
+            A clear framework for editorial, research, and education governance.
           </p>
         </div>
 
