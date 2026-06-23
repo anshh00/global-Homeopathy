@@ -8,11 +8,13 @@ function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const isExplore = location.pathname === "/explore";
+  const useFoundationChrome = isHome || isExplore;
 
   return (
     <>
-      <header className={`site-header ${isHome ? "stitch-layout-header" : ""}`}>
-        <NavLink className={`brand ${isHome ? "stitch-layout-brand" : ""}`} to="/" onClick={() => setMenuOpen(false)} aria-label="WorldHomeopathy.org home">
+      <header className={`site-header ${useFoundationChrome ? "stitch-layout-header" : ""}`}>
+        <NavLink className={`brand ${useFoundationChrome ? "stitch-layout-brand" : ""}`} to="/" onClick={() => setMenuOpen(false)} aria-label="WorldHomeopathy.org home">
           <span className="header-emblem" aria-hidden="true">
             <span className="emblem-ring"></span>
             <span className="emblem-line line-a"></span>
@@ -22,8 +24,14 @@ function Layout() {
             <span className="emblem-node node-c"></span>
           </span>
           <span>
-            <strong>{isHome ? "Global Homeopathy Foundation" : "WorldHomeopathy.org"}</strong>
-            <small>{isHome ? "Research • Education • Summit Hub" : "Global digital headquarters of homeopathy"}</small>
+            <strong>{useFoundationChrome ? "Global Homeopathy Foundation" : "WorldHomeopathy.org"}</strong>
+            <small>
+              {isHome
+                ? "Research / Education / Summit Hub"
+                : isExplore
+                  ? "Science / Philosophy / Global Hub"
+                  : "Global digital headquarters of homeopathy"}
+            </small>
           </span>
         </NavLink>
 
@@ -55,6 +63,10 @@ function Layout() {
                 Donate
               </Link>
             </>
+          ) : isExplore ? (
+            <Link className="stitch-nav-join" to="/research" onClick={() => setMenuOpen(false)}>
+              Join Research
+            </Link>
           ) : null}
           <button className="nav-search" type="button" aria-label="Search WorldHomeopathy.org">
             <Search size={21} />
