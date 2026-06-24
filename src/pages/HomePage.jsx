@@ -1,7 +1,6 @@
 import React from "react";
 import {
   ArrowRight,
-  ArrowUpRight,
   BookOpen,
   CalendarDays,
   CheckCircle2,
@@ -9,11 +8,7 @@ import {
   FlaskConical,
   Globe2,
   GraduationCap,
-  Landmark,
-  Library,
   Microscope,
-  Network,
-  Search,
   ShieldCheck,
   Sparkles,
   Users,
@@ -132,87 +127,6 @@ const governanceAreas = [
     title: "Education Council",
     text: "Learning paths, public education, and professional resources for global readers.",
     action: "Curriculum",
-  },
-];
-
-const audiencePathways = [
-  {
-    number: "01",
-    icon: BookOpen,
-    title: "Students and the public",
-    text: "Begin with history, foundational ideas, key figures, and a clear introduction to the global context.",
-    action: "Enter the knowledge hub",
-    to: "/explore",
-  },
-  {
-    number: "02",
-    icon: GraduationCap,
-    title: "Practitioners and educators",
-    text: "Follow education, professional dialogue, international meetings, and learning resources.",
-    action: "Follow the summit journey",
-    to: "/summit",
-  },
-  {
-    number: "03",
-    icon: Microscope,
-    title: "Researchers and institutions",
-    text: "Move directly into databases, publications, evidence summaries, and research organizations.",
-    action: "Open the research center",
-    to: "/research",
-  },
-  {
-    number: "04",
-    icon: Network,
-    title: "Media and collaborators",
-    text: "Find leadership profiles, summit reporting, institutional references, and public updates.",
-    action: "Visit the media desk",
-    to: "/media",
-  },
-];
-
-const globalReferenceLinks = [
-  {
-    icon: Globe2,
-    label: "Global strategy",
-    title: "WHO Traditional Medicine Strategy 2025–2034",
-    text: "A global framework centered on evidence, safety, regulation, health systems, sustainability, and innovation.",
-    href: "https://www.who.int/publications/i/item/9789240113176",
-  },
-  {
-    icon: Library,
-    label: "Biomedical literature",
-    title: "PubMed",
-    text: "Search citations and abstracts from biomedical and life-science journals through the U.S. National Library of Medicine.",
-    href: "https://pubmed.ncbi.nlm.nih.gov/?term=homeopathy",
-  },
-  {
-    icon: Search,
-    label: "Registered studies",
-    title: "ClinicalTrials.gov",
-    text: "Review publicly registered clinical studies, their status, study design, and available results information.",
-    href: "https://clinicaltrials.gov/search?term=homeopathy",
-  },
-  {
-    icon: Landmark,
-    label: "Public research institution",
-    title: "Central Council for Research in Homoeopathy",
-    text: "An autonomous research organization under India’s Ministry of AYUSH coordinating scientific research in homoeopathy.",
-    href: "https://ccrhindia.ayush.gov.in/",
-  },
-];
-
-const editorialStandards = [
-  {
-    title: "Sources before slogans",
-    text: "Research pages should lead visitors to the original database, publication, institution, or event record wherever possible.",
-  },
-  {
-    title: "Context around every claim",
-    text: "Study design, publication status, limitations, and uncertainty matter. The platform should make those distinctions visible.",
-  },
-  {
-    title: "Education, not diagnosis",
-    text: "Public information should support informed discussion and must not replace advice from a qualified healthcare professional.",
   },
 ];
 
@@ -418,125 +332,6 @@ function HomePage() {
               </article>
             );
           })}
-        </div>
-      </section>
-
-      <section className="stitch-audience-section" aria-labelledby="audience-heading">
-        <div className="stitch-audience-intro">
-          <p className="stitch-kicker">One platform, different journeys</p>
-          <h2 id="audience-heading">Find the part of the global conversation that matters to you.</h2>
-          <p>
-            WorldHomeopathy.org is designed as a gateway rather than a single long article.
-            Each pathway opens a focused area while keeping education, research, summits,
-            leadership, and media connected.
-          </p>
-        </div>
-
-        <div className="stitch-audience-list">
-          {audiencePathways.map((pathway) => {
-            const Icon = pathway.icon;
-            return (
-              <Link to={pathway.to} className="stitch-audience-row" key={pathway.number}>
-                <span className="stitch-audience-number">{pathway.number}</span>
-                <Icon aria-hidden="true" />
-                <div>
-                  <h3>{pathway.title}</h3>
-                  <p>{pathway.text}</p>
-                </div>
-                <span className="stitch-audience-action">
-                  {pathway.action}
-                  <ArrowRight size={16} />
-                </span>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="stitch-reference-desk" aria-labelledby="reference-heading">
-        <div className="stitch-reference-head">
-          <div>
-            <p className="stitch-kicker">Global reference desk</p>
-            <h2 id="reference-heading">Start with the primary source.</h2>
-          </div>
-          <p>
-            A credible global platform should help readers move beyond summaries. These
-            independent public resources provide direct access to policy, literature,
-            registered studies, and institutional research.
-          </p>
-        </div>
-
-        <div className="stitch-reference-list">
-          {globalReferenceLinks.map((resource) => {
-            const Icon = resource.icon;
-            return (
-              <a href={resource.href} target="_blank" rel="noreferrer" key={resource.title}>
-                <Icon aria-hidden="true" />
-                <div>
-                  <span>{resource.label}</span>
-                  <h3>{resource.title}</h3>
-                  <p>{resource.text}</p>
-                </div>
-                <ArrowUpRight aria-hidden="true" />
-              </a>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="stitch-evidence-standard" aria-labelledby="standard-heading">
-        <div className="stitch-standard-title">
-          <p className="stitch-kicker">Editorial standard</p>
-          <h2 id="standard-heading">Credibility is built in the details.</h2>
-        </div>
-        <div className="stitch-standard-copy">
-          <p>
-            Homeopathy is discussed differently across countries, healthcare systems, and
-            research communities. WorldHomeopathy.org should present that conversation with
-            clarity: linking evidence, identifying sources, and avoiding unsupported medical
-            promises.
-          </p>
-        </div>
-        <div className="stitch-standard-principles">
-          {editorialStandards.map((item, index) => (
-            <article key={item.title}>
-              <span>0{index + 1}</span>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="stitch-global-mission" aria-labelledby="mission-heading">
-        <div className="stitch-mission-image">
-          <img
-            src="/images/summit-global-stage.jpg"
-            alt="International delegates at a World Homeopathy Summit"
-          />
-          <span>International dialogue</span>
-        </div>
-        <div className="stitch-mission-copy">
-          <p className="stitch-kicker">A connected global platform</p>
-          <h2 id="mission-heading">Knowledge becomes more useful when institutions and people can find one another.</h2>
-          <p>
-            The platform brings public education, research navigation, summit records,
-            leadership profiles, and media references into one coherent international
-            destination. Burnett Homeopathy Pvt. Ltd. is referenced through its documented
-            contribution to summit organization, research dialogue, and global visibility.
-          </p>
-          <blockquote>
-            Build a clear public record. Connect serious work. Make the global story easier
-            to understand.
-          </blockquote>
-          <div className="stitch-mission-links">
-            <Link className="stitch-button primary" to="/explore">
-              Explore the platform <ArrowRight size={16} />
-            </Link>
-            <Link className="stitch-text-link" to="/contact">
-              Contact the foundation <ArrowUpRight size={15} />
-            </Link>
-          </div>
         </div>
       </section>
     </main>
