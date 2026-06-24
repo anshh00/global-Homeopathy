@@ -356,28 +356,6 @@ function ExplorePage() {
         </div>
       </section>
 
-      <footer className="explore-stitch-footer">
-        <div>
-          <strong>Global Homeopathy Foundation</strong>
-          <p>
-            A global gateway for homeopathy education, research context, summit references,
-            and institutional collaboration.
-          </p>
-        </div>
-        <nav aria-label="Explore footer links">
-          <Link to="/">Home</Link>
-          <Link to="/summit">Summit</Link>
-          <Link to="/research">Research</Link>
-          <Link to="/leaders">Leaders</Link>
-        </nav>
-        <form>
-          <label htmlFor="explore-email">Updates</label>
-          <div>
-            <input id="explore-email" type="email" placeholder="Email address" />
-            <button type="button">Join</button>
-          </div>
-        </form>
-      </footer>
     </main>
   );
 }
