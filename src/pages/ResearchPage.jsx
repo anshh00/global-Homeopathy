@@ -144,10 +144,11 @@ function ResearchPage() {
             </div>
           </div>
 
-          <div className="rr-hero-art" aria-label="Abstract research visualization">
-            <div className="rr-research-sphere" aria-hidden="true">
-              {Array.from({ length: 12 }, (_, index) => <span key={index}></span>)}
-            </div>
+          <div className="rr-hero-art">
+            <img
+              src="/images/research-prescription-trends.jpg"
+              alt="Global prescription trends in homeopathy infographic"
+            />
           </div>
         </div>
       </section>
@@ -176,7 +177,7 @@ function ResearchPage() {
         <div className="rr-featured-grid">
           <article className="rr-featured-lead">
             <div className="rr-lab-visual">
-              <img src="/images/stitch-burnett-lab-reference.jpg" alt="Modern research laboratory" />
+              <img src="/images/research-microscope-lab.jpg" alt="Researcher using a microscope in a laboratory" />
               <span>{publications[0].tag}</span>
             </div>
             <div className="rr-featured-copy">
