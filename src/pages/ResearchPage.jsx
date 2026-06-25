@@ -24,6 +24,19 @@ const researchMetrics = [
   { value: "6", label: "Core research domains" },
 ];
 
+const prescriptionTrends = [
+  { name: "Arsenicum album", value: 16.2 },
+  { name: "Nux vomica", value: 13.7 },
+  { name: "Sulphur", value: 11.8 },
+  { name: "Pulsatilla", value: 8.9 },
+  { name: "Natrum muriaticum", value: 6.6 },
+  { name: "Sepia", value: 5.4 },
+  { name: "Lycopodium clavatum", value: 4.2 },
+  { name: "Rhus toxicodendron", value: 3.1 },
+  { name: "Belladonna", value: 2.3 },
+  { name: "Calcarea carbonica", value: 1.8 },
+];
+
 const publications = [
   {
     tag: "Meta-analysis",
@@ -131,7 +144,10 @@ function ResearchPage() {
         <div className="rr-shell rr-hero-grid">
           <div className="rr-hero-copy">
             <p className="rr-kicker">Global research atlas</p>
-            <h1>Advancing Evidence-Based Homeopathy</h1>
+            <h1>
+              <span>Advancing Evidence-</span>
+              <span>Based Homeopathy</span>
+            </h1>
             <p>
               A focused international gateway to clinical studies, systematic reviews,
               research databases, and evidence-led collaboration.
@@ -144,11 +160,41 @@ function ResearchPage() {
             </div>
           </div>
 
-          <div className="rr-hero-art">
-            <img
-              src="/images/research-prescription-trends.jpg"
-              alt="Global prescription trends in homeopathy infographic"
-            />
+          <div className="rr-hero-chart" aria-label="Global prescription trends in homeopathy">
+            <header>
+              <p>Global data snapshot</p>
+              <h2>Global Prescription Trends in Homeopathy</h2>
+              <span>Relative frequency of selected remedies in the supplied dataset</span>
+            </header>
+
+            <div className="rr-chart-context">
+              <span><Globe2 size={16} /><b>100+ countries</b></span>
+              <span><Users size={16} /><b>Clinical sources</b></span>
+              <span><BarChart3 size={16} /><b>2010–2024</b></span>
+            </div>
+
+            <div className="rr-chart-plot">
+              <div className="rr-chart-y-axis" aria-hidden="true">
+                <span>18%</span><span>12%</span><span>6%</span><span>0%</span>
+              </div>
+              <div className="rr-chart-bars">
+                {prescriptionTrends.map((item) => (
+                  <div className="rr-chart-item" key={item.name}>
+                    <strong>{item.value}%</strong>
+                    <div className="rr-chart-track">
+                      <span style={{ height: `${(item.value / 18) * 100}%` }}></span>
+                    </div>
+                    <small>{item.name}</small>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <footer>
+              <span>Relative frequency only</span>
+              <span>Aggregated international data</span>
+              <span>Not a measure of efficacy</span>
+            </footer>
           </div>
         </div>
       </section>
