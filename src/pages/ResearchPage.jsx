@@ -131,7 +131,7 @@ function ResearchPage() {
         <div className="rr-shell rr-hero-grid">
           <div className="rr-hero-copy">
             <p className="rr-kicker">Global research atlas</p>
-            <h1>Advancing Evidence:<br />Trusted Homeopathy</h1>
+            <h1>Advancing Evidence-Based Homeopathy</h1>
             <p>
               A focused international gateway to clinical studies, systematic reviews,
               research databases, and evidence-led collaboration.
