@@ -147,11 +147,11 @@ function ExplorePage() {
           <p className="explore-stitch-kicker">The wellness science and global knowledge hub</p>
           <h1 id="explore-title">Explore the Science and Philosophy of Homeopathy</h1>
           <p>
-            A focused learning gateway into the foundations, global relevance, responsible
-            research conversation, and educational pathways behind homeopathy.
+            Discover the history, philosophy, educational foundations, and evolving global
+            conversation around homeopathy through one structured institutional archive.
           </p>
           <div className="explore-stitch-actions">
-            <a href="#pillars">Accept the Active</a>
+            <a href="#pillars">Explore Archive</a>
             <a href="#domains">Discover Timeline</a>
           </div>
         </div>
@@ -207,7 +207,11 @@ function ExplorePage() {
                 View summits <ArrowRight size={13} />
               </Link>
             </div>
-            <img src="/images/explore-remedy-clean.png" alt="Homeopathic remedy bottle and botanical material" />
+            <div className="explore-stitch-ripple-visual" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </article>
         </div>
       </section>

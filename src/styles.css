@@ -14797,3 +14797,459 @@ body .site-header.stitch-layout-header .nav-search {
     width: 100%;
   }
 }
+
+/* Explore page: approved editorial reference */
+.explore-stitch-page {
+  --explore-ink: #071e31;
+  --explore-muted: #566777;
+  --explore-green: #0c9186;
+  --explore-green-dark: #06284c;
+  --explore-mint: #63d2c7;
+  --explore-gold: #d8bf3f;
+  background: #fafbfc;
+}
+
+.explore-stitch-hero {
+  display: flex;
+  align-items: center;
+  min-height: 360px;
+  padding-top: 56px;
+  padding-bottom: 58px;
+  background: #06284c;
+}
+
+.explore-stitch-hero::before {
+  width: 48%;
+  background:
+    linear-gradient(132deg, transparent 0 31%, rgba(74, 111, 151, 0.3) 31% 100%);
+  clip-path: polygon(36% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.explore-stitch-hero::after {
+  background:
+    radial-gradient(circle at 80% 24%, rgba(255, 255, 255, 0.1) 0 1px, transparent 1.5px);
+  background-size: 34px 34px;
+  opacity: 0.32;
+}
+
+.explore-stitch-hero-copy {
+  width: min(56%, 760px);
+}
+
+.explore-stitch-hero h1 {
+  max-width: 760px;
+  font-size: clamp(2.85rem, 4.1vw, 4.7rem);
+  line-height: 0.96;
+}
+
+.explore-stitch-hero p:not(.explore-stitch-kicker) {
+  max-width: 690px;
+  font-size: 1rem;
+}
+
+.explore-stitch-actions a {
+  min-width: 158px;
+  border-radius: 0;
+}
+
+.explore-stitch-section,
+.explore-stitch-capsules,
+.explore-stitch-pathway,
+.explore-stitch-glossary,
+.explore-stitch-myths,
+.explore-stitch-faq {
+  width: min(92vw, 1280px);
+}
+
+.explore-stitch-section {
+  padding: 52px 0 34px;
+}
+
+.explore-stitch-heading {
+  margin-bottom: 28px;
+}
+
+.explore-stitch-heading h2,
+.explore-stitch-capsules h2,
+.explore-stitch-pathway h2,
+.explore-stitch-glossary h2,
+.explore-stitch-myths h2,
+.explore-stitch-faq h2 {
+  font-size: clamp(1.7rem, 2.15vw, 2.5rem);
+}
+
+.explore-stitch-pillar-grid {
+  gap: 0;
+  border: 1px solid rgba(7, 30, 49, 0.1);
+  border-bottom: 0;
+}
+
+.explore-stitch-pillar-grid article {
+  min-height: 215px;
+  padding: 28px 25px;
+  border: 0;
+  border-right: 1px solid rgba(7, 30, 49, 0.1);
+  border-bottom: 1px solid rgba(7, 30, 49, 0.1);
+  box-shadow: none;
+}
+
+.explore-stitch-pillar-grid article:last-child {
+  border-right: 0;
+}
+
+.explore-stitch-pillar-grid h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.explore-stitch-feature-grid {
+  gap: 0;
+  margin-top: 0;
+  border: 1px solid rgba(7, 30, 49, 0.1);
+  border-top: 0;
+}
+
+.explore-stitch-feature-card,
+.explore-stitch-feature-card-reverse {
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 24px;
+  min-height: 220px;
+  padding: 20px;
+  border: 0;
+  border-right: 1px solid rgba(7, 30, 49, 0.1);
+}
+
+.explore-stitch-feature-card:last-child {
+  border-right: 0;
+}
+
+.explore-stitch-feature-card img,
+.explore-stitch-ripple-visual {
+  min-height: 180px;
+}
+
+.explore-stitch-feature-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.explore-stitch-ripple-visual {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 52% 48%, rgba(194, 243, 242, 0.78) 0 2px, transparent 3px),
+    radial-gradient(circle at 52% 48%, transparent 0 18px, rgba(132, 218, 223, 0.44) 19px 21px, transparent 22px 36px, rgba(78, 171, 188, 0.32) 37px 39px, transparent 40px 62px, rgba(60, 138, 160, 0.24) 63px 66px, transparent 67px),
+    linear-gradient(145deg, #061b34, #0c4d68 58%, #0e6570);
+}
+
+.explore-stitch-ripple-visual::before,
+.explore-stitch-ripple-visual::after,
+.explore-stitch-ripple-visual span {
+  position: absolute;
+  border: 1px solid rgba(160, 231, 231, 0.28);
+  border-radius: 50%;
+  content: "";
+}
+
+.explore-stitch-ripple-visual::before {
+  inset: 17% 12%;
+}
+
+.explore-stitch-ripple-visual::after {
+  inset: 30% 25%;
+}
+
+.explore-stitch-ripple-visual span:nth-child(1) {
+  inset: 41% 36%;
+}
+
+.explore-stitch-ripple-visual span:nth-child(2) {
+  width: 4px;
+  height: 4px;
+  top: 20%;
+  left: 22%;
+  background: #83d8d4;
+  border: 0;
+  box-shadow: 82px 94px 0 rgba(255,255,255,.5), 126px 32px 0 rgba(102,211,204,.75);
+}
+
+.explore-stitch-ripple-visual span:nth-child(3) {
+  width: 1px;
+  height: 120%;
+  top: -10%;
+  left: 52%;
+  background: rgba(255,255,255,.12);
+  border: 0;
+  border-radius: 0;
+  transform: rotate(28deg);
+}
+
+.explore-stitch-capsules {
+  padding: 54px 0 52px;
+}
+
+.explore-stitch-capsules > div {
+  gap: 0;
+  margin-top: 28px;
+  border-top: 1px solid rgba(7, 30, 49, 0.1);
+  border-bottom: 1px solid rgba(7, 30, 49, 0.1);
+}
+
+.explore-stitch-capsules article {
+  min-height: 166px;
+  padding: 30px 30px;
+  background: transparent;
+  border-left: 0;
+  border-right: 1px solid rgba(7, 30, 49, 0.1);
+  box-shadow: none;
+}
+
+.explore-stitch-capsules article:last-child {
+  border-right: 0;
+}
+
+.explore-stitch-pathway {
+  padding: 58px 0 64px;
+  background:
+    linear-gradient(#fafbfc, #fafbfc) padding-box;
+}
+
+.explore-stitch-pathway > div {
+  position: relative;
+  gap: 24px;
+  margin-top: 34px;
+}
+
+.explore-stitch-pathway > div::before {
+  position: absolute;
+  top: 23px;
+  right: 9%;
+  left: 9%;
+  height: 1px;
+  content: "";
+  background: rgba(7, 30, 49, 0.14);
+}
+
+.explore-stitch-pathway article {
+  position: relative;
+  z-index: 1;
+  padding: 0 18px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.explore-stitch-pathway article span {
+  width: 48px;
+  height: 48px;
+  color: #ffffff;
+  background: var(--explore-green-dark);
+  box-shadow: 0 0 0 9px #fafbfc;
+}
+
+.explore-stitch-pathway article:nth-child(even) span {
+  background: var(--explore-green);
+}
+
+.explore-stitch-domains {
+  padding-top: 58px;
+  padding-bottom: 62px;
+  background: #06284c;
+}
+
+.explore-stitch-domain-grid {
+  gap: 16px;
+}
+
+.explore-stitch-domain-grid article {
+  min-height: 190px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.explore-stitch-stats {
+  width: 100%;
+  max-width: none;
+  padding: 35px max(4vw, calc((100vw - 1280px) / 2));
+}
+
+.explore-stitch-stats strong {
+  color: #0c7f77;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+}
+
+.explore-stitch-glossary {
+  grid-template-columns: minmax(270px, 0.32fr) minmax(0, 0.68fr);
+  gap: 68px;
+  padding: 62px 0;
+}
+
+.explore-stitch-terms {
+  gap: 26px 42px;
+}
+
+.explore-stitch-terms article {
+  min-height: 120px;
+}
+
+.explore-stitch-myths {
+  padding: 32px 0 60px;
+}
+
+.explore-stitch-myths > div {
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.explore-stitch-myths article {
+  min-height: 150px;
+  padding: 26px 28px;
+  box-shadow: 0 16px 35px rgba(6, 40, 76, 0.045);
+}
+
+.explore-stitch-faq {
+  grid-template-columns: minmax(300px, 0.32fr) minmax(0, 0.68fr);
+  gap: 60px;
+  padding: 42px 0 72px;
+}
+
+.explore-stitch-faq-copy article {
+  min-height: 220px;
+  padding: 28px;
+  background: #06284c;
+}
+
+.explore-stitch-faq-list {
+  gap: 0;
+  border-top: 1px solid rgba(7, 30, 49, 0.12);
+}
+
+.explore-stitch-faq-list details {
+  border: 0;
+  border-bottom: 1px solid rgba(7, 30, 49, 0.12);
+}
+
+.explore-stitch-faq-list summary {
+  min-height: 61px;
+  padding-inline: 18px;
+}
+
+.explore-stitch-faq-list details[open] {
+  background: #f3f8f7;
+}
+
+@media (max-width: 1100px) {
+  .explore-stitch-hero-copy {
+    width: 70%;
+  }
+
+  .explore-stitch-feature-card,
+  .explore-stitch-feature-card-reverse {
+    border-right: 0;
+    border-bottom: 1px solid rgba(7, 30, 49, 0.1);
+  }
+
+  .explore-stitch-capsules article {
+    border-right: 0;
+    border-bottom: 1px solid rgba(7, 30, 49, 0.1);
+  }
+}
+
+@media (max-width: 860px) {
+  .explore-stitch-hero {
+    min-height: 440px;
+    align-items: end;
+    padding: 70px 22px 52px;
+  }
+
+  .explore-stitch-hero::before {
+    width: 72%;
+    opacity: 0.7;
+  }
+
+  .explore-stitch-hero-copy {
+    width: 100%;
+  }
+
+  .explore-stitch-hero h1 {
+    font-size: clamp(2.35rem, 12vw, 3.5rem);
+  }
+
+  .explore-stitch-section,
+  .explore-stitch-capsules,
+  .explore-stitch-pathway,
+  .explore-stitch-glossary,
+  .explore-stitch-myths,
+  .explore-stitch-faq {
+    width: min(90vw, 620px);
+  }
+
+  .explore-stitch-pillar-grid {
+    border: 0;
+  }
+
+  .explore-stitch-pillar-grid article {
+    min-height: 0;
+    border-right: 0;
+  }
+
+  .explore-stitch-feature-grid {
+    border: 0;
+  }
+
+  .explore-stitch-feature-card,
+  .explore-stitch-feature-card-reverse {
+    grid-template-columns: 1fr;
+    padding: 18px 0;
+  }
+
+  .explore-stitch-feature-card img,
+  .explore-stitch-ripple-visual {
+    height: 220px;
+  }
+
+  .explore-stitch-feature-card-reverse > div:first-child {
+    grid-row: 2;
+  }
+
+  .explore-stitch-ripple-visual {
+    grid-row: 1;
+  }
+
+  .explore-stitch-pathway > div::before {
+    display: none;
+  }
+
+  .explore-stitch-glossary,
+  .explore-stitch-faq {
+    gap: 36px;
+  }
+}
+
+@media (max-width: 520px) {
+  .explore-stitch-hero {
+    min-height: 480px;
+  }
+
+  .explore-stitch-actions {
+    display: grid;
+  }
+
+  .explore-stitch-actions a {
+    width: 100%;
+  }
+
+  .explore-stitch-pillar-grid article,
+  .explore-stitch-capsules article,
+  .explore-stitch-myths article {
+    padding-inline: 20px;
+  }
+
+  .explore-stitch-domain-head {
+    gap: 16px;
+  }
+}

@@ -4,6 +4,8 @@ dist/
 npm-debug.log*
 vite-dev.*.log
 .vite-dev*.log
+vite.log
+vite-error.log
 tmp-images/
 .codex-remote-attachments/
 domdump.html
