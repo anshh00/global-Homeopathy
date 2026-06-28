@@ -17046,3 +17046,252 @@ body .site-header.stitch-layout-header .nav-search {
     min-height: 300px;
   }
 }
+
+/* Summit page typography and spacing correction */
+.summit-stitch-page {
+  --summit-wrap: min(92vw, 1360px);
+  --summit-h1: clamp(2.85rem, 4.4vw, 4.85rem);
+  --summit-h2: clamp(1.85rem, 2.65vw, 3.05rem);
+  --summit-h3: clamp(1.05rem, 1.18vw, 1.28rem);
+  --summit-body: clamp(0.96rem, 0.98vw, 1.05rem);
+}
+
+.summit-stitch-section,
+.summit-stitch-chapters,
+.summit-stitch-dark,
+.summit-stitch-program,
+.summit-stitch-participation,
+.summit-stitch-hero {
+  width: var(--summit-wrap);
+}
+
+.summit-stitch-hero {
+  grid-template-columns: minmax(360px, 0.82fr) minmax(520px, 1.18fr);
+  gap: clamp(32px, 4.2vw, 64px);
+  min-height: auto;
+  padding-block: clamp(48px, 5.4vw, 78px);
+}
+
+.summit-stitch-hero h1,
+.summit-stitch-intro h2,
+.summit-stitch-heading h2,
+.summit-stitch-dark h2,
+.summit-stitch-program h2,
+.summit-stitch-participation h2,
+.summit-stitch-chapter h3,
+.summit-stitch-track-grid h3,
+.summit-stitch-route-grid h3 {
+  font-family: inherit;
+}
+
+.summit-stitch-hero h1 {
+  max-width: 650px;
+  font-size: var(--summit-h1);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.summit-stitch-hero-copy > p:not(.summit-stitch-kicker),
+.summit-stitch-intro > p,
+.summit-stitch-dark p:not(.summit-stitch-kicker),
+.summit-stitch-program-copy p,
+.summit-stitch-route-grid p {
+  font-size: var(--summit-body);
+  line-height: 1.68;
+}
+
+.summit-stitch-visual {
+  min-height: clamp(380px, 34vw, 520px);
+  border: 1px solid rgba(0, 127, 95, 0.12);
+  border-radius: 24px;
+}
+
+.summit-stitch-stats {
+  max-width: 620px;
+  margin-top: 28px;
+  padding-top: 20px;
+}
+
+.summit-stitch-stats strong {
+  font-size: clamp(1.55rem, 1.95vw, 2.25rem);
+}
+
+.summit-stitch-intro {
+  grid-template-columns: minmax(320px, 0.62fr) minmax(420px, 1fr);
+  gap: clamp(28px, 4.6vw, 70px);
+  padding-block: clamp(38px, 4.2vw, 62px);
+}
+
+.summit-stitch-intro h2,
+.summit-stitch-heading h2,
+.summit-stitch-dark h2,
+.summit-stitch-program h2,
+.summit-stitch-participation h2 {
+  font-size: var(--summit-h2);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.summit-stitch-heading {
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.summit-stitch-chapters {
+  padding-block: clamp(42px, 4.6vw, 68px);
+}
+
+.summit-stitch-chapter-grid {
+  gap: 16px;
+}
+
+.summit-stitch-chapter {
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(6, 42, 77, 0.055);
+}
+
+.summit-stitch-chapter > div {
+  padding: 20px;
+}
+
+.summit-stitch-chapter h3 {
+  min-height: 2.4em;
+  font-size: var(--summit-h3);
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+
+.summit-stitch-chapter p:not(.summit-stitch-location) {
+  min-height: 5.05em;
+  font-size: 0.88rem;
+  line-height: 1.52;
+}
+
+.summit-stitch-chapter ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 10px;
+  margin-block: 16px;
+}
+
+.summit-stitch-chapter li {
+  font-size: 0.78rem;
+}
+
+.summit-stitch-dark {
+  grid-template-columns: minmax(340px, 0.78fr) minmax(500px, 1.22fr);
+  gap: clamp(28px, 4vw, 62px);
+  padding: clamp(38px, 4.2vw, 62px);
+  border-radius: 26px;
+}
+
+.summit-stitch-track-grid article {
+  min-height: 166px;
+  padding: 24px;
+}
+
+.summit-stitch-program {
+  grid-template-columns: minmax(380px, 0.95fr) minmax(420px, 1.05fr);
+  gap: clamp(30px, 4.4vw, 66px);
+  padding-block: clamp(46px, 5vw, 74px);
+}
+
+.summit-stitch-program-media,
+.summit-stitch-program-media img {
+  min-height: clamp(330px, 30vw, 440px);
+}
+
+.summit-stitch-program-media {
+  border-radius: 22px;
+}
+
+.summit-stitch-program-copy li {
+  min-height: 58px;
+  font-size: 0.94rem;
+}
+
+.summit-stitch-participation {
+  padding-block: clamp(38px, 4.4vw, 64px) clamp(56px, 6vw, 86px);
+}
+
+.summit-stitch-route-grid article {
+  min-height: 178px;
+  padding: 24px;
+}
+
+@media (max-width: 1100px) {
+  .summit-stitch-hero,
+  .summit-stitch-intro,
+  .summit-stitch-dark,
+  .summit-stitch-program {
+    grid-template-columns: 1fr;
+  }
+
+  .summit-stitch-hero-copy,
+  .summit-stitch-hero h1 {
+    max-width: 780px;
+  }
+
+  .summit-stitch-chapter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .summit-stitch-page {
+    --summit-wrap: min(calc(100% - 28px), 1360px);
+    --summit-h1: clamp(2.35rem, 11.5vw, 3.25rem);
+    --summit-h2: clamp(1.75rem, 8vw, 2.35rem);
+  }
+
+  .summit-stitch-hero {
+    padding-block: 34px 42px;
+  }
+
+  .summit-stitch-hero-copy > p:not(.summit-stitch-kicker),
+  .summit-stitch-intro > p,
+  .summit-stitch-dark p:not(.summit-stitch-kicker),
+  .summit-stitch-program-copy p,
+  .summit-stitch-route-grid p {
+    font-size: 0.94rem;
+    line-height: 1.58;
+  }
+
+  .summit-stitch-actions a {
+    width: 100%;
+  }
+
+  .summit-stitch-stats,
+  .summit-stitch-chapter-grid,
+  .summit-stitch-track-grid,
+  .summit-stitch-route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summit-stitch-stats {
+    gap: 12px;
+  }
+
+  .summit-stitch-visual {
+    min-height: 330px;
+    border-radius: 18px;
+  }
+
+  .summit-stitch-chapter h3,
+  .summit-stitch-chapter p:not(.summit-stitch-location) {
+    min-height: 0;
+  }
+
+  .summit-stitch-chapter ul {
+    grid-template-columns: 1fr;
+  }
+
+  .summit-stitch-dark {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  .summit-stitch-program-media,
+  .summit-stitch-program-media img {
+    min-height: 280px;
+  }
+}
