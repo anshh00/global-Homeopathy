@@ -15,9 +15,9 @@ import {
 import { leaders } from "../data/siteData.js";
 
 const liveReach = [
-  { icon: Globe2, value: "Global", label: "Leadership archive" },
-  { icon: Users, value: "Summit", label: "Expert network" },
-  { icon: FileText, value: "Research", label: "Proceedings desk" },
+  { icon: Globe2, value: "110+", label: "Member nations" },
+  { icon: Users, value: "15,420", label: "Active scholars" },
+  { icon: FileText, value: "1.2k+", label: "Indexed papers" },
 ];
 
 const portalTabs = [
@@ -69,20 +69,18 @@ const scholarlyPapers = [
 function LeadersPage() {
   const featuredLeader = leaders.find((leader) => leader.featured) || leaders[0];
   const directoryLeaders = leaders.filter((leader) => leader.name !== featuredLeader.name).slice(0, 4);
-  const heroLeaders = leaders.slice(0, 4);
 
   return (
     <main className="leaders-portal-page">
       <section className="leaders-portal-hero">
         <div className="leaders-portal-shell leaders-portal-hero-grid">
           <div className="leaders-portal-hero-copy">
-            <p className="leaders-portal-kicker">Global leadership registry</p>
-            <h1>Leaders shaping the global homeopathy movement.</h1>
+            <p className="leaders-portal-kicker">Global leadership and summit archive</p>
+            <h1>Master Institutional Portal for World Homeopathy Summits</h1>
             <p>
-              A structured institutional directory for founders, educators,
-              researchers, summit voices, and modern contributors. Burnett
-              Homeopathy Pvt. Ltd. is represented through global summit activity,
-              research visibility, and leadership contribution.
+              The editorial repository of the Global Homeopathy Foundation, uniting
+              international pedagogy, verified resources, and professional
+              summit records in one institutional leadership portal.
             </p>
             <div className="leaders-portal-actions">
               <a href="#leadership-archive">
@@ -94,42 +92,22 @@ function LeadersPage() {
             </div>
           </div>
 
-          <aside className="leaders-hero-console" aria-label="Global leadership console">
-            <div className="leaders-console-feature">
-              <img src={featuredLeader.image} alt={featuredLeader.name} />
-              <div>
-                <span>Featured modern contributor</span>
-                <h2>{featuredLeader.name}</h2>
-                <p>Chairman, Burnett Homeopathy Pvt. Ltd.</p>
-              </div>
+          <aside className="leaders-reach-panel" aria-label="Live global reach">
+            <div>
+              <span>Live global reach</span>
+              <Search size={16} />
             </div>
-
-            <div className="leaders-console-stats">
-              {liveReach.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <article key={item.label}>
-                    <Icon size={18} />
-                    <strong>{item.value}</strong>
-                    <span>{item.label}</span>
-                  </article>
-                );
-              })}
-            </div>
-
-            <div className="leaders-console-list">
-              <div>
-                <span>Directory preview</span>
-                <Search size={15} />
-              </div>
-              {heroLeaders.map((leader) => (
-                <a href={leader.source} key={leader.name} target="_blank" rel="noreferrer">
-                  <strong>{leader.name}</strong>
-                  <span>{leader.role}</span>
-                  <ArrowRight size={13} />
-                </a>
-              ))}
-            </div>
+            {liveReach.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article key={item.label}>
+                  <Icon size={20} />
+                  <strong>{item.value}</strong>
+                  <p>{item.label}</p>
+                  <ArrowRight size={14} />
+                </article>
+              );
+            })}
           </aside>
         </div>
       </section>
