@@ -1,7 +1,6 @@
 import React from "react";
 import {
   ArrowRight,
-  CalendarDays,
   Download,
   FileText,
   Globe2,
@@ -77,11 +76,26 @@ const timelineItems = [
 ];
 
 const expertPlaceholders = [
-  "Expert profile",
-  "Research speaker",
-  "Clinical leader",
-  "Education advisor",
-  "Institutional voice",
+  {
+    role: "Summit Chair",
+    text: "Leadership profile, photograph, designation, and institutional contribution to be added.",
+  },
+  {
+    role: "Research Speaker",
+    text: "Evidence, publication, and academic contribution details to be added.",
+  },
+  {
+    role: "Clinical Leader",
+    text: "Practice background, specialization, and summit participation details to be added.",
+  },
+  {
+    role: "Education Advisor",
+    text: "Teaching, training, and professional development details to be added.",
+  },
+  {
+    role: "Institutional Voice",
+    text: "Organization, country, and collaboration details to be added.",
+  },
 ];
 
 const mediaDesk = [
@@ -228,11 +242,11 @@ function SummitPage() {
           <a href="#summit-media">View all experts <ArrowRight size={14} /></a>
         </div>
         <div className="summit-expert-row">
-          {expertPlaceholders.map((label, index) => (
-            <article key={label}>
-              <div>{index + 1}</div>
-              <h3>{label}</h3>
-              <p>Name, photograph, designation, and contribution details to be added.</p>
+          {expertPlaceholders.map((expert) => (
+            <article key={expert.role}>
+              <div>TBA</div>
+              <h3>{expert.role}</h3>
+              <p>{expert.text}</p>
             </article>
           ))}
         </div>

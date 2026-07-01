@@ -17947,3 +17947,438 @@ body .site-header.stitch-layout-header .nav-search {
     grid-template-columns: 1fr;
   }
 }
+
+/* Summit page: institutional alignment layer */
+body:has(.summit-foundation-page) {
+  overflow-x: hidden;
+  background: #f7faf8;
+}
+
+body:has(.summit-foundation-page) .site-header {
+  min-height: 58px;
+  padding: 7px max(2vw, calc((100vw - 1320px) / 2));
+  border-bottom: 1px solid rgba(6, 42, 77, 0.08);
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 8px 22px rgba(6, 42, 77, 0.045);
+}
+
+body:has(.summit-foundation-page) .site-header::before,
+body:has(.summit-foundation-page) .site-header::after {
+  display: none;
+}
+
+body:has(.summit-foundation-page) .brand {
+  max-width: 260px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body:has(.summit-foundation-page) .brand strong {
+  color: #062a22;
+  font-size: 0.82rem;
+}
+
+body:has(.summit-foundation-page) .brand small {
+  color: #566b66;
+  font-size: 0.56rem;
+}
+
+body:has(.summit-foundation-page) .header-emblem {
+  width: 30px;
+  height: 30px;
+}
+
+body:has(.summit-foundation-page) .site-nav {
+  flex: 0 0 auto;
+  gap: 17px;
+  min-height: 34px;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body:has(.summit-foundation-page) .site-nav a,
+body:has(.summit-foundation-page) .nav-search {
+  position: relative;
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+  border-radius: 0;
+  color: #132c3a;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+body:has(.summit-foundation-page) .site-nav a.active {
+  color: #007f5f;
+  background: transparent;
+}
+
+body:has(.summit-foundation-page) .site-nav a.active::after {
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: #007f5f;
+}
+
+body:has(.summit-foundation-page) .nav-search {
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  padding: 0;
+}
+
+body:has(.summit-foundation-page) .stitch-nav-join,
+body:has(.summit-foundation-page) .stitch-nav-donate {
+  min-height: 28px;
+  padding-inline: 13px;
+  border-radius: 2px;
+  font-size: 0.64rem;
+}
+
+body:has(.summit-foundation-page) .stitch-nav-join {
+  background: #062a4d;
+  color: #ffffff;
+}
+
+body:has(.summit-foundation-page) .stitch-nav-donate {
+  border: 1px solid rgba(6, 42, 77, 0.16);
+  background: #ffffff;
+  color: #062a4d;
+}
+
+body:has(.summit-foundation-page) .stitch-nav-join::after,
+body:has(.summit-foundation-page) .stitch-nav-donate::after {
+  display: none;
+}
+
+.summit-foundation-page {
+  --sf-shell: min(1320px, calc(100% - 72px));
+  background:
+    radial-gradient(circle at 12% 20%, rgba(69, 197, 193, 0.08), transparent 22rem),
+    linear-gradient(180deg, #f8faf8 0%, #ffffff 48%, #f3f8f6 100%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.summit-foundation-page :is(h1, h2, h3, p) {
+  margin-top: 0;
+}
+
+.summit-foundation-page a {
+  text-decoration: none;
+}
+
+.summit-foundation-hero {
+  position: relative;
+  isolation: isolate;
+  border-bottom: 1px solid rgba(6, 42, 77, 0.12);
+}
+
+.summit-foundation-hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent 0 49px, rgba(255, 255, 255, 0.045) 50px),
+    linear-gradient(0deg, transparent 0 49px, rgba(255, 255, 255, 0.04) 50px);
+  background-size: 50px 50px;
+  opacity: 0.38;
+}
+
+.summit-foundation-hero-grid {
+  min-height: 380px;
+  grid-template-columns: minmax(390px, 0.72fr) minmax(420px, 1fr);
+  gap: clamp(34px, 5vw, 84px);
+  padding: clamp(42px, 5vw, 74px) 0 44px;
+}
+
+.summit-foundation-hero h1 {
+  max-width: 760px;
+  font-size: clamp(2.45rem, 4.6vw, 4.75rem);
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.summit-foundation-hero p:not(.summit-foundation-kicker) {
+  max-width: 680px;
+  font-size: 1rem;
+}
+
+.summit-foundation-map {
+  min-height: 300px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.summit-foundation-actions a,
+.summit-dialogue a {
+  border-radius: 2px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.summit-foundation-actions a:hover,
+.summit-dialogue a:hover,
+.summit-featured-copy a:hover,
+.summit-archive a:hover,
+.summit-section-heading-row > a:hover,
+.summit-media-grid a:hover {
+  transform: translateY(-2px);
+}
+
+.summit-foundation-stats {
+  background: rgba(3, 23, 43, 0.42);
+}
+
+.summit-foundation-stats article {
+  min-height: 88px;
+}
+
+.summit-featured,
+.summit-archive,
+.summit-experts,
+.summit-media-desk {
+  padding-block: clamp(38px, 5vw, 62px);
+}
+
+.summit-featured {
+  position: relative;
+  grid-template-columns: minmax(420px, 0.95fr) minmax(440px, 1fr);
+  border-bottom: 1px solid var(--sf-line);
+}
+
+.summit-featured::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(11, 124, 102, 0.28), transparent);
+}
+
+.summit-featured-image {
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(6, 42, 77, 0.12);
+}
+
+.summit-featured-image img {
+  display: block;
+}
+
+.summit-featured-copy h2,
+.summit-section-heading h2,
+.summit-dialogue h2 {
+  letter-spacing: -0.035em;
+}
+
+.summit-featured-copy > p {
+  max-width: 720px;
+}
+
+.summit-featured-copy li::before {
+  top: 4px;
+  width: 13px;
+  height: 13px;
+  border: 3px solid rgba(69, 197, 193, 0.2);
+  background: var(--sf-green);
+  box-shadow: inset 0 0 0 2px #ffffff;
+}
+
+.summit-archive {
+  width: min(1380px, calc(100% - 72px));
+}
+
+.summit-section-heading {
+  margin-bottom: 28px;
+}
+
+.summit-archive-grid {
+  gap: 1px;
+  border: 1px solid var(--sf-line);
+  background: var(--sf-line);
+}
+
+.summit-archive-grid article {
+  min-height: 236px;
+  border: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 248, 0.92)),
+    #ffffff;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.summit-archive-grid article:hover {
+  z-index: 3;
+  transform: translateY(-5px);
+  box-shadow: 0 22px 60px rgba(6, 42, 77, 0.12);
+}
+
+.summit-archive-grid article > div {
+  padding: 26px;
+}
+
+.summit-archive-grid strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.35rem;
+  font-weight: 600;
+}
+
+.summit-timeline {
+  margin-top: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(69, 197, 193, 0.2), transparent 18rem),
+    #062a4d;
+}
+
+.summit-experts {
+  border-bottom: 1px solid var(--sf-line);
+}
+
+.summit-expert-row {
+  gap: 1px;
+  border: 1px solid var(--sf-line);
+  background: var(--sf-line);
+}
+
+.summit-expert-row article {
+  min-height: 205px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.9);
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.summit-expert-row article:hover {
+  background: #ffffff;
+  transform: translateY(-4px);
+}
+
+.summit-expert-row article > div {
+  width: 74px;
+  height: 74px;
+  border: 1px dashed rgba(11, 124, 102, 0.35);
+  color: var(--sf-green);
+  background: rgba(69, 197, 193, 0.12);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+.summit-media-desk {
+  padding-top: clamp(30px, 4vw, 50px);
+}
+
+.summit-media-grid {
+  gap: 1px;
+  border: 1px solid var(--sf-line);
+  background: var(--sf-line);
+}
+
+.summit-media-grid article {
+  min-height: 160px;
+  border: 0;
+  background: #ffffff;
+}
+
+.summit-media-grid svg {
+  border-radius: 50%;
+}
+
+.summit-dialogue {
+  width: min(1320px, calc(100% - 72px));
+  margin-top: 8px;
+  border-radius: 2px;
+  background:
+    linear-gradient(100deg, rgba(69, 197, 193, 0.18), transparent 46%),
+    linear-gradient(135deg, #062a4d, #041d36);
+  box-shadow: 0 28px 70px rgba(6, 42, 77, 0.16);
+}
+
+@media (max-width: 1050px) {
+  body:has(.summit-foundation-page) .site-header {
+    gap: 14px;
+    padding-inline: 18px;
+  }
+
+  body:has(.summit-foundation-page) .site-nav {
+    gap: 13px;
+    overflow-x: auto;
+  }
+
+  .summit-foundation-page {
+    --sf-shell: min(calc(100% - 36px), 1320px);
+  }
+
+  .summit-foundation-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summit-foundation-map {
+    border-left: 0;
+  }
+
+  .summit-archive,
+  .summit-dialogue {
+    width: min(calc(100% - 36px), 1320px);
+  }
+}
+
+@media (max-width: 720px) {
+  body:has(.summit-foundation-page) .site-header {
+    align-items: flex-start;
+  }
+
+  body:has(.summit-foundation-page) .brand {
+    max-width: 100%;
+  }
+
+  body:has(.summit-foundation-page) .site-nav {
+    width: 100%;
+    padding-bottom: 2px;
+  }
+
+  .summit-foundation-page {
+    --sf-shell: min(calc(100% - 28px), 1320px);
+  }
+
+  .summit-foundation-hero-grid {
+    gap: 26px;
+  }
+
+  .summit-foundation-hero h1 {
+    font-size: clamp(2.25rem, 11vw, 3.4rem);
+  }
+
+  .summit-foundation-map {
+    min-height: 180px;
+  }
+
+  .summit-foundation-stats .summit-foundation-shell {
+    gap: 0;
+  }
+
+  .summit-foundation-stats article {
+    padding: 14px 0;
+  }
+
+  .summit-archive,
+  .summit-dialogue {
+    width: min(calc(100% - 28px), 1320px);
+  }
+
+  .summit-section-heading {
+    text-align: left;
+  }
+
+  .summit-section-heading h2 {
+    margin-inline: 0;
+  }
+}
