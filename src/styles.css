@@ -21442,37 +21442,37 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .jobs-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
 }
 
 .job-row {
   position: relative;
   display: grid;
-  gap: 11px;
+  gap: 8px;
   align-items: start;
   min-height: 100%;
-  padding: 17px 18px 16px;
+  padding: 13px 14px 12px;
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(234, 248, 245, 0.38)),
     var(--white);
   border: 1px solid rgba(6, 42, 77, 0.12);
-  border-radius: 18px;
-  box-shadow: 0 12px 34px rgba(6, 42, 77, 0.07);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(6, 42, 77, 0.055);
 }
 
 .job-row::before {
   position: absolute;
   inset: 0 auto 0 0;
-  width: 4px;
+  width: 3px;
   content: "";
   background: linear-gradient(180deg, var(--emerald), var(--gold));
 }
 
 .job-row-region {
   display: flex;
-  gap: 10px;
+  gap: 7px;
   align-items: center;
   justify-content: space-between;
   color: var(--emerald);
@@ -21481,18 +21481,18 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .job-row-region > span:first-child {
   display: inline-flex;
-  gap: 7px;
+  gap: 5px;
   align-items: center;
-  font-size: 0.74rem;
+  font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .job-family {
   flex: 0 0 auto;
-  padding: 4px 8px;
+  padding: 3px 7px;
   color: var(--navy);
-  font-size: 0.6rem;
+  font-size: 0.54rem;
   font-weight: 950;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -21502,9 +21502,9 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 }
 
 .job-row-main p {
-  margin: 0 0 5px;
+  margin: 0 0 3px;
   color: var(--gold);
-  font-size: 0.66rem;
+  font-size: 0.58rem;
   font-weight: 950;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -21513,20 +21513,21 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 .job-row-main h3 {
   color: #063124;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.12rem, 1.35vw, 1.42rem);
+  font-size: clamp(0.98rem, 1.05vw, 1.22rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.05;
   letter-spacing: -0.035em;
 }
 
 .job-row-main span {
   display: flex;
-  gap: 6px;
+  gap: 5px;
   align-items: center;
-  margin-top: 6px;
+  margin-top: 4px;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 750;
+  line-height: 1.25;
 }
 
 .job-row-main svg {
@@ -21535,25 +21536,29 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .job-row-detail strong {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
   color: var(--navy);
-  font-size: 0.68rem;
+  font-size: 0.58rem;
   font-weight: 950;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .job-row-detail p {
+  display: -webkit-box;
+  overflow: hidden;
   color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.42;
+  font-size: 0.68rem;
+  line-height: 1.34;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .job-row-detail {
-  padding: 10px 11px;
+  padding: 8px 9px;
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(6, 42, 77, 0.08);
-  border-radius: 13px;
+  border-radius: 10px;
 }
 
 .job-row > a {
@@ -21562,10 +21567,10 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   align-items: center;
   justify-content: center;
   justify-self: start;
-  min-height: 37px;
-  padding: 0 13px;
+  min-height: 32px;
+  padding: 0 11px;
   color: var(--navy);
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   font-weight: 950;
   white-space: nowrap;
   background: rgba(255, 255, 255, 0.76);
@@ -21663,6 +21668,10 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 @media (max-width: 1180px) {
   .jobs-filter-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .jobs-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
