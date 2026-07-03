@@ -21771,18 +21771,18 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 }
 
 .media-coverage-shell {
-  width: min(92vw, 1500px);
+  width: min(1320px, calc(100% - 48px));
   margin: 0 auto;
 }
 
 .media-coverage-hero {
-  padding: clamp(54px, 7vw, 112px) 0 0;
+  padding: clamp(34px, 5vw, 70px) 0 0;
 }
 
 .media-coverage-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.72fr);
-  gap: clamp(28px, 5vw, 74px);
+  grid-template-columns: minmax(340px, 0.78fr) minmax(520px, 1.22fr);
+  gap: clamp(28px, 4vw, 56px);
   align-items: stretch;
 }
 
@@ -21806,10 +21806,11 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .media-hero-copy {
   display: flex;
-  min-height: 520px;
+  min-height: 430px;
+  max-width: 520px;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(18px, 2vw, 28px) 0;
+  padding: clamp(12px, 1.5vw, 22px) 0;
 }
 
 .media-hero-copy h1,
@@ -21820,18 +21821,18 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   margin-top: 18px;
   color: #052f26;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.9rem, 5vw, 5.8rem);
-  font-weight: 800;
-  line-height: 0.96;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.65rem, 3.45vw, 3.8rem);
+  font-weight: 500;
+  line-height: 1.03;
+  letter-spacing: -0.045em;
 }
 
 .media-hero-copy p {
-  max-width: 760px;
-  margin-top: 24px;
+  max-width: 500px;
+  margin-top: 22px;
   color: #486174;
-  font-size: clamp(1.03rem, 1.35vw, 1.3rem);
-  line-height: 1.75;
+  font-size: 0.96rem;
+  line-height: 1.68;
 }
 
 .media-hero-actions {
@@ -21882,7 +21883,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 }
 
 .media-feature-image {
-  height: 300px;
+  height: 260px;
   overflow: hidden;
 }
 
@@ -21894,7 +21895,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 }
 
 .media-feature-body {
-  padding: 28px;
+  padding: 24px;
   color: rgba(255, 255, 255, 0.76);
 }
 
@@ -21911,7 +21912,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   margin: 8px 0 12px;
   color: #fff;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.7rem, 2.6vw, 2.45rem);
+  font-size: clamp(1.55rem, 2vw, 2.1rem);
   line-height: 1.04;
 }
 
@@ -21932,13 +21933,13 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 .media-hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin-top: clamp(32px, 5vw, 62px);
+  margin-top: clamp(24px, 4vw, 46px);
   border-top: 1px solid rgba(14, 107, 80, 0.16);
   border-bottom: 1px solid rgba(14, 107, 80, 0.16);
 }
 
 .media-hero-stats div {
-  padding: 26px clamp(16px, 3vw, 38px);
+  padding: 20px clamp(16px, 3vw, 34px);
   border-right: 1px solid rgba(14, 107, 80, 0.16);
 }
 
@@ -21949,7 +21950,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 .media-hero-stats strong {
   display: block;
   color: #087d61;
-  font-size: clamp(1.85rem, 3vw, 3rem);
+  font-size: clamp(1.55rem, 2.45vw, 2.45rem);
   font-weight: 950;
   line-height: 1;
 }
@@ -22002,7 +22003,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 }
 
 .media-section {
-  padding: clamp(68px, 7vw, 118px) 0;
+  padding: clamp(48px, 6vw, 84px) 0;
 }
 
 .media-section-intro {
@@ -22010,7 +22011,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.65fr);
   gap: clamp(24px, 5vw, 70px);
   align-items: end;
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
 .media-section-intro.compact {
@@ -22020,13 +22021,13 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .media-section-intro h2 {
   margin-top: 14px;
-  font-size: clamp(2.3rem, 4.2vw, 4.7rem);
+  font-size: clamp(2rem, 3vw, 3.45rem);
 }
 
 .media-section-intro p {
   color: #586d7d;
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 0.98rem;
+  line-height: 1.72;
 }
 
 .media-coverage-grid {
@@ -22059,7 +22060,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .media-card-image {
   display: block;
-  height: 190px;
+  height: 165px;
   overflow: hidden;
   background: #dceae4;
 }
@@ -22068,7 +22069,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 22px;
+  padding: 18px;
 }
 
 .media-card-meta,
@@ -22096,13 +22097,13 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 .media-card-body p {
   margin-top: 12px;
   color: #536879;
-  font-size: 0.91rem;
-  line-height: 1.65;
+  font-size: 0.86rem;
+  line-height: 1.58;
 }
 
 .media-card-footer {
   margin-top: auto;
-  padding-top: 18px;
+  padding-top: 14px;
   color: #5a6f80;
   font-size: 0.78rem;
   font-weight: 850;
@@ -22122,7 +22123,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
   gap: clamp(28px, 5vw, 76px);
   align-items: start;
-  padding: clamp(46px, 6vw, 76px);
+  padding: clamp(36px, 5vw, 60px);
   border: 1px solid rgba(14, 107, 80, 0.18);
   border-radius: 28px;
   background:
@@ -22138,7 +22139,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .media-editorial-panel h2 {
   color: #fff;
-  font-size: clamp(2rem, 3.5vw, 4rem);
+  font-size: clamp(1.9rem, 3vw, 3.35rem);
 }
 
 .media-standard-grid {
@@ -22148,8 +22149,8 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 }
 
 .media-standard-grid article {
-  min-height: 210px;
-  padding: 24px;
+  min-height: 180px;
+  padding: 22px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.06);
 }
@@ -22170,7 +22171,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 }
 
 .media-archive-section {
-  padding: clamp(72px, 7vw, 112px) 0;
+  padding: clamp(54px, 6vw, 90px) 0;
 }
 
 .media-archive-list {
@@ -22218,8 +22219,8 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-  margin-bottom: clamp(72px, 8vw, 120px);
-  padding: clamp(36px, 5vw, 62px);
+  margin-bottom: clamp(54px, 7vw, 96px);
+  padding: clamp(32px, 4vw, 52px);
   border-radius: 28px;
   background:
     linear-gradient(90deg, rgba(6, 47, 38, 0.94), rgba(8, 125, 97, 0.9)),
@@ -22234,7 +22235,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 .media-newsroom-cta h2 {
   max-width: 760px;
   color: #fff;
-  font-size: clamp(2rem, 3.5vw, 4rem);
+  font-size: clamp(1.9rem, 3vw, 3.35rem);
 }
 
 .media-newsroom-cta p {

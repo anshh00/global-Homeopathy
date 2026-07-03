@@ -20,9 +20,13 @@ const heroStats = [
 ];
 
 const sourceLogos = [
+  "Homeopathy360",
+  "OIMH / GWU",
   "Express Healthcare",
   "Faculty of Homeopathy",
   "Republic World",
+  "PharmaBiz",
+  "LMHI",
   "The Guardian",
   "NCCIH",
   "ABC News",
@@ -32,16 +36,27 @@ const sourceLogos = [
 
 const coverageItems = [
   {
-    tag: "Summit Coverage",
-    date: "2026",
-    source: "Express Healthcare",
-    country: "United Kingdom",
-    title: "Burnett Homoeopathy hosts 4th World Homoeopathy Summit 2026",
+    tag: "Conference Coverage",
+    date: "2025",
+    source: "Homeopathy360",
+    country: "United States",
+    title: "Joint American Homeopathic Conference 2025",
     summary:
-      "Coverage of the London chapter, including the British Parliament, Oxford University, and international summit visibility led by Burnett Homeopathy Pvt. Ltd.",
-    link: "https://www.expresshealthcare.in/news/burnett-homoeopathy-hosts-4th-world-homoeopathy-summit-2026/453433/",
-    image: "https://cdn.expresshealthcare.in/wp-content/uploads/2026/04/18163648/New-Project-1-7.jpg",
-    feature: true,
+      "Coverage of JAHC 2025, a North American homeopathy gathering focused on education, professional dialogue, and community learning.",
+    link: "https://www.homeopathy360.com/jahc-2025-joint-american-homeopathic-conference/",
+    image: "https://www.homeopathy360.com/wp-content/uploads/Jahc-2025.png",
+  },
+  {
+    tag: "Academic Event",
+    date: "2025",
+    source: "OIMH / George Washington University",
+    country: "United States",
+    title: "Online Joint American Homeopathic Conference 2025",
+    summary:
+      "A university-hosted event listing for the Joint American Homeopathic Conference, useful for visitors tracking formal education events.",
+    link: "https://oimh.smhs.gwu.edu/events/online-joint-american-homeopathic-conference-2025",
+    image:
+      "https://oimh.smhs.gwu.edu/sites/g/files/zaskib1041/files/2025-01/national_center_for_homeopathy.jpg",
   },
   {
     tag: "Conference Calendar",
@@ -53,6 +68,41 @@ const coverageItems = [
       "An international congress listing that keeps global homeopathy education, clinical discussion, and professional exchange visible for delegates.",
     link: "https://www.facultyofhomeopathy.org/pages/Congress-2026",
     image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    tag: "Summit Coverage",
+    date: "2026",
+    source: "Express Healthcare",
+    country: "United Kingdom",
+    title: "Burnett Homoeopathy hosts 4th World Homoeopathy Summit 2026",
+    summary:
+      "Coverage of the London chapter, including the British Parliament, Oxford University, and international summit visibility led by Burnett Homeopathy Pvt. Ltd.",
+    link: "https://www.expresshealthcare.in/news/burnett-homoeopathy-hosts-4th-world-homoeopathy-summit-2026/453433/",
+    image: "https://cdn.expresshealthcare.in/wp-content/uploads/2026/04/18163648/New-Project-1-7.jpg",
+    burnett: true,
+  },
+  {
+    tag: "Summit Coverage",
+    date: "2026",
+    source: "PharmaBiz",
+    country: "United Kingdom",
+    title: "Global summit reaches British Parliament and Oxford University",
+    summary:
+      "PharmaBiz coverage of Burnett Homoeopathy's world summit activity and India's visibility in international healthcare discussion.",
+    link: "https://www.pharmabiz.com/NewsDetails.aspx?aid=185405&sid=2",
+    image: "https://cdn.expresshealthcare.in/wp-content/uploads/2026/04/18163648/New-Project-1-7.jpg",
+    burnett: true,
+  },
+  {
+    tag: "Conference Coverage",
+    date: "2025",
+    source: "Homeopathy360",
+    country: "India",
+    title: "The 10th National Homeopathic Conference 2025",
+    summary:
+      "Homeopathy360 coverage of HOMCON 2025, adding a professional Indian conference reference to the global media library.",
+    link: "https://www.homeopathy360.com/the-10th-national-homeopathic-conference-2025-homcon/",
+    image: "https://www.homeopathy360.com/wp-content/uploads/Homcon-01-4-scaled.jpg",
   },
   {
     tag: "Evidence Reference",
@@ -77,7 +127,7 @@ const coverageItems = [
     link: "https://www.republicworld.com/initiatives/burnett-homeopathy-redefines-global-standards-with-groundbreaking-evidence-based-research-summit-in-goa",
     image:
       "https://img.republicworld.com/all_images/burnett-homeopathy-redefines-global-standards-with-groundbreaking-evidence-based-research-summit-in-goa-1755871589954-16_9.webp",
-    feature: true,
+    burnett: true,
   },
   {
     tag: "Public Health Reference",
@@ -100,7 +150,7 @@ const coverageItems = [
       "Coverage of the Koethen chapter, connecting a modern summit series with the historical city most closely linked to Samuel Hahnemann's work.",
     link: "https://theprint.in/ani-press-releases/burnett-homeopathy-hosts-world-homeopathy-summit-3-during-global-week-in-kothen-germany/2595264/",
     image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80",
-    feature: true,
+    burnett: true,
   },
   {
     tag: "Research Evidence",
@@ -124,7 +174,29 @@ const coverageItems = [
     link: "https://www.facultyofhomeopathy.org/articles/world-homeopathy-summit-2",
     image:
       "https://hubble-live-assets.s3.eu-west-1.amazonaws.com/faculty-of-homeopathy/image_asset/file/3338/content_451755481_989103479885200_5862739557236088808_n.jpg",
-    feature: true,
+    burnett: true,
+  },
+  {
+    tag: "World Homeopathy Day",
+    date: "2025",
+    source: "LMHI",
+    country: "International",
+    title: "270th anniversary of Samuel Hahnemann's birth",
+    summary:
+      "LMHI's World Homeopathy Day reference connects current global observance with Hahnemann's historical contribution.",
+    link: "https://lmhi.org/news/270th-anniversary-of-s-hahnemann-s-birth-during-world-homeopathy-day-on-10th-of-april-2025",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    tag: "Conference Coverage",
+    date: "Recent",
+    source: "Homeopathy360",
+    country: "UAE",
+    title: "Homeopathy Maha Kumbh organized in Dubai",
+    summary:
+      "An international event story from Dubai, useful for tracking homeopathy's professional and public-facing presence in the Gulf region.",
+    link: "https://www.homeopathy360.com/homeopathy-award-homeopathy-maha-kumbh-organized-in-dubai/",
+    image: "https://www.homeopathy360.com/wp-content/uploads/HomeopathyMahaKumbh.jpg",
   },
   {
     tag: "Public Information",
@@ -173,8 +245,8 @@ const coverageItems = [
   },
 ];
 
-const recentItems = coverageItems.slice(0, 8);
-const archiveItems = coverageItems.slice(8);
+const recentItems = coverageItems.slice(0, 12);
+const archiveItems = coverageItems.slice(12);
 
 function MediaImage({ src, alt }) {
   return (
@@ -191,7 +263,7 @@ function MediaImage({ src, alt }) {
 
 function CoverageCard({ item }) {
   return (
-    <article className={`media-coverage-card${item.feature ? " is-burnett" : ""}`}>
+    <article className={`media-coverage-card${item.burnett ? " is-burnett" : ""}`}>
       <a href={item.link} target="_blank" rel="noreferrer" className="media-card-image" aria-label={item.title}>
         <MediaImage src={item.image} alt={item.title} />
       </a>
@@ -224,8 +296,8 @@ function MediaPage() {
             <h1>Homeopathy coverage, research references, and summit visibility in one place.</h1>
             <p>
               A curated press library for global homeopathy coverage, public-health references, research updates, and
-              international summit stories. Burnett Homeopathy Pvt. Ltd. appears here through real summit and research
-              coverage, alongside wider global media and evidence references.
+              international summit stories. Each entry links back to the original publication or public source so
+              visitors can verify the coverage directly.
             </p>
             <div className="media-hero-actions">
               <a href="#recent-media">
