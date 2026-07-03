@@ -51,9 +51,6 @@ function Layout() {
           <Link className="stitch-nav-join" to="/research" onClick={() => setMenuOpen(false)}>
             Join Research
           </Link>
-          <Link className="stitch-nav-donate" to="/contact" onClick={() => setMenuOpen(false)}>
-            Donate
-          </Link>
           <button className="nav-search" type="button" aria-label="Search Global Homeopathy Foundation">
             <Search size={21} />
           </button>

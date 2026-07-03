@@ -1,17 +1,17 @@
 import React from "react";
 import {
   ArrowRight,
+  BookOpen,
+  CalendarDays,
   ExternalLink,
   FileText,
   Globe2,
+  Landmark,
   Newspaper,
   Radio,
   Search,
   ShieldCheck,
 } from "lucide-react";
-
-const fallbackImage =
-  "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80";
 
 const heroStats = [
   { value: "2026", label: "Recent summit coverage" },
@@ -304,16 +304,70 @@ const coverageItems = [
 const recentItems = coverageItems.slice(0, 16);
 const archiveItems = coverageItems.slice(16);
 
-function MediaImage({ src, alt }) {
+const referenceSteps = [
+  {
+    step: "01",
+    icon: ShieldCheck,
+    title: "Source verified",
+    text: "Each card opens the original publication, institution page, public reference, or coverage link.",
+  },
+  {
+    step: "02",
+    icon: Search,
+    title: "Context checked",
+    text: "Recent summit news, research references, and archive debate are separated so visitors understand the source type.",
+  },
+  {
+    step: "03",
+    icon: Globe2,
+    title: "Global indexed",
+    text: "Coverage is organized across countries, conferences, public bodies, research sources, and summit chapters.",
+  },
+];
+
+const visualIcons = {
+  archive: Newspaper,
+  conference: Globe2,
+  journal: BookOpen,
+  policy: Landmark,
+  public: ShieldCheck,
+  recent: CalendarDays,
+  research: FileText,
+  summit: Radio,
+};
+
+function getVisualType(item) {
+  if (item.burnett || item.tag.includes("Summit")) return "summit";
+  if (item.tag.includes("Research") || item.tag.includes("Evidence")) return "research";
+  if (item.tag.includes("Journal")) return "journal";
+  if (item.tag.includes("Public")) return "public";
+  if (item.tag.includes("Archive")) return "archive";
+  if (item.tag.includes("Recent") || item.tag.includes("World Homeopathy Day")) return "recent";
+  if (item.tag.includes("Conference") || item.tag.includes("Academic")) return "conference";
+  return "policy";
+}
+
+function MediaVisual({ item, mode = "card" }) {
+  const type = getVisualType(item);
+  const Icon = visualIcons[type] || Newspaper;
+
   return (
-    <img
-      src={src}
-      alt={alt}
-      loading="lazy"
-      onError={(event) => {
-        event.currentTarget.src = fallbackImage;
-      }}
-    />
+    <div className={`media-visual media-visual-${type} media-visual-${mode}`} aria-hidden="true">
+      <span className="media-visual-grid"></span>
+      <span className="media-visual-orb orb-one"></span>
+      <span className="media-visual-orb orb-two"></span>
+      <span className="media-visual-line line-one"></span>
+      <span className="media-visual-line line-two"></span>
+      <div className="media-visual-top">
+        <Icon size={mode === "large" ? 34 : 26} />
+        <span>{item.date}</span>
+      </div>
+      <div className="media-visual-copy">
+        <small>{item.tag}</small>
+        <strong>{item.source}</strong>
+        <span>{item.country}</span>
+      </div>
+    </div>
   );
 }
 
@@ -321,7 +375,7 @@ function CoverageCard({ item }) {
   return (
     <article className={`media-coverage-card${item.burnett ? " is-burnett" : ""}`}>
       <a href={item.link} target="_blank" rel="noreferrer" className="media-card-image" aria-label={item.title}>
-        <MediaImage src={item.image} alt={item.title} />
+        <MediaVisual item={item} />
       </a>
       <div className="media-card-body">
         <div className="media-card-meta">
@@ -371,7 +425,7 @@ function MediaPage() {
           </div>
           <aside className="media-hero-feature" aria-label="Featured media coverage">
             <div className="media-feature-image">
-              <MediaImage src={coverageItems[0].image} alt={coverageItems[0].title} />
+              <MediaVisual item={coverageItems[0]} mode="large" />
             </div>
             <div className="media-feature-body">
               <span>Featured coverage</span>
@@ -428,22 +482,18 @@ function MediaPage() {
           <span className="media-coverage-kicker">Reference Method</span>
           <h2>Every story is organized as a source, not a claim.</h2>
         </div>
-        <div className="media-standard-grid">
-          <article>
-            <ShieldCheck size={28} />
-            <h3>Original source first</h3>
-            <p>Visitors can open the publication, event page, or public reference directly.</p>
-          </article>
-          <article>
-            <Search size={28} />
-            <h3>Recent plus archive</h3>
-            <p>New announcements sit beside older policy and evidence references for context.</p>
-          </article>
-          <article>
-            <Globe2 size={28} />
-            <h3>Worldwide lens</h3>
-            <p>Coverage spans India, UAE, Germany, the UK, Australia, the United States, and international bodies.</p>
-          </article>
+        <div className="media-reference-rail">
+          {referenceSteps.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <article className="media-reference-step" style={{ "--step": index }} key={item.title}>
+                <span>{item.step}</span>
+                <Icon size={28} />
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -456,7 +506,7 @@ function MediaPage() {
           {archiveItems.map((item) => (
             <a className="media-archive-card" href={item.link} target="_blank" rel="noreferrer" key={item.title}>
               <div className="media-archive-thumb">
-                <MediaImage src={item.image} alt={item.title} />
+                <MediaVisual item={item} mode="compact" />
               </div>
               <span>{item.date} / {item.source}</span>
               <strong>{item.title}</strong>

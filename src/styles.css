@@ -21907,13 +21907,6 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   overflow: hidden;
 }
 
-.media-feature-image img,
-.media-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .media-feature-body {
   padding: 24px;
   color: rgba(255, 255, 255, 0.76);
@@ -22110,7 +22103,234 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   display: block;
   height: 165px;
   overflow: hidden;
-  background: #dceae4;
+  background: #062f26;
+}
+
+.media-visual {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px;
+  color: #ffffff;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 255, 255, 0.26), transparent 5rem),
+    linear-gradient(135deg, #062f26, #0a5a43);
+}
+
+.media-visual::before {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  content: "";
+  opacity: 0.3;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 34px 34px;
+  transform: rotate(-5deg) scale(1.12);
+}
+
+.media-visual::after {
+  position: absolute;
+  inset: auto -16% -38% auto;
+  z-index: -1;
+  width: 64%;
+  aspect-ratio: 1;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 64%);
+}
+
+.media-visual-conference {
+  background:
+    radial-gradient(circle at 86% 18%, rgba(200, 166, 77, 0.28), transparent 5rem),
+    linear-gradient(135deg, #08213a, #087d61);
+}
+
+.media-visual-recent {
+  background:
+    radial-gradient(circle at 78% 22%, rgba(255, 255, 255, 0.35), transparent 5rem),
+    linear-gradient(135deg, #0b2c4d, #45c5c1);
+}
+
+.media-visual-summit {
+  background:
+    radial-gradient(circle at 76% 20%, rgba(212, 177, 44, 0.36), transparent 5rem),
+    linear-gradient(135deg, #061d3b, #0e6b50);
+}
+
+.media-visual-research,
+.media-visual-journal {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(79, 196, 189, 0.28), transparent 5rem),
+    linear-gradient(135deg, #061d3b, #174963);
+}
+
+.media-visual-public,
+.media-visual-policy {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(221, 237, 231, 0.3), transparent 5rem),
+    linear-gradient(135deg, #0a5a43, #0e6b50);
+}
+
+.media-visual-archive {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(200, 166, 77, 0.25), transparent 5rem),
+    linear-gradient(135deg, #0b2238, #2f5961);
+}
+
+.media-visual-grid,
+.media-visual-orb,
+.media-visual-line {
+  position: absolute;
+  pointer-events: none;
+}
+
+.media-visual-grid {
+  inset: 16%;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.media-visual-orb {
+  z-index: -1;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #d4b12c;
+  box-shadow: 0 0 28px rgba(212, 177, 44, 0.78);
+  animation: mediaVisualPulse 3.6s ease-in-out infinite;
+}
+
+.media-visual-orb.orb-one {
+  top: 26%;
+  right: 22%;
+}
+
+.media-visual-orb.orb-two {
+  right: 45%;
+  bottom: 25%;
+  animation-delay: 1.1s;
+}
+
+.media-visual-line {
+  z-index: -1;
+  width: 58%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.54), transparent);
+  transform-origin: center;
+}
+
+.media-visual-line.line-one {
+  top: 34%;
+  right: 8%;
+  transform: rotate(-18deg);
+}
+
+.media-visual-line.line-two {
+  right: 18%;
+  bottom: 33%;
+  transform: rotate(21deg);
+}
+
+.media-visual-top,
+.media-visual-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.media-visual-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.media-visual-top svg {
+  color: #ffffff;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25));
+}
+
+.media-visual-top span {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.media-visual-copy small {
+  display: block;
+  color: #d7c06d;
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.media-visual-copy strong {
+  display: block;
+  max-width: 82%;
+  margin-top: 6px;
+  color: #ffffff;
+  font-size: 1.18rem;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.media-visual-copy span {
+  display: block;
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.media-visual-large {
+  padding: 26px;
+}
+
+.media-visual-large .media-visual-copy strong {
+  max-width: 74%;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+.media-visual-large::after {
+  width: 52%;
+}
+
+.media-visual-compact {
+  padding: 16px;
+}
+
+.media-visual-compact .media-visual-copy strong {
+  font-size: 1.06rem;
+}
+
+@keyframes mediaVisualPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
 
 .media-card-body {
@@ -22190,32 +22410,124 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   font-size: clamp(1.9rem, 3vw, 3.35rem);
 }
 
-.media-standard-grid {
+.media-reference-rail {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
-.media-standard-grid article {
+.media-reference-rail::before {
+  position: absolute;
+  top: 44px;
+  right: 8%;
+  left: 8%;
+  height: 2px;
+  content: "";
+  background: linear-gradient(90deg, transparent, rgba(8, 125, 97, 0.68), transparent);
+  transform-origin: left;
+  animation: mediaReferenceLine 4.8s ease-in-out infinite;
+}
+
+.media-reference-step {
+  position: relative;
   min-height: 170px;
   padding: 22px;
   border: 1px solid rgba(14, 107, 80, 0.14);
   background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 38px rgba(6, 42, 77, 0.06);
+  animation: mediaReferenceFloat 5.4s ease-in-out infinite;
+  animation-delay: calc(var(--step) * 180ms);
 }
 
-.media-standard-grid svg {
+.media-reference-step::before {
+  position: absolute;
+  inset: -1px;
+  content: "";
+  opacity: 0;
+  background: linear-gradient(130deg, transparent 30%, rgba(8, 125, 97, 0.14), transparent 70%);
+  transform: translateX(-40%);
+  animation: mediaReferenceSweep 4.8s ease-in-out infinite;
+  animation-delay: calc(var(--step) * 220ms);
+}
+
+.media-reference-step > * {
+  position: relative;
+  z-index: 1;
+}
+
+.media-reference-step > span {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  padding: 0 9px;
+  border-radius: 999px;
+  background: rgba(8, 125, 97, 0.1);
+  color: #087d61;
+  font-size: 0.7rem;
+  font-weight: 950;
+}
+
+.media-reference-step svg {
+  display: block;
+  margin-top: 16px;
   color: #087d61;
 }
 
-.media-standard-grid h3 {
-  margin-top: 20px;
+.media-reference-step h3 {
+  margin-top: 16px;
   color: #0b2238;
 }
 
-.media-standard-grid p {
+.media-reference-step p {
   margin-top: 10px;
   color: #526778;
   line-height: 1.7;
+}
+
+@keyframes mediaReferenceLine {
+  0% {
+    transform: scaleX(0.15);
+    opacity: 0.35;
+  }
+
+  55% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(0.15);
+    opacity: 0.35;
+  }
+}
+
+@keyframes mediaReferenceFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes mediaReferenceSweep {
+  0%,
+  45% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(45%);
+  }
 }
 
 .media-archive-section {
@@ -22242,12 +22554,6 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   height: 155px;
   overflow: hidden;
   background: #dceae4;
-}
-
-.media-archive-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .media-archive-card > span {
@@ -22341,7 +22647,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .media-standard-grid {
+  .media-reference-rail {
     grid-template-columns: 1fr;
   }
 }
