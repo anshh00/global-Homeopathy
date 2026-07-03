@@ -417,6 +417,24 @@ const jobPortalChecks = [
   "Only homeopathy-specific leads accepted",
 ];
 
+const heroBriefs = [
+  {
+    icon: MapPin,
+    title: "Worldwide coverage",
+    text: "India, UAE, Gulf, US, UK, Australia, Malaysia, Canada, and remote channels.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Application-ready details",
+    text: "Each lead shows designation, location, qualification, experience scope, and source.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Verified-source approach",
+    text: "Openings link to the original job board or employer channel for latest status.",
+  },
+];
+
 const careerTracks = [
   {
     icon: BriefcaseBusiness,
@@ -461,6 +479,20 @@ function JobsPage() {
               <a className="button secondary" href="mailto:info@worldhomeopathy.org?subject=Submit%20Homeopathy%20Job%20Opening">
                 Submit a job
               </a>
+            </div>
+            <div className="jobs-hero-briefs" aria-label="Jobs portal details">
+              {heroBriefs.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <article key={item.title}>
+                    <Icon size={20} />
+                    <div>
+                      <strong>{item.title}</strong>
+                      <span>{item.text}</span>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
 

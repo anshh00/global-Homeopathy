@@ -21002,7 +21002,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(50px, 6vw, 92px) 0 clamp(34px, 5vw, 64px);
+  padding: clamp(36px, 4.8vw, 72px) 0 clamp(34px, 5vw, 64px);
   border-bottom: 1px solid rgba(14, 107, 80, 0.12);
 }
 
@@ -21037,8 +21037,8 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 .jobs-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.88fr) minmax(390px, 0.68fr);
-  gap: clamp(30px, 5vw, 76px);
-  align-items: center;
+  gap: clamp(30px, 5vw, 68px);
+  align-items: start;
 }
 
 .jobs-kicker {
@@ -21053,7 +21053,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 .jobs-hero h1 {
   max-width: 760px;
   color: var(--ink);
-  font-size: clamp(2.55rem, 4.15vw, 4.85rem);
+  font-size: clamp(2.45rem, 3.85vw, 4.35rem);
   font-weight: 900;
   line-height: 1.02;
 }
@@ -21070,7 +21070,49 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+  margin-top: 24px;
+}
+
+.jobs-hero-briefs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  max-width: 880px;
   margin-top: 28px;
+  overflow: hidden;
+  background: rgba(6, 42, 77, 0.12);
+  border: 1px solid rgba(6, 42, 77, 0.12);
+  border-radius: 22px;
+}
+
+.jobs-hero-briefs article {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  min-height: 128px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.jobs-hero-briefs svg {
+  color: var(--emerald);
+}
+
+.jobs-hero-briefs strong {
+  display: block;
+  color: var(--navy);
+  font-size: 0.92rem;
+  font-weight: 950;
+  line-height: 1.2;
+}
+
+.jobs-hero-briefs span {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
 }
 
 .jobs-hero-panel {
@@ -21085,6 +21127,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   border-radius: 28px;
   box-shadow: 0 28px 80px rgba(6, 42, 77, 0.12);
   backdrop-filter: blur(18px);
+  margin-top: 10px;
 }
 
 .jobs-search-bar {
@@ -21413,6 +21456,10 @@ body:has(.leaders-council-page) .stitch-layout-footer {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .jobs-hero-briefs {
+    grid-template-columns: 1fr;
+  }
+
   .job-row {
     grid-template-columns: 1fr;
   }
@@ -21429,6 +21476,10 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
   .jobs-actions {
     display: grid;
+  }
+
+  .jobs-hero-briefs article {
+    min-height: auto;
   }
 
   .jobs-metrics .jobs-shell,
