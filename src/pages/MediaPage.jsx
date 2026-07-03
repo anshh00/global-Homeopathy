@@ -47,6 +47,39 @@ const coverageItems = [
     image: "https://www.homeopathy360.com/wp-content/uploads/Jahc-2025.png",
   },
   {
+    tag: "Recent News",
+    date: "2026",
+    source: "Homeopathy360",
+    country: "United Kingdom",
+    title: "World Homeopathy Day 2026 to be celebrated in London",
+    summary:
+      "Recent international coverage around World Homeopathy Day planning, connecting London with the wider global homeopathy calendar.",
+    link: "https://www.homeopathy360.com/world-homeopathy-day-2026-to-be-celebrated-in-london/",
+    image: "https://www.homeopathy360.com/wp-content/uploads/ChatGPT-Image-Feb-17-2026-10_29_48-AM-1024x683.png",
+  },
+  {
+    tag: "Recent News",
+    date: "2026",
+    source: "Homeopathy360",
+    country: "Mexico",
+    title: "79th LMHI World Congress announced for Mexico 2026",
+    summary:
+      "A global congress update from the Liga Medicorum Homoeopathica Internationalis calendar, useful for tracking worldwide professional activity.",
+    link: "https://www.homeopathy360.com/79th-lmhi-world-congress-liga-medicorum-homoeopathica-internationalis-mexico-2026/",
+    image: "https://www.homeopathy360.com/wp-content/uploads/LMHI-Banner-02.jpg",
+  },
+  {
+    tag: "Recent News",
+    date: "2026",
+    source: "Homeopathy360",
+    country: "Portugal",
+    title: "International homeopathy leaders convene in Lisbon",
+    summary:
+      "Coverage of the 12th International CEDH Conference, adding a European education and leadership reference to the media desk.",
+    link: "https://www.homeopathy360.com/international-homeopathy-leaders-convene-in-lisbon-for-12th-international-cedh-conference/",
+    image: "https://www.homeopathy360.com/wp-content/uploads/ChatGPT-Image-Feb-12-2026-02_39_32-PM-1024x683.png",
+  },
+  {
     tag: "Academic Event",
     date: "2025",
     source: "OIMH / George Washington University",
@@ -57,6 +90,29 @@ const coverageItems = [
     link: "https://oimh.smhs.gwu.edu/events/online-joint-american-homeopathic-conference-2025",
     image:
       "https://oimh.smhs.gwu.edu/sites/g/files/zaskib1041/files/2025-01/national_center_for_homeopathy.jpg",
+  },
+  {
+    tag: "Journal Update",
+    date: "2026",
+    source: "Faculty of Homeopathy",
+    country: "United Kingdom",
+    title: "Homeopathy journal impact factor update",
+    summary:
+      "Faculty coverage of the journal's impact factor update, relevant for readers following publication visibility and research communication.",
+    link: "https://www.facultyofhomeopathy.org/articles/homeopathy-journal-new-impact-factor-released",
+    image:
+      "https://hubble-live-assets.s3.eu-west-1.amazonaws.com/faculty-of-homeopathy/image_asset/file/1001/content_impact_factor_and_thieme.png",
+  },
+  {
+    tag: "Recent News",
+    date: "2026",
+    source: "Homeopathy360",
+    country: "India",
+    title: "World Homoeopathy Day 2026 nationwide activity call",
+    summary:
+      "Coverage of World Homoeopathy Day planning around Samuel Hahnemann's 271st birth anniversary and national awareness activity.",
+    link: "https://www.homeopathy360.com/world-homoeopathy-day-2026-271st-birth-anniversary-of-master-samuel-hahnemann-nch-calls-for-nationwide-activities/",
+    image: "https://www.homeopathy360.com/wp-content/uploads/update.png",
   },
   {
     tag: "Conference Calendar",
@@ -245,8 +301,8 @@ const coverageItems = [
   },
 ];
 
-const recentItems = coverageItems.slice(0, 12);
-const archiveItems = coverageItems.slice(12);
+const recentItems = coverageItems.slice(0, 16);
+const archiveItems = coverageItems.slice(16);
 
 function MediaImage({ src, alt }) {
   return (
@@ -293,12 +349,17 @@ function MediaPage() {
         <div className="media-coverage-shell media-coverage-hero-grid">
           <div className="media-hero-copy">
             <span className="media-coverage-kicker">Global Media Desk</span>
-            <h1>Homeopathy coverage, research references, and summit visibility in one place.</h1>
+            <h1>Global homeopathy media desk and coverage archive.</h1>
             <p>
               A curated press library for global homeopathy coverage, public-health references, research updates, and
               international summit stories. Each entry links back to the original publication or public source so
               visitors can verify the coverage directly.
             </p>
+            <div className="media-hero-notes" aria-label="Media desk focus areas">
+              <span>Recent congress updates</span>
+              <span>Research references</span>
+              <span>Summit media coverage</span>
+            </div>
             <div className="media-hero-actions">
               <a href="#recent-media">
                 Browse recent coverage <ArrowRight size={17} />
@@ -334,8 +395,11 @@ function MediaPage() {
 
       <section className="media-source-band" aria-label="Sources represented">
         <div className="media-coverage-shell media-source-strip">
-          <span>Sources tracked</span>
-          <div>
+          <div className="media-source-copy">
+            <span>Coverage index</span>
+            <p>Global publications, professional bodies, public references, conference listings, and summit reports.</p>
+          </div>
+          <div className="media-source-pills">
             {sourceLogos.map((source) => (
               <small key={source}>{source}</small>
             ))}
@@ -344,7 +408,7 @@ function MediaPage() {
       </section>
 
       <section className="media-coverage-shell media-section" id="recent-media">
-        <div className="media-section-intro">
+        <div className="media-section-intro media-section-wide">
           <span className="media-coverage-kicker">Recent and Active Coverage</span>
           <h2>Media stories that show the global conversation around homeopathy.</h2>
           <p>
@@ -361,19 +425,19 @@ function MediaPage() {
 
       <section className="media-coverage-shell media-editorial-panel">
         <div>
-          <span className="media-coverage-kicker">Editorial Standard</span>
-          <h2>Coverage is useful only when it is clearly sourced.</h2>
+          <span className="media-coverage-kicker">Reference Method</span>
+          <h2>Every story is organized as a source, not a claim.</h2>
         </div>
         <div className="media-standard-grid">
           <article>
             <ShieldCheck size={28} />
-            <h3>External links stay visible</h3>
-            <p>Every article links back to the original publication or public reference page.</p>
+            <h3>Original source first</h3>
+            <p>Visitors can open the publication, event page, or public reference directly.</p>
           </article>
           <article>
             <Search size={28} />
-            <h3>Recent and archive items</h3>
-            <p>Newer summit coverage appears beside older policy and evidence references for context.</p>
+            <h3>Recent plus archive</h3>
+            <p>New announcements sit beside older policy and evidence references for context.</p>
           </article>
           <article>
             <Globe2 size={28} />
@@ -386,19 +450,18 @@ function MediaPage() {
       <section className="media-coverage-shell media-archive-section" id="media-archive">
         <div className="media-section-intro compact">
           <span className="media-coverage-kicker">Archive</span>
-          <h2>Older coverage and public references for background reading.</h2>
+          <h2>Older coverage with stronger context, not hidden at the bottom.</h2>
         </div>
-        <div className="media-archive-list">
+        <div className="media-archive-grid">
           {archiveItems.map((item) => (
-            <a className="media-archive-row" href={item.link} target="_blank" rel="noreferrer" key={item.title}>
-              <span>{item.date}</span>
-              <div>
-                <strong>{item.title}</strong>
-                <p>{item.summary}</p>
+            <a className="media-archive-card" href={item.link} target="_blank" rel="noreferrer" key={item.title}>
+              <div className="media-archive-thumb">
+                <MediaImage src={item.image} alt={item.title} />
               </div>
-              <small>
-                {item.source} <ArrowRight size={15} />
-              </small>
+              <span>{item.date} / {item.source}</span>
+              <strong>{item.title}</strong>
+              <p>{item.summary}</p>
+              <small>Read archive <ArrowRight size={15} /></small>
             </a>
           ))}
         </div>
@@ -408,14 +471,14 @@ function MediaPage() {
         <div>
           <Radio size={30} />
           <span className="media-coverage-kicker">Media Room</span>
-          <h2>Build this into a verified homeopathy newsroom.</h2>
+          <h2>A living media archive for global homeopathy coverage.</h2>
           <p>
-            Add future press releases, interviews, event galleries, and Burnett Homeopathy Pvt. Ltd. coverage here as new
-            source links become available.
+            Use this page as a press reference point for international events, research updates, public information, and
+            summit coverage as new verified links become available.
           </p>
         </div>
-        <a href="mailto:info@globalhomeopathy.org">
-          Submit coverage <FileText size={17} />
+        <a href="#recent-media">
+          Explore newsroom <FileText size={17} />
         </a>
       </section>
     </main>
