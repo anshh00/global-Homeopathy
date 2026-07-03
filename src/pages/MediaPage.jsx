@@ -1,54 +1,350 @@
 import React from "react";
-import { ArrowRight, Camera, Newspaper, Video } from "lucide-react";
-import PageHero from "../components/PageHero.jsx";
-import { mediaItems } from "../data/siteData.js";
+import {
+  ArrowRight,
+  ExternalLink,
+  FileText,
+  Globe2,
+  Newspaper,
+  Radio,
+  Search,
+  ShieldCheck,
+} from "lucide-react";
 
-const galleryBuckets = [
-  { icon: Camera, title: "Photos", text: "Summit photos, leadership moments, awards, and networking galleries." },
-  { icon: Video, title: "Videos", text: "Event reels, interviews, keynote clips, research sessions, and public messages." },
-  { icon: Newspaper, title: "Press", text: "External media coverage, publication logos, article summaries, and press releases." },
+const fallbackImage =
+  "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80";
+
+const heroStats = [
+  { value: "2026", label: "Recent summit coverage" },
+  { value: "Global", label: "Research and public references" },
+  { value: "2015-2026", label: "Recent and archive window" },
 ];
+
+const sourceLogos = [
+  "Express Healthcare",
+  "Faculty of Homeopathy",
+  "Republic World",
+  "The Guardian",
+  "NCCIH",
+  "ABC News",
+  "Australian Government",
+  "HRI",
+];
+
+const coverageItems = [
+  {
+    tag: "Summit Coverage",
+    date: "2026",
+    source: "Express Healthcare",
+    country: "United Kingdom",
+    title: "Burnett Homoeopathy hosts 4th World Homoeopathy Summit 2026",
+    summary:
+      "Coverage of the London chapter, including the British Parliament, Oxford University, and international summit visibility led by Burnett Homeopathy Pvt. Ltd.",
+    link: "https://www.expresshealthcare.in/news/burnett-homoeopathy-hosts-4th-world-homoeopathy-summit-2026/453433/",
+    image: "https://cdn.expresshealthcare.in/wp-content/uploads/2026/04/18163648/New-Project-1-7.jpg",
+    feature: true,
+  },
+  {
+    tag: "Conference Calendar",
+    date: "2026",
+    source: "Faculty of Homeopathy",
+    country: "United Kingdom",
+    title: "Faculty of Homeopathy Congress 2026",
+    summary:
+      "An international congress listing that keeps global homeopathy education, clinical discussion, and professional exchange visible for delegates.",
+    link: "https://www.facultyofhomeopathy.org/pages/Congress-2026",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    tag: "Evidence Reference",
+    date: "2024",
+    source: "Australian Government",
+    country: "Australia",
+    title: "Natural Therapies Review 2024: Homeopathy Evidence Evaluation",
+    summary:
+      "A government evidence evaluation reference that belongs in any serious media desk because it shows how public bodies review homeopathy claims.",
+    link: "https://www.health.gov.au/resources/publications/natural-therapies-review-2024-homeopathy-evidence-evaluation?language=en",
+    image:
+      "https://www.health.gov.au/sites/default/files/2025-03/natural-therapies-review-2024-homeopathy-evidence-evaluation.jpg",
+  },
+  {
+    tag: "Research Summit",
+    date: "2025",
+    source: "Republic World",
+    country: "India",
+    title: "Burnett Homeopathy Goa Evidence-Based Research Summit",
+    summary:
+      "A research-focused summit story from Goa, positioning Burnett Homeopathy Pvt. Ltd. within evidence, standards, and academic discussion.",
+    link: "https://www.republicworld.com/initiatives/burnett-homeopathy-redefines-global-standards-with-groundbreaking-evidence-based-research-summit-in-goa",
+    image:
+      "https://img.republicworld.com/all_images/burnett-homeopathy-redefines-global-standards-with-groundbreaking-evidence-based-research-summit-in-goa-1755871589954-16_9.webp",
+    feature: true,
+  },
+  {
+    tag: "Public Health Reference",
+    date: "Updated",
+    source: "NCCIH",
+    country: "United States",
+    title: "Homeopathy: public information and safety overview",
+    summary:
+      "A public-facing U.S. reference page covering what homeopathy is, how it is discussed, and why evidence and safety language must stay clear.",
+    link: "https://www.nccih.nih.gov/health/homeopathy",
+    image: "https://files.nccih.nih.gov/files/pills-vitamins-supplements-chondroitin.ThinkstockPhotos-177253300-square.jpg",
+  },
+  {
+    tag: "Summit Coverage",
+    date: "2025",
+    source: "ThePrint",
+    country: "Germany",
+    title: "World Homeopathy Summit 3 during Global Week in Koethen",
+    summary:
+      "Coverage of the Koethen chapter, connecting a modern summit series with the historical city most closely linked to Samuel Hahnemann's work.",
+    link: "https://theprint.in/ani-press-releases/burnett-homeopathy-hosts-world-homeopathy-summit-3-during-global-week-in-kothen-germany/2595264/",
+    image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80",
+    feature: true,
+  },
+  {
+    tag: "Research Evidence",
+    date: "2024",
+    source: "HRI",
+    country: "International",
+    title: "Homeopathy Research Institute Evidence Summary 2024",
+    summary:
+      "A research-facing evidence summary reference for readers who want a structured entry point into the homeopathy research conversation.",
+    link: "https://www.hri-research.org/wp-content/uploads/2024/12/HRI_EvidenceSummary_2024.pdf",
+    image: "https://images.unsplash.com/photo-1581093458791-9f3c3900f578?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    tag: "Summit Coverage",
+    date: "2024",
+    source: "Faculty of Homeopathy",
+    country: "UAE",
+    title: "World Homeopathy Summit 2 in Dubai",
+    summary:
+      "Faculty coverage of the Dubai summit chapter, adding international context and external visibility to the summit journey.",
+    link: "https://www.facultyofhomeopathy.org/articles/world-homeopathy-summit-2",
+    image:
+      "https://hubble-live-assets.s3.eu-west-1.amazonaws.com/faculty-of-homeopathy/image_asset/file/3338/content_451755481_989103479885200_5862739557236088808_n.jpg",
+    feature: true,
+  },
+  {
+    tag: "Public Information",
+    date: "Updated",
+    source: "NHS Inform",
+    country: "Scotland / UK",
+    title: "Homeopathy public information",
+    summary:
+      "A public information page useful for understanding how government health portals describe homeopathy to patients and the public.",
+    link: "https://www.nhsinform.scot/tests-and-treatments/medicines-and-medical-aids/complementary-medicine/homeopathy/",
+    image: "https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    tag: "News Archive",
+    date: "2019",
+    source: "The Guardian",
+    country: "United Kingdom",
+    title: "NHS leadership voices concerns about homeopathy",
+    summary:
+      "Archive coverage showing how homeopathy appears in public health policy debate and mainstream media commentary.",
+    link: "https://www.theguardian.com/society/2019/oct/28/head-nhs-voices-serious-concerns-about-homeopathy-simon-stevens",
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    tag: "News Archive",
+    date: "2017",
+    source: "The Guardian",
+    country: "United Kingdom",
+    title: "NHS to end prescription of homeopathic remedies",
+    summary:
+      "A widely cited archive piece on NHS prescribing policy, included for balanced historical context around homeopathy coverage.",
+    link: "https://www.theguardian.com/lifeandstyle/2017/jul/21/a-misuse-of-scarce-funds-nhs-to-end-prescription-of-homeopathic-remedies",
+    image:
+      "https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/3/11/1426094388505/Homeopathy-pills-007.jpg?width=1200&height=630&quality=85&auto=format&fit=crop",
+  },
+  {
+    tag: "News Archive",
+    date: "2015",
+    source: "ABC News",
+    country: "Australia",
+    title: "Australian review brought homeopathy into global headlines",
+    summary:
+      "ABC News coverage of the Australian evidence review, included as older media context for the global public discussion.",
+    link: "https://abcnews.com/Health/homeopathy-work-major-australian-study-concludes/story?id=29595411",
+    image: "https://s.abcnews.com/images/Health/gty_meds_lb_150312_16x9_992.jpg?w=1600",
+  },
+];
+
+const recentItems = coverageItems.slice(0, 8);
+const archiveItems = coverageItems.slice(8);
+
+function MediaImage({ src, alt }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading="lazy"
+      onError={(event) => {
+        event.currentTarget.src = fallbackImage;
+      }}
+    />
+  );
+}
+
+function CoverageCard({ item }) {
+  return (
+    <article className={`media-coverage-card${item.feature ? " is-burnett" : ""}`}>
+      <a href={item.link} target="_blank" rel="noreferrer" className="media-card-image" aria-label={item.title}>
+        <MediaImage src={item.image} alt={item.title} />
+      </a>
+      <div className="media-card-body">
+        <div className="media-card-meta">
+          <span>{item.tag}</span>
+          <small>{item.date}</small>
+        </div>
+        <h3>{item.title}</h3>
+        <p>{item.summary}</p>
+        <div className="media-card-footer">
+          <span>{item.source}</span>
+          <span>{item.country}</span>
+        </div>
+        <a className="media-read-link" href={item.link} target="_blank" rel="noreferrer">
+          Read coverage <ArrowRight size={16} />
+        </a>
+      </div>
+    </article>
+  );
+}
 
 function MediaPage() {
   return (
-    <main>
-      <PageHero
-        eyebrow="Media Coverage"
-        title="A media wall for summits, interviews, research news, and press releases."
-        text="This page gives external credibility to the global platform while keeping summit and research activity organized."
-      >
-        <div className="hero-list">
-          <span>News articles</span>
-          <span>Interviews</span>
-          <span>Summit coverage</span>
-          <span>Research announcements</span>
+    <main className="media-coverage-page">
+      <section className="media-coverage-hero">
+        <div className="media-coverage-shell media-coverage-hero-grid">
+          <div className="media-hero-copy">
+            <span className="media-coverage-kicker">Global Media Desk</span>
+            <h1>Homeopathy coverage, research references, and summit visibility in one place.</h1>
+            <p>
+              A curated press library for global homeopathy coverage, public-health references, research updates, and
+              international summit stories. Burnett Homeopathy Pvt. Ltd. appears here through real summit and research
+              coverage, alongside wider global media and evidence references.
+            </p>
+            <div className="media-hero-actions">
+              <a href="#recent-media">
+                Browse recent coverage <ArrowRight size={17} />
+              </a>
+              <a href="#media-archive">
+                View archive <Newspaper size={17} />
+              </a>
+            </div>
+          </div>
+          <aside className="media-hero-feature" aria-label="Featured media coverage">
+            <div className="media-feature-image">
+              <MediaImage src={coverageItems[0].image} alt={coverageItems[0].title} />
+            </div>
+            <div className="media-feature-body">
+              <span>Featured coverage</span>
+              <h2>{coverageItems[0].title}</h2>
+              <p>{coverageItems[0].summary}</p>
+              <a href={coverageItems[0].link} target="_blank" rel="noreferrer">
+                Open source <ExternalLink size={16} />
+              </a>
+            </div>
+          </aside>
         </div>
-      </PageHero>
-
-      <section className="section media-grid">
-        {mediaItems.map((item) => (
-          <a className="media-card" href={item.link} target="_blank" rel="noreferrer" key={item.title}>
-            <span>{item.tag}</span>
-            <h3>{item.title}</h3>
-            <p>{item.source}</p>
-            <strong>
-              Open article <ArrowRight size={16} />
-            </strong>
-          </a>
-        ))}
+        <div className="media-coverage-shell media-hero-stats" aria-label="Media desk summary">
+          {heroStats.map((item) => (
+            <div key={item.label}>
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </div>
       </section>
 
-      <section className="section content-grid">
-        {galleryBuckets.map((item) => {
-          const Icon = item.icon;
-          return (
-            <article className="content-card" key={item.title}>
-              <Icon size={28} />
-              <h2>{item.title}</h2>
-              <p>{item.text}</p>
-            </article>
-          );
-        })}
+      <section className="media-source-band" aria-label="Sources represented">
+        <div className="media-coverage-shell media-source-strip">
+          <span>Sources tracked</span>
+          <div>
+            {sourceLogos.map((source) => (
+              <small key={source}>{source}</small>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="media-coverage-shell media-section" id="recent-media">
+        <div className="media-section-intro">
+          <span className="media-coverage-kicker">Recent and Active Coverage</span>
+          <h2>Media stories that show the global conversation around homeopathy.</h2>
+          <p>
+            This page intentionally combines supportive coverage, public references, policy debate, and research sources
+            so visitors can see the subject in a credible global context.
+          </p>
+        </div>
+        <div className="media-coverage-grid">
+          {recentItems.map((item) => (
+            <CoverageCard item={item} key={`${item.source}-${item.title}`} />
+          ))}
+        </div>
+      </section>
+
+      <section className="media-coverage-shell media-editorial-panel">
+        <div>
+          <span className="media-coverage-kicker">Editorial Standard</span>
+          <h2>Coverage is useful only when it is clearly sourced.</h2>
+        </div>
+        <div className="media-standard-grid">
+          <article>
+            <ShieldCheck size={28} />
+            <h3>External links stay visible</h3>
+            <p>Every article links back to the original publication or public reference page.</p>
+          </article>
+          <article>
+            <Search size={28} />
+            <h3>Recent and archive items</h3>
+            <p>Newer summit coverage appears beside older policy and evidence references for context.</p>
+          </article>
+          <article>
+            <Globe2 size={28} />
+            <h3>Worldwide lens</h3>
+            <p>Coverage spans India, UAE, Germany, the UK, Australia, the United States, and international bodies.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="media-coverage-shell media-archive-section" id="media-archive">
+        <div className="media-section-intro compact">
+          <span className="media-coverage-kicker">Archive</span>
+          <h2>Older coverage and public references for background reading.</h2>
+        </div>
+        <div className="media-archive-list">
+          {archiveItems.map((item) => (
+            <a className="media-archive-row" href={item.link} target="_blank" rel="noreferrer" key={item.title}>
+              <span>{item.date}</span>
+              <div>
+                <strong>{item.title}</strong>
+                <p>{item.summary}</p>
+              </div>
+              <small>
+                {item.source} <ArrowRight size={15} />
+              </small>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="media-coverage-shell media-newsroom-cta">
+        <div>
+          <Radio size={30} />
+          <span className="media-coverage-kicker">Media Room</span>
+          <h2>Build this into a verified homeopathy newsroom.</h2>
+          <p>
+            Add future press releases, interviews, event galleries, and Burnett Homeopathy Pvt. Ltd. coverage here as new
+            source links become available.
+          </p>
+        </div>
+        <a href="mailto:info@globalhomeopathy.org">
+          Submit coverage <FileText size={17} />
+        </a>
       </section>
     </main>
   );
