@@ -87,6 +87,7 @@ function Layout() {
         <nav aria-label="Footer resource links">
           <strong>Resources</strong>
           <NavLink to="/leaders">Directory</NavLink>
+          <NavLink to="/jobs">Jobs</NavLink>
           <NavLink to="/media">Articles</NavLink>
           <NavLink to="/contact">Contact</NavLink>
           <a href="mailto:info@worldhomeopathy.org">Enquiry</a>

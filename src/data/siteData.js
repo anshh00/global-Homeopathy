@@ -19,6 +19,7 @@ export const navItems = [
   { label: "Summit", path: "/summit" },
   { label: "Research", path: "/research" },
   { label: "Leaders", path: "/leaders" },
+  { label: "Jobs", path: "/jobs" },
   { label: "Media", path: "/media" },
 ];
 

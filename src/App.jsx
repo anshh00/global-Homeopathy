@@ -4,6 +4,7 @@ import Layout from "./components/Layout.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import ExplorePage from "./pages/ExplorePage.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import JobsPage from "./pages/JobsPage.jsx";
 import LeadersPage from "./pages/LeadersPage.jsx";
 import MediaPage from "./pages/MediaPage.jsx";
 import ResearchPage from "./pages/ResearchPage.jsx";
@@ -37,6 +38,7 @@ function App() {
           <Route path="/summit" element={<SummitPage />} />
           <Route path="/research" element={<ResearchPage />} />
           <Route path="/leaders" element={<LeadersPage />} />
+          <Route path="/jobs" element={<JobsPage />} />
           <Route path="/media" element={<MediaPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
