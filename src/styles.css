@@ -20523,12 +20523,12 @@ body:has(.leaders-council-page) .nav-search {
 }
 
 .leaders-council-hero h1 {
-  max-width: 620px;
+  max-width: 700px;
   margin: 0;
   color: var(--ink);
-  font-size: clamp(3.4rem, 5.6vw, 6.4rem);
+  font-size: clamp(2.65rem, 4.2vw, 4.65rem);
   font-weight: 900;
-  line-height: 0.94;
+  line-height: 1.02;
   letter-spacing: 0;
 }
 
@@ -20655,7 +20655,8 @@ body:has(.leaders-council-page) .nav-search {
 .leaders-council-heading h2 {
   margin: 0;
   color: var(--ink);
-  font-size: clamp(2.2rem, 4.4vw, 4rem);
+  font-size: clamp(1.85rem, 2.8vw, 3rem);
+  line-height: 1.08;
   letter-spacing: 0;
 }
 
@@ -20730,8 +20731,8 @@ body:has(.leaders-council-page) .nav-search {
 .leaders-council-card h3 {
   margin: 10px 0 2px;
   color: var(--ink);
-  font-size: 1.15rem;
-  line-height: 1.1;
+  font-size: 1.05rem;
+  line-height: 1.18;
 }
 
 .leaders-council-card small {
@@ -20779,7 +20780,8 @@ body:has(.leaders-council-page) .nav-search {
 .leaders-principles h2 {
   margin: 0 0 10px;
   color: var(--ink);
-  font-size: 1.35rem;
+  font-size: 1.22rem;
+  line-height: 1.18;
 }
 
 .leaders-principles p {
@@ -20849,7 +20851,8 @@ body:has(.leaders-council-page) .nav-search {
 .leaders-community-cta h2 {
   margin: 0 0 6px;
   color: #ffffff;
-  font-size: 1.45rem;
+  font-size: clamp(1.18rem, 1.7vw, 1.45rem);
+  line-height: 1.15;
 }
 
 .leaders-community-cta p {
@@ -20949,7 +20952,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   }
 
   .leaders-council-hero h1 {
-    font-size: clamp(2.25rem, 11vw, 3.35rem);
+    font-size: clamp(2.15rem, 9vw, 3rem);
   }
 
   .leaders-council-visual {
