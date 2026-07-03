@@ -20360,24 +20360,17 @@ body:has(.leaders-portal-page) .stitch-layout-footer {
 }
 /* Leaders council reference page */
 .leaders-council-page {
-  --lc-green: #007f5f;
-  --lc-dark: #073d35;
-  --lc-navy: #062a4d;
-  --lc-paper: #fbfaf7;
-  --lc-mint: #eaf8f5;
-  --lc-line: rgba(6, 42, 77, 0.12);
-  --lc-muted: #5d6f7d;
-  --lc-shell: min(1280px, calc(100% - 72px));
-  color: #0b2338;
+  --lc-green: var(--emerald);
+  --lc-dark: var(--emerald-2);
+  --lc-navy: var(--navy);
+  --lc-paper: var(--paper);
+  --lc-mint: var(--aqua);
+  --lc-line: var(--line);
+  --lc-muted: var(--muted);
+  --lc-shell: var(--container);
+  color: var(--ink);
   background: var(--lc-paper);
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+  font-family: inherit;
 }
 
 .leaders-council-shell {
@@ -20386,96 +20379,95 @@ body:has(.leaders-portal-page) .stitch-layout-footer {
 }
 
 body:has(.leaders-council-page) .site-header {
-  min-height: 58px;
-  padding: 7px max(2vw, calc((100vw - 1320px) / 2));
-  background: #ffffff;
-  border-bottom: 1px solid rgba(6, 42, 77, 0.08);
-  box-shadow: 0 8px 22px rgba(6, 42, 77, 0.045);
+  min-height: 104px;
+  padding: 16px max(4.8vw, calc((100vw - var(--max)) / 2));
+  background:
+    radial-gradient(circle at 9% 50%, rgba(14, 138, 106, 0.16), transparent 18rem),
+    radial-gradient(circle at 82% 42%, rgba(91, 171, 139, 0.18), transparent 22rem),
+    linear-gradient(90deg, rgba(250, 252, 248, 0.9), rgba(234, 248, 245, 0.78) 58%, rgba(221, 237, 231, 0.86));
+  border-bottom: 1px solid rgba(14, 107, 80, 0.12);
+  box-shadow: 0 18px 58px rgba(6, 42, 77, 0.08);
 }
 
 body:has(.leaders-council-page) .site-header::before,
 body:has(.leaders-council-page) .site-header::after {
-  display: none;
+  display: block;
 }
 
 body:has(.leaders-council-page) .brand {
-  max-width: 290px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
+  max-width: none;
+  padding: 8px 18px 8px 10px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(14, 107, 80, 0.13);
+  box-shadow: 0 24px 62px rgba(6, 42, 77, 0.09);
 }
 
 body:has(.leaders-council-page) .brand strong {
   color: var(--lc-navy);
-  font-size: 0.82rem;
+  font-size: 1.08rem;
 }
 
 body:has(.leaders-council-page) .brand small {
-  color: #566b66;
-  font-size: 0.56rem;
+  color: var(--muted);
+  font-size: 0.8rem;
 }
 
 body:has(.leaders-council-page) .header-emblem {
-  width: 30px;
-  height: 30px;
-  background: #ffffff;
-  border-color: rgba(0, 127, 95, 0.2);
+  width: 58px;
+  height: 58px;
+  background:
+    radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.96), transparent 20%),
+    linear-gradient(135deg, #0e8a6a, #0a4d43);
+  border-color: rgba(255, 255, 255, 0.74);
 }
 
 body:has(.leaders-council-page) .site-nav {
-  gap: 17px;
-  min-height: 34px;
-  padding: 0;
+  gap: 3px;
+  min-height: auto;
+  padding: 7px;
   overflow: visible;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(14, 107, 80, 0.14);
+  box-shadow: 0 24px 62px rgba(6, 42, 77, 0.08);
 }
 
 body:has(.leaders-council-page) .site-nav a,
 body:has(.leaders-council-page) .nav-search {
   position: relative;
-  min-height: 28px;
-  padding: 5px 0;
-  color: #132c3a;
-  font-size: 0.7rem;
+  min-height: auto;
+  padding: 11px 15px;
+  color: #27445e;
+  font-size: 0.9rem;
   white-space: nowrap;
-  border-radius: 0;
+  border-radius: 999px;
 }
 
 body:has(.leaders-council-page) .site-nav a.active {
-  color: var(--lc-green);
-  background: transparent;
+  color: var(--emerald-2);
+  background: linear-gradient(135deg, rgba(221, 237, 231, 0.98), rgba(234, 248, 245, 0.86));
 }
 
 body:has(.leaders-council-page) .site-nav a.active::after {
-  position: absolute;
-  right: 0;
-  bottom: -2px;
-  left: 0;
-  height: 2px;
-  content: "";
-  background: var(--lc-green);
+  display: none;
 }
 
 body:has(.leaders-council-page) .stitch-nav-join {
-  min-height: 28px;
-  padding-inline: 13px;
+  min-height: 40px;
+  padding-inline: 16px;
   color: #ffffff;
-  font-size: 0.64rem;
+  font-size: 0.84rem;
   background: var(--lc-green);
-  border-radius: 2px;
+  border-radius: 999px;
 }
 
 body:has(.leaders-council-page) .stitch-nav-donate {
-  min-height: 28px;
-  padding-inline: 13px;
+  min-height: 40px;
+  padding-inline: 16px;
   color: var(--lc-navy);
-  font-size: 0.64rem;
+  font-size: 0.84rem;
   background: #ffffff;
   border: 1px solid rgba(6, 42, 77, 0.16);
-  border-radius: 2px;
+  border-radius: 999px;
 }
 
 body:has(.leaders-council-page) .stitch-nav-join::after,
@@ -20484,9 +20476,9 @@ body:has(.leaders-council-page) .stitch-nav-donate::after {
 }
 
 body:has(.leaders-council-page) .nav-search {
-  width: 30px;
-  height: 30px;
-  min-height: 30px;
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
   padding: 0;
 }
 
@@ -20494,8 +20486,10 @@ body:has(.leaders-council-page) .nav-search {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(90deg, #fbfaf7 0%, rgba(251, 250, 247, 0.94) 45%, rgba(234, 248, 245, 0.84) 100%);
-  border-bottom: 1px solid rgba(0, 127, 95, 0.12);
+    radial-gradient(circle at 5% 0%, rgba(14, 107, 80, 0.1), transparent 28rem),
+    radial-gradient(circle at 96% 8%, rgba(200, 166, 77, 0.1), transparent 32rem),
+    linear-gradient(180deg, var(--paper) 0%, #f3f8f5 100%);
+  border-bottom: 1px solid rgba(14, 107, 80, 0.12);
 }
 
 .leaders-council-hero::before {
@@ -20503,7 +20497,7 @@ body:has(.leaders-council-page) .nav-search {
   inset: 0;
   content: "";
   background:
-    radial-gradient(circle at 73% 42%, rgba(0, 127, 95, 0.16), transparent 20rem),
+    radial-gradient(circle at 73% 42%, rgba(14, 107, 80, 0.16), transparent 20rem),
     url("/images/summit-world-map-hero-4k.jpg") center right / cover;
   opacity: 0.22;
   mix-blend-mode: multiply;
@@ -20524,25 +20518,25 @@ body:has(.leaders-council-page) .nav-search {
   color: var(--lc-green);
   font-size: 0.72rem;
   font-weight: 900;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .leaders-council-hero h1 {
   max-width: 620px;
   margin: 0;
-  color: #0b2338;
-  font-size: clamp(2.55rem, 4.3vw, 4.8rem);
-  font-weight: 850;
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  color: var(--ink);
+  font-size: clamp(3.4rem, 5.6vw, 6.4rem);
+  font-weight: 900;
+  line-height: 0.94;
+  letter-spacing: 0;
 }
 
 .leaders-council-hero p {
   max-width: 560px;
   margin: 18px 0 0;
   color: var(--lc-muted);
-  font-size: 1rem;
+  font-size: clamp(1.02rem, 1.4vw, 1.22rem);
   line-height: 1.65;
 }
 
@@ -20551,8 +20545,8 @@ body:has(.leaders-council-page) .nav-search {
   min-height: 280px;
   overflow: hidden;
   background:
-    linear-gradient(90deg, transparent, rgba(0, 127, 95, 0.12)),
-    radial-gradient(circle at 72% 46%, rgba(0, 127, 95, 0.15), transparent 32%);
+    linear-gradient(90deg, transparent, rgba(14, 107, 80, 0.12)),
+    radial-gradient(circle at 72% 46%, rgba(14, 107, 80, 0.15), transparent 32%);
 }
 
 .leaders-council-visual::before {
@@ -20561,7 +20555,7 @@ body:has(.leaders-council-page) .nav-search {
   content: "";
   background:
     radial-gradient(circle at 60% 42%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.15) 32%, transparent 45%),
-    repeating-radial-gradient(circle at 62% 43%, rgba(0, 127, 95, 0.12) 0 1px, transparent 1px 9px);
+    repeating-radial-gradient(circle at 62% 43%, rgba(14, 107, 80, 0.12) 0 1px, transparent 1px 9px);
   border-radius: 50%;
 }
 
@@ -20579,7 +20573,7 @@ body:has(.leaders-council-page) .nav-search {
 .leaders-council-visual span {
   position: absolute;
   border-radius: 50%;
-  background: rgba(0, 127, 95, 0.18);
+  background: rgba(14, 107, 80, 0.18);
   box-shadow: 0 0 20px rgba(200, 166, 77, 0.22);
 }
 
@@ -20641,7 +20635,7 @@ body:has(.leaders-council-page) .nav-search {
 
 .leaders-council-stats strong {
   display: block;
-  color: var(--lc-green);
+  color: var(--emerald);
   font-size: 1.55rem;
   line-height: 1;
 }
@@ -20660,9 +20654,9 @@ body:has(.leaders-council-page) .nav-search {
 
 .leaders-council-heading h2 {
   margin: 0;
-  color: #0b2338;
-  font-size: clamp(1.8rem, 2.4vw, 2.6rem);
-  letter-spacing: -0.04em;
+  color: var(--ink);
+  font-size: clamp(2.2rem, 4.4vw, 4rem);
+  letter-spacing: 0;
 }
 
 .leaders-council-heading p {
@@ -20684,9 +20678,9 @@ body:has(.leaders-council-page) .nav-search {
   padding: 14px;
   flex-direction: column;
   background: #ffffff;
-  border: 1px solid var(--lc-line);
+  border: 1px solid var(--line);
   border-radius: 8px;
-  box-shadow: 0 12px 38px rgba(6, 42, 77, 0.045);
+  box-shadow: 0 18px 44px rgba(6, 42, 77, 0.08);
 }
 
 .leaders-council-photo {
@@ -20735,13 +20729,13 @@ body:has(.leaders-council-page) .nav-search {
 
 .leaders-council-card h3 {
   margin: 10px 0 2px;
-  color: #0b2338;
+  color: var(--ink);
   font-size: 1.15rem;
   line-height: 1.1;
 }
 
 .leaders-council-card small {
-  color: #526579;
+  color: var(--muted);
   font-weight: 800;
 }
 
@@ -20768,7 +20762,7 @@ body:has(.leaders-council-page) .nav-search {
   grid-template-columns: 1.25fr repeat(4, 1fr);
   margin-block: 34px 46px;
   background: #ffffff;
-  border: 1px solid var(--lc-line);
+  border: 1px solid var(--line);
   border-radius: 8px;
 }
 
@@ -20784,7 +20778,7 @@ body:has(.leaders-council-page) .nav-search {
 
 .leaders-principles h2 {
   margin: 0 0 10px;
-  color: #0b2338;
+  color: var(--ink);
   font-size: 1.35rem;
 }
 
@@ -20817,14 +20811,17 @@ body:has(.leaders-council-page) .nav-search {
 
 .leaders-principles article h3 {
   margin: 13px 0 9px;
-  color: #0b2338;
+  color: var(--ink);
   font-size: 1rem;
 }
 
 .leaders-community-cta {
   padding: 28px 0;
   color: #ffffff;
-  background: linear-gradient(90deg, var(--lc-green), #063f35);
+  background:
+    radial-gradient(circle at 88% 18%, rgba(200, 166, 77, 0.18), transparent 28rem),
+    radial-gradient(circle at 8% 80%, rgba(14, 138, 106, 0.18), transparent 30rem),
+    linear-gradient(105deg, var(--navy-2), var(--navy) 48%, #063a44);
 }
 
 .leaders-community-cta .leaders-council-shell {
@@ -20880,18 +20877,18 @@ body:has(.leaders-council-page) .nav-search {
 }
 
 .leaders-community-cta a:last-child {
-  color: #063f35;
+  color: var(--navy);
   background: #ffffff;
   border-color: #ffffff;
 }
 
 body:has(.leaders-council-page) .stitch-layout-footer {
-  background: #13231f;
+  background: var(--navy-2);
 }
 
 @media (max-width: 1050px) {
   .leaders-council-page {
-    --lc-shell: min(calc(100% - 36px), 1280px);
+    --lc-shell: min(92vw, var(--max));
   }
 
   body:has(.leaders-council-page) .site-header {
@@ -20931,7 +20928,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 @media (max-width: 640px) {
   .leaders-council-page {
-    --lc-shell: min(calc(100% - 28px), 1280px);
+    --lc-shell: min(92vw, var(--max));
   }
 
   body:has(.leaders-council-page) .site-header {
