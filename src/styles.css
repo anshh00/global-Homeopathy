@@ -21051,19 +21051,28 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 }
 
 .jobs-hero h1 {
-  max-width: 760px;
+  max-width: 680px;
   color: var(--ink);
-  font-size: clamp(2.45rem, 3.85vw, 4.35rem);
+  font-size: clamp(2.15rem, 3vw, 3.55rem);
   font-weight: 900;
-  line-height: 1.02;
+  line-height: 1.08;
 }
 
 .jobs-hero p {
   max-width: 820px;
   margin-top: 18px;
   color: var(--muted);
-  font-size: clamp(1.02rem, 1.35vw, 1.2rem);
-  line-height: 1.75;
+  font-size: clamp(0.98rem, 1.18vw, 1.12rem);
+  line-height: 1.7;
+}
+
+.jobs-hero .jobs-hero-support {
+  max-width: 780px;
+  padding-left: 18px;
+  margin-top: 14px;
+  color: #4e6376;
+  font-size: clamp(0.95rem, 1.05vw, 1.05rem);
+  border-left: 3px solid var(--emerald);
 }
 
 .jobs-actions {
@@ -21078,7 +21087,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   max-width: 880px;
-  margin-top: 28px;
+  margin-top: 24px;
   overflow: hidden;
   background: rgba(6, 42, 77, 0.12);
   border: 1px solid rgba(6, 42, 77, 0.12);
@@ -21471,7 +21480,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 @media (max-width: 620px) {
   .jobs-hero h1 {
-    font-size: clamp(2.15rem, 10vw, 3rem);
+    font-size: clamp(1.95rem, 9vw, 2.65rem);
   }
 
   .jobs-actions {

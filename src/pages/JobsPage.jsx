@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 const jobHighlights = [
-  { value: "32", label: "curated job leads" },
+  { value: "31", label: "curated external leads" },
   { value: "12+", label: "regions and channels" },
   { value: "Clinical", label: "doctor / consultant roles" },
   { value: "Academic", label: "teaching and research paths" },
@@ -395,17 +395,6 @@ const jobListings = [
     source: "School of Homeopathy",
     link: "https://www.homeopathyschool.com/why-study-with-us/careers-in-homeopathy/",
   },
-  {
-    region: "Global",
-    location: "International / future submissions",
-    designation: "Homeopathy openings from clinics, colleges, manufacturers, and research teams",
-    organization: "WorldHomeopathy.org job submission desk",
-    qualification: "Only homeopathy-specific openings will be accepted for publication",
-    experience: "Clinical, academic, pharmacy, research, regulatory, manufacturing, or operations roles",
-    type: "Submit opening",
-    source: "WorldHomeopathy.org",
-    link: "mailto:info@worldhomeopathy.org?subject=Submit%20Homeopathy%20Job%20Opening",
-  },
 ];
 
 const regions = ["India", "UAE", "United States", "United Kingdom", "Australia", "Malaysia", "Canada", "Gulf", "Remote"];
@@ -421,7 +410,7 @@ const heroBriefs = [
   {
     icon: MapPin,
     title: "Worldwide coverage",
-    text: "India, UAE, Gulf, US, UK, Australia, Malaysia, Canada, and remote channels.",
+    text: "India, UAE, Gulf, US, UK, Australia, Malaysia, Canada, and remote job-board channels.",
   },
   {
     icon: ClipboardList,
@@ -431,7 +420,7 @@ const heroBriefs = [
   {
     icon: ShieldCheck,
     title: "Verified-source approach",
-    text: "Openings link to the original job board or employer channel for latest status.",
+    text: "GlobalHomeopathy.org does not hire directly; each card routes to the live external apply source.",
   },
 ];
 
@@ -465,19 +454,25 @@ function JobsPage() {
         <div className="jobs-shell jobs-hero-grid">
           <div>
             <p className="jobs-kicker">Global homeopathy jobs</p>
-            <h1>Global homeopathy job portal.</h1>
+            <h1>Homeopathy jobs across the world.</h1>
             <p>
-              A focused career desk for homeopathy doctors, consultants,
-              educators, research teams, clinic operators, manufacturers, and
-              institutions. Listings are organized by region with qualification,
-              licensing, experience scope, and original application source.
+              GlobalHomeopathy.org works as a discovery layer for live
+              homeopathy openings, not as a direct recruiter. Candidates can
+              compare clinical, academic, remote, institutional, pharmacy,
+              wellness, research, and non-clinical BHMS pathways, then continue
+              to the original employer or job-board source to apply.
+            </p>
+            <p className="jobs-hero-support">
+              Use this page to check country, designation, required
+              qualification, licensing context, experience scope, and source
+              credibility before moving to the external application page.
             </p>
             <div className="jobs-actions">
               <a className="button primary" href="#openings">
                 Browse openings <ArrowRight size={17} />
               </a>
-              <a className="button secondary" href="mailto:info@worldhomeopathy.org?subject=Submit%20Homeopathy%20Job%20Opening">
-                Submit a job
+              <a className="button secondary" href="mailto:jobs@globalhomeopathy.org?subject=Submit%20Verified%20Homeopathy%20Job%20Opening">
+                Submit verified opening
               </a>
             </div>
             <div className="jobs-hero-briefs" aria-label="Jobs portal details">
@@ -499,7 +494,7 @@ function JobsPage() {
           <aside className="jobs-hero-panel" aria-label="Job portal search preview">
             <div className="jobs-search-bar">
               <Search size={18} />
-              <span>Role • country • qualification • source</span>
+              <span>Role / country / qualification / source</span>
             </div>
             <div className="jobs-hero-priority">
               <strong>What matters before applying</strong>
@@ -520,8 +515,8 @@ function JobsPage() {
             <div className="jobs-burnett-note">
               <ShieldCheck size={20} />
               <p>
-                Burnett Homeopathy Pvt. Ltd. can be listed through verified
-                hiring, summit, research, and institutional opportunities.
+                Burnett Homeopathy Pvt. Ltd. openings can appear here only when
+                a verified external application link is available.
               </p>
             </div>
           </aside>
@@ -611,15 +606,16 @@ function JobsPage() {
         <div className="jobs-shell">
           <div>
             <p className="jobs-kicker">Employer desk</p>
-            <h2>Submit a verified homeopathy opening.</h2>
+            <h2>Submit a verified external homeopathy opening.</h2>
             <p>
               Clinics, colleges, research teams, pharmacies, manufacturers, and
-              summit partners can submit role details for review. Required
-              fields: designation, country, location, qualification, experience,
-              salary range if public, application deadline, and official apply link.
+              summit partners can submit role details for review. The listing
+              must include a public employer page or live application link,
+              because GlobalHomeopathy.org only routes candidates to external
+              application platforms and does not recruit directly.
             </p>
           </div>
-          <a className="button primary" href="mailto:info@worldhomeopathy.org?subject=Submit%20Homeopathy%20Job%20Opening">
+          <a className="button primary" href="mailto:jobs@globalhomeopathy.org?subject=Submit%20Verified%20Homeopathy%20Job%20Opening">
             Send job details <Users size={17} />
           </a>
         </div>
