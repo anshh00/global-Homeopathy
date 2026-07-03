@@ -21443,23 +21443,23 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 .jobs-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 14px;
 }
 
 .job-row {
   position: relative;
   display: grid;
-  gap: 16px;
+  gap: 11px;
   align-items: start;
   min-height: 100%;
-  padding: 22px;
+  padding: 17px 18px 16px;
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(234, 248, 245, 0.38)),
     var(--white);
   border: 1px solid rgba(6, 42, 77, 0.12);
-  border-radius: 22px;
-  box-shadow: 0 18px 52px rgba(6, 42, 77, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 12px 34px rgba(6, 42, 77, 0.07);
 }
 
 .job-row::before {
@@ -21472,7 +21472,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .job-row-region {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
   justify-content: space-between;
   color: var(--emerald);
@@ -21481,18 +21481,18 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .job-row-region > span:first-child {
   display: inline-flex;
-  gap: 8px;
+  gap: 7px;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.74rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .job-family {
   flex: 0 0 auto;
-  padding: 5px 10px;
+  padding: 4px 8px;
   color: var(--navy);
-  font-size: 0.66rem;
+  font-size: 0.6rem;
   font-weight: 950;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -21502,9 +21502,9 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 }
 
 .job-row-main p {
-  margin: 0 0 7px;
+  margin: 0 0 5px;
   color: var(--gold);
-  font-size: 0.72rem;
+  font-size: 0.66rem;
   font-weight: 950;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -21513,7 +21513,7 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 .job-row-main h3 {
   color: #063124;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.28rem, 1.7vw, 1.72rem);
+  font-size: clamp(1.12rem, 1.35vw, 1.42rem);
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.035em;
@@ -21521,11 +21521,11 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .job-row-main span {
   display: flex;
-  gap: 7px;
+  gap: 6px;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 6px;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.8rem;
   font-weight: 750;
 }
 
@@ -21535,9 +21535,9 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .job-row-detail strong {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   color: var(--navy);
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 950;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -21545,15 +21545,15 @@ body:has(.leaders-council-page) .stitch-layout-footer {
 
 .job-row-detail p {
   color: var(--muted);
-  font-size: 0.86rem;
-  line-height: 1.5;
+  font-size: 0.78rem;
+  line-height: 1.42;
 }
 
 .job-row-detail {
-  padding: 14px;
+  padding: 10px 11px;
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(6, 42, 77, 0.08);
-  border-radius: 16px;
+  border-radius: 13px;
 }
 
 .job-row > a {
@@ -21562,9 +21562,10 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   align-items: center;
   justify-content: center;
   justify-self: start;
-  min-height: 44px;
-  padding: 0 16px;
+  min-height: 37px;
+  padding: 0 13px;
   color: var(--navy);
+  font-size: 0.82rem;
   font-weight: 950;
   white-space: nowrap;
   background: rgba(255, 255, 255, 0.76);
