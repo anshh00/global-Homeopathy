@@ -3,11 +3,8 @@ import {
   ArrowRight,
   ExternalLink,
   FileText,
-  Globe2,
   Newspaper,
   Radio,
-  Search,
-  ShieldCheck,
 } from "lucide-react";
 
 const fallbackImages = {
@@ -63,7 +60,7 @@ const coverageItems = [
     summary:
       "Recent international coverage around World Homeopathy Day planning, connecting London with the wider global homeopathy calendar.",
     link: "https://www.homeopathy360.com/world-homeopathy-day-2026-to-be-celebrated-in-london/",
-    image: "https://www.homeopathy360.com/wp-content/uploads/ChatGPT-Image-Feb-17-2026-10_29_48-AM-1024x683.png",
+    image: "https://images.unsplash.com/photo-1486299267070-83823f5448dd?auto=format&fit=crop&w=1200&q=80",
   },
   {
     tag: "Recent News",
@@ -74,7 +71,7 @@ const coverageItems = [
     summary:
       "A global congress update from the Liga Medicorum Homoeopathica Internationalis calendar, useful for tracking worldwide professional activity.",
     link: "https://www.homeopathy360.com/79th-lmhi-world-congress-liga-medicorum-homoeopathica-internationalis-mexico-2026/",
-    image: "https://www.homeopathy360.com/wp-content/uploads/LMHI-Banner-02.jpg",
+    image: "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=1200&q=80",
   },
   {
     tag: "Recent News",
@@ -85,7 +82,7 @@ const coverageItems = [
     summary:
       "Coverage of the 12th International CEDH Conference, adding a European education and leadership reference to the media desk.",
     link: "https://www.homeopathy360.com/international-homeopathy-leaders-convene-in-lisbon-for-12th-international-cedh-conference/",
-    image: "https://www.homeopathy360.com/wp-content/uploads/ChatGPT-Image-Feb-12-2026-02_39_32-PM-1024x683.png",
+    image: "https://images.unsplash.com/photo-1585208798174-6cedd86e019a?auto=format&fit=crop&w=1200&q=80",
   },
   {
     tag: "Academic Event",
@@ -225,7 +222,7 @@ const coverageItems = [
     summary:
       "A research-facing evidence summary reference for readers who want a structured entry point into the homeopathy research conversation.",
     link: "https://www.hri-research.org/wp-content/uploads/2024/12/HRI_EvidenceSummary_2024.pdf",
-    image: "https://images.unsplash.com/photo-1581093458791-9f3c3900f578?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=1200&q=80",
   },
   {
     tag: "Summit Coverage",
@@ -312,24 +309,73 @@ const coverageItems = [
 const recentItems = coverageItems.slice(0, 16);
 const archiveItems = coverageItems.slice(16);
 
-const referenceSteps = [
+const moreNewsItems = [
   {
-    step: "01",
-    icon: ShieldCheck,
-    title: "Source verified",
-    text: "Each card opens the original publication, institution page, public reference, or coverage link.",
+    tag: "Congress Update",
+    date: "2026",
+    source: "Faculty of Homeopathy",
+    country: "United Kingdom",
+    title: "Two leading speakers announced for Faculty Congress 2026",
+    summary:
+      "Faculty news announcing speakers for Congress 2026, keeping the international education and CPD calendar visible.",
+    link: "https://www.facultyofhomeopathy.org/articles/two-leading-speakers-just-announced-for-faculty-of-homeopathy-congress-2026",
+    image:
+      "https://hubble-live-assets.s3.eu-west-1.amazonaws.com/faculty-of-homeopathy/image_asset/file/1001/content_impact_factor_and_thieme.png",
   },
   {
-    step: "02",
-    icon: Search,
-    title: "Context checked",
-    text: "Recent summit news, research references, and archive debate are separated so visitors understand the source type.",
+    tag: "Congress Update",
+    date: "2026",
+    source: "Faculty of Homeopathy",
+    country: "United Kingdom",
+    title: "Cutting Edge Medicine: The Role of Homeopathy in Tomorrow's Health",
+    summary:
+      "The Faculty Congress 2026 theme page positions homeopathy inside a wider discussion on future health and clinical education.",
+    link: "https://www.facultyofhomeopathy.org/events/cutting-edge-medicine-the-role-of-homeopathy-in-tomorrow-s-health",
+    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    step: "03",
-    icon: Globe2,
-    title: "Global indexed",
-    text: "Coverage is organized across countries, conferences, public bodies, research sources, and summit chapters.",
+    tag: "LMHI Update",
+    date: "2026",
+    source: "Homeopathy360",
+    country: "Mexico",
+    title: "LMHI 2026 registration process and conference planning",
+    summary:
+      "Coverage of registration guidance and planning details around the 79th LMHI World Congress in Mexico.",
+    link: "https://www.homeopathy360.com/registration-fee-for-process-for-lmhi-2026-homeopathy-global-conference-in-mexico/",
+    image: "https://images.unsplash.com/photo-1512813195386-6cf811ad3542?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    tag: "Events Desk",
+    date: "Updated",
+    source: "Homeopathy360",
+    country: "International",
+    title: "Upcoming events in homeopathy",
+    summary:
+      "A rolling events page for conferences, seminars, CME updates, and homeopathy activity across regions.",
+    link: "https://www.homeopathy360.com/events-in-homeopathy/",
+    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    tag: "Research Media",
+    date: "2025",
+    source: "HRI",
+    country: "Greece",
+    title: "HRI conference presentations released for wider viewing",
+    summary:
+      "Research conference materials and filmed presentations help make specialist discussions more accessible to global audiences.",
+    link: "https://www.hri-research.org/2025/10/filmed-presentations-live-free-to-view/",
+    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    tag: "Research Conference",
+    date: "2025",
+    source: "HRI",
+    country: "Greece",
+    title: "Thessaloniki conference reported as a research success",
+    summary:
+      "HRI's Thessaloniki conference coverage adds a research-led international event reference to the media archive.",
+    link: "https://www.hri-research.org/2025/08/thessaloniki-conference-a-resounding-success/",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
@@ -468,23 +514,19 @@ function MediaPage() {
         </div>
       </section>
 
-      <section className="media-coverage-shell media-editorial-panel">
-        <div>
-          <span className="media-coverage-kicker">Reference Method</span>
-          <h2>Every story is organized as a source, not a claim.</h2>
+      <section className="media-coverage-shell media-section media-more-news-section">
+        <div className="media-section-intro media-section-wide">
+          <span className="media-coverage-kicker">More Global Updates</span>
+          <h2>Additional media and event references for the global homeopathy calendar.</h2>
+          <p>
+            Instead of a static reference block, this section adds more active news, congress updates, and research-media
+            references that visitors can open directly.
+          </p>
         </div>
-        <div className="media-reference-rail">
-          {referenceSteps.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <article className="media-reference-step" style={{ "--step": index }} key={item.title}>
-                <span>{item.step}</span>
-                <Icon size={28} />
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
-            );
-          })}
+        <div className="media-coverage-grid media-more-news-grid">
+          {moreNewsItems.map((item) => (
+            <CoverageCard item={item} key={`${item.source}-${item.title}`} />
+          ))}
         </div>
       </section>
 
