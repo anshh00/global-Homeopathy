@@ -1,17 +1,25 @@
 import React from "react";
 import {
   ArrowRight,
-  BookOpen,
-  CalendarDays,
   ExternalLink,
   FileText,
   Globe2,
-  Landmark,
   Newspaper,
   Radio,
   Search,
   ShieldCheck,
 } from "lucide-react";
+
+const fallbackImages = {
+  archive: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
+  conference: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+  journal: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
+  policy: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+  public: "https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=1200&q=80",
+  recent: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80",
+  research: "https://images.unsplash.com/photo-1581093458791-9f3c3900f578?auto=format&fit=crop&w=1200&q=80",
+  summit: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80",
+};
 
 const heroStats = [
   { value: "2026", label: "Recent summit coverage" },
@@ -325,17 +333,6 @@ const referenceSteps = [
   },
 ];
 
-const visualIcons = {
-  archive: Newspaper,
-  conference: Globe2,
-  journal: BookOpen,
-  policy: Landmark,
-  public: ShieldCheck,
-  recent: CalendarDays,
-  research: FileText,
-  summit: Radio,
-};
-
 function getVisualType(item) {
   if (item.burnett || item.tag.includes("Summit")) return "summit";
   if (item.tag.includes("Research") || item.tag.includes("Evidence")) return "research";
@@ -347,27 +344,21 @@ function getVisualType(item) {
   return "policy";
 }
 
-function MediaVisual({ item, mode = "card" }) {
+function MediaImage({ item }) {
   const type = getVisualType(item);
-  const Icon = visualIcons[type] || Newspaper;
+  const fallback = item.fallbackImage || fallbackImages[type] || fallbackImages.archive;
 
   return (
-    <div className={`media-visual media-visual-${type} media-visual-${mode}`} aria-hidden="true">
-      <span className="media-visual-grid"></span>
-      <span className="media-visual-orb orb-one"></span>
-      <span className="media-visual-orb orb-two"></span>
-      <span className="media-visual-line line-one"></span>
-      <span className="media-visual-line line-two"></span>
-      <div className="media-visual-top">
-        <Icon size={mode === "large" ? 34 : 26} />
-        <span>{item.date}</span>
-      </div>
-      <div className="media-visual-copy">
-        <small>{item.tag}</small>
-        <strong>{item.source}</strong>
-        <span>{item.country}</span>
-      </div>
-    </div>
+    <img
+      src={item.image || fallback}
+      alt={item.title}
+      loading="lazy"
+      onError={(event) => {
+        if (event.currentTarget.dataset.fallbackApplied === "true") return;
+        event.currentTarget.dataset.fallbackApplied = "true";
+        event.currentTarget.src = fallback;
+      }}
+    />
   );
 }
 
@@ -375,7 +366,7 @@ function CoverageCard({ item }) {
   return (
     <article className={`media-coverage-card${item.burnett ? " is-burnett" : ""}`}>
       <a href={item.link} target="_blank" rel="noreferrer" className="media-card-image" aria-label={item.title}>
-        <MediaVisual item={item} />
+        <MediaImage item={item} />
       </a>
       <div className="media-card-body">
         <div className="media-card-meta">
@@ -425,7 +416,7 @@ function MediaPage() {
           </div>
           <aside className="media-hero-feature" aria-label="Featured media coverage">
             <div className="media-feature-image">
-              <MediaVisual item={coverageItems[0]} mode="large" />
+              <MediaImage item={coverageItems[0]} />
             </div>
             <div className="media-feature-body">
               <span>Featured coverage</span>
@@ -506,7 +497,7 @@ function MediaPage() {
           {archiveItems.map((item) => (
             <a className="media-archive-card" href={item.link} target="_blank" rel="noreferrer" key={item.title}>
               <div className="media-archive-thumb">
-                <MediaVisual item={item} mode="compact" />
+                <MediaImage item={item} />
               </div>
               <span>{item.date} / {item.source}</span>
               <strong>{item.title}</strong>

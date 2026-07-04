@@ -21907,6 +21907,15 @@ body:has(.leaders-council-page) .stitch-layout-footer {
   overflow: hidden;
 }
 
+.media-feature-image img,
+.media-card-image img,
+.media-archive-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .media-feature-body {
   padding: 24px;
   color: rgba(255, 255, 255, 0.76);
