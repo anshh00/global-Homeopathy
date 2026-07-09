@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Search } from "lucide-react";
+import { Mail, MapPin, Search } from "lucide-react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import BrandMark from "./BrandMark.jsx";
 import { navItems } from "../data/siteData.js";
 
 function Layout() {
@@ -15,14 +16,7 @@ function Layout() {
           onClick={() => setMenuOpen(false)}
           aria-label="Global Homeopathy Foundation home"
         >
-          <span className="header-emblem" aria-hidden="true">
-            <span className="emblem-ring"></span>
-            <span className="emblem-line line-a"></span>
-            <span className="emblem-line line-b"></span>
-            <span className="emblem-node node-a"></span>
-            <span className="emblem-node node-b"></span>
-            <span className="emblem-node node-c"></span>
-          </span>
+          <BrandMark compact />
           <span>
             <strong>Global Homeopathy Foundation</strong>
             <small>Research / Education / Summit Hub</small>
@@ -48,8 +42,8 @@ function Layout() {
               {item.label}
             </NavLink>
           ))}
-          <Link className="stitch-nav-join" to="/research" onClick={() => setMenuOpen(false)}>
-            Join Research
+          <Link className="stitch-nav-join" to="/contact" onClick={() => setMenuOpen(false)}>
+            Join Network
           </Link>
           <button className="nav-search" type="button" aria-label="Search Global Homeopathy Foundation">
             <Search size={21} />
@@ -60,35 +54,53 @@ function Layout() {
       <Outlet />
 
       <footer className="stitch-layout-footer">
-        <div>
-          <strong>Global Homeopathy Foundation</strong>
+        <div className="footer-brand-block">
+          <Link className="footer-brand-lockup" to="/" aria-label="Global Homeopathy Foundation home">
+            <BrandMark compact />
+            <span>
+              <strong>Global Homeopathy Foundation</strong>
+              <small>Research / Education / Summit Hub</small>
+            </span>
+          </Link>
           <p>
-            A worldwide platform for homeopathy education, research, summits,
-            publications, and institutional collaboration.
+            A global platform for homeopathy education, research, summits,
+            media, jobs, and professional collaboration.
           </p>
-          <div className="stitch-footer-socials" aria-label="Social links placeholders">
-            <span></span>
-            <span></span>
-            <span></span>
+          <div className="stitch-footer-socials" aria-label="Social links">
+            <span>in</span>
+            <span>yt</span>
+            <span>f</span>
           </div>
         </div>
 
         <nav aria-label="Footer platform links">
           <strong>Foundation</strong>
-          <NavLink to="/explore">Explore</NavLink>
-          <NavLink to="/summit">Summits</NavLink>
-          <NavLink to="/research">Research</NavLink>
-          <NavLink to="/media">Media</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/explore">Knowledge Hub</NavLink>
+          <NavLink to="/leaders">Leadership</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </nav>
 
         <nav aria-label="Footer resource links">
           <strong>Resources</strong>
-          <NavLink to="/leaders">Directory</NavLink>
+          <NavLink to="/summit">Summit Archive</NavLink>
+          <NavLink to="/research">Research Center</NavLink>
           <NavLink to="/jobs">Jobs</NavLink>
-          <NavLink to="/media">Articles</NavLink>
-          <NavLink to="/contact">Contact</NavLink>
-          <a href="mailto:info@worldhomeopathy.org">Enquiry</a>
+          <NavLink to="/media">Media Desk</NavLink>
         </nav>
+
+        <div className="footer-contact-block">
+          <strong>Connect</strong>
+          <a href="mailto:info@globalhomeopathy.org">
+            <Mail size={16} />
+            info@globalhomeopathy.org
+          </a>
+          <span>
+            <MapPin size={16} />
+            Global digital platform
+          </span>
+          <NavLink to="/contact">Submit an update</NavLink>
+        </div>
 
         <form className="stitch-footer-updates">
           <label htmlFor="stitch-footer-email">Updates</label>
@@ -100,7 +112,10 @@ function Layout() {
         </form>
 
         <p className="stitch-footer-copy">
-          © 2026 Global Homeopathy Foundation. Educational information only.
+          (c) 2026 Global Homeopathy Foundation. Educational information only.
+          <span>Privacy Policy</span>
+          <span>Terms of Use</span>
+          <span>Editorial Policy</span>
         </p>
       </footer>
     </>
