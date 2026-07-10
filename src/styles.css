@@ -23140,3 +23140,88 @@ body:has(.leaders-council-page) .stitch-layout-footer p {
     min-height: 42px;
   }
 }
+
+/* Homepage hero collage background */
+.stitch-home .stitch-hero {
+  position: relative;
+  isolation: isolate;
+  width: min(94vw, 1500px);
+  margin-top: 24px;
+  overflow: hidden;
+  padding: clamp(42px, 5vw, 74px) clamp(24px, 4vw, 64px);
+  background:
+    linear-gradient(90deg, rgba(5, 28, 48, 0.95) 0%, rgba(5, 28, 48, 0.78) 42%, rgba(5, 28, 48, 0.24) 68%, rgba(250, 252, 249, 0.18) 100%),
+    url("/images/homeopathy-global-collage-hero.png") center / cover no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 28px 90px rgba(6, 42, 77, 0.16);
+}
+
+.stitch-home .stitch-hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(circle at 20% 18%, rgba(14, 107, 80, 0.2), transparent 26rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 42%);
+}
+
+.stitch-home .stitch-breadcrumb {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.stitch-home .stitch-breadcrumb span + span::before {
+  background: rgba(200, 166, 77, 0.86);
+}
+
+.stitch-home .stitch-hero h1 {
+  color: #ffffff;
+  text-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+}
+
+.stitch-home .stitch-hero-copy > p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.stitch-home .stitch-hero-copy strong {
+  color: #bdeee1;
+}
+
+.stitch-home .stitch-stat-row {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+.stitch-home .stitch-stat-row strong {
+  color: #f3d976;
+}
+
+.stitch-home .stitch-stat-row span {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.stitch-home .stitch-hero-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 22px 52px rgba(3, 23, 43, 0.14);
+  backdrop-filter: blur(14px);
+}
+
+@media (max-width: 1180px) {
+  .stitch-home .stitch-hero {
+    background:
+      linear-gradient(180deg, rgba(5, 28, 48, 0.94) 0%, rgba(5, 28, 48, 0.78) 46%, rgba(5, 28, 48, 0.32) 100%),
+      url("/images/homeopathy-global-collage-hero.png") 58% center / cover no-repeat;
+  }
+}
+
+@media (max-width: 640px) {
+  .stitch-home .stitch-hero {
+    width: min(92vw, 1500px);
+    margin-top: 14px;
+    padding: 30px 18px;
+    background:
+      linear-gradient(180deg, rgba(5, 28, 48, 0.97) 0%, rgba(5, 28, 48, 0.84) 56%, rgba(5, 28, 48, 0.55) 100%),
+      url("/images/homeopathy-global-collage-hero.png") 62% center / cover no-repeat;
+  }
+}
