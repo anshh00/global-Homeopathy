@@ -23225,3 +23225,256 @@ body:has(.leaders-council-page) .stitch-layout-footer p {
       url("/images/homeopathy-global-collage-hero.png") 62% center / cover no-repeat;
   }
 }
+
+/* LMHI-inspired homepage mosaic hero */
+.stitch-home .stitch-hero {
+  width: 100%;
+  min-height: clamp(680px, calc(100svh - 96px), 900px);
+  margin: 0;
+  padding: clamp(76px, 8vw, 128px) clamp(22px, 5vw, 84px) clamp(118px, 11vw, 164px);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: center;
+  justify-items: center;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background:
+    linear-gradient(180deg, rgba(5, 15, 28, 0.24) 0%, rgba(5, 15, 28, 0.52) 45%, rgba(5, 15, 28, 0.72) 100%),
+    linear-gradient(90deg, rgba(3, 17, 30, 0.78) 0%, rgba(3, 17, 30, 0.38) 42%, rgba(3, 17, 30, 0.56) 100%),
+    url("/images/homeopathy-lmhi-style-mosaic.jpg") center / cover no-repeat;
+}
+
+.stitch-home .stitch-hero::before {
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.12), transparent 16rem),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.08));
+}
+
+.stitch-home .stitch-hero::after {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 0;
+  height: 42%;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(2, 20, 34, 0.7));
+}
+
+.stitch-hero-outline {
+  position: absolute;
+  inset: 7% 0 auto;
+  z-index: 1;
+  display: grid;
+  gap: clamp(22px, 3vw, 46px);
+  pointer-events: none;
+  text-align: center;
+  opacity: 0.78;
+}
+
+.stitch-hero-outline span {
+  display: block;
+  color: transparent;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: clamp(5.2rem, 16vw, 19rem);
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  line-height: 0.68;
+  -webkit-text-stroke: clamp(1px, 0.16vw, 3px) rgba(255, 255, 255, 0.62);
+  text-stroke: clamp(1px, 0.16vw, 3px) rgba(255, 255, 255, 0.62);
+  text-transform: uppercase;
+}
+
+.stitch-home .stitch-hero-copy {
+  position: relative;
+  z-index: 3;
+  max-width: min(920px, 92vw);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stitch-home .stitch-breadcrumb {
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.stitch-home .stitch-hero h1 {
+  max-width: 980px;
+  margin: clamp(18px, 2vw, 26px) auto 0;
+  color: #f7a22c;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: clamp(2.6rem, 5.4vw, 6.6rem);
+  font-weight: 900;
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+  text-shadow: 0 16px 38px rgba(0, 0, 0, 0.38);
+}
+
+.stitch-home .stitch-hero-copy > p {
+  max-width: 760px;
+  margin: 22px auto 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(1rem, 1.15vw, 1.28rem);
+  line-height: 1.75;
+  text-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.stitch-home .stitch-hero-play {
+  width: fit-content;
+  margin: clamp(22px, 3vw, 34px) auto 0;
+  display: inline-grid;
+  justify-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.stitch-home .stitch-hero-play svg {
+  color: #ff1d12;
+  fill: #ff1d12;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.36));
+}
+
+.stitch-home .stitch-hero-play span {
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+}
+
+.stitch-home .stitch-hero-actions {
+  justify-content: center;
+  margin-top: clamp(24px, 3vw, 38px);
+}
+
+.stitch-home .stitch-stat-row {
+  display: none;
+}
+
+.stitch-home .stitch-hero-topic-rail {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(22px, 3vw, 38px);
+  z-index: 4;
+  width: min(1120px, calc(100% - 42px));
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  background: rgba(6, 31, 48, 0.72);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px);
+}
+
+.stitch-home .stitch-hero-topic-rail .stitch-hero-card {
+  min-height: auto;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 14px;
+  align-items: center;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+.stitch-home .stitch-hero-topic-rail .stitch-hero-card:last-child {
+  border-right: 0;
+}
+
+.stitch-home .stitch-hero-topic-rail .stitch-hero-card svg {
+  grid-row: span 2;
+  color: #6ee7d4;
+}
+
+.stitch-home .stitch-hero-topic-rail .stitch-hero-card h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.stitch-home .stitch-hero-topic-rail .stitch-hero-card p {
+  display: none;
+}
+
+.stitch-home .stitch-hero-topic-rail .stitch-hero-card > span:last-child {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+}
+
+@media (max-width: 900px) {
+  .stitch-home .stitch-hero {
+    min-height: 760px;
+    padding-bottom: 198px;
+    background-position: center;
+  }
+
+  .stitch-hero-outline {
+    inset-block-start: 13%;
+  }
+
+  .stitch-hero-outline span {
+    font-size: clamp(4.3rem, 19vw, 8rem);
+    line-height: 0.82;
+  }
+
+  .stitch-home .stitch-hero-topic-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stitch-home .stitch-hero-topic-rail .stitch-hero-card:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .stitch-home .stitch-hero-topic-rail .stitch-hero-card:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+}
+
+@media (max-width: 560px) {
+  .stitch-home .stitch-hero {
+    min-height: auto;
+    padding: 54px 18px 28px;
+  }
+
+  .stitch-home .stitch-breadcrumb {
+    display: none;
+  }
+
+  .stitch-home .stitch-hero h1 {
+    font-size: clamp(2.4rem, 14vw, 4.6rem);
+  }
+
+  .stitch-home .stitch-hero-copy > p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .stitch-home .stitch-hero-topic-rail {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: calc(100% - 24px);
+    margin: 22px auto 0;
+    transform: none;
+    border-radius: 18px;
+  }
+
+  .stitch-home .stitch-hero-topic-rail .stitch-hero-card {
+    padding: 14px 12px;
+  }
+}

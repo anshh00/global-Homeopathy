@@ -9,6 +9,7 @@ import {
   Globe2,
   GraduationCap,
   Microscope,
+  PlayCircle,
   ShieldCheck,
   Sparkles,
   Users,
@@ -172,6 +173,11 @@ function HomePage() {
   return (
     <main className="stitch-home">
       <section className="stitch-hero">
+        <div className="stitch-hero-outline" aria-hidden="true">
+          <span>GLOBAL</span>
+          <span>HOMEOPATHY</span>
+        </div>
+
         <div className="stitch-hero-copy">
           <div className="stitch-breadcrumb">
             <span>Home</span>
@@ -186,6 +192,11 @@ function HomePage() {
             institutions, and supporters to <strong>advance the science and practice</strong> for
             a healthier world.
           </p>
+
+          <Link className="stitch-hero-play" to="/media" aria-label="Open media highlights">
+            <PlayCircle size={50} />
+            <span>Watch global homeopathy highlights</span>
+          </Link>
 
           <div className="stitch-hero-actions">
             <Link className="stitch-button primary" to="/explore">
@@ -207,7 +218,7 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="stitch-hero-grid" aria-label="Homepage platform gateways">
+        <div className="stitch-hero-grid stitch-hero-topic-rail" aria-label="Homepage platform gateways">
           {heroCards.map((card) => (
             <HeroCard card={card} key={card.title} />
           ))}
