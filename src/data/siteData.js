@@ -15,12 +15,66 @@ import {
 
 export const navItems = [
   { label: "Home", path: "/" },
-  { label: "Explore", path: "/explore" },
-  { label: "Summit", path: "/summit" },
-  { label: "Research", path: "/research" },
-  { label: "Leaders", path: "/leaders" },
-  { label: "Jobs", path: "/jobs" },
-  { label: "Media", path: "/media" },
+  {
+    label: "Explore",
+    path: "/explore",
+    children: [
+      { label: "Foundational Pillars", path: "/explore#pillars" },
+      { label: "Healing Pathway", path: "/explore#pathway" },
+      { label: "Therapeutic Domains", path: "/explore#domains" },
+      { label: "Institutional FAQ", path: "/explore#faq" },
+    ],
+  },
+  {
+    label: "Summit",
+    path: "/summit",
+    children: [
+      { label: "Summit Archive", path: "/summit#archive" },
+      { label: "Global Timeline", path: "/summit#timeline" },
+      { label: "Experts & Voices", path: "/summit#experts" },
+      { label: "Media Desk", path: "/summit#media" },
+    ],
+  },
+  {
+    label: "Research",
+    path: "/research",
+    children: [
+      { label: "Evidence Atlas", path: "/research#atlas" },
+      { label: "Featured Research", path: "/research#featured" },
+      { label: "Goa Research Summit", path: "/research#goa" },
+      { label: "Publications", path: "/research#publications" },
+    ],
+  },
+  {
+    label: "Leaders",
+    path: "/leaders",
+    children: [
+      { label: "Leadership Council", path: "/leaders#council" },
+      { label: "Global Leaders", path: "/leaders#leaders" },
+      { label: "Pioneers", path: "/leaders#pioneers" },
+      { label: "Principles", path: "/leaders#principles" },
+    ],
+  },
+  {
+    label: "Jobs",
+    path: "/jobs",
+    children: [
+      { label: "Open Roles", path: "/jobs#openings" },
+      { label: "Search by Country", path: "/jobs#filters" },
+      { label: "Remote Roles", path: "/jobs#remote" },
+      { label: "Submit Job Lead", path: "/contact" },
+    ],
+  },
+  {
+    label: "Media",
+    path: "/media",
+    children: [
+      { label: "Recent Coverage", path: "/media#recent" },
+      { label: "Global Updates", path: "/media#updates" },
+      { label: "Coverage Archive", path: "/media#archive" },
+      { label: "Submit News", path: "/contact" },
+    ],
+  },
 ];
 
 export const stats = [

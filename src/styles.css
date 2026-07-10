@@ -22688,6 +22688,12 @@ body:has(.leaders-council-page) .site-nav {
   box-shadow: none;
 }
 
+.nav-menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .site-nav a,
 body:has(.stitch-home) .site-nav a,
 body:has(.explore-stitch-page) .site-nav a,
@@ -22702,6 +22708,83 @@ body:has(.leaders-council-page) .site-nav a {
   line-height: 1;
   background: transparent;
   border-radius: 0;
+}
+
+.site-nav .nav-parent-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-caret {
+  flex: 0 0 auto;
+  stroke-width: 2.4;
+  transition: transform 0.18s ease;
+}
+
+.nav-menu-item:hover .nav-caret,
+.nav-menu-item:focus-within .nav-caret {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  z-index: 20;
+  display: grid;
+  min-width: 228px;
+  padding: 12px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 252, 249, 0.96));
+  border: 1px solid rgba(6, 42, 77, 0.12);
+  box-shadow: 0 24px 68px rgba(6, 42, 77, 0.16);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.nav-dropdown::before {
+  position: absolute;
+  top: -18px;
+  right: 0;
+  left: 0;
+  height: 18px;
+  content: "";
+}
+
+.nav-menu-item:hover .nav-dropdown,
+.nav-menu-item:focus-within .nav-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.site-nav .nav-dropdown a,
+body:has(.stitch-home) .site-nav .nav-dropdown a,
+body:has(.explore-stitch-page) .site-nav .nav-dropdown a,
+body:has(.summit-foundation-page) .site-nav .nav-dropdown a,
+body:has(.leaders-portal-page) .site-nav .nav-dropdown a,
+body:has(.leaders-council-page) .site-nav .nav-dropdown a {
+  display: block;
+  padding: 10px 12px;
+  color: #294057;
+  font-size: 0.82rem;
+  font-weight: 850;
+  line-height: 1.2;
+  border-left: 2px solid transparent;
+}
+
+.site-nav .nav-dropdown a:hover,
+.site-nav .nav-dropdown a:focus-visible {
+  color: var(--emerald);
+  background: rgba(14, 107, 80, 0.07);
+  border-left-color: var(--emerald);
+}
+
+.site-nav .nav-dropdown a::after {
+  display: none;
 }
 
 .site-nav a::after,
@@ -22975,6 +23058,45 @@ body:has(.leaders-council-page) .stitch-layout-footer p {
     justify-content: center;
     width: 100%;
     min-height: 44px;
+  }
+
+  .nav-menu-item {
+    display: grid;
+    width: 100%;
+  }
+
+  .site-nav .nav-parent-link {
+    justify-content: center;
+  }
+
+  .nav-caret {
+    transform: none !important;
+  }
+
+  .nav-dropdown {
+    position: static;
+    display: grid;
+    min-width: 0;
+    padding: 0 0 12px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  .nav-dropdown::before {
+    display: none;
+  }
+
+  .site-nav .nav-dropdown a {
+    min-height: 38px;
+    padding: 8px 12px;
+    color: #526579;
+    font-size: 0.8rem;
+    background: rgba(14, 107, 80, 0.05);
+    border-left: 0;
   }
 
   .stitch-layout-footer {

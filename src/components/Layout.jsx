@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Mail, MapPin, Search } from "lucide-react";
+import { ChevronDown, Mail, MapPin, Search } from "lucide-react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import BrandMark from "./BrandMark.jsx";
 import { navItems } from "../data/siteData.js";
@@ -37,11 +37,33 @@ function Layout() {
         </button>
 
         <nav className={`site-nav ${menuOpen ? "is-open" : ""}`} id="site-nav" aria-label="Primary navigation">
-          {navItems.map((item) => (
-            <NavLink key={item.path} to={item.path} onClick={() => setMenuOpen(false)}>
-              {item.label}
-            </NavLink>
-          ))}
+          {navItems.map((item) => {
+            const hasChildren = Array.isArray(item.children) && item.children.length > 0;
+
+            return (
+              <div className={hasChildren ? "nav-menu-item has-submenu" : "nav-menu-item"} key={item.path}>
+                <NavLink
+                  className={hasChildren ? "nav-parent-link" : undefined}
+                  to={item.path}
+                  onClick={() => setMenuOpen(false)}
+                  aria-haspopup={hasChildren ? "true" : undefined}
+                >
+                  {item.label}
+                  {hasChildren ? <ChevronDown className="nav-caret" size={14} aria-hidden="true" /> : null}
+                </NavLink>
+
+                {hasChildren ? (
+                  <div className="nav-dropdown" aria-label={`${item.label} sections`}>
+                    {item.children.map((child) => (
+                      <Link key={child.path} to={child.path} onClick={() => setMenuOpen(false)}>
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
           <Link className="stitch-nav-join" to="/contact" onClick={() => setMenuOpen(false)}>
             Join Network
           </Link>
