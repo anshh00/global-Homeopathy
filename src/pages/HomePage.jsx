@@ -77,7 +77,7 @@ function HomePage() {
   const [typedAbout, setTypedAbout] = useState("");
   const aboutRef = useRef(null);
   const slide = heroSlides[activeSlide];
-  const aboutText = "WorldHomeopathy.org is an independent digital platform for understanding homeopathy through history, education, research, global leadership, summits, media, and professional pathways. It gives students, practitioners, researchers, journalists, and the public a thoughtful place to begin, while keeping context, responsible language, and international collaboration at the centre of the experience.";
+  const aboutText = "WorldHomeopathy.org is an independent digital platform for learning about homeopathy through history, education, research, global leadership, summits, media, and professional pathways. It brings context, international perspectives, and responsible language together so every visitor can find a clear beginning and move confidently through the Center of the Experience.";
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -105,8 +105,8 @@ function HomePage() {
   useEffect(() => {
     if (!aboutVisible || typedAbout.length >= aboutText.length) return undefined;
     const timer = window.setTimeout(() => {
-      setTypedAbout(aboutText.slice(0, typedAbout.length + 2));
-    }, 16);
+      setTypedAbout(aboutText.slice(0, typedAbout.length + 1));
+    }, 34);
     return () => window.clearTimeout(timer);
   }, [aboutText, aboutVisible, typedAbout]);
 
@@ -184,13 +184,14 @@ function HomePage() {
         </div>
         <div className="original-home-welcome-grid">
           <div className="original-home-welcome-heading">
-            <p className="original-kicker original-about-kicker">About Us</p>
             <h2>A shared place to understand the global homeopathy story.</h2>
           </div>
           <div className="original-home-welcome-copy">
             <p className={`original-home-typing ${aboutVisible ? "is-visible" : ""}`} aria-live="polite">
               {typedAbout}
-              <span className="original-home-typing-caret" aria-hidden="true">|</span>
+              {typedAbout.length < aboutText.length ? (
+                <span className="original-home-typing-caret" aria-hidden="true">|</span>
+              ) : null}
             </p>
             <Link className="original-text-link" to="/explore">Start with the essentials <ArrowRight size={16} /></Link>
           </div>

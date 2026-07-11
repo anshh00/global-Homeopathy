@@ -24210,6 +24210,7 @@ body:has(.original-home) {
 
 /* About section: centered editorial reveal with a quiet typewriter treatment. */
 .original-home-welcome {
+  padding-top: clamp(42px, 5vw, 72px);
   text-align: center;
 }
 
@@ -24226,7 +24227,7 @@ body:has(.original-home) {
 .original-home-welcome-grid {
   display: block;
   max-width: 930px;
-  margin: 48px auto 0;
+  margin: 30px auto 0;
 }
 
 .original-home-welcome-heading h2 {
@@ -24242,7 +24243,7 @@ body:has(.original-home) {
 
 .original-home-welcome-copy {
   max-width: 780px;
-  margin: 30px auto 0;
+  margin: 24px auto 0;
   padding: 0;
 }
 
@@ -24272,7 +24273,7 @@ body:has(.original-home) {
   }
 
   .original-home-welcome-grid {
-    margin-top: 34px;
+    margin-top: 24px;
   }
 
   .original-home-welcome-heading h2 {
