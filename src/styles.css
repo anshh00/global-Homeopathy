@@ -23522,9 +23522,14 @@ body:has(.original-home) {
   transition: opacity 1.1s ease, transform 7s ease;
 }
 
-.original-home-hero-media img[src*="hahnemann-hero"] {
+.original-home-hero-media img[src*="hahnemann-statue"] {
   object-position: 51% 44%;
   filter: saturate(0.84) contrast(1.16) brightness(1.08) sepia(0.06);
+}
+
+.original-home-hero-media img[src*="old-homeopathic-medicine"] {
+  object-position: center 48%;
+  filter: grayscale(0.1) contrast(1.12) brightness(0.94);
 }
 
 .original-home-hero-media img.is-active {

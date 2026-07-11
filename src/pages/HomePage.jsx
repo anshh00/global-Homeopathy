@@ -15,11 +15,18 @@ import { Link } from "react-router-dom";
 
 const heroSlides = [
   {
-    image: "/images/homepage/hahnemann-hero.png",
+    image: "/images/homepage/hahnemann-statue.jpg",
     eyebrow: "Heritage with a future",
     title: "A tradition that keeps asking better questions.",
     text: "Begin with the history of homeopathy, then follow the people and ideas carrying its global conversation forward.",
     note: "History / learning / context",
+  },
+  {
+    image: "/images/homepage/old-homeopathic-medicine.jpeg",
+    eyebrow: "A tradition in objects",
+    title: "Every remedy carries a story.",
+    text: "Look back at the materials, texts, and practices that helped homeopathy travel across generations and borders.",
+    note: "History / materia medica / memory",
   },
   {
     image: "/images/homepage/research-lab.jpg",
@@ -27,13 +34,6 @@ const heroSlides = [
     title: "The questions behind the practice matter.",
     text: "Follow research conversations, professional learning, and the work of making homeopathy easier to understand responsibly.",
     note: "Research and inquiry",
-  },
-  {
-    image: "/images/homepage/heritage-gathering.jpg",
-    eyebrow: "Knowledge in conversation",
-    title: "Many voices. One growing community.",
-    text: "Connect with the people, institutions, and learning spaces making homeopathy more visible around the world.",
-    note: "Education and collaboration",
   },
   {
     image: "/images/homepage/summit-awards.jpg",
