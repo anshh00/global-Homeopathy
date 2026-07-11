@@ -73,23 +73,19 @@ const knowledgeThreads = [
 
 function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const slide = heroSlides[activeSlide];
 
   useEffect(() => {
-    if (isPaused) return undefined;
     const timer = window.setInterval(() => {
       setActiveSlide((current) => (current + 1) % heroSlides.length);
-    }, 6500);
+    }, 4300);
     return () => window.clearInterval(timer);
-  }, [isPaused]);
+  }, []);
 
   return (
     <main className="original-home">
       <section
         className="original-home-hero"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
         aria-label="Global Homeopathy visual introduction"
       >
         <div className="original-home-hero-media" aria-hidden="true">
@@ -105,15 +101,14 @@ function HomePage() {
         <div className="original-home-hero-shade" aria-hidden="true" />
         <div className="original-home-hero-inner">
           <div className="original-home-hero-copy">
-            <p className="original-kicker">WorldHomeopathy.org</p>
             <p className="original-home-hero-welcome">Welcome to the World Homeopathy Organisation</p>
             <p className="original-home-hero-eyebrow">{slide.eyebrow}</p>
             <h1>{slide.title}</h1>
             <p className="original-home-hero-text">{slide.text}</p>
             <div className="original-home-actions">
-              <Link className="original-button original-button-light" to="/explore">
-                Enter the knowledge hub <ArrowRight size={16} />
-              </Link>
+              <a className="original-button original-button-light" href="#about">
+                About Us <ArrowRight size={16} />
+              </a>
               <Link className="original-button original-button-outline" to="/contact">
                 Join us <Users size={16} />
               </Link>
@@ -154,15 +149,15 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="original-home-welcome" id="welcome">
+      <section className="original-home-welcome" id="about">
         <div className="original-home-section-label">
           <span>01</span>
           <p>Welcome to the global homeopathy platform</p>
         </div>
         <div className="original-home-welcome-grid">
           <div className="original-home-welcome-heading">
-            <p className="original-kicker">A shared starting point</p>
-            <h2>Understanding homeopathy begins with a better question.</h2>
+            <p className="original-kicker">About Us</p>
+            <h2>WorldHomeopathy.org is a clear starting point for the global homeopathy community.</h2>
           </div>
           <div className="original-home-welcome-copy">
             <p>
