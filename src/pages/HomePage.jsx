@@ -1,352 +1,255 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
+  ArrowDownRight,
   ArrowRight,
+  ArrowUpRight,
   BookOpen,
-  CalendarDays,
-  CheckCircle2,
-  FileText,
-  FlaskConical,
   Globe2,
-  GraduationCap,
+  Landmark,
   Microscope,
-  PlayCircle,
-  ShieldCheck,
-  Sparkles,
+  Play,
+  Quote,
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const heroCards = [
+const heroSlides = [
   {
-    icon: FlaskConical,
-    title: "Research Center",
-    text: "Advancing global studies, trials, and publications.",
-    action: "Explore",
-    to: "/research",
-    tone: "teal",
+    image: "/images/homepage/summit-awards.jpg",
+    eyebrow: "A living global archive",
+    title: "Where homeopathy meets the world.",
+    text: "A visual record of the people, places, conversations, and milestones shaping homeopathy across generations.",
+    note: "Global summit community",
   },
   {
-    icon: Users,
-    title: "Global Leaders",
-    text: "Uniting visionary leaders and experts.",
-    action: "Meet Leaders",
-    to: "/leaders",
-    tone: "navy",
+    image: "/images/homepage/hahnemann-memorial.jpg",
+    eyebrow: "Heritage with a future",
+    title: "Ideas travel further when they are remembered.",
+    text: "From the history of Samuel Hahnemann to the questions being asked by today's educators and researchers.",
+    note: "History / learning / context",
   },
   {
-    icon: Globe2,
-    title: "World Summit",
-    text: "International events that connect and create impact.",
-    action: "Discover",
-    to: "/summit",
-    tone: "gold",
+    image: "/images/homepage/education-community.jpg",
+    eyebrow: "Knowledge in conversation",
+    title: "Many voices. One growing community.",
+    text: "Connect with the people, institutions, and learning spaces making homeopathy more visible around the world.",
+    note: "Education and collaboration",
   },
   {
+    image: "/images/homepage/homeopathic-practice.jpg",
+    eyebrow: "Practice, inquiry, responsibility",
+    title: "A clearer way into homeopathy.",
+    text: "Explore foundations, research pathways, global events, and professional resources in one considered platform.",
+    note: "A public knowledge platform",
+  },
+];
+
+const knowledgeThreads = [
+  {
+    number: "01",
     icon: BookOpen,
-    title: "Publications",
-    text: "Journals, articles, and peer-reviewed global insights.",
-    action: "View Library",
-    to: "/media",
-    tone: "olive",
-  },
-];
-
-const platformStats = [
-  { value: "75+", label: "Countries" },
-  { value: "95k+", label: "Practitioners" },
-  { value: "120+", label: "Research Articles" },
-];
-
-const researchItems = [
-  {
-    label: "Research Note",
-    title: "Efficacy of Ultra High Dilutions in Chronic Allergic Rhinitis",
-    text: "Clinical notes, source-led evidence, and publication references organized for review.",
-    meta: "Journal of Integrative Medicine",
+    title: "Begin with the foundations",
+    text: "Learn about the history, language, principles, and people that shaped homeopathy. Start with context before moving into deeper resources.",
+    to: "/explore",
+    link: "Open the knowledge hub",
   },
   {
-    label: "Whitepaper",
-    title: "Standardization of Potentization Processes: Molecular Analysis",
-    text: "Manufacturing standards, research methods, and scientific review notes in one place.",
-    meta: "Burnett Homeopathy Pvt. Ltd.",
-  },
-  {
-    label: "Public Health",
-    title: "Public Health Impact in Developing Economies",
-    text: "Reserved for country-level references, healthcare education, and public guidance.",
-    meta: "Foundation research desk",
-  },
-];
-
-const newsroomItems = [
-  {
-    tag: "Summit Desk",
-    title: "World Homeopathy Summit 2024 Agenda",
-    text: "Planning and reference space for keynote sessions, summit notes, and public reports.",
-    image: "/images/summit-global-stage.jpg",
-  },
-  {
-    tag: "Platform Update",
-    title: "New Certification Standards",
-    text: "Institutional standards, learning pathways, and reference material for readers.",
-  },
-  {
-    tag: "Media Desk",
-    title: "European Research Grants",
-    text: "Collaborations, academic updates, and partner notices for the research community.",
-  },
-];
-
-const calendarItems = [
-  { date: "15", label: "Ethics Committee Meeting", note: "Governance and standards review" },
-  { date: "08", label: "Regional Symposium", note: "Education and summit planning" },
-  { date: "22", label: "Clinical Standards Webinar", note: "Practice guidance and training" },
-];
-
-const infrastructurePoints = [
-  "State-of-the-art manufacturing and quality-focused operations",
-  "Global logistics and summit-led international visibility",
-  "Research, education, and media contribution across the platform",
-];
-
-const governanceAreas = [
-  {
-    icon: ShieldCheck,
-    title: "Ethics Committee",
-    text: "Responsible language, public guidance, and editorial standards for the platform.",
-    action: "Documents",
-  },
-  {
+    number: "02",
     icon: Microscope,
-    title: "Research Board",
-    text: "Verified studies, citations, databases, and evidence summaries for researchers.",
-    action: "Research",
-    featured: true,
+    title: "Follow the evidence conversation",
+    text: "Find research pathways, reviews, databases, and evidence-focused initiatives with clear references and responsible language.",
+    to: "/research",
+    link: "Explore research",
   },
   {
-    icon: GraduationCap,
-    title: "Education Council",
-    text: "Learning paths, public education, and professional resources for global readers.",
-    action: "Curriculum",
+    number: "03",
+    icon: Globe2,
+    title: "See the global movement",
+    text: "Follow summits, country chapters, media coverage, and professional opportunities that connect the homeopathy community internationally.",
+    to: "/summit",
+    link: "View the summit journey",
   },
 ];
-
-function IconPanel({ icon: Icon, children, className = "" }) {
-  return (
-    <span className={`stitch-icon-panel ${className}`} aria-hidden="true">
-      <Icon size={20} />
-      {children}
-    </span>
-  );
-}
-
-function HeroCard({ card }) {
-  const Icon = card.icon;
-
-  return (
-    <Link className={`stitch-hero-card is-${card.tone}`} to={card.to}>
-      <IconPanel icon={Icon} />
-      <h2>{card.title}</h2>
-      <p>{card.text}</p>
-      <span>
-        {card.action} <ArrowRight size={14} />
-      </span>
-    </Link>
-  );
-}
-
-function ResearchArticle({ item }) {
-  return (
-    <article className="stitch-research-card">
-      <span>{item.label}</span>
-      <h3>{item.title}</h3>
-      <p>{item.text}</p>
-      <small>
-        <FileText size={13} />
-        {item.meta}
-      </small>
-    </article>
-  );
-}
 
 function HomePage() {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const slide = heroSlides[activeSlide];
+
+  useEffect(() => {
+    if (isPaused) return undefined;
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % heroSlides.length);
+    }, 6500);
+    return () => window.clearInterval(timer);
+  }, [isPaused]);
+
   return (
-    <main className="stitch-home">
-      <section className="stitch-hero">
-        <div className="stitch-hero-outline" aria-hidden="true">
-          <span>GLOBAL</span>
-          <span>HOMEOPATHY</span>
-        </div>
-
-        <div className="stitch-hero-copy">
-          <div className="stitch-breadcrumb">
-            <span>Home</span>
-            <span>Global Platform</span>
-            <span>Research Hub</span>
-          </div>
-
-          <h1>Connecting the Global Homeopathy Community</h1>
-          <p>
-            A worldwide platform for education, research, innovation, leadership, and
-            international collaboration in homeopathy. Uniting practitioners, researchers,
-            institutions, and supporters to <strong>advance the science and practice</strong> for
-            a healthier world.
-          </p>
-
-          <Link className="stitch-hero-play" to="/media" aria-label="Open media highlights">
-            <PlayCircle size={50} />
-            <span>Watch global homeopathy highlights</span>
-          </Link>
-
-          <div className="stitch-hero-actions">
-            <Link className="stitch-button primary" to="/explore">
-              Start Exploring <ArrowRight size={16} />
-            </Link>
-            <Link className="stitch-button secondary" to="/summit">
-              <Sparkles size={15} />
-              World Summit
-            </Link>
-          </div>
-
-          <div className="stitch-stat-row" aria-label="Platform highlights">
-            {platformStats.map((stat) => (
-              <article key={stat.label}>
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <div className="stitch-hero-grid stitch-hero-topic-rail" aria-label="Homepage platform gateways">
-          {heroCards.map((card) => (
-            <HeroCard card={card} key={card.title} />
+    <main className="original-home">
+      <section
+        className="original-home-hero"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+        aria-label="Global Homeopathy visual introduction"
+      >
+        <div className="original-home-hero-media" aria-hidden="true">
+          {heroSlides.map((item, index) => (
+            <img
+              className={index === activeSlide ? "is-active" : ""}
+              key={item.image}
+              src={item.image}
+              alt=""
+            />
           ))}
         </div>
-      </section>
-
-      <section className="stitch-section stitch-repository" aria-labelledby="repository-heading">
-        <div className="stitch-section-head">
-          <div>
-            <p className="stitch-kicker">Global Research Repository</p>
-          <h2 id="repository-heading">Critical notes and research publications.</h2>
-          </div>
-          <Link to="/research">
-            View Archive <ArrowRight size={14} />
-          </Link>
-        </div>
-
-        <div className="stitch-research-grid">
-          {researchItems.map((item) => (
-            <ResearchArticle item={item} key={item.title} />
-          ))}
-        </div>
-      </section>
-
-      <section className="stitch-section stitch-newsroom" aria-labelledby="newsroom-heading">
-        <h2 id="newsroom-heading">Foundation Newsroom</h2>
-
-        <div className="stitch-news-layout">
-          <div className="stitch-news-main">
-            <img src="/images/summit-global-stage.jpg" alt="World Homeopathy Summit delegates" />
-            <div>
-              <span>Global Desk</span>
-              <h3>World Homeopathy Summit 2024 Agenda</h3>
-              <p>
-                A structured editorial space for summit coverage, verified media references,
-                and public updates.
-              </p>
-              <Link to="/media">
-                Explore archive <ArrowRight size={14} />
+        <div className="original-home-hero-shade" aria-hidden="true" />
+        <div className="original-home-hero-inner">
+          <div className="original-home-hero-copy">
+            <p className="original-kicker">WorldHomeopathy.org</p>
+            <p className="original-home-hero-eyebrow">{slide.eyebrow}</p>
+            <h1>{slide.title}</h1>
+            <p className="original-home-hero-text">{slide.text}</p>
+            <div className="original-home-actions">
+              <Link className="original-button original-button-light" to="/explore">
+                Enter the knowledge hub <ArrowRight size={16} />
+              </Link>
+              <Link className="original-play-link" to="/media">
+                <span className="original-play-icon"><Play size={14} fill="currentColor" /></span>
+                Watch the global story
               </Link>
             </div>
           </div>
 
-          <div className="stitch-news-small-grid">
-            {newsroomItems.slice(1).map((item) => (
-              <article key={item.title}>
-                <span>{item.tag}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-                <Link to="/media">
-                  Read Story <ArrowRight size={13} />
-                </Link>
-              </article>
-            ))}
+          <div className="original-home-hero-aside">
+            <span className="original-home-hero-index">0{activeSlide + 1} / 0{heroSlides.length}</span>
+            <span className="original-home-hero-note">{slide.note}</span>
+            <button
+              className="original-scroll-cue"
+              type="button"
+              onClick={() => document.querySelector("#welcome")?.scrollIntoView({ behavior: "smooth" })}
+              aria-label="Scroll to welcome section"
+            >
+              <ArrowDownRight size={18} />
+              Discover the platform
+            </button>
           </div>
-
-          <aside className="stitch-calendar" aria-label="Events calendar">
-            <div className="stitch-calendar-head">
-              <strong>Events Calendar</strong>
-              <CalendarDays size={18} />
-            </div>
-            {calendarItems.map((item) => (
-              <article key={item.date}>
-                <time>{item.date}</time>
-                <div>
-                  <strong>{item.label}</strong>
-                  <span>{item.note}</span>
-                </div>
-              </article>
-            ))}
-            <Link to="/summit">
-              Full Calendar <ArrowRight size={13} />
-            </Link>
-          </aside>
+        </div>
+        <div className="original-home-slide-controls" aria-label="Hero slides">
+          {heroSlides.map((item, index) => (
+            <button
+              key={item.image}
+              type="button"
+              className={index === activeSlide ? "is-active" : ""}
+              onClick={() => setActiveSlide(index)}
+              aria-label={`Show slide ${index + 1}`}
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <i />
+            </button>
+          ))}
         </div>
       </section>
 
-      <section className="stitch-burnett-band">
-        <div className="stitch-burnett-visual">
-          <img src="/images/stitch-burnett-lab-reference.jpg" alt="Manufacturing and research infrastructure visual" />
+      <section className="original-home-welcome" id="welcome">
+        <div className="original-home-section-label">
+          <span>01</span>
+          <p>Welcome to the global homeopathy platform</p>
         </div>
-        <div className="stitch-burnett-copy">
-          <p className="stitch-kicker">Founder Technical Partner</p>
-          <h2>Burnett Homeopathy: Setting Global Infrastructure Standards</h2>
-          <p>
-            Representing the principle of modern manufacturing and research support, Burnett
-            Homeopathy Pvt. Ltd. appears through summit, education, and infrastructure activity.
-          </p>
-          <div className="stitch-burnett-points">
-            {infrastructurePoints.map((point) => (
-              <span key={point}>
-                <CheckCircle2 size={16} />
-                {point}
-              </span>
-            ))}
+        <div className="original-home-welcome-grid">
+          <div className="original-home-welcome-heading">
+            <p className="original-kicker">A shared starting point</p>
+            <h2>Understanding homeopathy begins with a better question.</h2>
           </div>
-          <Link className="stitch-button light" to="/summit">
-            Partnership Details
-          </Link>
+          <div className="original-home-welcome-copy">
+            <p>
+              WorldHomeopathy.org is an independent digital platform for learning about homeopathy, its history, its communities, and its evolving conversations.
+            </p>
+            <p>
+              It brings together accessible education, research pathways, summit archives, leadership profiles, and global media so that every visitor can choose a clear place to begin.
+            </p>
+            <Link className="original-text-link" to="/explore">Start with the essentials <ArrowRight size={16} /></Link>
+          </div>
+        </div>
+        <div className="original-home-heritage-strip">
+          <img src="/images/homepage/hahnemann-portrait.jpg" alt="Historical portrait of Samuel Hahnemann" />
+          <div>
+            <p className="original-kicker">A short historical note</p>
+            <h3>Samuel Hahnemann and the origins of homeopathy</h3>
+            <p>Samuel Hahnemann, a German physician, established the foundations of homeopathy in the late eighteenth and early nineteenth centuries. His work remains an important part of the tradition's historical record.</p>
+          </div>
+          <Link className="original-round-link" to="/explore" aria-label="Read the history of homeopathy"><ArrowUpRightIcon /></Link>
         </div>
       </section>
 
-      <section className="stitch-section stitch-governance" aria-labelledby="governance-heading">
-        <div className="stitch-centered-head">
-          <h2 id="governance-heading">Foundation Governance</h2>
-          <p>
-            A clear framework for editorial, research, and education governance.
-          </p>
+      <section className="original-home-threads" aria-labelledby="threads-heading">
+        <div className="original-home-section-label">
+          <span>02</span>
+          <p id="threads-heading">Choose your way in</p>
         </div>
-
-        <div className="stitch-governance-grid">
-          {governanceAreas.map((item) => {
-            const Icon = item.icon;
+        <div className="original-home-threads-intro">
+          <h2>Three routes into one worldwide story.</h2>
+          <p>Whether you are learning, researching, or following the international community, the platform keeps the connections visible.</p>
+        </div>
+        <div className="original-home-thread-list">
+          {knowledgeThreads.map((thread) => {
+            const Icon = thread.icon;
             return (
-              <article className={item.featured ? "is-featured" : ""} key={item.title}>
-                <IconPanel icon={Icon} />
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-                <span>
-                  {item.action} <ArrowRight size={13} />
+              <Link className="original-home-thread" to={thread.to} key={thread.number}>
+                <span className="original-home-thread-number">{thread.number}</span>
+                <span className="original-home-thread-icon"><Icon size={24} /></span>
+                <span className="original-home-thread-content">
+                  <h3>{thread.title}</h3>
+                  <p>{thread.text}</p>
+                  <span className="original-text-link">{thread.link} <ArrowRight size={15} /></span>
                 </span>
-              </article>
+                <ArrowRight className="original-home-thread-arrow" size={22} />
+              </Link>
             );
           })}
         </div>
       </section>
+
+      <section className="original-home-perspectives" aria-labelledby="perspectives-heading">
+        <div className="original-home-perspectives-image">
+          <img src="/images/homepage/heritage-gathering.jpg" alt="Homeopathy professionals gathered at an international event" />
+          <span>People make a platform global.</span>
+        </div>
+        <div className="original-home-perspectives-copy">
+          <p className="original-kicker">03 / The wider picture</p>
+          <h2>Homeopathy is a history, a practice, and a conversation.</h2>
+          <p>Its story includes foundational texts, clinical traditions, educational institutions, research questions, public discussions, and the people who continue to carry the work forward.</p>
+          <div className="original-home-perspective-lines">
+            <div><Users size={20} /><span>People and leadership</span></div>
+            <div><Landmark size={20} /><span>History and institutions</span></div>
+            <div><Microscope size={20} /><span>Research and inquiry</span></div>
+          </div>
+          <Link className="original-button original-button-dark" to="/leaders">Meet the global community <ArrowRight size={16} /></Link>
+        </div>
+      </section>
+
+      <section className="original-home-quote">
+        <Quote size={34} />
+        <blockquote>“A global platform should make knowledge easier to enter, easier to question, and easier to share.”</blockquote>
+        <p>WorldHomeopathy.org / Editorial principle</p>
+      </section>
+
+      <section className="original-home-cta">
+        <div>
+          <p className="original-kicker">Continue exploring</p>
+          <h2>Find the part of the global story that matters to you.</h2>
+        </div>
+        <div className="original-home-cta-links">
+          <Link to="/research">Research Center <ArrowRight size={15} /></Link>
+          <Link to="/summit">World Summit <ArrowRight size={15} /></Link>
+          <Link to="/media">Media Desk <ArrowRight size={15} /></Link>
+        </div>
+      </section>
     </main>
   );
+}
+
+function ArrowUpRightIcon() {
+  return <ArrowUpRight size={18} />;
 }
 
 export default HomePage;
