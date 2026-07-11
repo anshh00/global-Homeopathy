@@ -15,18 +15,18 @@ import { Link } from "react-router-dom";
 
 const heroSlides = [
   {
+    image: "/images/homepage/hahnemann-hero.png",
+    eyebrow: "Heritage with a future",
+    title: "A tradition that keeps asking better questions.",
+    text: "Begin with the history of homeopathy, then follow the people and ideas carrying its global conversation forward.",
+    note: "History / learning / context",
+  },
+  {
     image: "/images/homepage/summit-awards.jpg",
     eyebrow: "A living global archive",
     title: "Where homeopathy meets the world.",
     text: "A visual record of the people, places, conversations, and milestones shaping homeopathy across generations.",
     note: "Global summit community",
-  },
-  {
-    image: "/images/homepage/hahnemann-memorial.jpg",
-    eyebrow: "Heritage with a future",
-    title: "Ideas travel further when they are remembered.",
-    text: "From the history of Samuel Hahnemann to the questions being asked by today's educators and researchers.",
-    note: "History / learning / context",
   },
   {
     image: "/images/homepage/education-community.jpg",
@@ -36,7 +36,7 @@ const heroSlides = [
     note: "Education and collaboration",
   },
   {
-    image: "/images/homepage/homeopathic-practice.jpg",
+    image: "/images/homepage/research-lab.jpg",
     eyebrow: "Practice, inquiry, responsibility",
     title: "A clearer way into homeopathy.",
     text: "Explore foundations, research pathways, global events, and professional resources in one considered platform.",
@@ -106,12 +106,16 @@ function HomePage() {
         <div className="original-home-hero-inner">
           <div className="original-home-hero-copy">
             <p className="original-kicker">WorldHomeopathy.org</p>
+            <p className="original-home-hero-welcome">Welcome to the World Homeopathy Organisation</p>
             <p className="original-home-hero-eyebrow">{slide.eyebrow}</p>
             <h1>{slide.title}</h1>
             <p className="original-home-hero-text">{slide.text}</p>
             <div className="original-home-actions">
               <Link className="original-button original-button-light" to="/explore">
                 Enter the knowledge hub <ArrowRight size={16} />
+              </Link>
+              <Link className="original-button original-button-outline" to="/contact">
+                Join us <Users size={16} />
               </Link>
               <Link className="original-play-link" to="/media">
                 <span className="original-play-icon"><Play size={14} fill="currentColor" /></span>

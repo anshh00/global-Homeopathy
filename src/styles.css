@@ -23564,6 +23564,16 @@ body:has(.original-home) {
   color: #e4c675;
 }
 
+.original-home-hero-welcome {
+  max-width: 560px;
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(1rem, 1.35vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+}
+
 .original-home-hero h1 {
   max-width: 750px;
   margin: 18px 0 0;
@@ -23621,6 +23631,12 @@ body:has(.original-home) {
   color: var(--original-ink);
   background: #f7f2df;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+
+.original-button-outline {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .original-button-dark {
@@ -24084,6 +24100,10 @@ body:has(.original-home) {
 
   .original-home-hero-eyebrow {
     margin-top: 24px;
+  }
+
+  .original-home-hero-welcome {
+    font-size: 1rem;
   }
 
   .original-home-hero h1 {
