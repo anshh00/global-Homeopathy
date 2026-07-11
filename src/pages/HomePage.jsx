@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -73,7 +73,11 @@ const knowledgeThreads = [
 
 function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [aboutVisible, setAboutVisible] = useState(false);
+  const [typedAbout, setTypedAbout] = useState("");
+  const aboutRef = useRef(null);
   const slide = heroSlides[activeSlide];
+  const aboutText = "WorldHomeopathy.org is an independent digital platform for understanding homeopathy through history, education, research, global leadership, summits, media, and professional pathways. It gives students, practitioners, researchers, journalists, and the public a thoughtful place to begin, while keeping context, responsible language, and international collaboration at the centre of the experience.";
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -81,6 +85,30 @@ function HomePage() {
     }, 4300);
     return () => window.clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    const node = aboutRef.current;
+    if (!node) return undefined;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAboutVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!aboutVisible || typedAbout.length >= aboutText.length) return undefined;
+    const timer = window.setTimeout(() => {
+      setTypedAbout(aboutText.slice(0, typedAbout.length + 2));
+    }, 16);
+    return () => window.clearTimeout(timer);
+  }, [aboutText, aboutVisible, typedAbout]);
 
   return (
     <main className="original-home">
@@ -149,22 +177,20 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="original-home-welcome" id="about">
+      <section className="original-home-welcome" id="about" ref={aboutRef}>
         <div className="original-home-section-label">
           <span>01</span>
-          <p>Welcome to the global homeopathy platform</p>
+          <p>About Us</p>
         </div>
         <div className="original-home-welcome-grid">
           <div className="original-home-welcome-heading">
-            <p className="original-kicker">About Us</p>
-            <h2>WorldHomeopathy.org is a clear starting point for the global homeopathy community.</h2>
+            <p className="original-kicker original-about-kicker">About Us</p>
+            <h2>A shared place to understand the global homeopathy story.</h2>
           </div>
           <div className="original-home-welcome-copy">
-            <p>
-              WorldHomeopathy.org is an independent digital platform for learning about homeopathy, its history, its communities, and its evolving conversations.
-            </p>
-            <p>
-              It brings together accessible education, research pathways, summit archives, leadership profiles, and global media so that every visitor can choose a clear place to begin.
+            <p className={`original-home-typing ${aboutVisible ? "is-visible" : ""}`} aria-live="polite">
+              {typedAbout}
+              <span className="original-home-typing-caret" aria-hidden="true">|</span>
             </p>
             <Link className="original-text-link" to="/explore">Start with the essentials <ArrowRight size={16} /></Link>
           </div>

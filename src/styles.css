@@ -24208,6 +24208,84 @@ body:has(.original-home) {
   }
 }
 
+/* About section: centered editorial reveal with a quiet typewriter treatment. */
+.original-home-welcome {
+  text-align: center;
+}
+
+.original-home-welcome .original-home-section-label {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.original-home-welcome .original-home-section-label p {
+  color: #b58f2f;
+  font-weight: 900;
+}
+
+.original-home-welcome-grid {
+  display: block;
+  max-width: 930px;
+  margin: 48px auto 0;
+}
+
+.original-home-welcome-heading h2 {
+  max-width: 860px;
+  margin: 16px auto 0;
+  font-size: clamp(2.3rem, 4vw, 4.5rem);
+  line-height: 1.02;
+}
+
+.original-about-kicker {
+  color: #b58f2f;
+}
+
+.original-home-welcome-copy {
+  max-width: 780px;
+  margin: 30px auto 0;
+  padding: 0;
+}
+
+.original-home-welcome-copy p.original-home-typing {
+  min-height: 145px;
+  margin-bottom: 24px;
+  color: var(--original-muted);
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.85;
+}
+
+.original-home-typing-caret {
+  display: inline-block;
+  margin-left: 3px;
+  color: #b58f2f;
+  font-weight: 900;
+  animation: original-caret-blink 0.85s steps(1) infinite;
+}
+
+@keyframes original-caret-blink {
+  50% { opacity: 0; }
+}
+
+@media (max-width: 600px) {
+  .original-home-welcome .original-home-section-label {
+    justify-content: flex-start;
+  }
+
+  .original-home-welcome-grid {
+    margin-top: 34px;
+  }
+
+  .original-home-welcome-heading h2 {
+    font-size: 2.55rem;
+  }
+
+  .original-home-welcome-copy p.original-home-typing {
+    min-height: 240px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
 /* Final hero typography and control alignment. */
 .original-home-hero-inner {
   display: block;
