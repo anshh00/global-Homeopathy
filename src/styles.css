@@ -24546,3 +24546,32 @@ body:has(.original-home) {
     margin-top: 18px;
   }
 }
+
+/* Give the summit photograph enough softness and contrast for readable hero copy. */
+.original-home-hero-media img[src*="summit-awards"] {
+  filter: blur(3px) saturate(0.78) brightness(0.72);
+  transform: scale(1.08);
+}
+
+.original-home-hero-media img[src*="summit-awards"].is-active {
+  transform: scale(1.04);
+}
+
+/* Center the About Us introduction and keep its hierarchy calm. */
+.original-home-welcome .original-home-section-label {
+  justify-content: center;
+  text-align: center;
+}
+
+.original-home-welcome-heading h2 {
+  max-width: 760px;
+  margin: 12px auto 0;
+  font-size: clamp(2rem, 3.2vw, 3.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+  text-align: center;
+}
+
+.original-home-heritage-strip .original-kicker {
+  box-shadow: 0 4px 14px rgba(181, 143, 47, 0.1);
+}
