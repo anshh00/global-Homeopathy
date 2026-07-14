@@ -24521,3 +24521,28 @@ body:has(.original-home) {
     padding: 0.42em 0 0.7em;
   }
 }
+
+/* Keep the historical note visually connected to the About Us narrative. */
+.original-home-heritage-strip {
+  margin-top: 24px;
+}
+
+.original-home-heritage-strip .original-kicker {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 8px;
+  padding: 5px 10px;
+  border-left: 3px solid #b58f2f;
+  background: rgba(181, 143, 47, 0.12);
+  color: #8b6a1f;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .original-home-heritage-strip {
+    margin-top: 18px;
+  }
+}
