@@ -186,9 +186,8 @@ function HomePage() {
       </section>
 
       <section className="original-home-welcome" id="about" ref={aboutRef}>
-        <div className="original-home-section-label">
-          <span>01</span>
-          <p>About Us</p>
+        <div className="original-home-about-label">
+          <span>About Us</span>
         </div>
         <div className="original-home-welcome-grid">
           <div className="original-home-welcome-heading">
