@@ -114,7 +114,7 @@ function HomePage() {
     if (!aboutVisible || typedAbout.length >= aboutText.length) return undefined;
     const timer = window.setTimeout(() => {
       setTypedAbout(aboutText.slice(0, typedAbout.length + 1));
-    }, 34);
+    }, 12);
     return () => window.clearTimeout(timer);
   }, [aboutText, aboutVisible, typedAbout]);
 
