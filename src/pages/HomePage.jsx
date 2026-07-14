@@ -78,12 +78,12 @@ function HomePage() {
   const aboutRef = useRef(null);
   const slide = heroSlides[activeSlide];
   const aboutTextLines = [
-    "WorldHomeopathy.org is an independent digital platform",
-    "for learning about homeopathy through history, education,",
-    "research, global leadership, summits, media, and professional",
-    "pathways. It brings context, international perspectives, and",
-    "responsible language together so every visitor can find a clear",
-    "beginning and move confidently through the Center of the Experience.",
+    "WorldHomeopathy.org is an independent digital platform created to make the global homeopathy story easier to discover, understand, and follow.",
+    "It brings together history, education, research conversations, international summits, leadership, media coverage, and country perspectives in one clear place.",
+    "Visitors can begin with trusted foundations, explore professional pathways, discover the homeopathy jobs portal, and connect with opportunities across the worldwide community.",
+    "The platform is designed to help students, practitioners, researchers, institutions, journalists, and the public find useful context without losing sight of the people and ideas behind the movement.",
+    "By giving knowledge, collaboration, events, publications, and career connections a shared home, it helps the community learn from one another and move the conversation forward.",
+    "This is a place to begin with a better question and move confidently through the Center of the Experience.",
   ];
   const aboutText = aboutTextLines.join(" ");
 
