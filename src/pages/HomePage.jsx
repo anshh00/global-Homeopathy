@@ -77,7 +77,15 @@ function HomePage() {
   const [typedAbout, setTypedAbout] = useState("");
   const aboutRef = useRef(null);
   const slide = heroSlides[activeSlide];
-  const aboutText = "WorldHomeopathy.org is an independent digital platform for learning about homeopathy through history, education, research, global leadership, summits, media, and professional pathways. It brings context, international perspectives, and responsible language together so every visitor can find a clear beginning and move confidently through the Center of the Experience.";
+  const aboutTextLines = [
+    "WorldHomeopathy.org is an independent digital platform",
+    "for learning about homeopathy through history, education,",
+    "research, global leadership, summits, media, and professional",
+    "pathways. It brings context, international perspectives, and",
+    "responsible language together so every visitor can find a clear",
+    "beginning and move confidently through the Center of the Experience.",
+  ];
+  const aboutText = aboutTextLines.join(" ");
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -187,12 +195,23 @@ function HomePage() {
             <h2>A shared place to understand the global homeopathy story.</h2>
           </div>
           <div className="original-home-welcome-copy">
-            <p className={`original-home-typing ${aboutVisible ? "is-visible" : ""}`} aria-live="polite">
-              {typedAbout}
-              {typedAbout.length < aboutText.length ? (
-                <span className="original-home-typing-caret" aria-hidden="true">|</span>
-              ) : null}
-            </p>
+            <div className={`original-home-typing ${aboutVisible ? "is-visible" : ""}`} aria-live="polite">
+              {aboutTextLines.map((line, index) => {
+                const start = aboutTextLines.slice(0, index).join(" ").length + (index ? 1 : 0);
+                const visibleLine = typedAbout.slice(start, start + line.length);
+                const isCurrentLine = typedAbout.length >= start && typedAbout.length < start + line.length;
+                return (
+                  <span className="original-home-typing-line" key={line}>
+                    <span className="original-home-typing-text">
+                      {visibleLine}
+                      {isCurrentLine ? (
+                        <span className="original-home-typing-caret" aria-hidden="true">|</span>
+                      ) : null}
+                    </span>
+                  </span>
+                );
+              })}
+            </div>
             <Link className="original-text-link" to="/explore">Start with the essentials <ArrowRight size={16} /></Link>
           </div>
         </div>

@@ -24376,3 +24376,98 @@ body:has(.original-home) {
     right: auto;
   }
 }
+
+/* Final pass: these rules intentionally sit last so shared page styles cannot move the controls. */
+.original-home-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.original-home-hero h1 {
+  min-height: 2em;
+}
+
+.original-home-hero-text {
+  min-height: 5.1em;
+}
+
+.original-home-actions {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 30px;
+}
+
+.original-home-welcome-copy {
+  position: relative;
+  padding: 20px 22px 8px;
+  border-top: 1px solid rgba(13, 105, 80, 0.2);
+  border-bottom: 1px solid rgba(13, 105, 80, 0.2);
+  background: linear-gradient(135deg, rgba(237, 247, 242, 0.72), rgba(255, 255, 255, 0.28));
+}
+
+.original-home-welcome-copy::before {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 72px;
+  height: 3px;
+  content: "";
+  background: #b58f2f;
+}
+
+.original-home-welcome-copy .original-home-typing {
+  display: block;
+  min-height: 0;
+  margin: 0 0 18px;
+  text-align: left;
+}
+
+.original-home-typing-line {
+  display: block;
+  min-height: 2.05em;
+  padding: 0.2em 0 0.44em;
+  border-bottom: 1px solid rgba(13, 105, 80, 0.18);
+}
+
+.original-home-typing-line:last-child {
+  border-bottom: 0;
+}
+
+.original-home-typing-text {
+  display: inline;
+}
+
+@media (max-width: 900px) {
+  .original-home-hero-text {
+    min-height: 0;
+  }
+
+  .original-home-actions {
+    min-height: 108px;
+  }
+}
+
+@media (max-width: 600px) {
+  .original-home-hero h1 {
+    min-height: 3em;
+  }
+
+  .original-home-hero-text {
+    min-height: 0;
+  }
+
+  .original-home-actions {
+    min-height: 156px;
+    margin-top: 24px;
+  }
+
+  .original-home-welcome-copy {
+    padding: 16px 14px 4px;
+  }
+
+  .original-home-typing-line {
+    min-height: 0;
+    padding: 0.28em 0 0.62em;
+  }
+}
