@@ -24794,7 +24794,7 @@ body:has(.original-home) {
 .original-home-live-item {
   position: relative;
   isolation: isolate;
-  min-height: 360px;
+  min-height: 300px;
   min-width: 0;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.42);
@@ -24837,8 +24837,8 @@ body:has(.original-home) {
   display: flex;
   position: relative;
   z-index: 1;
-  min-height: 360px;
-  padding: 19px 19px 17px;
+  min-height: 300px;
+  padding: 16px 18px 15px;
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -24883,7 +24883,7 @@ body:has(.original-home) {
 
 .original-home-live-content > p {
   max-width: 440px;
-  min-height: 4.2em;
+  min-height: 3.4em;
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.82rem;
@@ -24894,7 +24894,7 @@ body:has(.original-home) {
   align-items: stretch;
   flex-direction: column;
   gap: 13px;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 .original-home-live-countdown {
@@ -24974,7 +24974,7 @@ body:has(.original-home) {
 
   .original-home-live-item,
   .original-home-live-content {
-    min-height: 340px;
+    min-height: 290px;
   }
 
   .original-home-live-meta {
