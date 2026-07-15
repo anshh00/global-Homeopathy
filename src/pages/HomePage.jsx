@@ -223,6 +223,29 @@ function HomePage() {
           </div>
           <Link className="original-round-link" to="/explore" aria-label="Read the history of homeopathy"><ArrowUpRightIcon /></Link>
         </div>
+        <div className="original-home-archive" aria-labelledby="archive-heading">
+          <div className="original-home-archive-heading">
+            <div>
+              <p className="original-kicker">From the historical archive</p>
+              <h3 id="archive-heading">A story preserved in pages, places, and memory.</h3>
+            </div>
+            <Link className="original-text-link" to="/explore">Explore the history <ArrowRight size={16} /></Link>
+          </div>
+          <div className="original-home-archive-grid">
+            <figure>
+              <img src="/images/homepage/archive/hahnemann-book-archive.jpeg" alt="Archival book reference about Samuel Hahnemann" />
+              <figcaption><span>Archive reference</span> The life and work of Samuel Hahnemann.</figcaption>
+            </figure>
+            <figure>
+              <img src="/images/homepage/archive/koethen-heritage-archive.jpeg" alt="Historic building connected with the history of homeopathy" />
+              <figcaption><span>Historical place</span> Köthen and the heritage of homeopathic history.</figcaption>
+            </figure>
+            <figure>
+              <img src="/images/homepage/archive/hahnemann-memorial-archive.jpg" alt="Samuel Hahnemann memorial" />
+              <figcaption><span>Public memory</span> How the founder's legacy continues to be remembered.</figcaption>
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section className="original-home-threads" aria-labelledby="threads-heading">

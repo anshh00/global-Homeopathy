@@ -24595,3 +24595,104 @@ body:has(.original-home) {
   line-height: 1.3;
   text-transform: uppercase;
 }
+
+.original-home-archive {
+  margin-top: 42px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(13, 105, 80, 0.2);
+}
+
+.original-home-archive-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.original-home-archive-heading .original-kicker {
+  margin: 0 0 9px;
+  color: var(--original-green);
+}
+
+.original-home-archive-heading h3 {
+  max-width: 680px;
+  margin: 0;
+  color: var(--original-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.7rem, 2.7vw, 2.7rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.original-home-archive-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.original-home-archive figure {
+  margin: 0;
+}
+
+.original-home-archive figure:first-child {
+  transform: rotate(-1deg);
+}
+
+.original-home-archive figure:last-child {
+  transform: rotate(1deg);
+}
+
+.original-home-archive img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border: 7px solid #fffdf7;
+  box-shadow: 0 12px 24px rgba(6, 42, 37, 0.12);
+  filter: saturate(0.78) sepia(0.12) contrast(1.04);
+}
+
+.original-home-archive figure:first-child img {
+  object-position: center 42%;
+}
+
+.original-home-archive figure:nth-child(2) img {
+  object-position: center 48%;
+}
+
+.original-home-archive figcaption {
+  margin-top: 12px;
+  color: var(--original-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.original-home-archive figcaption span {
+  display: block;
+  margin-bottom: 3px;
+  color: #8b6a1f;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .original-home-archive-heading {
+    display: block;
+  }
+
+  .original-home-archive-heading .original-text-link {
+    margin-top: 16px;
+  }
+
+  .original-home-archive-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .original-home-archive img {
+    height: 210px;
+  }
+}
