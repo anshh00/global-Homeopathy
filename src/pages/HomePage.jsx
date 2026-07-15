@@ -3,8 +3,8 @@ import {
   ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
-  BookOpen,
-  Globe2,
+  CalendarDays,
+  Clock3,
   Landmark,
   Microscope,
   Play,
@@ -44,37 +44,70 @@ const heroSlides = [
   },
 ];
 
-const knowledgeThreads = [
+const liveEvents = [
   {
-    number: "01",
-    icon: BookOpen,
-    title: "Begin with the foundations",
-    text: "Learn about the history, language, principles, and people that shaped homeopathy. Start with context before moving into deeper resources.",
-    to: "/explore",
-    link: "Open the knowledge hub",
+    id: "sri-lanka-public-health",
+    date: "2026-07-21T09:00:00+05:30",
+    displayDate: "21–24 July 2026",
+    place: "Colombo, Sri Lanka",
+    title: "Public Health Summit 2026",
+    description: "A regional public-health gathering included for its wider healthcare context. It is not a homeopathy-only event.",
+    source: "https://summit2026.ccpsl.lk/",
   },
   {
-    number: "02",
-    icon: Microscope,
-    title: "Follow the evidence conversation",
-    text: "Find research pathways, reviews, databases, and evidence-focused initiatives with clear references and responsible language.",
-    to: "/research",
-    link: "Explore research",
+    id: "lmhi-mexico",
+    date: "2026-10-21T09:00:00-06:00",
+    displayDate: "21–24 October 2026",
+    place: "Mérida, Mexico",
+    title: "LMHI's 79th Homeopathic Medicine Congress",
+    description: "An international congress for homeopathic physicians, researchers, and the wider professional community.",
+    source: "https://lmhimexico2026.org/",
   },
   {
-    number: "03",
-    icon: Globe2,
-    title: "See the global movement",
-    text: "Follow summits, country chapters, media coverage, and professional opportunities that connect the homeopathy community internationally.",
-    to: "/summit",
-    link: "View the summit journey",
+    id: "faculty-warwick",
+    date: "2026-11-19T09:00:00Z",
+    displayDate: "19–22 November 2026",
+    place: "Warwick, United Kingdom",
+    title: "Faculty of Homeopathy Congress 2026",
+    description: "A professional congress exploring the role of homeopathy in tomorrow's health, with research and education sessions.",
+    source: "https://www.hri-research.org/events/",
+  },
+  {
+    id: "athens-homeopathy",
+    date: "2026-11-13T09:00:00+02:00",
+    displayDate: "13–15 November 2026",
+    place: "Athens, Greece",
+    title: "20th Panhellenic Congress of Homeopathic Medicine",
+    description: "A national homeopathic medicine congress focused on scientific dialogue and clinical experience exchange.",
+    source: "https://homeocongress2026.gr/",
+  },
+  {
+    id: "hri-malta",
+    date: "2027-06-18T09:00:00+02:00",
+    displayDate: "18–20 June 2027",
+    place: "St Julian's, Malta",
+    title: "HRI International Homeopathy Research Conference",
+    description: "The Homeopathy Research Institute's next international research conference, announced for Malta.",
+    source: "https://www.hri-research.org/events/",
   },
 ];
+
+function getCountdown(date, now) {
+  const difference = Math.max(0, new Date(date).getTime() - now);
+  const totalSeconds = Math.floor(difference / 1000);
+  return {
+    days: Math.floor(totalSeconds / 86400),
+    hours: Math.floor((totalSeconds % 86400) / 3600),
+    minutes: Math.floor((totalSeconds % 3600) / 60),
+    seconds: totalSeconds % 60,
+  };
+}
 
 function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [aboutVisible, setAboutVisible] = useState(false);
   const [typedAbout, setTypedAbout] = useState("");
+  const [currentTime, setCurrentTime] = useState(() => Date.now());
   const aboutRef = useRef(null);
   const slide = heroSlides[activeSlide];
   const aboutTextLines = [
@@ -91,6 +124,11 @@ function HomePage() {
     const timer = window.setInterval(() => {
       setActiveSlide((current) => (current + 1) % heroSlides.length);
     }, 4300);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setCurrentTime(Date.now()), 1000);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -251,29 +289,38 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="original-home-threads" aria-labelledby="threads-heading">
+      <section className="original-home-live" aria-labelledby="live-heading">
         <div className="original-home-section-label">
           <span>02</span>
-          <p id="threads-heading">Choose your way in</p>
+          <p id="live-heading">Live updates</p>
         </div>
-        <div className="original-home-threads-intro">
-          <h2>Three routes into one worldwide story.</h2>
-          <p>Whether you are learning, researching, or following the international community, the platform keeps the connections visible.</p>
+        <div className="original-home-live-intro">
+          <div>
+            <p className="original-kicker">Verified event desk</p>
+            <h2>What is happening next in the homeopathy community.</h2>
+          </div>
+          <p>Dates and links are collected from official event organisers and research organisations. Open each update to confirm registration, programme, and venue details.</p>
         </div>
-        <div className="original-home-thread-list">
-          {knowledgeThreads.map((thread) => {
-            const Icon = thread.icon;
+        <div className="original-home-live-list">
+          {liveEvents.map((event) => {
+            const countdown = getCountdown(event.date, currentTime);
             return (
-              <Link className="original-home-thread" to={thread.to} key={thread.number}>
-                <span className="original-home-thread-number">{thread.number}</span>
-                <span className="original-home-thread-icon"><Icon size={24} /></span>
-                <span className="original-home-thread-content">
-                  <h3>{thread.title}</h3>
-                  <p>{thread.text}</p>
-                  <span className="original-text-link">{thread.link} <ArrowRight size={15} /></span>
-                </span>
-                <ArrowRight className="original-home-thread-arrow" size={22} />
-              </Link>
+              <article className="original-home-live-item" key={event.id}>
+                <div className="original-home-live-meta">
+                  <span><CalendarDays size={15} /> {event.displayDate}</span>
+                  <span>{event.place}</span>
+                </div>
+                <h3>{event.title}</h3>
+                <p>{event.description}</p>
+                <div className="original-home-live-footer">
+                  <div className="original-home-live-countdown" aria-label={`Countdown to ${event.title}`}>
+                    <Clock3 size={16} />
+                    <span>Starts in</span>
+                    <strong>{countdown.days}d {String(countdown.hours).padStart(2, "0")}h {String(countdown.minutes).padStart(2, "0")}m {String(countdown.seconds).padStart(2, "0")}s</strong>
+                  </div>
+                  <a className="original-text-link" href={event.source} target="_blank" rel="noreferrer">Official details <ArrowUpRight size={15} /></a>
+                </div>
+              </article>
             );
           })}
         </div>
