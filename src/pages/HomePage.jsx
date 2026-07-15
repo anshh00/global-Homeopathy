@@ -308,7 +308,12 @@ function HomePage() {
         <div className="original-home-live-heading">
           <p className="original-kicker">Live updates</p>
           <h2 id="live-heading">What's happening next in the homeopathy community.</h2>
-          <p>Dates and links are collected from official event organisers and research organisations. Open each update to confirm registration, programme, and venue details.</p>
+          <div className="original-home-live-source-marquee" aria-label="Dates and links are collected from official event organisers and research organisations. Open each update to confirm registration, programme, and venue details.">
+            <div className="original-home-live-source-track">
+              <span>Dates and links are collected from official event organisers and research organisations. Open each update to confirm registration, programme, and venue details.</span>
+              <span aria-hidden="true">Dates and links are collected from official event organisers and research organisations. Open each update to confirm registration, programme, and venue details.</span>
+            </div>
+          </div>
         </div>
         <div className="original-home-live-list">
           {liveEvents.map((event) => {
