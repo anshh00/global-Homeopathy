@@ -24823,14 +24823,14 @@ body:has(.original-home) {
   background-image: var(--event-image);
   background-position: center;
   background-size: cover;
-  filter: saturate(0.82) contrast(0.92);
-  transform: scale(1.04);
+  filter: blur(8px) saturate(0.72) contrast(0.88);
+  transform: scale(1.12);
   transition: transform 700ms ease, filter 700ms ease;
 }
 
 .original-home-live-item:hover .original-home-live-image {
-  filter: saturate(1) contrast(1);
-  transform: scale(1.1);
+  filter: blur(6px) saturate(0.82) contrast(0.92);
+  transform: scale(1.14);
 }
 
 .original-home-live-content {
