@@ -349,39 +349,36 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="original-home-perspectives" aria-labelledby="perspectives-heading">
-        <div className="original-home-perspectives-image">
-          <img src="/images/homepage/heritage-gathering.jpg" alt="Homeopathy professionals gathered at an international event" />
-          <span>People make a platform global.</span>
-        </div>
-        <div className="original-home-perspectives-copy">
-          <p className="original-kicker">03 / The wider picture</p>
-          <h2>Homeopathy is a history, a practice, and a conversation.</h2>
-          <p>Its story includes foundational texts, clinical traditions, educational institutions, research questions, public discussions, and the people who continue to carry the work forward.</p>
-          <div className="original-home-perspective-lines">
-            <div><Users size={20} /><span>People and leadership</span></div>
-            <div><Landmark size={20} /><span>History and institutions</span></div>
-            <div><Microscope size={20} /><span>Research and inquiry</span></div>
-          </div>
-          <Link className="original-button original-button-dark" to="/leaders">Meet the global community <ArrowRight size={16} /></Link>
-        </div>
-      </section>
-
       <section className="original-home-quote">
         <Quote size={34} />
         <blockquote>“A global platform should make knowledge easier to enter, easier to question, and easier to share.”</blockquote>
         <p>WorldHomeopathy.org / Editorial principle</p>
       </section>
 
-      <section className="original-home-cta">
-        <div>
-          <p className="original-kicker">Continue exploring</p>
-          <h2>Find the part of the global story that matters to you.</h2>
+      <section className="original-home-institution" aria-labelledby="institution-heading">
+        <div className="original-home-institution-topline">
+          <p className="original-kicker">03 / The institutional lens</p>
+          <span>Knowledge / people / continuity</span>
         </div>
-        <div className="original-home-cta-links">
-          <Link to="/research">Research Center <ArrowRight size={15} /></Link>
-          <Link to="/summit">World Summit <ArrowRight size={15} /></Link>
-          <Link to="/media">Media Desk <ArrowRight size={15} /></Link>
+        <div className="original-home-institution-intro">
+          <div>
+            <h2 id="institution-heading">A global platform needs more than a homepage.</h2>
+            <p>It needs a clear place for people to learn, examine evidence, find professional opportunities, follow international conversations, and understand how homeopathy has travelled across generations.</p>
+          </div>
+          <div className="original-home-institution-image">
+            <img src="/images/homepage/heritage-gathering.jpg" alt="Homeopathy professionals gathered at an international event" />
+            <span>People make a platform global.</span>
+          </div>
+        </div>
+        <div className="original-home-institution-signals">
+          <div><strong>01</strong><Users size={20} /><h3>People and leadership</h3><p>Meet the practitioners, educators, researchers, and contributors shaping the conversation.</p><Link to="/leaders">Meet the community <ArrowRight size={15} /></Link></div>
+          <div><strong>02</strong><Landmark size={20} /><h3>History and institutions</h3><p>Trace the places, texts, organisations, and milestones that give the movement context.</p><Link to="/explore">Open the knowledge hub <ArrowRight size={15} /></Link></div>
+          <div><strong>03</strong><Microscope size={20} /><h3>Research and inquiry</h3><p>Follow evidence conversations with a focus on sources, responsibility, and learning.</p><Link to="/research">Enter the research centre <ArrowRight size={15} /></Link></div>
+        </div>
+        <div className="original-home-institution-footer">
+          <Quote size={25} />
+          <p>WorldHomeopathy.org is being built as a shared starting point for the global homeopathy community.</p>
+          <Link className="original-button original-button-light" to="/explore">Continue exploring <ArrowRight size={16} /></Link>
         </div>
       </section>
     </main>
