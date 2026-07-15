@@ -305,15 +305,9 @@ function HomePage() {
       </section>
 
       <section className="original-home-live" aria-labelledby="live-heading">
-        <div className="original-home-section-label">
-          <span>02</span>
-          <p id="live-heading">Live updates</p>
-        </div>
-        <div className="original-home-live-intro">
-          <div>
-            <p className="original-kicker">Verified event desk</p>
-            <h2>What is happening next in the homeopathy community.</h2>
-          </div>
+        <div className="original-home-live-heading">
+          <p className="original-kicker">Live updates</p>
+          <h2 id="live-heading">What's happening next in the homeopathy community.</h2>
           <p>Dates and links are collected from official event organisers and research organisations. Open each update to confirm registration, programme, and venue details.</p>
         </div>
         <div className="original-home-live-list">
