@@ -24794,7 +24794,7 @@ body:has(.original-home) {
 .original-home-live-item {
   position: relative;
   isolation: isolate;
-  min-height: 430px;
+  min-height: 360px;
   min-width: 0;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.42);
@@ -24837,8 +24837,8 @@ body:has(.original-home) {
   display: flex;
   position: relative;
   z-index: 1;
-  min-height: 430px;
-  padding: 24px 22px 20px;
+  min-height: 360px;
+  padding: 19px 19px 17px;
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -24873,7 +24873,7 @@ body:has(.original-home) {
 
 .original-home-live-item h3 {
   max-width: 440px;
-  margin: 16px 0 8px;
+  margin: 12px 0 7px;
   color: #fff;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.35rem, 1.55vw, 1.8rem);
@@ -24883,23 +24883,28 @@ body:has(.original-home) {
 
 .original-home-live-content > p {
   max-width: 440px;
-  min-height: 4.8em;
+  min-height: 4.2em;
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   line-height: 1.6;
 }
 
 .original-home-live-footer {
   align-items: stretch;
   flex-direction: column;
-  gap: 18px;
-  margin-top: 22px;
+  gap: 13px;
+  margin-top: 16px;
 }
 
 .original-home-live-countdown {
   display: block;
-  color: rgba(255, 255, 255, 0.78);
+  width: fit-content;
+  padding: 8px 10px 9px;
+  border: 1px solid rgba(255, 205, 198, 0.26);
+  border-radius: 8px;
+  background: rgba(91, 19, 18, 0.88);
+  color: #ffd6d6;
 }
 
 .original-home-live-countdown strong {
@@ -24913,15 +24918,15 @@ body:has(.original-home) {
 }
 
 .original-home-live-countdown strong b {
-  color: #f2d17a;
-  font-size: clamp(1.65rem, 2.4vw, 2.35rem);
+  color: #ffb0aa;
+  font-size: clamp(1.45rem, 2vw, 2rem);
   font-weight: 700;
   line-height: 1;
 }
 
 .original-home-live-countdown strong em {
   margin-right: 4px;
-  color: rgba(255, 255, 255, 0.74);
+  color: #ffd6d6;
   font-size: 0.61rem;
   font-style: normal;
   letter-spacing: 0.05em;
@@ -24969,7 +24974,7 @@ body:has(.original-home) {
 
   .original-home-live-item,
   .original-home-live-content {
-    min-height: 390px;
+    min-height: 340px;
   }
 
   .original-home-live-meta {
@@ -24986,6 +24991,6 @@ body:has(.original-home) {
   }
 
   .original-home-live-countdown strong b {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 }
