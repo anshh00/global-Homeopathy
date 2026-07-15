@@ -53,6 +53,7 @@ const liveEvents = [
     title: "Public Health Summit 2026",
     description: "A regional public-health gathering included for its wider healthcare context. It is not a homeopathy-only event.",
     source: "https://summit2026.ccpsl.lk/",
+    image: "/images/homepage/education-community.jpg",
   },
   {
     id: "lmhi-mexico",
@@ -62,6 +63,7 @@ const liveEvents = [
     title: "LMHI's 79th Homeopathic Medicine Congress",
     description: "An international congress for homeopathic physicians, researchers, and the wider professional community.",
     source: "https://lmhimexico2026.org/",
+    image: "/images/homepage/heritage-gathering.jpg",
   },
   {
     id: "faculty-warwick",
@@ -71,6 +73,7 @@ const liveEvents = [
     title: "Faculty of Homeopathy Congress 2026",
     description: "A professional congress exploring the role of homeopathy in tomorrow's health, with research and education sessions.",
     source: "https://www.hri-research.org/events/",
+    image: "/images/homepage/research-lab.jpg",
   },
   {
     id: "athens-homeopathy",
@@ -80,6 +83,7 @@ const liveEvents = [
     title: "20th Panhellenic Congress of Homeopathic Medicine",
     description: "A national homeopathic medicine congress focused on scientific dialogue and clinical experience exchange.",
     source: "https://homeocongress2026.gr/",
+    image: "/images/homepage/academic-recognition.jpg",
   },
   {
     id: "hri-malta",
@@ -89,6 +93,17 @@ const liveEvents = [
     title: "HRI International Homeopathy Research Conference",
     description: "The Homeopathy Research Institute's next international research conference, announced for Malta.",
     source: "https://www.hri-research.org/events/",
+    image: "/images/homepage/homeopathic-practice.jpg",
+  },
+  {
+    id: "jahc-2027",
+    date: "2027-04-09T09:00:00-04:00",
+    displayDate: "9-11 April 2027",
+    place: "Online, United States",
+    title: "Joint American Homeopathic Conference 2027",
+    description: "The National Center for Homeopathy's announced 2027 virtual event for learning, exchange, and professional connection.",
+    source: "https://homeopathycenter.org/all-events/",
+    image: "/images/homepage/education-community.jpg",
   },
 ];
 
@@ -305,7 +320,9 @@ function HomePage() {
           {liveEvents.map((event) => {
             const countdown = getCountdown(event.date, currentTime);
             return (
-              <article className="original-home-live-item" key={event.id}>
+              <article className="original-home-live-item" key={event.id} style={{ "--event-image": `url(${event.image})` }}>
+                <div className="original-home-live-image" aria-hidden="true" />
+                <div className="original-home-live-content">
                 <div className="original-home-live-meta">
                   <span><CalendarDays size={15} /> {event.displayDate}</span>
                   <span>{event.place}</span>
@@ -316,9 +333,15 @@ function HomePage() {
                   <div className="original-home-live-countdown" aria-label={`Countdown to ${event.title}`}>
                     <Clock3 size={16} />
                     <span>Starts in</span>
-                    <strong>{countdown.days}d {String(countdown.hours).padStart(2, "0")}h {String(countdown.minutes).padStart(2, "0")}m {String(countdown.seconds).padStart(2, "0")}s</strong>
+                    <strong>
+                      <b>{countdown.days}</b><em>days</em>
+                      <b>{String(countdown.hours).padStart(2, "0")}</b><em>hours</em>
+                      <b>{String(countdown.minutes).padStart(2, "0")}</b><em>min</em>
+                      <b>{String(countdown.seconds).padStart(2, "0")}</b><em>sec</em>
+                    </strong>
                   </div>
                   <a className="original-text-link" href={event.source} target="_blank" rel="noreferrer">Official details <ArrowUpRight size={15} /></a>
+                </div>
                 </div>
               </article>
             );
