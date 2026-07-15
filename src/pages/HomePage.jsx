@@ -234,15 +234,18 @@ function HomePage() {
           <div className="original-home-archive-grid">
             <figure>
               <img src="/images/homepage/archive/hahnemann-book-archive.jpeg" alt="Archival book reference about Samuel Hahnemann" />
-              <figcaption><span>Archive reference</span> The life and work of Samuel Hahnemann.</figcaption>
+              <figcaption><span>Nature archive · 1943</span> Samuel Hahnemann (1755–1843), a historical profile of homeopathy's founder.</figcaption>
+              <a className="original-home-archive-source" href="https://www.nature.com/articles/151724c0" target="_blank" rel="noreferrer">Read original source <ArrowUpRight size={14} /></a>
             </figure>
             <figure>
               <img src="/images/homepage/archive/koethen-heritage-archive.jpeg" alt="Historic building connected with the history of homeopathy" />
-              <figcaption><span>Historical place</span> Köthen and the heritage of homeopathic history.</figcaption>
+              <figcaption><span>PubMed review · 2007</span> A brief history of homeopathy and its development through medical history.</figcaption>
+              <a className="original-home-archive-source" href="https://pubmed.ncbi.nlm.nih.gov/17564158/" target="_blank" rel="noreferrer">Read original source <ArrowUpRight size={14} /></a>
             </figure>
             <figure>
               <img src="/images/homepage/archive/hahnemann-memorial-archive.jpg" alt="Samuel Hahnemann memorial" />
-              <figcaption><span>Public memory</span> How the founder's legacy continues to be remembered.</figcaption>
+              <figcaption><span>Köthen official archive</span> Samuel Hahnemann's work and years in Köthen, Germany.</figcaption>
+              <a className="original-home-archive-source" href="https://www.koethen-anhalt.de/de/samuel-hahnemann.html" target="_blank" rel="noreferrer">Read original source <ArrowUpRight size={14} /></a>
             </figure>
           </div>
         </div>
