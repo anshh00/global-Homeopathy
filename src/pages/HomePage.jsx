@@ -279,7 +279,7 @@ function HomePage() {
         <div className="original-home-archive" aria-labelledby="archive-heading">
           <div className="original-home-archive-heading">
             <div>
-              <p className="original-kicker">From the historical archive</p>
+              <p className="original-kicker original-archive-kicker">From the historical archive</p>
               <h3 id="archive-heading">A story preserved in pages, places, and memory.</h3>
             </div>
             <Link className="original-text-link" to="/explore">Explore the history <ArrowRight size={16} /></Link>
