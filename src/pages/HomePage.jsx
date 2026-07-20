@@ -356,27 +356,27 @@ function HomePage() {
 
       <section className="original-home-institution" aria-labelledby="institution-heading">
         <div className="original-home-institution-topline">
-          <p className="original-kicker">03 / The institutional lens</p>
-          <span>Knowledge / people / continuity</span>
+          <p className="original-kicker">03 / Homeopathy in context</p>
+          <span>Origins / practice / evidence</span>
         </div>
         <div className="original-home-institution-intro">
           <div>
-            <h2 id="institution-heading">A global platform needs more than a homepage.</h2>
-            <p>It needs a clear place for people to learn, examine evidence, find professional opportunities, follow international conversations, and understand how homeopathy has travelled across generations.</p>
+            <h2 id="institution-heading">Understanding homeopathy begins with context.</h2>
+            <p>Homeopathy is best explored through the ideas that shaped it, the people and institutions that carried it across countries, and the continuing conversation around education, practice, research, and responsible public understanding.</p>
           </div>
           <div className="original-home-institution-image">
-            <img src="/images/homepage/heritage-gathering.jpg" alt="Homeopathy professionals gathered at an international event" />
-            <span>People make a platform global.</span>
+            <img src="/images/homepage/hahnemann-portrait.jpg" alt="Historical portrait of Samuel Hahnemann" />
+            <span>Every global story has an origin.</span>
           </div>
         </div>
         <div className="original-home-institution-signals">
-          <div><strong>01</strong><Users size={20} /><h3>People and leadership</h3><p>Meet the practitioners, educators, researchers, and contributors shaping the conversation.</p><Link to="/leaders">Meet the community <ArrowRight size={15} /></Link></div>
-          <div><strong>02</strong><Landmark size={20} /><h3>History and institutions</h3><p>Trace the places, texts, organisations, and milestones that give the movement context.</p><Link to="/explore">Open the knowledge hub <ArrowRight size={15} /></Link></div>
-          <div><strong>03</strong><Microscope size={20} /><h3>Research and inquiry</h3><p>Follow evidence conversations with a focus on sources, responsibility, and learning.</p><Link to="/research">Enter the research centre <ArrowRight size={15} /></Link></div>
+          <div><strong>01</strong><Landmark size={20} /><h3>Start with the origins</h3><p>Explore Samuel Hahnemann, the early texts, and the historical places connected with homeopathy.</p><Link to="/explore">Explore the history <ArrowRight size={15} /></Link></div>
+          <div><strong>02</strong><Users size={20} /><h3>Follow the living practice</h3><p>See how practitioners, educators, leaders, and institutions continue to shape the worldwide conversation.</p><Link to="/leaders">Meet the community <ArrowRight size={15} /></Link></div>
+          <div><strong>03</strong><Microscope size={20} /><h3>Ask better questions</h3><p>Read research and public information with curiosity, clear sources, and room for thoughtful dialogue.</p><Link to="/research">Visit the research centre <ArrowRight size={15} /></Link></div>
         </div>
         <div className="original-home-institution-footer">
           <Quote size={25} />
-          <p>WorldHomeopathy.org is being built as a shared starting point for the global homeopathy community.</p>
+          <p>A calm starting point for learning, questioning, and discovering the global homeopathy community.</p>
           <Link className="original-button original-button-light" to="/explore">Continue exploring <ArrowRight size={16} /></Link>
         </div>
       </section>
