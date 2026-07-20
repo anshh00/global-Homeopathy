@@ -354,33 +354,6 @@ function HomePage() {
         <p>WorldHomeopathy.org / Editorial principle</p>
       </section>
 
-      <section className="original-home-institution" aria-labelledby="institution-heading">
-        <div className="original-home-institution-topline">
-          <p className="original-kicker">03 / Find your way in</p>
-          <span>Learn / discover / connect</span>
-        </div>
-        <div className="original-home-institution-intro">
-          <div>
-            <h2 id="institution-heading">A clear route into the global homeopathy conversation.</h2>
-            <p>Begin with the foundations, follow current research, find the next international gathering, meet the people behind the work, or discover opportunities across the wider professional community.</p>
-          </div>
-          <div className="original-home-institution-image">
-            <img src="/images/homepage/hahnemann-portrait.jpg" alt="Historical portrait of Samuel Hahnemann" />
-            <span>One subject. Many ways to discover it.</span>
-          </div>
-        </div>
-        <div className="original-home-institution-signals">
-          <div><strong>01</strong><Landmark size={20} /><h3>Learn the foundations</h3><p>Start with history, principles, key texts, and the language of homeopathy.</p><Link to="/explore">Open the knowledge hub <ArrowRight size={15} /></Link></div>
-          <div><strong>02</strong><Microscope size={20} /><h3>Follow the evidence</h3><p>Find research conversations, reviews, institutions, and sources gathered in one place.</p><Link to="/research">Explore research <ArrowRight size={15} /></Link></div>
-          <div><strong>03</strong><CalendarDays size={20} /><h3>Join the conversation</h3><p>Track summits, congresses, media coverage, and the people connecting the field.</p><Link to="/summit">Discover the summits <ArrowRight size={15} /></Link></div>
-          <div><strong>04</strong><Users size={20} /><h3>Find your opportunity</h3><p>Meet leaders, browse homeopathy-specific jobs, and stay connected to the wider community.</p><Link to="/jobs">View opportunities <ArrowRight size={15} /></Link></div>
-        </div>
-        <div className="original-home-institution-footer">
-          <Quote size={25} />
-          <p>One global subject, brought together through learning, evidence, people, events, and opportunity.</p>
-          <Link className="original-button original-button-light" to="/explore">Continue exploring <ArrowRight size={16} /></Link>
-        </div>
-      </section>
     </main>
   );
 }
