@@ -356,27 +356,28 @@ function HomePage() {
 
       <section className="original-home-institution" aria-labelledby="institution-heading">
         <div className="original-home-institution-topline">
-          <p className="original-kicker">03 / Homeopathy in context</p>
-          <span>Origins / practice / evidence</span>
+          <p className="original-kicker">03 / Find your way in</p>
+          <span>Learn / discover / connect</span>
         </div>
         <div className="original-home-institution-intro">
           <div>
-            <h2 id="institution-heading">Understanding homeopathy begins with context.</h2>
-            <p>Homeopathy is best explored through the ideas that shaped it, the people and institutions that carried it across countries, and the continuing conversation around education, practice, research, and responsible public understanding.</p>
+            <h2 id="institution-heading">A clear route into the global homeopathy conversation.</h2>
+            <p>Begin with the foundations, follow current research, find the next international gathering, meet the people behind the work, or discover opportunities across the wider professional community.</p>
           </div>
           <div className="original-home-institution-image">
             <img src="/images/homepage/hahnemann-portrait.jpg" alt="Historical portrait of Samuel Hahnemann" />
-            <span>Every global story has an origin.</span>
+            <span>One subject. Many ways to discover it.</span>
           </div>
         </div>
         <div className="original-home-institution-signals">
-          <div><strong>01</strong><Landmark size={20} /><h3>Start with the origins</h3><p>Explore Samuel Hahnemann, the early texts, and the historical places connected with homeopathy.</p><Link to="/explore">Explore the history <ArrowRight size={15} /></Link></div>
-          <div><strong>02</strong><Users size={20} /><h3>Follow the living practice</h3><p>See how practitioners, educators, leaders, and institutions continue to shape the worldwide conversation.</p><Link to="/leaders">Meet the community <ArrowRight size={15} /></Link></div>
-          <div><strong>03</strong><Microscope size={20} /><h3>Ask better questions</h3><p>Read research and public information with curiosity, clear sources, and room for thoughtful dialogue.</p><Link to="/research">Visit the research centre <ArrowRight size={15} /></Link></div>
+          <div><strong>01</strong><Landmark size={20} /><h3>Learn the foundations</h3><p>Start with history, principles, key texts, and the language of homeopathy.</p><Link to="/explore">Open the knowledge hub <ArrowRight size={15} /></Link></div>
+          <div><strong>02</strong><Microscope size={20} /><h3>Follow the evidence</h3><p>Find research conversations, reviews, institutions, and sources gathered in one place.</p><Link to="/research">Explore research <ArrowRight size={15} /></Link></div>
+          <div><strong>03</strong><CalendarDays size={20} /><h3>Join the conversation</h3><p>Track summits, congresses, media coverage, and the people connecting the field.</p><Link to="/summit">Discover the summits <ArrowRight size={15} /></Link></div>
+          <div><strong>04</strong><Users size={20} /><h3>Find your opportunity</h3><p>Meet leaders, browse homeopathy-specific jobs, and stay connected to the wider community.</p><Link to="/jobs">View opportunities <ArrowRight size={15} /></Link></div>
         </div>
         <div className="original-home-institution-footer">
           <Quote size={25} />
-          <p>A calm starting point for learning, questioning, and discovering the global homeopathy community.</p>
+          <p>One global subject, brought together through learning, evidence, people, events, and opportunity.</p>
           <Link className="original-button original-button-light" to="/explore">Continue exploring <ArrowRight size={16} /></Link>
         </div>
       </section>

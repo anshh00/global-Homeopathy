@@ -25171,18 +25171,18 @@ body:has(.original-home) {
 
 .original-home-institution-signals {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid rgba(233, 245, 238, 0.25);
   border-bottom: 1px solid rgba(233, 245, 238, 0.25);
 }
 
 .original-home-institution-signals > div {
   position: relative;
-  padding: 28px 28px 30px 0;
+  padding: 25px 20px 27px 0;
 }
 
 .original-home-institution-signals > div + div {
-  padding-left: 28px;
+  padding-left: 20px;
   border-left: 1px solid rgba(233, 245, 238, 0.25);
 }
 
@@ -25203,13 +25203,13 @@ body:has(.original-home) {
   margin: 0 0 10px;
   color: #fff;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 500;
 }
 
 .original-home-institution-signals p {
   max-width: 300px;
-  min-height: 4.5em;
+  min-height: 5.4em;
   margin: 0 0 18px;
   color: rgba(246, 251, 247, 0.72);
   font-size: 0.9rem;
@@ -25273,7 +25273,7 @@ body:has(.original-home) {
   }
 
   .original-home-institution-signals {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .original-home-institution-signals > div,
@@ -25293,5 +25293,11 @@ body:has(.original-home) {
 
   .original-home-institution-footer p {
     flex: 1 1 220px;
+  }
+}
+
+@media (max-width: 520px) {
+  .original-home-institution-signals {
+    grid-template-columns: 1fr;
   }
 }
