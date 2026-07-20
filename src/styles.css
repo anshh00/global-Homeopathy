@@ -25301,3 +25301,358 @@ body:has(.original-home) {
     grid-template-columns: 1fr;
   }
 }
+
+/* Final shared chrome: the same header and footer on every route. */
+.site-header.stitch-layout-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: clamp(18px, 3vw, 42px) !important;
+  width: 100% !important;
+  min-height: 78px !important;
+  padding: 10px max(28px, calc((100vw - 1440px) / 2)) !important;
+  background: rgba(250, 252, 249, 0.96) !important;
+  border: 0 !important;
+  border-bottom: 1px solid #dbe8e1 !important;
+  border-radius: 0 !important;
+  box-shadow: 0 10px 30px rgba(6, 42, 77, 0.08) !important;
+  backdrop-filter: blur(18px) saturate(1.12) !important;
+}
+
+.site-header.stitch-layout-header::before,
+.site-header.stitch-layout-header::after {
+  display: none !important;
+}
+
+.site-header.stitch-layout-header .stitch-layout-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  flex: 0 0 auto !important;
+  gap: 12px !important;
+  width: auto !important;
+  max-width: none !important;
+  padding: 0 !important;
+  color: var(--navy-2) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.site-header.stitch-layout-header .stitch-layout-brand .brand-system.compact {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.site-header.stitch-layout-header .stitch-layout-brand strong {
+  display: block !important;
+  color: var(--navy-2) !important;
+  font-size: 1.04rem !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+}
+
+.site-header.stitch-layout-header .stitch-layout-brand small {
+  display: block !important;
+  margin-top: 4px !important;
+  color: #5f6f80 !important;
+  font-size: 0.7rem !important;
+  font-weight: 750 !important;
+  line-height: 1.2 !important;
+}
+
+.site-header.stitch-layout-header .site-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: clamp(14px, 1.8vw, 28px) !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.site-header.stitch-layout-header .site-nav .nav-menu-item {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.site-header.stitch-layout-header .site-nav a {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  min-height: 36px !important;
+  padding: 9px 0 !important;
+  color: #13283c !important;
+  font-size: 0.86rem !important;
+  font-weight: 850 !important;
+  line-height: 1 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  transform: none !important;
+}
+
+.site-header.stitch-layout-header .site-nav a::after {
+  right: 0 !important;
+  bottom: 1px !important;
+  left: 0 !important;
+  height: 2px !important;
+  background: var(--emerald) !important;
+  border-radius: 999px !important;
+}
+
+.site-header.stitch-layout-header .site-nav a:hover,
+.site-header.stitch-layout-header .site-nav a:focus-visible,
+.site-header.stitch-layout-header .site-nav a.active {
+  color: var(--emerald) !important;
+  background: transparent !important;
+}
+
+.site-header.stitch-layout-header .site-nav .stitch-nav-join {
+  min-height: 42px !important;
+  padding: 12px 16px !important;
+  color: #fff !important;
+  background: var(--emerald) !important;
+  border: 1px solid var(--emerald) !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+}
+
+.site-header.stitch-layout-header .site-nav .stitch-nav-join:hover,
+.site-header.stitch-layout-header .site-nav .stitch-nav-join:focus-visible {
+  color: #fff !important;
+  background: var(--emerald-2) !important;
+}
+
+.site-header.stitch-layout-header .site-nav .stitch-nav-join::after {
+  display: none !important;
+}
+
+.site-header.stitch-layout-header .nav-search {
+  display: inline-grid !important;
+  width: 42px !important;
+  height: 42px !important;
+  padding: 0 !important;
+  place-items: center !important;
+  color: var(--navy-2) !important;
+  background: transparent !important;
+  border: 1px solid #cfe0da !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+}
+
+.site-header.stitch-layout-header .nav-search:hover,
+.site-header.stitch-layout-header .nav-search:focus-visible {
+  color: var(--emerald) !important;
+  background: #eff8f5 !important;
+}
+
+.stitch-layout-footer {
+  display: grid !important;
+  grid-template-columns: minmax(250px, 1.35fr) repeat(2, minmax(130px, 0.7fr)) minmax(190px, 0.9fr) minmax(250px, 1.1fr) !important;
+  gap: 34px !important;
+  width: 100% !important;
+  padding: 56px max(28px, calc((100vw - 1440px) / 2)) 24px !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  background: linear-gradient(135deg, #062a4d 0%, #08213a 48%, #073d36 100%) !important;
+  border: 0 !important;
+  border-top: 4px solid var(--emerald) !important;
+  border-radius: 0 !important;
+}
+
+.stitch-layout-footer .footer-brand-lockup {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  color: #fff !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.stitch-layout-footer .footer-brand-lockup .brand-system.compact {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+.stitch-layout-footer .footer-brand-lockup strong,
+.stitch-layout-footer nav strong,
+.stitch-layout-footer .footer-contact-block strong,
+.stitch-layout-footer .stitch-footer-updates label {
+  color: #fff !important;
+  font-size: 0.9rem !important;
+  font-weight: 900 !important;
+}
+
+.stitch-layout-footer .footer-brand-lockup small,
+.stitch-layout-footer .footer-contact-block span {
+  display: block !important;
+  color: rgba(255, 255, 255, 0.58) !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+}
+
+.stitch-layout-footer .footer-brand-block > p {
+  max-width: 360px !important;
+  margin: 18px 0 18px !important;
+  color: rgba(255, 255, 255, 0.68) !important;
+  font-size: 0.84rem !important;
+  line-height: 1.65 !important;
+}
+
+.stitch-layout-footer nav,
+.stitch-layout-footer .footer-contact-block {
+  display: grid !important;
+  align-content: start !important;
+  justify-items: start !important;
+  gap: 11px !important;
+}
+
+.stitch-layout-footer nav a,
+.stitch-layout-footer .footer-contact-block a,
+.stitch-layout-footer .footer-contact-block span {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: fit-content !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+}
+
+.stitch-layout-footer nav a:hover,
+.stitch-layout-footer nav a:focus-visible,
+.stitch-layout-footer .footer-contact-block a:hover,
+.stitch-layout-footer .footer-contact-block a:focus-visible {
+  color: #fff !important;
+}
+
+.stitch-layout-footer .stitch-footer-updates {
+  align-self: start !important;
+  padding: 18px !important;
+  color: var(--navy) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 4px !important;
+}
+
+.stitch-layout-footer .stitch-footer-updates p {
+  margin: 8px 0 14px !important;
+  color: #5f6f80 !important;
+  font-size: 0.78rem !important;
+}
+
+.stitch-layout-footer .stitch-footer-updates input,
+.stitch-layout-footer .stitch-footer-updates button {
+  min-height: 38px !important;
+  border-radius: 3px !important;
+}
+
+.stitch-layout-footer .stitch-footer-updates button {
+  color: #fff !important;
+  background: var(--emerald) !important;
+}
+
+.stitch-layout-footer .stitch-footer-copy {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  padding-top: 20px !important;
+  margin: 8px 0 0 !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+@media (max-width: 1120px) {
+  .site-header.stitch-layout-header {
+    min-height: 72px !important;
+    padding: 9px 18px !important;
+  }
+
+  .site-header.stitch-layout-header .menu-toggle {
+    display: grid !important;
+    width: 42px !important;
+    height: 42px !important;
+    margin-left: auto !important;
+    place-items: center !important;
+  }
+
+  .site-header.stitch-layout-header .site-nav {
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    right: 16px !important;
+    left: 16px !important;
+    display: none !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 3px !important;
+    padding: 12px !important;
+    background: rgba(250, 252, 249, 0.99) !important;
+    border: 1px solid #dbe8e1 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 24px 70px rgba(6, 42, 77, 0.16) !important;
+  }
+
+  .site-header.stitch-layout-header .site-nav.is-open {
+    display: flex !important;
+  }
+
+  .site-header.stitch-layout-header .site-nav .nav-menu-item,
+  .site-header.stitch-layout-header .site-nav a,
+  .site-header.stitch-layout-header .site-nav .stitch-nav-join,
+  .site-header.stitch-layout-header .nav-search {
+    width: 100% !important;
+  }
+
+  .site-header.stitch-layout-header .site-nav a,
+  .site-header.stitch-layout-header .site-nav .stitch-nav-join {
+    justify-content: center !important;
+    min-height: 42px !important;
+  }
+
+  .site-header.stitch-layout-header .site-nav .nav-dropdown {
+    position: static !important;
+    display: grid !important;
+    min-width: 0 !important;
+    padding: 0 0 8px !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+
+  .stitch-layout-footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header.stitch-layout-header {
+    padding-inline: 14px !important;
+  }
+
+  .site-header.stitch-layout-header .stitch-layout-brand .brand-system.compact {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .site-header.stitch-layout-header .stitch-layout-brand strong {
+    font-size: 0.9rem !important;
+  }
+
+  .site-header.stitch-layout-header .stitch-layout-brand small {
+    display: none !important;
+  }
+
+  .stitch-layout-footer {
+    grid-template-columns: 1fr !important;
+    padding: 42px 22px 24px !important;
+  }
+}
