@@ -25694,3 +25694,300 @@ body:has(.original-home) {
     animation: none;
   }
 }
+
+/* Homepage hero: low-motion scientific texture, deliberately kept behind copy. */
+.original-home-hero {
+  isolation: isolate;
+}
+
+.original-home-hero-media {
+  z-index: 0;
+}
+
+.medical-motion-background {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: paint;
+}
+
+.medical-motion-background > * {
+  animation-play-state: var(--medical-motion-state, running);
+}
+
+.medical-motion-background[data-motion-state="paused"] * {
+  animation-play-state: paused !important;
+}
+
+.medical-motion-glow,
+.medical-motion-cell,
+.medical-motion-pulse {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.medical-motion-glow {
+  width: clamp(20rem, 42vw, 48rem);
+  aspect-ratio: 1;
+  opacity: 0.14;
+  filter: blur(34px);
+  will-change: transform, opacity;
+}
+
+.medical-motion-glow-one {
+  top: -24%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(115, 225, 212, 0.78) 0%, rgba(14, 107, 80, 0.34) 40%, transparent 72%);
+  animation: medicalGlowDriftOne 38s ease-in-out infinite alternate;
+}
+
+.medical-motion-glow-two {
+  bottom: -38%;
+  left: 29%;
+  background: radial-gradient(circle, rgba(200, 166, 77, 0.55) 0%, rgba(39, 165, 157, 0.2) 43%, transparent 70%);
+  animation: medicalGlowDriftTwo 42s ease-in-out infinite alternate;
+}
+
+.medical-motion-cell {
+  width: clamp(12rem, 23vw, 28rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(209, 247, 239, 0.24);
+  box-shadow: inset 0 0 45px rgba(154, 237, 223, 0.08), 0 0 70px rgba(97, 222, 202, 0.04);
+  opacity: 0.12;
+  will-change: transform, opacity;
+}
+
+.medical-motion-cell::before,
+.medical-motion-cell::after {
+  position: absolute;
+  inset: 16%;
+  border: 1px solid rgba(218, 249, 243, 0.24);
+  border-radius: 48% 52% 53% 47%;
+  content: "";
+}
+
+.medical-motion-cell::after {
+  inset: 34%;
+  background: rgba(186, 240, 225, 0.08);
+  filter: blur(3px);
+}
+
+.medical-motion-cell-one {
+  top: 7%;
+  right: 8%;
+  animation: medicalCellFloatOne 34s ease-in-out infinite alternate;
+}
+
+.medical-motion-cell-two {
+  bottom: -13%;
+  left: 39%;
+  width: clamp(15rem, 27vw, 35rem);
+  opacity: 0.09;
+  animation: medicalCellFloatTwo 43s ease-in-out infinite alternate;
+}
+
+.medical-motion-cell-three {
+  top: 38%;
+  left: -8%;
+  width: clamp(10rem, 18vw, 22rem);
+  opacity: 0.1;
+  animation: medicalCellFloatThree 29s ease-in-out infinite alternate;
+}
+
+.medical-motion-pulse {
+  width: 9rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(194, 239, 230, 0.38);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.medical-motion-pulse-one {
+  top: 22%;
+  right: 27%;
+  animation: medicalPulse 19s ease-out infinite;
+}
+
+.medical-motion-pulse-two {
+  bottom: 18%;
+  right: 8%;
+  animation: medicalPulse 23s 8s ease-out infinite;
+}
+
+.medical-motion-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  opacity: 0.72;
+}
+
+.medical-motion-network-group {
+  stroke: rgba(168, 239, 225, 0.4);
+}
+
+.medical-motion-connection,
+.medical-motion-globe-arc {
+  vector-effect: non-scaling-stroke;
+  fill: none;
+  stroke-width: 1;
+}
+
+.medical-motion-connection {
+  stroke-dasharray: 4 12;
+  opacity: 0.36;
+  animation: medicalConnectionFlow 32s linear infinite;
+}
+
+.medical-motion-connection-two {
+  animation-duration: 39s;
+  animation-direction: reverse;
+}
+
+.medical-motion-connection-three {
+  animation-duration: 43s;
+}
+
+.medical-motion-globe-arc {
+  stroke: rgba(212, 181, 93, 0.45);
+  stroke-dasharray: 1 11;
+  opacity: 0.52;
+  animation: medicalConnectionFlow 36s linear infinite;
+}
+
+.medical-motion-globe-arc-two {
+  stroke: rgba(124, 228, 210, 0.4);
+  animation-duration: 44s;
+  animation-direction: reverse;
+}
+
+.medical-motion-node {
+  fill: rgba(202, 242, 231, 0.9);
+  stroke: rgba(16, 125, 104, 0.8);
+  stroke-width: 2;
+  animation: medicalNodePulse 9s ease-in-out infinite alternate;
+}
+
+.medical-motion-node-soft {
+  animation-delay: -4s;
+}
+
+.medical-motion-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.medical-motion-particle {
+  position: absolute;
+  top: var(--particle-y);
+  left: var(--particle-x);
+  width: var(--particle-size);
+  height: var(--particle-size);
+  display: block;
+  border-radius: 50%;
+  opacity: var(--particle-opacity);
+  background: radial-gradient(circle at 35% 30%, #fff 0%, rgba(179, 246, 232, 0.92) 36%, rgba(57, 175, 159, 0.3) 72%);
+  box-shadow: 0 0 0 1px rgba(205, 250, 241, 0.38), 0 0 16px rgba(89, 230, 207, 0.55);
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform, opacity;
+  animation: medicalParticleFloat var(--particle-duration) var(--particle-delay) ease-in-out infinite alternate;
+}
+
+.medical-motion-readability-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(2, 26, 29, 0.27) 0%, rgba(2, 26, 29, 0.13) 44%, rgba(2, 26, 29, 0.03) 72%, rgba(2, 26, 29, 0.17) 100%);
+}
+
+.original-home-hero-shade {
+  z-index: 2;
+}
+
+.original-home-hero-inner,
+.original-home-slide-controls {
+  z-index: 3;
+}
+
+@keyframes medicalParticleFloat {
+  0% { transform: translate3d(-50%, -50%, 0) scale(0.88); opacity: var(--particle-dim-opacity); }
+  52% { transform: translate3d(calc(-50% + var(--particle-drift-x)), calc(-50% + var(--particle-drift-y)), 0) scale(1.15); opacity: var(--particle-opacity); }
+  100% { transform: translate3d(calc(-50% + var(--particle-drift-x)), calc(-50% + var(--particle-drift-y)), 0) scale(0.94); opacity: var(--particle-end-opacity); }
+}
+
+@keyframes medicalGlowDriftOne {
+  from { transform: translate3d(0, 0, 0) scale(0.92); opacity: 0.08; }
+  to { transform: translate3d(-8%, 13%, 0) scale(1.14); opacity: 0.16; }
+}
+
+@keyframes medicalGlowDriftTwo {
+  from { transform: translate3d(0, 0, 0) scale(0.95); opacity: 0.06; }
+  to { transform: translate3d(12%, -9%, 0) scale(1.12); opacity: 0.14; }
+}
+
+@keyframes medicalCellFloatOne {
+  from { transform: translate3d(0, 0, 0) rotate(0deg) scale(0.96); }
+  to { transform: translate3d(-6%, 8%, 0) rotate(14deg) scale(1.08); }
+}
+
+@keyframes medicalCellFloatTwo {
+  from { transform: translate3d(0, 0, 0) rotate(0deg); }
+  to { transform: translate3d(5%, -11%, 0) rotate(-13deg); }
+}
+
+@keyframes medicalCellFloatThree {
+  from { transform: translate3d(0, 0, 0) rotate(0deg); }
+  to { transform: translate3d(8%, -6%, 0) rotate(10deg); }
+}
+
+@keyframes medicalPulse {
+  0%, 18% { transform: scale(0.32); opacity: 0; }
+  28% { opacity: 0.32; }
+  65%, 100% { transform: scale(3.1); opacity: 0; }
+}
+
+@keyframes medicalConnectionFlow {
+  to { stroke-dashoffset: -160; }
+}
+
+@keyframes medicalNodePulse {
+  from { opacity: 0.42; filter: drop-shadow(0 0 0 rgba(142, 238, 218, 0)); }
+  to { opacity: 0.96; filter: drop-shadow(0 0 8px rgba(142, 238, 218, 0.82)); }
+}
+
+@media (max-width: 900px) {
+  .medical-motion-particle-wide { display: none; }
+  .medical-motion-glow { filter: blur(25px); opacity: 0.1; }
+  .medical-motion-cell { opacity: 0.07; }
+  .medical-motion-connection-three,
+  .medical-motion-globe-arc-two { display: none; }
+}
+
+@media (max-width: 600px) {
+  .medical-motion-particle-desktop,
+  .medical-motion-network .medical-motion-connection,
+  .medical-motion-network .medical-motion-globe-arc,
+  .medical-motion-network .medical-motion-node,
+  .medical-motion-cell-three,
+  .medical-motion-pulse-two { display: none; }
+
+  .medical-motion-glow { filter: blur(18px); opacity: 0.07; }
+  .medical-motion-cell { opacity: 0.05; }
+  .medical-motion-cell-one { right: -28%; top: 12%; }
+  .medical-motion-cell-two { left: 24%; bottom: -26%; }
+  .medical-motion-pulse-one { right: 14%; top: 40%; opacity: 0.4; }
+  .medical-motion-readability-veil { background: linear-gradient(135deg, rgba(2, 26, 29, 0.32), rgba(2, 26, 29, 0.12)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medical-motion-background *,
+  .medical-motion-background {
+    animation: none !important;
+  }
+
+  .medical-motion-pulse { display: none; }
+  .medical-motion-particle { opacity: calc(var(--particle-opacity) * 0.65); }
+}

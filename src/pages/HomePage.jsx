@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import MedicalMotionBackground from "../components/MedicalMotionBackground.jsx";
 
 const heroSlides = [
   {
@@ -187,6 +188,7 @@ function HomePage() {
             />
           ))}
         </div>
+        <MedicalMotionBackground />
         <div className="original-home-hero-shade" aria-hidden="true" />
         <div className="original-home-hero-inner">
           <div className="original-home-hero-copy">
