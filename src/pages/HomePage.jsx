@@ -247,6 +247,9 @@ function HomePage() {
         <div className="original-home-welcome-grid">
           <div className="original-home-welcome-heading">
             <h2>A shared place to understand the global homeopathy story.</h2>
+            <p className="original-home-about-lede">
+              One international starting point for heritage, learning, evidence conversations, and the people keeping the discipline in motion.
+            </p>
           </div>
           <div className="original-home-welcome-copy">
             <div className={`original-home-typing ${aboutVisible ? "is-visible" : ""}`} aria-live="polite">
@@ -266,18 +269,43 @@ function HomePage() {
                 );
               })}
             </div>
-            <Link className="original-text-link" to="/explore">Start with the essentials <ArrowRight size={16} /></Link>
+            <div className="original-home-about-actions">
+              <Link className="original-text-link" to="/explore">Start with the essentials <ArrowRight size={16} /></Link>
+              <Link className="original-text-link" to="/jobs">Find global opportunities <ArrowUpRight size={16} /></Link>
+            </div>
           </div>
         </div>
-        <div className="original-home-heritage-strip">
-          <img src="/images/homepage/hahnemann-portrait.jpg" alt="Historical portrait of Samuel Hahnemann" />
+        <div className="original-home-about-themes" aria-label="Platform focus areas">
           <div>
+            <Landmark size={22} aria-hidden="true" />
+            <span>History and foundations</span>
+          </div>
+          <div>
+            <Microscope size={22} aria-hidden="true" />
+            <span>Research and professional learning</span>
+          </div>
+          <div>
+            <Users size={22} aria-hidden="true" />
+            <span>Global people, events, and opportunities</span>
+          </div>
+        </div>
+        <article className="original-home-heritage-strip">
+          <div className="original-home-heritage-image">
+            <img src="/images/homepage/hahnemann-portrait.jpg" alt="Historical portrait of Samuel Hahnemann" />
+            <span>1755 - 1843</span>
+          </div>
+          <div className="original-home-heritage-content">
             <p className="original-kicker">A short historical note</p>
             <h3>Samuel Hahnemann and the origins of homeopathy</h3>
             <p>Samuel Hahnemann, a German physician, established the foundations of homeopathy in the late eighteenth and early nineteenth centuries. His work remains an important part of the tradition's historical record.</p>
+            <div className="original-home-heritage-details">
+              <span>Origins</span>
+              <span>History</span>
+              <span>Learning context</span>
+            </div>
           </div>
           <Link className="original-round-link" to="/explore" aria-label="Read the history of homeopathy"><ArrowUpRightIcon /></Link>
-        </div>
+        </article>
         <div className="original-home-archive" aria-labelledby="archive-heading">
           <div className="original-home-archive-heading">
             <div>
