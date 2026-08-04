@@ -15,67 +15,12 @@ import {
 
 export const navItems = [
   { label: "Home", path: "/" },
-  {
-    label: "Explore",
-    path: "/explore",
-    children: [
-      { label: "Explore Paths", path: "/explore#paths" },
-      { label: "Learn Homoeopathy", path: "/explore#learn" },
-      { label: "Medicine Library", path: "/explore#medicines" },
-      { label: "Knowledge Hub", path: "/explore#knowledge" },
-      { label: "Institutional FAQ", path: "/explore#faq" },
-    ],
-  },
-  {
-    label: "Summit",
-    path: "/summit",
-    children: [
-      { label: "Summit Archive", path: "/summit#archive" },
-      { label: "Burnett Chapters", path: "/summit#summit-archive" },
-      { label: "Global Programmes", path: "/summit#global-programmes" },
-      { label: "Submit Reference", path: "/summit#submit-reference" },
-    ],
-  },
-  {
-    label: "Research",
-    path: "/research",
-    children: [
-      { label: "Evidence Sources", path: "/research#evidence-sources" },
-      { label: "Reading Sequence", path: "/research#research-sequence" },
-      { label: "Peer-Reviewed Papers", path: "/research#reading-list" },
-      { label: "Goa Research Summit", path: "/research#goa-research" },
-    ],
-  },
-  {
-    label: "Leaders",
-    path: "/leaders",
-    children: [
-      { label: "Leadership Council", path: "/leaders#council" },
-      { label: "Global Leaders", path: "/leaders#leaders" },
-      { label: "Pioneers", path: "/leaders#pioneers" },
-      { label: "Principles", path: "/leaders#principles" },
-    ],
-  },
-  {
-    label: "Jobs",
-    path: "/jobs",
-    children: [
-      { label: "Open Roles", path: "/jobs#openings" },
-      { label: "Search by Country", path: "/jobs#filters" },
-      { label: "Remote Roles", path: "/jobs#remote" },
-      { label: "Submit Job Lead", path: "/contact" },
-    ],
-  },
-  {
-    label: "Media",
-    path: "/media",
-    children: [
-      { label: "Recent Coverage", path: "/media#recent" },
-      { label: "Global Updates", path: "/media#updates" },
-      { label: "Coverage Archive", path: "/media#archive" },
-      { label: "Submit News", path: "/contact" },
-    ],
-  },
+  { label: "Explore", path: "/explore" },
+  { label: "Summit", path: "/summit" },
+  { label: "Research", path: "/research" },
+  { label: "Leaders", path: "/leaders" },
+  { label: "Jobs", path: "/jobs" },
+  { label: "Media", path: "/media" },
 ];
 
 export const stats = [

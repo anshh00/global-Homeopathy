@@ -26291,6 +26291,215 @@ body:has(.original-home) {
   }
 }
 
+/* Shared join-network modal */
+button.stitch-nav-join {
+  font: inherit;
+  cursor: pointer;
+}
+
+.network-modal-shell {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  padding: 22px;
+  place-items: center;
+}
+
+.network-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background:
+    linear-gradient(135deg, rgba(6, 42, 77, 0.78), rgba(5, 55, 48, 0.74)),
+    rgba(6, 42, 77, 0.72);
+  border: 0;
+  backdrop-filter: blur(12px);
+}
+
+.network-modal-card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.82fr) minmax(280px, 1fr);
+  gap: clamp(22px, 4vw, 44px);
+  width: min(94vw, 900px);
+  max-height: min(86vh, 760px);
+  overflow: auto;
+  padding: clamp(24px, 4vw, 42px);
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(241, 249, 245, 0.96)),
+    var(--paper);
+  border: 1px solid rgba(14, 107, 80, 0.18);
+  box-shadow: 0 34px 100px rgba(6, 42, 77, 0.34);
+}
+
+.network-modal-card::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(rgba(14, 107, 80, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 107, 80, 0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(135deg, #000 0%, transparent 62%);
+}
+
+.network-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: inline-grid;
+  width: 38px;
+  height: 38px;
+  color: var(--navy);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(6, 42, 77, 0.13);
+  place-items: center;
+}
+
+.network-modal-intro,
+.network-modal-form {
+  position: relative;
+  z-index: 1;
+}
+
+.network-modal-intro span {
+  display: inline-flex;
+  width: fit-content;
+  padding: 7px 10px;
+  margin-bottom: 18px;
+  color: var(--emerald);
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  background: rgba(14, 107, 80, 0.08);
+  border-left: 3px solid var(--gold);
+}
+
+.network-modal-intro h2 {
+  max-width: 420px;
+  color: var(--navy-2);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3.4vw, 3.45rem);
+  line-height: 0.98;
+}
+
+.network-modal-intro p {
+  max-width: 430px;
+  margin-top: 18px;
+  color: #526579;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.network-modal-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.network-modal-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--navy-2);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.network-modal-form input,
+.network-modal-form select,
+.network-modal-form textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 13px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(6, 42, 77, 0.15);
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.network-modal-form textarea {
+  resize: vertical;
+}
+
+.network-modal-form input:focus,
+.network-modal-form select:focus,
+.network-modal-form textarea:focus {
+  border-color: rgba(14, 107, 80, 0.7);
+  box-shadow: 0 0 0 4px rgba(14, 107, 80, 0.12);
+}
+
+.network-modal-message,
+.network-modal-form button,
+.network-modal-status {
+  grid-column: 1 / -1;
+}
+
+.network-modal-form button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 4px;
+  color: #fff;
+  font: inherit;
+  font-weight: 950;
+  cursor: pointer;
+  background: var(--emerald);
+  border: 1px solid var(--emerald);
+  box-shadow: 0 14px 34px rgba(14, 107, 80, 0.2);
+}
+
+.network-modal-status {
+  color: #526579;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.stitch-layout-footer .stitch-footer-updates strong {
+  display: block !important;
+  color: var(--navy-2) !important;
+  font-size: 0.9rem !important;
+  font-weight: 900 !important;
+}
+
+.stitch-layout-footer .stitch-footer-updates div {
+  display: block !important;
+}
+
+.stitch-layout-footer .stitch-footer-updates button {
+  width: 100% !important;
+  cursor: pointer !important;
+  font-weight: 900 !important;
+}
+
+@media (max-width: 720px) {
+  .network-modal-shell {
+    align-items: end;
+    padding: 12px;
+  }
+
+  .network-modal-card {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-height: 90vh;
+    padding: 24px 18px 18px;
+  }
+
+  .network-modal-form {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Homepage hero: low-motion scientific texture, deliberately kept behind copy. */
 .original-home-hero {
   isolation: isolate;
