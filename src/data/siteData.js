@@ -40,10 +40,10 @@ export const navItems = [
     label: "Research",
     path: "/research",
     children: [
-      { label: "Evidence Atlas", path: "/research#atlas" },
-      { label: "Featured Research", path: "/research#featured" },
-      { label: "Goa Research Summit", path: "/research#goa" },
-      { label: "Publications", path: "/research#publications" },
+      { label: "Evidence Sources", path: "/research#evidence-sources" },
+      { label: "Reading Sequence", path: "/research#research-sequence" },
+      { label: "Peer-Reviewed Papers", path: "/research#reading-list" },
+      { label: "Goa Research Summit", path: "/research#goa-research" },
     ],
   },
   {

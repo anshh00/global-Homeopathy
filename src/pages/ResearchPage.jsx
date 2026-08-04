@@ -1,419 +1,347 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  ArrowRight,
-  BarChart3,
   BookOpen,
-  Building2,
-  ChevronDown,
+  Database,
+  ExternalLink,
   FileSearch,
   FlaskConical,
   Globe2,
-  GraduationCap,
   Microscope,
-  Network,
   ShieldCheck,
-  Stethoscope,
-  Users,
 } from "lucide-react";
+import "../research-evidence.css";
 
-const researchMetrics = [
-  { value: "6,500+", label: "PubMed-indexed articles" },
-  { value: "1,700+", label: "LILACS database entries" },
-  { value: "2021", label: "HOMIS study mapping" },
-  { value: "30+", label: "Goa research presentations" },
-  { value: "6", label: "Core research domains" },
-];
-
-const prescriptionTrends = [
-  { name: "Arsenicum album", value: 16.2 },
-  { name: "Nux vomica", value: 13.7 },
-  { name: "Sulphur", value: 11.8 },
-  { name: "Pulsatilla", value: 8.9 },
-  { name: "Natrum muriaticum", value: 6.6 },
-  { name: "Sepia", value: 5.4 },
-  { name: "Lycopodium clavatum", value: 4.2 },
-  { name: "Rhus toxicodendron", value: 3.1 },
-  { name: "Belladonna", value: 2.3 },
-  { name: "Calcarea carbonica", value: 1.8 },
-];
-
-const publications = [
+const evidenceSources = [
   {
-    tag: "Meta-analysis",
-    title: "Individualised homeopathic treatment in randomised placebo-controlled trials",
-    source: "Mathie et al. / Systematic Reviews / 2014",
-    description:
-      "A peer-reviewed systematic review and meta-analysis of randomised trials evaluating individualised treatment.",
-    link: "https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/2046-4053-3-142",
+    eyebrow: "Clinical database",
+    title: "CORE-Hom",
+    text: "A research database for clinical studies in homeopathy, useful for locating trials by condition, remedy, study type, and publication details.",
+    linkLabel: "Open CORE-Hom",
+    href: "https://www.hri-research.org/resources/research-databases/core-hom/",
+    icon: Database,
   },
   {
-    tag: "Meta-analysis",
-    title: "Non-individualised homeopathic treatment in randomised trials",
-    source: "Mathie et al. / Systematic Reviews / 2017",
-    description:
-      "A structured review of placebo-controlled research involving non-individualised homeopathic treatment.",
-    link: "https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/s13643-017-0445-3",
-  },
-  {
-    tag: "Review",
-    title: "Efficacy of homeopathic treatment: review of meta-analyses",
-    source: "Hamre et al. / Systematic Reviews / 2023",
-    description:
-      "An overview examining the quality, methods, and conclusions of published meta-analyses.",
-    link: "https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/s13643-023-02313-2",
-  },
-];
-
-const repositoryItems = [
-  {
-    type: "Clinical evidence",
-    title: "CORE-Hom clinical research database",
-    text: "A specialist index for published clinical research in homeopathy.",
+    eyebrow: "Research databases",
+    title: "HRI Research Databases",
+    text: "A central place to discover homeopathy research databases, including clinical research resources and structured evidence tools.",
+    linkLabel: "Open HRI resources",
+    href: "https://www.hri-research.org/resources/research-databases/",
     icon: FileSearch,
   },
   {
-    type: "Controlled studies",
-    title: "HOMIS research mapping",
-    text: "A structured academic project mapping controlled clinical studies.",
-    icon: BarChart3,
+    eyebrow: "Medical literature",
+    title: "PubMed Indexed Literature",
+    text: "A live literature search for peer-reviewed articles, systematic reviews, clinical studies, and basic science papers mentioning homeopathy.",
+    linkLabel: "Search PubMed",
+    href: "https://pubmed.ncbi.nlm.nih.gov/?term=homeopathy",
+    icon: BookOpen,
   },
   {
-    type: "Public guidance",
-    title: "NIH / NCCIH homeopathy guidance",
-    text: "Public information covering evidence, regulation, and responsible care.",
+    eyebrow: "Trial registry",
+    title: "ClinicalTrials.gov",
+    text: "A registry search for current and past studies. It helps visitors separate published articles from registered or ongoing clinical trials.",
+    linkLabel: "View trials",
+    href: "https://clinicaltrials.gov/search?term=homeopathy",
+    icon: Microscope,
+  },
+  {
+    eyebrow: "Public health guidance",
+    title: "NCCIH Homeopathy Overview",
+    text: "A public-facing evidence and safety page from the U.S. National Center for Complementary and Integrative Health.",
+    linkLabel: "Read guidance",
+    href: "https://www.nccih.nih.gov/health/homeopathy",
     icon: ShieldCheck,
   },
-];
-
-const milestones = [
-  { year: "2014", title: "Individualised trials", text: "Major systematic review published." },
-  { year: "2017", title: "Non-individualised trials", text: "A second evidence synthesis expanded the review base." },
-  { year: "2021", title: "Clinical mapping", text: "HOMIS study mapping strengthened research discovery." },
-  { year: "2023", title: "Meta-review", text: "A review of meta-analyses revisited the evidence landscape." },
-  { year: "2025", title: "Goa summit", text: "Evidence-focused international dialogue and presentations." },
-];
-
-const cases = [
   {
-    tag: "Evidence review",
-    title: "Clinical outcome research",
-    text: "Randomised trials, observational studies, outcome measurement, and case documentation.",
-    icon: Stethoscope,
-  },
-  {
-    tag: "Scientific inquiry",
-    title: "Basic and high-dilution research",
-    text: "Laboratory models, physicochemical studies, and transparent reporting of methods.",
-    icon: FlaskConical,
+    eyebrow: "International reference",
+    title: "LMHI Research Resources",
+    text: "An international homeopathic community reference point for research links, congresses, and institutional homeopathy activity.",
+    linkLabel: "Visit LMHI",
+    href: "https://www.lmhi.org/",
+    icon: Globe2,
   },
 ];
 
-const networkItems = [
-  { label: "Clinical research", icon: Stethoscope },
-  { label: "Basic science", icon: FlaskConical },
-  { label: "Education", icon: GraduationCap },
-  { label: "Public health", icon: Globe2 },
-  { label: "Institutions", icon: Building2 },
-  { label: "Collaboration", icon: Network },
+const readingList = [
+  {
+    type: "Systematic review",
+    title: "Randomised placebo-controlled trials of individualised homeopathic treatment",
+    authors: "Mathie et al.",
+    year: "2014",
+    text: "A systematic review and meta-analysis focused on individualised homeopathic treatment compared with placebo.",
+    href: "https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/2046-4053-3-142",
+  },
+  {
+    type: "Systematic review",
+    title: "Randomised placebo-controlled trials of non-individualised homeopathic treatment",
+    authors: "Mathie et al.",
+    year: "2017",
+    text: "A companion review examining non-individualised homeopathic treatment, useful for comparing different study designs.",
+    href: "https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/s13643-017-0445-3",
+  },
+  {
+    type: "Meta-analysis review",
+    title: "Systematic reviews and meta-analyses of homeopathic treatment",
+    authors: "Hamre et al.",
+    year: "2023",
+    text: "A review of systematic-review evidence that helps readers understand where results differ across methods and clinical contexts.",
+    href: "https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/s13643-023-02313-2",
+  },
+  {
+    type: "Comparative study",
+    title: "Are the clinical effects of homoeopathy placebo effects?",
+    authors: "Shang et al.",
+    year: "2005",
+    text: "A widely discussed comparative study published in The Lancet. Included here because serious evidence pages should show debated literature too.",
+    href: "https://pubmed.ncbi.nlm.nih.gov/16125589/",
+  },
 ];
 
-const faqs = [
+const researchSequence = [
   {
-    question: "How is research selected for this page?",
-    answer:
-      "The page prioritizes named databases, peer-reviewed publications, research institutions, and clearly attributed public guidance.",
+    label: "01",
+    title: "Start with databases",
+    text: "Search indexed databases first. They help visitors move beyond generic claims and find study records, conditions, authors, and publication context.",
   },
   {
-    question: "Does WorldHomeopathy.org provide medical advice?",
-    answer:
-      "No. The research page is an educational gateway and visitors should consult qualified healthcare professionals for medical decisions.",
+    label: "02",
+    title: "Read systematic reviews",
+    text: "Systematic reviews show how researchers group studies, assess quality, compare results, and explain uncertainty.",
   },
   {
-    question: "How is the Goa initiative represented?",
-    answer:
-      "It is presented as an evidence-focused summit initiative led by Burnett Homeopathy Pvt. Ltd. within a wider international research landscape.",
+    label: "03",
+    title: "Check condition-level evidence",
+    text: "Evidence is not the same for every disease or symptom. A useful page should guide readers by topic, not only by broad opinion.",
+  },
+  {
+    label: "04",
+    title: "Separate clinical, basic, and public-health research",
+    text: "Clinical trials, laboratory studies, public-health usage, and education research answer different questions and should not be mixed randomly.",
+  },
+  {
+    label: "05",
+    title: "Keep safety and responsibility visible",
+    text: "Research should be presented with source links, transparent language, and a clear note that website content is educational and not personal medical advice.",
   },
 ];
 
-function ResearchPage() {
-  const [openFaq, setOpenFaq] = useState(0);
+const researchAreas = [
+  "Clinical outcome research",
+  "Systematic reviews",
+  "Public health and policy",
+  "Materia medica documentation",
+  "Education and training research",
+  "Pharmacy and manufacturing standards",
+  "Digital health and access",
+  "Summit-led academic dialogue",
+];
 
+const sourceNotes = [
+  "External links open original sources so visitors can verify details directly.",
+  "Counts and claims are avoided unless a reliable public source supports them.",
+  "Burnett Homeopathy Pvt. Ltd. is referenced through public summit and research activity, not as the whole identity of the platform.",
+];
+
+function ExternalAnchor({ href, children, className = "" }) {
   return (
-    <main className="research-reference-page">
-      <section className="rr-hero">
-        <div className="rr-shell rr-hero-grid">
-          <div className="rr-hero-copy">
-            <p className="rr-kicker">Global research atlas</p>
-            <h1>
-              <span>Advancing Evidence-</span>
-              <span>Based Homeopathy</span>
-            </h1>
-            <p>
-              A focused international gateway to clinical studies, systematic reviews,
-              research databases, and evidence-led collaboration.
-            </p>
-            <div className="rr-actions">
-              <a className="rr-button rr-button-dark" href="#featured-research">
-                View research <ArrowRight size={15} />
-              </a>
-              <a className="rr-text-link" href="#research-repository">Explore repository</a>
-            </div>
-          </div>
-
-          <div className="rr-hero-chart" aria-label="Global prescription trends in homeopathy">
-            <header>
-              <p>Global data snapshot</p>
-              <h2>Global Prescription Trends in Homeopathy</h2>
-              <span>Relative frequency of selected remedies in the supplied dataset</span>
-            </header>
-
-            <div className="rr-chart-context">
-              <span><Globe2 size={16} /><b>100+ countries</b></span>
-              <span><Users size={16} /><b>Clinical sources</b></span>
-              <span><BarChart3 size={16} /><b>2010–2024</b></span>
-            </div>
-
-            <div className="rr-chart-plot">
-              <div className="rr-chart-y-axis" aria-hidden="true">
-                <span>18%</span><span>12%</span><span>6%</span><span>0%</span>
-              </div>
-              <div className="rr-chart-bars">
-                {prescriptionTrends.map((item) => (
-                  <div className="rr-chart-item" key={item.name}>
-                    <strong>{item.value}%</strong>
-                    <div className="rr-chart-track">
-                      <span style={{ height: `${(item.value / 18) * 100}%` }}></span>
-                    </div>
-                    <small>{item.name}</small>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <footer>
-              <span>Relative frequency only</span>
-              <span>Aggregated international data</span>
-              <span>Not a measure of efficacy</span>
-            </footer>
-          </div>
-        </div>
-      </section>
-
-      <section className="rr-metric-band" aria-label="Research metrics">
-        <div className="rr-shell rr-metric-grid">
-          {researchMetrics.map((metric) => (
-            <article key={metric.label}>
-              <strong>{metric.value}</strong>
-              <span>{metric.label}</span>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="rr-section rr-shell" id="featured-research">
-        <div className="rr-section-heading rr-heading-row">
-          <div>
-            <p className="rr-kicker">Evidence desk</p>
-            <h2>Featured Research</h2>
-            <p>Named publications and primary sources form the centre of this research archive.</p>
-          </div>
-          <a href="#research-repository">View all research <ArrowRight size={14} /></a>
-        </div>
-
-        <div className="rr-featured-grid">
-          <article className="rr-featured-lead">
-            <div className="rr-lab-visual">
-              <img src="/images/research-microscope-lab.jpg" alt="Researcher using a microscope in a laboratory" />
-              <span>{publications[0].tag}</span>
-            </div>
-            <div className="rr-featured-copy">
-              <small>{publications[0].source}</small>
-              <h3>{publications[0].title}</h3>
-              <p>{publications[0].description}</p>
-              <a href={publications[0].link} target="_blank" rel="noreferrer">
-                Read source <ArrowRight size={14} />
-              </a>
-            </div>
-          </article>
-
-          <div className="rr-featured-side">
-            {publications.slice(1).map((item) => (
-              <article key={item.title}>
-                <span>{item.tag}</span>
-                <small>{item.source}</small>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <a href={item.link} target="_blank" rel="noreferrer">
-                  View publication <ArrowRight size={13} />
-                </a>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="rr-goa-band">
-        <div className="rr-shell rr-goa-grid">
-          <div className="rr-goa-copy">
-            <p className="rr-kicker">Featured research initiative</p>
-            <h2>Burnett Homeopathy Goa Evidence-Based Research</h2>
-            <p>
-              The 2025 Goa initiative brought clinical discussion, research presentations,
-              evidence review, and international professional exchange into one focused forum.
-            </p>
-            <ul>
-              <li><Microscope size={16} /> Clinical research presentations and case review</li>
-              <li><Users size={16} /> Researchers, practitioners, educators, and institutions</li>
-              <li><BookOpen size={16} /> Documentation, evidence literacy, and knowledge exchange</li>
-            </ul>
-            <a
-              className="rr-button rr-button-dark"
-              href="https://www.republicworld.com/initiatives/burnett-homeopathy-redefines-global-standards-with-groundbreaking-evidence-based-research-summit-in-goa"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Read summit coverage <ArrowRight size={15} />
-            </a>
-          </div>
-
-          <aside className="rr-goa-brief">
-            <p className="rr-kicker">Research direction</p>
-            {[
-              ["01", "Evidence review", "Research quality, methodology, and responsible interpretation."],
-              ["02", "Global dialogue", "Connections across countries, disciplines, and institutions."],
-              ["03", "Future practice", "Education and standards shaped by transparent research."],
-            ].map(([number, title, text]) => (
-              <div key={number}>
-                <strong>{number}</strong>
-                <span><b>{title}</b>{text}</span>
-              </div>
-            ))}
-          </aside>
-        </div>
-      </section>
-
-      <section className="rr-section rr-shell" id="research-repository">
-        <div className="rr-section-heading rr-centered-heading">
-          <p className="rr-kicker">Institutional archive</p>
-          <h2>Research Repository</h2>
-          <p>A clear route into databases, reviews, public guidance, and source-led evidence.</p>
-        </div>
-
-        <div className="rr-filter-row" aria-label="Research filters">
-          {["All research", "Clinical", "Reviews", "Basic science", "Public guidance", "Summit research"].map((filter, index) => (
-            <button className={index === 0 ? "active" : ""} type="button" key={filter}>{filter}</button>
-          ))}
-        </div>
-
-        <div className="rr-repository-grid">
-          {repositoryItems.map((item) => {
-            const Icon = item.icon;
-            return (
-              <article key={item.title}>
-                <div><Icon size={22} /><span>{item.type}</span></div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-                <a href="#research-networks">Open record <ArrowRight size={13} /></a>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="rr-milestone-band">
-        <div className="rr-shell">
-          <div className="rr-dark-heading">
-            <p className="rr-kicker">Evidence over time</p>
-            <h2>Research Milestones</h2>
-            <p>Selected moments that help visitors understand the development of the evidence conversation.</p>
-          </div>
-          <div className="rr-milestone-grid">
-            {milestones.map((item) => (
-              <article key={item.year}>
-                <strong>{item.year}</strong>
-                <span>{item.title}</span>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="rr-section rr-shell">
-        <div className="rr-section-heading">
-          <p className="rr-kicker">Focused reading</p>
-          <h2>Case Research Highlights</h2>
-        </div>
-        <div className="rr-case-grid">
-          {cases.map((item) => {
-            const Icon = item.icon;
-            return (
-              <article key={item.title}>
-                <Icon size={26} />
-                <div><span>{item.tag}</span><h3>{item.title}</h3><p>{item.text}</p></div>
-                <ArrowRight size={18} />
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="rr-network-band" id="research-networks">
-        <div className="rr-shell">
-          <div className="rr-section-heading rr-centered-heading">
-            <p className="rr-kicker">Connected research</p>
-            <h2>Our Research Network</h2>
-            <p>Six connected areas give the platform a practical international research structure.</p>
-          </div>
-          <div className="rr-network-grid">
-            {networkItems.map((item) => {
-              const Icon = item.icon;
-              return <article key={item.label}><Icon size={22} /><span>{item.label}</span></article>;
-            })}
-          </div>
-          <div className="rr-institution-strip" aria-label="Research institution placeholders">
-            {["Research institute", "University network", "Clinical database", "Education council", "Public health desk", "Global partners"].map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="rr-section rr-shell rr-faq-section">
-        <div className="rr-section-heading rr-centered-heading">
-          <p className="rr-kicker">Research guidance</p>
-          <h2>Research Ethical Questions</h2>
-        </div>
-        <div className="rr-faq-list">
-          {faqs.map((item, index) => (
-            <article className={openFaq === index ? "is-open" : ""} key={item.question}>
-              <button type="button" onClick={() => setOpenFaq(openFaq === index ? -1 : index)}>
-                <span>{item.question}</span><ChevronDown size={18} />
-              </button>
-              <div><p>{item.answer}</p></div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="rr-partner-cta">
-        <div className="rr-shell">
-          <p className="rr-kicker">International collaboration</p>
-          <h2>Partner in Progress</h2>
-          <p>
-            Research grows through transparent methods, qualified institutions, education,
-            and meaningful exchange across borders.
-          </p>
-          <div>
-            <a className="rr-button rr-button-light" href="mailto:info@worldhomeopathy.org">
-              Research enquiry <ArrowRight size={15} />
-            </a>
-            <a href="#featured-research">Return to research desk</a>
-          </div>
-        </div>
-      </section>
-    </main>
+    <a className={className} href={href} target="_blank" rel="noreferrer">
+      {children}
+      <ExternalLink size={15} strokeWidth={2.2} />
+    </a>
   );
 }
 
-export default ResearchPage;
+export default function ResearchPage() {
+  return (
+    <div className="research-evidence-page">
+      <section className="reh-hero" id="atlas">
+        <div className="reh-hero__copy">
+          <p className="reh-kicker">Global research atlas</p>
+          <h1>Research & Evidence in Global Homeopathy</h1>
+          <p className="reh-lede">
+            A source-led evidence gateway for clinical studies, systematic reviews, research databases,
+            public guidance, and summit-led academic dialogue.
+          </p>
+          <p className="reh-body">
+            WorldHomeopathy.org should help visitors read research with context. This page organizes
+            reliable databases, major review papers, safety guidance, and evidence-focused summit activity
+            into a clear sequence without unsupported medical claims.
+          </p>
+          <div className="reh-hero__actions" aria-label="Research page shortcuts">
+            <a href="#evidence-sources">Explore sources</a>
+            <a href="#reading-list">Reading list</a>
+            <a href="#goa-research">Goa research summit</a>
+          </div>
+        </div>
+
+        <div className="reh-hero__visual" aria-label="Research laboratory visual">
+          <img src="/images/research-microscope-lab.jpg" alt="Microscope and research laboratory" />
+          <div className="reh-visual-note">
+            <ShieldCheck size={22} />
+            <span>Evidence with responsibility</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="reh-source-strip" aria-label="Research source principles">
+        {sourceNotes.map((note) => (
+          <div key={note}>
+            <span />
+            <p>{note}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="reh-section reh-section--sources" id="evidence-sources">
+        <div className="reh-section__intro">
+          <p className="reh-kicker">Evidence sources</p>
+          <h2>Where serious research reading should begin.</h2>
+          <p>
+            These are not decorative links. They are practical starting points for researchers, students,
+            practitioners, journalists, and institutions who want to verify homeopathy research directly.
+          </p>
+        </div>
+
+        <div className="reh-source-grid">
+          {evidenceSources.map((source) => {
+            const Icon = source.icon;
+            return (
+              <article className="reh-source" key={source.title}>
+                <Icon size={28} />
+                <div>
+                  <p>{source.eyebrow}</p>
+                  <h3>{source.title}</h3>
+                  <span>{source.text}</span>
+                  <ExternalAnchor href={source.href}>{source.linkLabel}</ExternalAnchor>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="reh-section reh-sequence" id="research-sequence">
+        <div className="reh-section__intro reh-section__intro--wide">
+          <p className="reh-kicker">Research sequence</p>
+          <h2>A cleaner way to read the global evidence conversation.</h2>
+          <p>
+            Instead of presenting random research blocks, the page now moves through a transparent order:
+            databases, reviews, condition-level reading, research type, and safety context.
+          </p>
+        </div>
+
+        <div className="reh-sequence__list">
+          {researchSequence.map((item) => (
+            <article className="reh-step" key={item.label}>
+              <strong>{item.label}</strong>
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="reh-section reh-reading" id="reading-list">
+        <div className="reh-reading__header">
+          <div>
+            <p className="reh-kicker">Peer-reviewed reading list</p>
+            <h2>Important papers to read before forming an opinion.</h2>
+          </div>
+          <p>
+            The list includes supportive, critical, and method-focused literature because an institutional
+            research page should be credible, balanced, and source-linked.
+          </p>
+        </div>
+
+        <div className="reh-paper-list">
+          {readingList.map((paper) => (
+            <article className="reh-paper" key={paper.title}>
+              <div className="reh-paper__meta">
+                <span>{paper.type}</span>
+                <strong>{paper.year}</strong>
+              </div>
+              <div>
+                <h3>{paper.title}</h3>
+                <p>{paper.text}</p>
+                <span>{paper.authors}</span>
+              </div>
+              <ExternalAnchor href={paper.href} className="reh-paper__link">
+                Read source
+              </ExternalAnchor>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="reh-section reh-goa" id="goa-research">
+        <div className="reh-goa__image">
+          <img src="/images/summit-global-stage.jpg" alt="International homeopathy summit stage" />
+        </div>
+        <div className="reh-goa__copy">
+          <p className="reh-kicker">Featured research initiative</p>
+          <h2>Burnett Homeopathy Goa - Evidence-Based Research Summit</h2>
+          <p>
+            Public coverage of the Goa research summit positioned the programme around evidence-based
+            discussion, global standards, and research dialogue. On WorldHomeopathy.org, Burnett
+            Homeopathy Pvt. Ltd. is referenced through this kind of documented summit and research
+            contribution.
+          </p>
+          <ul>
+            <li>Research-focused summit coverage with public source link.</li>
+            <li>Useful bridge between summit visibility and evidence discussion.</li>
+            <li>Presented as one contributor inside a wider global platform.</li>
+          </ul>
+          <ExternalAnchor
+            href="https://www.republicworld.com/initiatives/burnett-homeopathy-redefines-global-standards-with-groundbreaking-evidence-based-research-summit-in-goa"
+            className="reh-button"
+          >
+            Read public coverage
+          </ExternalAnchor>
+        </div>
+      </section>
+
+      <section className="reh-section reh-fields" id="research-areas">
+        <div>
+          <p className="reh-kicker">What belongs on this page</p>
+          <h2>Research areas worth organizing over time.</h2>
+          <p>
+            As the website grows, these areas can become dedicated pages with filters, source references,
+            author names, publication years, and download links where rights are confirmed.
+          </p>
+        </div>
+        <div className="reh-fields__grid">
+          {researchAreas.map((area) => (
+            <span key={area}>{area}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="reh-section reh-ethics" id="research-ethics">
+        <div className="reh-ethics__panel">
+          <FlaskConical size={34} />
+          <h2>Editorial standard for research content</h2>
+          <p>
+            Research content should cite the original source, avoid disease-cure promises, identify the
+            research type, and separate educational information from personal medical advice.
+          </p>
+        </div>
+        <div className="reh-ethics__faq">
+          <details open>
+            <summary>Is this page medical advice?</summary>
+            <p>No. It is an educational evidence gateway. Visitors should consult qualified healthcare professionals for personal medical decisions.</p>
+          </details>
+          <details>
+            <summary>How are links selected?</summary>
+            <p>Priority is given to research databases, peer-reviewed articles, public health guidance, and public coverage of research-focused events.</p>
+          </details>
+          <details>
+            <summary>How is Burnett Homeopathy included?</summary>
+            <p>Burnett Homeopathy Pvt. Ltd. is included through documented summit and research initiatives, while the page remains a broader global research resource.</p>
+          </details>
+        </div>
+      </section>
+    </div>
+  );
+}
