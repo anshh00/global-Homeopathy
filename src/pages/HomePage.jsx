@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ArrowDownRight,
   ArrowRight,
@@ -13,6 +13,11 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import MedicalMotionBackground from "../components/MedicalMotionBackground.jsx";
+import globalNetworkGlobe from "../assets/homepage-redesign/global-network-globe.png";
+import historicalArchiveBuilding from "../assets/homepage-redesign/historical-archive-building.png";
+import historicalBooksManuscripts from "../assets/homepage-redesign/historical-books-manuscripts.png";
+import homeopathyBottleFlower from "../assets/homepage-redesign/homeopathy-bottle-flower.png";
+import samuelHahnemann from "../assets/homepage-redesign/samuel-hahnemann.png";
 
 const heroSlides = [
   {
@@ -108,6 +113,60 @@ const liveEvents = [
   },
 ];
 
+const storyParagraphs = [
+  "WorldHomeopathy.org is an independent digital platform created to make the global homeopathy story easier to discover, understand, and follow.",
+  "It brings together history, education, research conversations, international summits, leadership, media coverage, and country perspectives in one clear place.",
+  "Visitors can begin with trusted foundations, explore professional pathways, discover the homeopathy jobs portal, and connect with opportunities across the worldwide community.",
+  "The platform is designed to help students, practitioners, researchers, institutions, journalists, and the public find useful context without losing sight of the people and ideas behind the movement.",
+  "By giving knowledge, collaboration, events, publications, and career connections a shared home, it helps the community learn from one another and move the conversation forward.",
+  "This is a place to begin with a better question and move confidently through the Center of the Experience.",
+];
+
+const storyFocusItems = [
+  {
+    icon: Landmark,
+    title: "History & Foundations",
+    text: "Explore the roots of homeopathy.",
+    path: "/explore",
+  },
+  {
+    icon: Microscope,
+    title: "Research & Learning",
+    text: "Discover evidence, papers, and academic work.",
+    path: "/research",
+  },
+  {
+    icon: Users,
+    title: "People, Events & Opportunities",
+    text: "Meet the community behind the movement.",
+    path: "/summit",
+  },
+];
+
+const archivePanels = [
+  {
+    image: samuelHahnemann,
+    eyebrow: "The founder",
+    title: "Samuel Hahnemann",
+    text: "Discover the life and vision of the founder of homeopathy.",
+    source: "https://www.nature.com/articles/151724c0",
+  },
+  {
+    image: historicalBooksManuscripts,
+    eyebrow: "His life & work",
+    title: "Writings & Contributions",
+    text: "Explore original writings, letters, and historical documents.",
+    source: "https://pubmed.ncbi.nlm.nih.gov/17564158/",
+  },
+  {
+    image: historicalArchiveBuilding,
+    eyebrow: "Historical archives",
+    title: "Places that shaped homeopathy",
+    text: "From Koethen to around the world, follow places linked with homeopathy's historical memory.",
+    source: "https://www.koethen-anhalt.de/de/samuel-hahnemann.html",
+  },
+];
+
 function getCountdown(date, now) {
   const difference = Math.max(0, new Date(date).getTime() - now);
   const totalSeconds = Math.floor(difference / 1000);
@@ -121,20 +180,8 @@ function getCountdown(date, now) {
 
 function HomePage() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [aboutVisible, setAboutVisible] = useState(false);
-  const [typedAbout, setTypedAbout] = useState("");
   const [currentTime, setCurrentTime] = useState(() => Date.now());
-  const aboutRef = useRef(null);
   const slide = heroSlides[activeSlide];
-  const aboutTextLines = [
-    "WorldHomeopathy.org is an independent digital platform created to make the global homeopathy story easier to discover, understand, and follow.",
-    "It brings together history, education, research conversations, international summits, leadership, media coverage, and country perspectives in one clear place.",
-    "Visitors can begin with trusted foundations, explore professional pathways, discover the homeopathy jobs portal, and connect with opportunities across the worldwide community.",
-    "The platform is designed to help students, practitioners, researchers, institutions, journalists, and the public find useful context without losing sight of the people and ideas behind the movement.",
-    "By giving knowledge, collaboration, events, publications, and career connections a shared home, it helps the community learn from one another and move the conversation forward.",
-    "This is a place to begin with a better question and move confidently through the Center of the Experience.",
-  ];
-  const aboutText = aboutTextLines.join(" ");
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -147,30 +194,6 @@ function HomePage() {
     const timer = window.setInterval(() => setCurrentTime(Date.now()), 1000);
     return () => window.clearInterval(timer);
   }, []);
-
-  useEffect(() => {
-    const node = aboutRef.current;
-    if (!node) return undefined;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setAboutVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!aboutVisible || typedAbout.length >= aboutText.length) return undefined;
-    const timer = window.setTimeout(() => {
-      setTypedAbout(aboutText.slice(0, typedAbout.length + 1));
-    }, 12);
-    return () => window.clearTimeout(timer);
-  }, [aboutText, aboutVisible, typedAbout]);
 
   return (
     <main className="original-home">
@@ -240,98 +263,140 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="original-home-welcome" id="about" ref={aboutRef}>
-        <div className="original-home-about-label">
-          <span>About Us</span>
-        </div>
-        <div className="original-home-welcome-grid">
-          <div className="original-home-welcome-heading">
-            <h2>A shared place to understand the global homeopathy story.</h2>
-            <p className="original-home-about-lede">
-              One international starting point for heritage, learning, evidence conversations, and the people keeping the discipline in motion.
+      <section className="homepage-story-redesign" id="about" aria-labelledby="homepage-story-title">
+        <div className="homepage-story-redesign__hero">
+          <div className="homepage-story-redesign__hero-copy">
+            <p className="homepage-story-redesign__eyebrow">About Us</p>
+            <h2 id="homepage-story-title">
+              A shared place to understand the <span>global homeopathy story.</span>
+            </h2>
+            <p>
+              One international starting point for heritage, learning, evidence, conversations, and the people keeping
+              the discipline in motion.
             </p>
-          </div>
-          <div className="original-home-welcome-copy">
-            <div className={`original-home-typing ${aboutVisible ? "is-visible" : ""}`} aria-live="polite">
-              {aboutTextLines.map((line, index) => {
-                const start = aboutTextLines.slice(0, index).join(" ").length + (index ? 1 : 0);
-                const visibleLine = typedAbout.slice(start, start + line.length);
-                const isCurrentLine = typedAbout.length >= start && typedAbout.length < start + line.length;
-                return (
-                  <span className="original-home-typing-line" key={line}>
-                    <span className="original-home-typing-text">
-                      {visibleLine}
-                      {isCurrentLine ? (
-                        <span className="original-home-typing-caret" aria-hidden="true">|</span>
-                      ) : null}
-                    </span>
-                  </span>
-                );
-              })}
-            </div>
-            <div className="original-home-about-actions">
-              <Link className="original-text-link" to="/explore">Start with the essentials <ArrowRight size={16} /></Link>
-              <Link className="original-text-link" to="/jobs">Find global opportunities <ArrowUpRight size={16} /></Link>
+            <div className="homepage-story-redesign__actions">
+              <Link className="homepage-story-redesign__button" to="/explore">
+                Start Your Journey <ArrowRight size={16} />
+              </Link>
+              <a className="homepage-story-redesign__text-link" href="#home-story-purpose">
+                Learn More <ArrowRight size={15} />
+              </a>
             </div>
           </div>
+          <figure className="homepage-story-redesign__globe">
+            <img
+              src={globalNetworkGlobe}
+              alt="Transparent globe with global connection lines and botanical details"
+              width="1280"
+              height="960"
+            />
+          </figure>
         </div>
-        <div className="original-home-about-themes" aria-label="Platform focus areas">
-          <div>
-            <Landmark size={22} aria-hidden="true" />
-            <span>History and foundations</span>
-          </div>
-          <div>
-            <Microscope size={22} aria-hidden="true" />
-            <span>Research and professional learning</span>
-          </div>
-          <div>
-            <Users size={22} aria-hidden="true" />
-            <span>Global people, events, and opportunities</span>
-          </div>
+
+        <div className="homepage-story-redesign__signal-strip" aria-label="Platform focus">
+          <span>Global Connections</span>
+          <span>Professionals</span>
+          <span>Research and Learning</span>
+          <span>International Summits</span>
         </div>
-        <article className="original-home-heritage-strip">
-          <div className="original-home-heritage-image">
-            <img src="/images/homepage/hahnemann-portrait.jpg" alt="Historical portrait of Samuel Hahnemann" />
-            <span>1755 - 1843</span>
+
+        <section className="homepage-story-redesign__purpose" id="home-story-purpose" aria-labelledby="home-story-purpose-title">
+          <div className="homepage-story-redesign__purpose-copy">
+            <p className="homepage-story-redesign__eyebrow">Our Purpose</p>
+            <h3 id="home-story-purpose-title">Uniting knowledge, people, and purpose.</h3>
+            <div className="homepage-story-redesign__paragraphs">
+              {storyParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <Link className="homepage-story-redesign__button homepage-story-redesign__button--compact" to="/explore">
+              Start with the essentials <ArrowRight size={15} />
+            </Link>
           </div>
-          <div className="original-home-heritage-content">
-            <p className="original-kicker">A short historical note</p>
+          <figure className="homepage-story-redesign__bottle">
+            <img
+              src={homeopathyBottleFlower}
+              alt="Homeopathy bottle with white flower and green leaves"
+              width="1280"
+              height="960"
+              loading="lazy"
+            />
+          </figure>
+        </section>
+
+        <nav className="homepage-story-redesign__pathways" aria-label="Introductory homepage pathways">
+          {storyFocusItems.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Link className="homepage-story-redesign__pathway" to={item.path} key={item.title}>
+                <Icon size={24} aria-hidden="true" />
+                <span>
+                  <strong>{item.title}</strong>
+                  <small>{item.text}</small>
+                </span>
+                <ArrowRight size={15} aria-hidden="true" />
+              </Link>
+            );
+          })}
+        </nav>
+        <article className="homepage-story-redesign__hahnemann">
+          <figure className="homepage-story-redesign__portrait">
+            <img
+              src={samuelHahnemann}
+              alt="Portrait of Samuel Hahnemann"
+              width="960"
+              height="1280"
+              loading="lazy"
+            />
+            <figcaption>1755 - 1843</figcaption>
+          </figure>
+          <div className="homepage-story-redesign__hahnemann-copy">
+            <p className="homepage-story-redesign__eyebrow">A Short Historical Note</p>
             <h3>Samuel Hahnemann and the origins of homeopathy</h3>
-            <p>Samuel Hahnemann, a German physician, established the foundations of homeopathy in the late eighteenth and early nineteenth centuries. His work remains an important part of the tradition's historical record.</p>
-            <div className="original-home-heritage-details">
+            <p>
+              Samuel Hahnemann, a German physician, established the foundations of homeopathy in the late eighteenth
+              and early nineteenth centuries. His work remains an important part of the tradition's historical record.
+            </p>
+            <div className="homepage-story-redesign__tags" aria-label="Historical context">
               <span>Origins</span>
               <span>History</span>
-              <span>Learning context</span>
+              <span>Learning Context</span>
             </div>
           </div>
-          <Link className="original-round-link" to="/explore" aria-label="Read the history of homeopathy"><ArrowUpRightIcon /></Link>
+          <Link className="homepage-story-redesign__round-link" to="/explore" aria-label="Read the history of homeopathy">
+            <ArrowUpRight size={18} />
+          </Link>
         </article>
-        <div className="original-home-archive" aria-labelledby="archive-heading">
-          <div className="original-home-archive-heading">
-            <div>
-              <p className="original-kicker original-archive-kicker">From the historical archive</p>
-              <h3 id="archive-heading">A story preserved in pages, places, and memory.</h3>
-            </div>
-            <Link className="original-text-link" to="/explore">Explore the history <ArrowRight size={16} /></Link>
+        <section className="homepage-story-redesign__archive" aria-labelledby="archive-heading">
+          <div className="homepage-story-redesign__archive-heading">
+            <p className="homepage-story-redesign__eyebrow">From the historical archive</p>
+            <h3 id="archive-heading">A story preserved in pages, places, and memory.</h3>
+            <Link className="homepage-story-redesign__text-link" to="/explore">
+              Explore the history <ArrowRight size={15} />
+            </Link>
           </div>
-          <div className="original-home-archive-grid">
-            <figure>
-              <img src="/images/homepage/archive/hahnemann-book-archive.jpeg" alt="Archival book reference about Samuel Hahnemann" />
-              <figcaption><span>Nature archive · 1943</span> Samuel Hahnemann (1755–1843), a historical profile of homeopathy's founder.</figcaption>
-              <a className="original-home-archive-source" href="https://www.nature.com/articles/151724c0" target="_blank" rel="noreferrer">Read original source <ArrowUpRight size={14} /></a>
-            </figure>
-            <figure>
-              <img src="/images/homepage/archive/koethen-heritage-archive.jpeg" alt="Historic building connected with the history of homeopathy" />
-              <figcaption><span>PubMed review · 2007</span> A brief history of homeopathy and its development through medical history.</figcaption>
-              <a className="original-home-archive-source" href="https://pubmed.ncbi.nlm.nih.gov/17564158/" target="_blank" rel="noreferrer">Read original source <ArrowUpRight size={14} /></a>
-            </figure>
-            <figure>
-              <img src="/images/homepage/archive/hahnemann-memorial-archive.jpg" alt="Samuel Hahnemann memorial" />
-              <figcaption><span>Köthen official archive</span> Samuel Hahnemann's work and years in Köthen, Germany.</figcaption>
-              <a className="original-home-archive-source" href="https://www.koethen-anhalt.de/de/samuel-hahnemann.html" target="_blank" rel="noreferrer">Read original source <ArrowUpRight size={14} /></a>
-            </figure>
+          <div className="homepage-story-redesign__archive-grid">
+            {archivePanels.map((panel) => (
+              <article className="homepage-story-redesign__archive-panel" key={panel.title}>
+                <img
+                  src={panel.image}
+                  alt={panel.title}
+                  width="1280"
+                  height="960"
+                  loading="lazy"
+                />
+                <div>
+                  <p>{panel.eyebrow}</p>
+                  <h4>{panel.title}</h4>
+                  <span>{panel.text}</span>
+                  <a href={panel.source} target="_blank" rel="noreferrer">
+                    Read original source <ArrowUpRight size={14} />
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
-        </div>
+        </section>
       </section>
 
       <section className="original-home-live" aria-labelledby="live-heading">
@@ -386,10 +451,6 @@ function HomePage() {
 
     </main>
   );
-}
-
-function ArrowUpRightIcon() {
-  return <ArrowUpRight size={18} />;
 }
 
 export default HomePage;
