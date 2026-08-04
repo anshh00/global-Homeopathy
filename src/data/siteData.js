@@ -31,9 +31,9 @@ export const navItems = [
     path: "/summit",
     children: [
       { label: "Summit Archive", path: "/summit#archive" },
-      { label: "Global Timeline", path: "/summit#timeline" },
-      { label: "Experts & Voices", path: "/summit#experts" },
-      { label: "Media Desk", path: "/summit#media" },
+      { label: "Burnett Chapters", path: "/summit#summit-archive" },
+      { label: "Global Programmes", path: "/summit#global-programmes" },
+      { label: "Submit Reference", path: "/summit#submit-reference" },
     ],
   },
   {

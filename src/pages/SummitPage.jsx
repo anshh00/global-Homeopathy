@@ -1,293 +1,318 @@
 import React from "react";
 import {
   ArrowRight,
-  Download,
+  BookOpen,
+  CalendarDays,
+  ExternalLink,
   FileText,
   Globe2,
-  Image,
+  MapPin,
+  Microscope,
   Newspaper,
-  Search,
+  ShieldCheck,
   Users,
 } from "lucide-react";
 
-const heroStats = [
-  { icon: Globe2, value: "4", label: "Summit Chapters" },
-  { icon: Users, value: "110+", label: "Countries Reached" },
-  { icon: Search, value: "1,200+", label: "Expert Participants" },
-  { icon: FileText, value: "2,500+", label: "Published Outcomes" },
-];
-
-const archiveItems = [
+const summitCards = [
   {
-    city: "Dubai",
-    year: "2024",
+    type: "Burnett Summit",
     title: "World Homeopathy Summit 2",
-    text: "A global summit chapter focused on leadership visibility, international dialogue, and institutional participation.",
+    date: "2024",
+    place: "Dubai, United Arab Emirates",
+    organizer: "Burnett Homeopathy Pvt. Ltd.",
+    source: "Faculty of Homeopathy",
     image: "/images/summit-dubai-authority.jpg",
-    link: "https://www.facultyofhomeopathy.org/articles/world-homeopathy-summit-2",
+    href: "https://www.facultyofhomeopathy.org/articles/world-homeopathy-summit-2",
+    summary:
+      "A high-visibility Dubai chapter covered by the Faculty of Homeopathy, bringing international delegates into one summit setting.",
   },
   {
-    city: "Kothen, Germany",
-    year: "2025",
+    type: "Burnett Summit",
     title: "World Homeopathy Summit 3",
-    text: "A historically significant chapter connecting modern homeopathy leaders with Hahnemann's legacy.",
+    date: "2025",
+    place: "Koethen, Germany",
+    organizer: "Burnett Homeopathy Pvt. Ltd.",
+    source: "Republic World",
     image: "/images/summit-recognition.jpg",
-    link: "https://www.republicworld.com/initiatives/dr-nitish-dubeys-burnett-homeopathy-hosts-historic-world-homeopathy-summit-3-during-world-homeopathy-week-in-germany",
+    href: "https://www.republicworld.com/initiatives/dr-nitish-dubeys-burnett-homeopathy-hosts-historic-world-homeopathy-summit-3-during-world-homeopathy-week-in-germany",
+    summary:
+      "A historically rooted summit chapter connected with Hahnemann's professional legacy and World Homeopathy Week in Germany.",
   },
   {
-    city: "Goa, India",
-    year: "2025",
+    type: "Research Summit",
     title: "Evidence-Based Research Summit",
-    text: "A research-oriented summit focused on evidence discussion, academic exchange, and global standards.",
+    date: "2025",
+    place: "Goa, India",
+    organizer: "Burnett Homeopathy Pvt. Ltd.",
+    source: "Republic World",
     image: "/images/summit-global-stage.jpg",
-    link: "https://www.republicworld.com/initiatives/burnett-homeopathy-redefines-global-standards-with-groundbreaking-evidence-based-research-summit-in-goa",
+    href: "https://www.republicworld.com/initiatives/burnett-homeopathy-redefines-global-standards-with-groundbreaking-evidence-based-research-summit-in-goa",
+    summary:
+      "A research-focused Goa initiative positioned around evidence discussion, academic exchange, and global standards.",
   },
   {
-    city: "London, UK",
-    year: "2026",
+    type: "Burnett Summit",
     title: "World Homeopathy Summit 4",
-    text: "A planned UK chapter connecting institutions, science dialogue, leadership, and global collaboration.",
+    date: "2026",
+    place: "London, United Kingdom",
+    organizer: "Burnett Homeopathy Pvt. Ltd.",
+    source: "Express Healthcare",
     image: "/images/dr-nitish-podium.jpg",
-    link: "https://www.expresshealthcare.in/news/burnett-homoeopathy-hosts-4th-world-homoeopathy-summit-2026/453433/",
+    href: "https://www.expresshealthcare.in/news/burnett-homoeopathy-hosts-4th-world-homoeopathy-summit-2026/453433/",
+    summary:
+      "A UK summit chapter reported around British Parliament, Oxford University, institutional dialogue, and global collaboration.",
   },
 ];
 
-const timelineItems = [
+const programmeCards = [
   {
-    year: "2024",
-    title: "Dubai Summit",
-    text: "International summit visibility and leadership dialogue.",
+    type: "World Congress",
+    title: "79th LMHI World Congress",
+    date: "21-24 October 2026",
+    place: "Merida, Mexico",
+    organizer: "Liga Medicorum Homoeopathica Internationalis",
+    source: "Homeopathy360",
+    image: "https://www.homeopathy360.com/wp-content/uploads/2026/07/LMHI-2026.jpg",
+    href: "https://www.homeopathy360.com/79th-lmhi-world-congress-liga-medicorum-homoeopathica-internationalis-mexico-2026/",
+    summary:
+      "An international congress listing for physicians, researchers, and the wider homeopathy community.",
   },
   {
-    year: "2025",
-    title: "Kothen Summit",
-    text: "Historical continuity with Hahnemann's professional roots.",
+    type: "Congress",
+    title: "Faculty of Homeopathy Congress 2026",
+    date: "19-22 November 2026",
+    place: "Warwick, United Kingdom",
+    organizer: "Faculty of Homeopathy",
+    source: "Faculty of Homeopathy",
+    image:
+      "https://hubble-live-assets.s3.eu-west-1.amazonaws.com/facultyofhomeopathy/file_asset/file/2433/content_Congress_2026.jpg",
+    href: "https://www.facultyofhomeopathy.org/events/faculty-of-homeopathy-congress-2026",
+    summary:
+      "A professional congress programme with education, research, and practice conversations for the Faculty community.",
   },
   {
-    year: "2025",
-    title: "Goa Research Summit",
-    text: "Evidence-based conversations and academic exchange.",
+    type: "Research Conference",
+    title: "HRI Greece 2025",
+    date: "20-22 June 2025",
+    place: "Thessaloniki, Greece",
+    organizer: "Homeopathy Research Institute",
+    source: "HRI Greece",
+    image: "/images/research-microscope-lab.jpg",
+    href: "https://www.hrigreece2025.org/",
+    summary:
+      "A research conference space for scientific discussion, evidence review, and international homeopathy research exchange.",
   },
   {
-    year: "2026",
-    title: "London Summit",
-    text: "Institutional collaboration and global media visibility.",
+    type: "Education Event",
+    title: "LMHI 2025: Joy of Homeopathy",
+    date: "14-17 May 2025",
+    place: "Utrecht, Netherlands",
+    organizer: "LMHI / Dutch Homeopathic community",
+    source: "Faculty of Homeopathy",
+    image:
+      "https://hubble-live-assets.s3.eu-west-1.amazonaws.com/facultyofhomeopathy/file_asset/file/2412/content_LMHI_2025.jpg",
+    href: "https://www.facultyofhomeopathy.org/events/lmhi-2025-joy-of-homeopathy",
+    summary:
+      "An LMHI-linked international learning and community programme focused on education, exchange, and professional connection.",
+  },
+  {
+    type: "National Programme",
+    title: "HOMCON 2025",
+    date: "2025",
+    place: "Lucknow, India",
+    organizer: "HOMCON",
+    source: "Homeopathy360",
+    image:
+      "https://www.homeopathy360.com/wp-content/uploads/2025/02/HOMCON-2025-The-Celebration-Of-Homeopathy.jpg",
+    href: "https://www.homeopathy360.com/homcon-2025/",
+    summary:
+      "A listed Indian homeopathy programme bringing clinical, educational, and professional voices together.",
+  },
+  {
+    type: "Joint Conference",
+    title: "Groundbreaking Science and Global Health",
+    date: "2025",
+    place: "Connecticut, United States",
+    organizer: "AIH / Faculty of Homeopathy",
+    source: "American Institute of Homeopathy",
+    image:
+      "https://www.homeopathyusa.org/assets/images/upcoming_conferences/Flyer%20Joint%20Conference%202025.jpg",
+    href: "https://www.homeopathyusa.org/groundbreaking-science-and-global-health",
+    summary:
+      "A joint science and global health programme connected with professional education and international dialogue.",
   },
 ];
 
-const expertPlaceholders = [
+const platformNotes = [
   {
-    role: "Summit Chair",
-    text: "Leadership profile, photograph, designation, and institutional contribution to be added.",
+    icon: ShieldCheck,
+    title: "Source-linked archive",
+    text: "Every summit card opens the original media, event, or official reference so visitors can verify details.",
   },
   {
-    role: "Research Speaker",
-    text: "Evidence, publication, and academic contribution details to be added.",
-  },
-  {
-    role: "Clinical Leader",
-    text: "Practice background, specialization, and summit participation details to be added.",
-  },
-  {
-    role: "Education Advisor",
-    text: "Teaching, training, and professional development details to be added.",
-  },
-  {
-    role: "Institutional Voice",
-    text: "Organization, country, and collaboration details to be added.",
-  },
-];
-
-const mediaDesk = [
-  {
-    icon: FileText,
-    title: "Agenda & Proceedings",
-    text: "Official agenda notes, keynote summaries, session outcomes, and post-summit documentation.",
-    action: "Explore documents",
+    icon: Globe2,
+    title: "Global, not local",
+    text: "The page places Burnett chapters beside LMHI, Faculty, HRI, AIH, and other international programmes.",
   },
   {
     icon: Newspaper,
-    title: "Media Coverage",
-    text: "News coverage, interviews, press releases, and summit coverage from verified external sources.",
-    action: "View coverage",
-  },
-  {
-    icon: Image,
-    title: "Photo Gallery / Highlights",
-    text: "Summit galleries, stage moments, delegate photographs, and visual highlights for each chapter.",
-    action: "View gallery",
+    title: "Designed for coverage",
+    text: "Short summaries keep the page clean while the external links carry detailed reports, photos, and registration notes.",
   },
 ];
 
+function EventCard({ event, featured = false }) {
+  return (
+    <article className={featured ? "summit-event-card is-featured" : "summit-event-card"}>
+      <a className="summit-event-image" href={event.href} target="_blank" rel="noreferrer">
+        <img
+          src={event.image}
+          alt={`${event.title} coverage visual`}
+          loading={featured ? "eager" : "lazy"}
+          onError={(error) => {
+            error.currentTarget.src = "/images/homeopathy-global-collage-hero.png";
+          }}
+        />
+      </a>
+      <div className="summit-event-copy">
+        <div className="summit-event-topline">
+          <span>{event.type}</span>
+          <strong>{event.date}</strong>
+        </div>
+        <h3>{event.title}</h3>
+        <p className="summit-event-location">
+          <MapPin size={15} />
+          {event.place}
+        </p>
+        <p>{event.summary}</p>
+        <div className="summit-event-meta">
+          <span>{event.organizer}</span>
+          <span>{event.source}</span>
+        </div>
+        <a className="summit-event-link" href={event.href} target="_blank" rel="noreferrer">
+          Open source coverage <ExternalLink size={14} />
+        </a>
+      </div>
+    </article>
+  );
+}
+
 function SummitPage() {
   return (
-    <main className="summit-foundation-page">
-      <section className="summit-foundation-hero">
-        <div className="summit-foundation-shell summit-foundation-hero-grid">
-          <div className="summit-foundation-hero-copy">
-            <p className="summit-foundation-kicker">Global Summit Platform</p>
-            <h1>Uniting the World Through Homeopathy</h1>
+    <main className="summit-foundation-page summit-archive-page">
+      <section className="summit-archive-hero">
+        <div className="summit-archive-shell summit-archive-hero-grid">
+          <div className="summit-archive-hero-copy">
+            <p className="summit-archive-kicker">World summit desk</p>
+            <h1>Global homeopathy summits, congresses, and programmes.</h1>
             <p>
-              Our international summits bring together practitioners, researchers,
-              educators, institutions, and media voices to advance dialogue, share
-              evidence, and strengthen collaboration across the global homeopathy
-              community.
+              A clean source-linked archive for major homeopathy gatherings across countries,
+              including Burnett Homeopathy Pvt. Ltd. summit chapters and wider international
+              congresses, research meetings, education events, and professional programmes.
             </p>
-            <div className="summit-foundation-actions">
+            <div className="summit-archive-actions">
               <a href="#summit-archive">
-                Explore Archive <ArrowRight size={15} />
+                View summit cards <ArrowRight size={16} />
               </a>
-              <a href="#summit-media">
-                Media Coverage <ArrowRight size={15} />
+              <a href="#global-programmes">
+                Explore programmes <Globe2 size={16} />
               </a>
             </div>
           </div>
-          <div className="summit-foundation-map" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-
-        <div className="summit-foundation-stats">
-          <div className="summit-foundation-shell">
-            {heroStats.map((stat) => {
-              const Icon = stat.icon;
-              return (
-                <article key={stat.label}>
-                  <Icon size={24} />
-                  <strong>{stat.value}</strong>
-                  <span>{stat.label}</span>
-                </article>
-              );
-            })}
+          <div className="summit-archive-hero-panel" aria-label="Summit archive method">
+            <div>
+              <CalendarDays size={24} />
+              <span>2024-2026</span>
+              <strong>Tracked summit window</strong>
+            </div>
+            <div>
+              <Newspaper size={24} />
+              <span>Source first</span>
+              <strong>News and official references</strong>
+            </div>
+            <div>
+              <Users size={24} />
+              <span>Global community</span>
+              <strong>Delegates, educators, researchers</strong>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="summit-featured summit-foundation-shell">
-        <div className="summit-featured-image">
-          <img src="/images/summit-global-stage.jpg" alt="World Homeopathy Summit stage and delegates" />
-        </div>
-        <div className="summit-featured-copy">
-          <p className="summit-foundation-kicker">Featured Global Summit</p>
-          <h2>Evidence-Based Research Summit 2025 - Goa</h2>
-          <p>
-            A research-focused gathering advancing evidence-led homeopathy
-            discussion, international participation, and academic exchange.
-            Burnett Homeopathy Pvt. Ltd. is referenced through summit
-            organization and research visibility.
-          </p>
-          <ul>
-            <li>Research presentations and academic conversations.</li>
-            <li>International participation across education and practice.</li>
-            <li>Consensus-building around evidence and global standards.</li>
-          </ul>
-          <div>
-            <a href="https://www.republicworld.com/initiatives/burnett-homeopathy-redefines-global-standards-with-groundbreaking-evidence-based-research-summit-in-goa" target="_blank" rel="noreferrer">
-              View summit coverage <ArrowRight size={14} />
-            </a>
-            <a href="#summit-media">
-              Download agenda <Download size={14} />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="summit-archive summit-foundation-shell" id="summit-archive">
-        <div className="summit-section-heading">
-          <p className="summit-foundation-kicker">Global Summit Archive</p>
-          <h2>Summit chapters organized by destination and purpose.</h2>
-        </div>
-        <div className="summit-archive-grid">
-          {archiveItems.map((item) => (
-            <article key={item.title}>
+      <section className="summit-archive-intro summit-archive-shell">
+        {platformNotes.map((note) => {
+          const Icon = note.icon;
+          return (
+            <article key={note.title}>
+              <Icon size={24} />
               <div>
-                <span>{item.city}</span>
-                <strong>{item.year}</strong>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-                <a href={item.link} target="_blank" rel="noreferrer">
-                  Explore summit <ArrowRight size={13} />
-                </a>
+                <h2>{note.title}</h2>
+                <p>{note.text}</p>
               </div>
-              <img src={item.image} alt={`${item.title} visual`} />
             </article>
+          );
+        })}
+      </section>
+
+      <section className="summit-archive-section summit-archive-shell" id="summit-archive">
+        <span className="summit-anchor" id="archive" aria-hidden="true"></span>
+        <div className="summit-archive-heading">
+          <p className="summit-archive-kicker">Burnett summit chapters</p>
+          <h2>World Homeopathy Summit coverage, organized into clear cards.</h2>
+          <p>
+            These cards keep the page concise and route visitors to the original article or
+            official page for full details, photographs, and wider coverage.
+          </p>
+        </div>
+        <div className="summit-event-grid">
+          {summitCards.map((event, index) => (
+            <EventCard key={event.title} event={event} featured={index === 0} />
           ))}
         </div>
       </section>
 
-      <section className="summit-timeline">
-        <div className="summit-foundation-shell">
-          <p className="summit-foundation-kicker">Global Summit Timeline</p>
-          <div className="summit-timeline-row">
-            {timelineItems.map((item) => (
-              <article key={`${item.year}-${item.title}`}>
-                <span></span>
-                <strong>{item.year}</strong>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
+      <section className="summit-programme-band" id="global-programmes">
+        <div className="summit-archive-shell">
+          <div className="summit-programme-heading">
+            <p className="summit-archive-kicker">Worldwide programmes</p>
+            <h2>Congresses, research meetings, and education programmes.</h2>
+            <p>
+              A broader international desk for real homeopathy-related programmes beyond the
+              Burnett summit series, useful for students, practitioners, media, and institutions.
+            </p>
+          </div>
+          <div className="summit-programme-grid">
+            {programmeCards.map((event) => (
+              <EventCard key={event.title} event={event} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="summit-experts summit-foundation-shell">
-        <div className="summit-section-heading summit-section-heading-row">
+      <section className="summit-submit-strip summit-archive-shell" id="submit-reference">
+        <div>
+          <FileText size={34} />
           <div>
-            <p className="summit-foundation-kicker">Institutional Voices</p>
-            <h2>Experts in World Homeopathy</h2>
+            <p className="summit-archive-kicker">Archive contribution</p>
+            <h2>Have a verified summit or programme to include?</h2>
+            <p>
+              Share the official page, organiser note, media article, event image, and location.
+              We can add it to the archive without turning this page into a long article.
+            </p>
           </div>
-          <a href="#summit-media">View all experts <ArrowRight size={14} /></a>
         </div>
-        <div className="summit-expert-row">
-          {expertPlaceholders.map((expert) => (
-            <article key={expert.role}>
-              <div>TBA</div>
-              <h3>{expert.role}</h3>
-              <p>{expert.text}</p>
-            </article>
-          ))}
-        </div>
+        <a href="mailto:info@worldhomeopathy.org">
+          Submit event reference <ArrowRight size={16} />
+        </a>
       </section>
 
-      <section className="summit-media-desk summit-foundation-shell" id="summit-media">
-        <p className="summit-foundation-kicker">Summit Reports & Media Desk</p>
-        <div className="summit-media-grid">
-          {mediaDesk.map((item) => {
-            const Icon = item.icon;
-            return (
-              <article key={item.title}>
-                <Icon size={34} />
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                  <a href="#summit-archive">
-                    {item.action} <ArrowRight size={13} />
-                  </a>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="summit-dialogue summit-foundation-shell">
-        <div>
-          <Globe2 size={48} />
-          <h2>Partner in Global Dialogue</h2>
-          <p>
-            Join us in shaping the future of homeopathy through collaboration,
-            research, education, media documentation, and shared purpose.
-          </p>
-        </div>
-        <div>
-          <a href="mailto:info@worldhomeopathy.org">
-            Participate in Future Summits <ArrowRight size={15} />
-          </a>
-          <a href="mailto:info@worldhomeopathy.org">Partner With Us</a>
-        </div>
+      <section className="summit-source-note summit-archive-shell">
+        <Microscope size={22} />
+        <p>
+          Summit summaries are intentionally brief. Visitors should use the linked external
+          sources for full agenda, organiser, programme, registration, and media details.
+        </p>
+        <BookOpen size={22} />
       </section>
     </main>
   );
