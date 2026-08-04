@@ -1,9 +1,7 @@
 import React from "react";
 import {
   ArrowRight,
-  ExternalLink,
   FileText,
-  Newspaper,
   Radio,
 } from "lucide-react";
 
@@ -17,27 +15,6 @@ const fallbackImages = {
   research: "https://images.unsplash.com/photo-1581093458791-9f3c3900f578?auto=format&fit=crop&w=1200&q=80",
   summit: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80",
 };
-
-const heroStats = [
-  { value: "2026", label: "Recent summit coverage" },
-  { value: "Global", label: "Research and public references" },
-  { value: "2015-2026", label: "Recent and archive window" },
-];
-
-const sourceLogos = [
-  "Homeopathy360",
-  "OIMH / GWU",
-  "Express Healthcare",
-  "Faculty of Homeopathy",
-  "Republic World",
-  "PharmaBiz",
-  "LMHI",
-  "The Guardian",
-  "NCCIH",
-  "ABC News",
-  "Australian Government",
-  "HRI",
-];
 
 const coverageItems = [
   {
@@ -436,68 +413,6 @@ function CoverageCard({ item }) {
 function MediaPage() {
   return (
     <main className="media-coverage-page">
-      <section className="media-coverage-hero">
-        <div className="media-coverage-shell media-coverage-hero-grid">
-          <div className="media-hero-copy">
-            <span className="media-coverage-kicker">Global Media Desk</span>
-            <h1>Global homeopathy media desk and coverage archive.</h1>
-            <p>
-              A curated press library for global homeopathy coverage, public-health references, research updates, and
-              international summit stories. Each entry links back to the original publication or public source so
-              visitors can verify the coverage directly.
-            </p>
-            <div className="media-hero-notes" aria-label="Media desk focus areas">
-              <span>Recent congress updates</span>
-              <span>Research references</span>
-              <span>Summit media coverage</span>
-            </div>
-            <div className="media-hero-actions">
-              <a href="#recent-media">
-                Browse recent coverage <ArrowRight size={17} />
-              </a>
-              <a href="#media-archive">
-                View archive <Newspaper size={17} />
-              </a>
-            </div>
-          </div>
-          <aside className="media-hero-feature" aria-label="Featured media coverage">
-            <div className="media-feature-image">
-              <MediaImage item={coverageItems[0]} />
-            </div>
-            <div className="media-feature-body">
-              <span>Featured coverage</span>
-              <h2>{coverageItems[0].title}</h2>
-              <p>{coverageItems[0].summary}</p>
-              <a href={coverageItems[0].link} target="_blank" rel="noreferrer">
-                Open source <ExternalLink size={16} />
-              </a>
-            </div>
-          </aside>
-        </div>
-        <div className="media-coverage-shell media-hero-stats" aria-label="Media desk summary">
-          {heroStats.map((item) => (
-            <div key={item.label}>
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="media-source-band" aria-label="Sources represented">
-        <div className="media-coverage-shell media-source-strip">
-          <div className="media-source-copy">
-            <span>Coverage index</span>
-            <p>Global publications, professional bodies, public references, conference listings, and summit reports.</p>
-          </div>
-          <div className="media-source-pills">
-            {sourceLogos.map((source) => (
-              <small key={source}>{source}</small>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="media-coverage-shell media-section" id="recent-media">
         <div className="media-section-intro media-section-wide">
           <span className="media-coverage-kicker">Recent and Active Coverage</span>
