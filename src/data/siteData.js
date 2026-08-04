@@ -19,9 +19,10 @@ export const navItems = [
     label: "Explore",
     path: "/explore",
     children: [
-      { label: "Foundational Pillars", path: "/explore#pillars" },
-      { label: "Healing Pathway", path: "/explore#pathway" },
-      { label: "Therapeutic Domains", path: "/explore#domains" },
+      { label: "Explore Paths", path: "/explore#paths" },
+      { label: "Learn Homoeopathy", path: "/explore#learn" },
+      { label: "Medicine Library", path: "/explore#medicines" },
+      { label: "Knowledge Hub", path: "/explore#knowledge" },
       { label: "Institutional FAQ", path: "/explore#faq" },
     ],
   },

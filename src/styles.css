@@ -26264,3 +26264,732 @@ body:has(.original-home) {
 @media (prefers-reduced-motion: reduce) {
   .original-home-heritage-image img { transition: none; }
 }
+/* Explore Homoeopathy institutional gateway */
+.explore-edu-page {
+  --explore-ink: #08213a;
+  --explore-deep: #062f28;
+  --explore-green: #087856;
+  --explore-teal: #0a8b83;
+  --explore-mint: #e9f6f1;
+  --explore-paper: #fbfcfa;
+  --explore-line: rgba(8, 120, 86, 0.17);
+  --explore-gold: #c8a64d;
+  background:
+    linear-gradient(90deg, rgba(8, 120, 86, 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(8, 120, 86, 0.03) 1px, transparent 1px),
+    linear-gradient(180deg, #fbfcfa 0%, #eef7f3 44%, #fbfcfa 100%);
+  background-size: 96px 96px, 96px 96px, auto;
+  color: var(--explore-ink);
+  overflow: hidden;
+}
+
+.explore-edu-page :is(h1, h2, h3, p) {
+  margin: 0;
+}
+
+.explore-edu-page :is(a, button, summary):focus-visible {
+  outline: 3px solid rgba(10, 139, 131, 0.26);
+  outline-offset: 4px;
+}
+
+.explore-edu-kicker {
+  color: var(--explore-green);
+  font-size: 0.79rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.explore-edu-hero,
+.explore-edu-modern,
+.explore-edu-split,
+.explore-edu-medicines,
+.explore-edu-knowledge,
+.explore-edu-philosophy,
+.explore-edu-pioneers,
+.explore-edu-tools,
+.explore-edu-events,
+.explore-edu-faq,
+.explore-edu-final {
+  width: min(1680px, 94vw);
+  margin: 0 auto;
+  position: relative;
+}
+
+.explore-edu-hero {
+  min-height: clamp(600px, calc(100vh - 135px), 780px);
+  display: grid;
+  grid-template-columns: minmax(360px, 0.88fr) minmax(520px, 1.12fr);
+  align-items: center;
+  gap: clamp(36px, 5vw, 92px);
+  padding: clamp(48px, 6vh, 78px) 0 clamp(44px, 6vh, 76px);
+}
+
+.explore-edu-hero::before {
+  content: "";
+  position: absolute;
+  inset: 1% -8% auto 42%;
+  height: 68%;
+  background:
+    linear-gradient(135deg, rgba(8, 120, 86, 0.06), rgba(200, 166, 77, 0.08)),
+    url("/images/explore-remedy-clean.png") center / cover no-repeat;
+  opacity: 0.24;
+  filter: saturate(0.8) blur(1px);
+  border-radius: 0 0 0 80px;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 82%, transparent 100%);
+  pointer-events: none;
+}
+
+.explore-edu-hero::after {
+  content: "";
+  position: absolute;
+  width: 58%;
+  height: 1px;
+  right: 0;
+  bottom: 56px;
+  background: linear-gradient(90deg, transparent, rgba(8, 120, 86, 0.32), transparent);
+  pointer-events: none;
+}
+
+.explore-edu-hero-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 22px;
+  max-width: 730px;
+}
+
+.explore-edu-hero-copy h1 {
+  max-width: 760px;
+  color: var(--explore-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.2rem, 5.3vw, 6.4rem);
+  line-height: 0.94;
+  font-weight: 700;
+}
+
+.explore-edu-hero-copy > p:not(.explore-edu-kicker) {
+  max-width: 690px;
+  color: #4f6376;
+  font-size: clamp(1.05rem, 1.25vw, 1.32rem);
+  line-height: 1.75;
+}
+
+.explore-edu-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.explore-edu-actions a,
+.explore-edu-final a {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 22px;
+  border: 1px solid rgba(8, 120, 86, 0.26);
+  background: #ffffff;
+  color: var(--explore-deep);
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.explore-edu-actions a:first-child,
+.explore-edu-final a {
+  background: var(--explore-green);
+  color: #ffffff;
+  border-color: var(--explore-green);
+}
+
+.explore-edu-actions a:hover,
+.explore-edu-final a:hover {
+  transform: translateY(-2px);
+  border-color: var(--explore-gold);
+}
+
+.explore-edu-hero-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 18px;
+  padding: clamp(18px, 2vw, 28px);
+  border: 1px solid rgba(8, 120, 86, 0.19);
+  background: rgba(255, 255, 255, 0.77);
+  box-shadow: 0 28px 80px rgba(6, 47, 40, 0.11);
+  backdrop-filter: blur(12px);
+}
+
+.explore-edu-panel-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--explore-line);
+}
+
+.explore-edu-panel-header span {
+  color: var(--explore-green);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.explore-edu-panel-header strong {
+  max-width: 340px;
+  text-align: right;
+  color: var(--explore-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 1.9vw, 2.08rem);
+  line-height: 1.08;
+}
+
+.explore-edu-purpose-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.explore-edu-purpose-grid a {
+  min-height: 162px;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--explore-line);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(233, 246, 241, 0.56));
+  color: var(--explore-ink);
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.explore-edu-purpose-grid a:hover {
+  transform: translateY(-4px);
+  border-color: rgba(8, 120, 86, 0.42);
+  box-shadow: 0 16px 38px rgba(8, 120, 86, 0.12);
+}
+
+.explore-edu-purpose-grid svg {
+  color: var(--explore-green);
+}
+
+.explore-edu-purpose-grid span {
+  font-size: 1.05rem;
+  font-weight: 900;
+}
+
+.explore-edu-purpose-grid p {
+  color: #5b6d7d;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.explore-edu-modern,
+.explore-edu-medicines,
+.explore-edu-philosophy,
+.explore-edu-tools,
+.explore-edu-faq {
+  padding: clamp(58px, 7vw, 92px) 0;
+  border-top: 1px solid var(--explore-line);
+}
+
+.explore-edu-section-head {
+  display: grid;
+  gap: 13px;
+  margin-bottom: clamp(24px, 3vw, 38px);
+  max-width: 980px;
+}
+
+.explore-edu-section-head h2,
+.explore-edu-split h2,
+.explore-edu-pioneers h2,
+.explore-edu-events h2,
+.explore-edu-faq-copy h2,
+.explore-edu-final h2 {
+  color: var(--explore-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 3.3vw, 4.2rem);
+  line-height: 1.02;
+  font-weight: 700;
+}
+
+.explore-edu-section-head p:not(.explore-edu-kicker),
+.explore-edu-split p,
+.explore-edu-pioneers p,
+.explore-edu-events p,
+.explore-edu-faq-copy p,
+.explore-edu-final p {
+  color: #53687b;
+  font-size: clamp(1rem, 1.1vw, 1.16rem);
+  line-height: 1.72;
+}
+
+.explore-edu-category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--explore-line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.explore-edu-category-grid article {
+  display: grid;
+  gap: 13px;
+  min-height: 238px;
+  padding: clamp(22px, 2.2vw, 34px);
+  border-right: 1px solid var(--explore-line);
+}
+
+.explore-edu-category-grid article:last-child {
+  border-right: 0;
+}
+
+.explore-edu-category-grid h3 {
+  color: var(--explore-green);
+  font-size: 1.28rem;
+}
+
+.explore-edu-category-grid span {
+  color: var(--explore-ink);
+  font-weight: 750;
+}
+
+.explore-edu-split,
+.explore-edu-pioneers,
+.explore-edu-events,
+.explore-edu-final {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.84fr) minmax(440px, 1.16fr);
+  gap: clamp(30px, 5vw, 84px);
+  align-items: center;
+  padding: clamp(60px, 7vw, 96px) 0;
+  border-top: 1px solid var(--explore-line);
+}
+
+.explore-edu-split > div:first-child,
+.explore-edu-pioneers > div:first-child,
+.explore-edu-events > div:first-child {
+  display: grid;
+  gap: 15px;
+}
+
+.explore-edu-list-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.explore-edu-list-panel a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 62px;
+  padding: 14px 16px;
+  border: 1px solid var(--explore-line);
+  background: rgba(255, 255, 255, 0.77);
+  color: var(--explore-ink);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.explore-edu-list-panel svg {
+  color: var(--explore-green);
+  flex: 0 0 auto;
+}
+
+.explore-edu-medicine-grid,
+.explore-edu-knowledge-grid,
+.explore-edu-philosophy-grid,
+.explore-edu-tool-grid,
+.explore-edu-event-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.explore-edu-medicine-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.explore-edu-medicine-grid article {
+  min-height: 118px;
+  padding: 20px;
+  border: 1px solid var(--explore-line);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.explore-edu-medicine-grid span {
+  color: var(--explore-gold);
+  font-size: 0.78rem;
+  font-weight: 950;
+}
+
+.explore-edu-medicine-grid h3 {
+  margin-top: 12px;
+  color: var(--explore-ink);
+  font-size: 1.22rem;
+}
+
+.explore-edu-knowledge {
+  width: 100%;
+  padding: clamp(62px, 7vw, 94px) max(3vw, calc((100vw - 1680px) / 2));
+  background:
+    linear-gradient(135deg, rgba(6, 47, 40, 0.96), rgba(8, 33, 58, 0.97)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+.explore-edu-knowledge .explore-edu-section-head h2,
+.explore-edu-knowledge .explore-edu-section-head p,
+.explore-edu-knowledge .explore-edu-kicker {
+  color: #ffffff;
+}
+
+.explore-edu-knowledge .explore-edu-kicker {
+  color: #8bd8cb;
+}
+
+.explore-edu-knowledge-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.explore-edu-knowledge-grid article {
+  min-height: 196px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.explore-edu-knowledge-grid svg {
+  color: #8bd8cb;
+}
+
+.explore-edu-knowledge-grid h3 {
+  margin-top: 22px;
+  color: #ffffff;
+  font-size: 1.22rem;
+}
+
+.explore-edu-knowledge-grid p {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.65;
+}
+
+.explore-edu-philosophy-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--explore-line);
+}
+
+.explore-edu-philosophy-grid article {
+  min-height: 150px;
+  padding: 24px 22px;
+  border-bottom: 1px solid var(--explore-line);
+  border-right: 1px solid var(--explore-line);
+}
+
+.explore-edu-philosophy-grid article:nth-child(3n) {
+  border-right: 0;
+}
+
+.explore-edu-philosophy-grid h3 {
+  color: var(--explore-ink);
+  font-size: 1.22rem;
+}
+
+.explore-edu-philosophy-grid p {
+  margin-top: 10px;
+  color: #53687b;
+  line-height: 1.62;
+}
+
+.explore-edu-pioneer-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+
+.explore-edu-pioneer-cloud a,
+.explore-edu-event-grid span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 17px;
+  border: 1px solid rgba(8, 120, 86, 0.22);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--explore-ink);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.explore-edu-tool-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.explore-edu-tool-grid article {
+  min-height: 180px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid var(--explore-line);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.explore-edu-tool-grid svg {
+  color: var(--explore-green);
+}
+
+.explore-edu-tool-grid h3 {
+  color: var(--explore-ink);
+  font-size: 1.12rem;
+}
+
+.explore-edu-tool-grid p {
+  margin-top: 9px;
+  color: #53687b;
+  line-height: 1.58;
+}
+
+.explore-edu-events {
+  grid-template-columns: minmax(320px, 0.76fr) minmax(480px, 1.24fr);
+}
+
+.explore-edu-event-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.explore-edu-event-grid span {
+  justify-content: center;
+  min-height: 76px;
+  text-align: center;
+}
+
+.explore-edu-faq {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.74fr) minmax(520px, 1.26fr);
+  gap: clamp(28px, 5vw, 84px);
+  align-items: start;
+}
+
+.explore-edu-faq-copy {
+  display: grid;
+  gap: 16px;
+  position: sticky;
+  top: 130px;
+}
+
+.explore-edu-safety {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 18px;
+  border-left: 4px solid var(--explore-gold);
+  background: rgba(233, 246, 241, 0.7);
+  color: var(--explore-ink);
+  font-weight: 800;
+}
+
+.explore-edu-safety svg {
+  color: var(--explore-green);
+  flex: 0 0 auto;
+}
+
+.explore-edu-faq-list {
+  display: grid;
+  border-top: 1px solid var(--explore-line);
+}
+
+.explore-edu-faq-list details {
+  border-bottom: 1px solid var(--explore-line);
+  background: transparent;
+}
+
+.explore-edu-faq-list summary {
+  min-height: 76px;
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+  color: var(--explore-ink);
+  font-size: clamp(1rem, 1.2vw, 1.22rem);
+  font-weight: 900;
+  list-style: none;
+}
+
+.explore-edu-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.explore-edu-faq-list summary span {
+  color: var(--explore-gold);
+  font-size: 0.78rem;
+  font-weight: 950;
+}
+
+.explore-edu-faq-list summary svg {
+  color: var(--explore-green);
+  transition: transform 160ms ease;
+}
+
+.explore-edu-faq-list details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.explore-edu-faq-list details p {
+  padding: 0 0 26px 66px;
+  max-width: 920px;
+  color: #53687b;
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+.explore-edu-final {
+  margin-bottom: clamp(48px, 7vw, 90px);
+  padding: clamp(28px, 4vw, 48px);
+  grid-template-columns: 1fr auto;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--explore-deep), var(--explore-ink));
+}
+
+.explore-edu-final > div {
+  display: grid;
+  gap: 12px;
+}
+
+.explore-edu-final h2,
+.explore-edu-final p {
+  color: #ffffff;
+}
+
+.explore-edu-final p {
+  max-width: 860px;
+  opacity: 0.78;
+}
+
+@media (max-width: 1180px) {
+  .explore-edu-hero,
+  .explore-edu-split,
+  .explore-edu-pioneers,
+  .explore-edu-events,
+  .explore-edu-faq {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-edu-hero {
+    min-height: auto;
+  }
+
+  .explore-edu-hero::before {
+    inset: 18% -20% auto 22%;
+    width: auto;
+    height: 58%;
+  }
+
+  .explore-edu-faq-copy {
+    position: relative;
+    top: auto;
+  }
+
+  .explore-edu-category-grid,
+  .explore-edu-tool-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .explore-edu-category-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .explore-edu-category-grid article {
+    border-bottom: 1px solid var(--explore-line);
+  }
+}
+
+@media (max-width: 760px) {
+  .explore-edu-hero,
+  .explore-edu-modern,
+  .explore-edu-split,
+  .explore-edu-medicines,
+  .explore-edu-knowledge,
+  .explore-edu-philosophy,
+  .explore-edu-pioneers,
+  .explore-edu-tools,
+  .explore-edu-events,
+  .explore-edu-faq,
+  .explore-edu-final {
+    width: min(100% - 28px, 1680px);
+  }
+
+  .explore-edu-hero {
+    padding-top: 34px;
+    gap: 24px;
+  }
+
+  .explore-edu-hero-copy h1 {
+    font-size: 2.75rem;
+    line-height: 1;
+  }
+
+  .explore-edu-hero-copy > p:not(.explore-edu-kicker) {
+    font-size: 1rem;
+  }
+
+  .explore-edu-panel-header {
+    display: grid;
+  }
+
+  .explore-edu-panel-header strong {
+    text-align: left;
+  }
+
+  .explore-edu-purpose-grid,
+  .explore-edu-category-grid,
+  .explore-edu-medicine-grid,
+  .explore-edu-knowledge-grid,
+  .explore-edu-philosophy-grid,
+  .explore-edu-tool-grid,
+  .explore-edu-event-grid,
+  .explore-edu-list-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-edu-category-grid article,
+  .explore-edu-category-grid article:last-child,
+  .explore-edu-philosophy-grid article,
+  .explore-edu-philosophy-grid article:nth-child(3n) {
+    border-right: 0;
+  }
+
+  .explore-edu-purpose-grid a {
+    min-height: 128px;
+  }
+
+  .explore-edu-faq-list summary {
+    grid-template-columns: 32px 1fr auto;
+    min-height: 72px;
+    gap: 10px;
+  }
+
+  .explore-edu-faq-list details p {
+    padding-left: 42px;
+  }
+
+  .explore-edu-final {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-edu-final a {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explore-edu-purpose-grid a,
+  .explore-edu-actions a,
+  .explore-edu-final a {
+    transition: none;
+  }
+}
