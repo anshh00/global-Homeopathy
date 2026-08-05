@@ -325,11 +325,12 @@ function HomePage() {
         </section>
 
         <nav className="homepage-story-redesign__pathways" aria-label="Introductory homepage pathways">
-          {storyFocusItems.map((item) => {
+          {storyFocusItems.map((item, index) => {
             const Icon = item.icon;
             return (
               <Link className="homepage-story-redesign__pathway" to={item.path} key={item.title}>
-                <Icon size={24} aria-hidden="true" />
+                <span className="homepage-story-redesign__pathway-number">{String(index + 1).padStart(2, "0")}</span>
+                <Icon className="homepage-story-redesign__pathway-icon" size={22} aria-hidden="true" />
                 <span>
                   <strong>{item.title}</strong>
                   <small>{item.text}</small>
@@ -376,8 +377,9 @@ function HomePage() {
             </Link>
           </div>
           <div className="homepage-story-redesign__archive-grid">
-            {archivePanels.map((panel) => (
+            {archivePanels.map((panel, index) => (
               <article className="homepage-story-redesign__archive-panel" key={panel.title}>
+                <span className="homepage-story-redesign__archive-number">{String(index + 1).padStart(2, "0")}</span>
                 <img
                   src={panel.image}
                   alt={panel.title}

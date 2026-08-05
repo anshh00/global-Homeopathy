@@ -28094,11 +28094,11 @@ button.stitch-nav-join {
 
 .homepage-story-redesign__pathway {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 16px;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 12px;
   align-items: center;
-  min-height: 118px;
-  padding: clamp(18px, 2vw, 28px);
+  min-height: 94px;
+  padding: clamp(14px, 1.6vw, 22px);
   color: var(--story-text);
   text-decoration: none;
   border-right: 1px solid var(--story-line);
@@ -28111,10 +28111,18 @@ button.stitch-nav-join {
 
 .homepage-story-redesign__pathway:hover {
   background: rgba(234, 244, 240, 0.8);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
-.homepage-story-redesign__pathway > svg:first-child {
+.homepage-story-redesign__pathway-number {
+  color: rgba(7, 63, 59, 0.42);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.86rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.homepage-story-redesign__pathway-icon {
   color: var(--story-primary);
 }
 
@@ -28124,12 +28132,12 @@ button.stitch-nav-join {
 }
 
 .homepage-story-redesign__pathway strong {
-  font-size: 1.04rem;
+  font-size: 0.98rem;
 }
 
 .homepage-story-redesign__pathway small {
   color: var(--story-muted);
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   line-height: 1.45;
 }
 
@@ -28215,8 +28223,8 @@ button.stitch-nav-join {
 
 .homepage-story-redesign__archive {
   display: grid;
-  gap: clamp(26px, 4vw, 44px);
-  padding: clamp(44px, 6vw, 82px) 0 0;
+  gap: clamp(20px, 3vw, 34px);
+  padding: clamp(36px, 5vw, 64px) 0 0;
 }
 
 .homepage-story-redesign__archive-heading {
@@ -28228,16 +28236,18 @@ button.stitch-nav-join {
 
 .homepage-story-redesign__archive-heading h3 {
   max-width: 760px;
-  font-size: clamp(2.2rem, 3.2vw, 4rem);
+  font-size: clamp(2rem, 2.8vw, 3.45rem);
 }
 
 .homepage-story-redesign__archive-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(18px, 2vw, 28px);
+  gap: clamp(14px, 1.6vw, 22px);
+  counter-reset: archive-panel;
 }
 
 .homepage-story-redesign__archive-panel {
+  position: relative;
   overflow: hidden;
   border: 1px solid var(--story-line);
   background: rgba(255, 255, 255, 0.86);
@@ -28246,13 +28256,32 @@ button.stitch-nav-join {
 
 .homepage-story-redesign__archive-panel:hover {
   border-color: rgba(7, 93, 86, 0.28);
-  box-shadow: 0 18px 36px rgba(7, 63, 59, 0.08);
-  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(7, 63, 59, 0.07);
+  transform: translateY(-2px);
+}
+
+.homepage-story-redesign__archive-number {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 12px;
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  background: rgba(7, 63, 59, 0.78);
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(10px);
 }
 
 .homepage-story-redesign__archive-panel img {
   width: 100%;
-  aspect-ratio: 1.5 / 1;
+  height: clamp(180px, 15vw, 245px);
   display: block;
   object-fit: cover;
   object-position: center;
@@ -28264,13 +28293,13 @@ button.stitch-nav-join {
 
 .homepage-story-redesign__archive-panel div {
   display: grid;
-  gap: 10px;
-  padding: clamp(18px, 2vw, 26px);
+  gap: 8px;
+  padding: clamp(15px, 1.55vw, 21px);
 }
 
 .homepage-story-redesign__archive-panel p {
   color: var(--story-primary);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -28278,7 +28307,7 @@ button.stitch-nav-join {
 .homepage-story-redesign__archive-panel h4 {
   color: var(--story-text);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.45rem, 1.6vw, 2rem);
+  font-size: clamp(1.18rem, 1.28vw, 1.55rem);
   line-height: 1.1;
 }
 
@@ -28287,8 +28316,9 @@ button.stitch-nav-join {
   align-items: center;
   gap: 7px;
   width: max-content;
-  margin-top: 6px;
+  margin-top: 4px;
   color: var(--story-primary);
+  font-size: 0.84rem;
   font-weight: 900;
   text-decoration: none;
 }
