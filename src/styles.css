@@ -27815,7 +27815,36 @@ button.stitch-nav-join {
   margin: 0 auto;
   padding: clamp(52px, 6vw, 88px) 0 clamp(48px, 6vw, 86px);
   color: var(--story-text);
+  position: relative;
   isolation: isolate;
+}
+
+.homepage-story-redesign::before,
+.homepage-story-redesign::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.homepage-story-redesign::before {
+  inset: 18px -3vw auto;
+  height: min(62vw, 760px);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(22, 133, 123, 0.12), transparent 28%),
+    radial-gradient(circle at 84% 34%, rgba(184, 138, 44, 0.12), transparent 24%),
+    linear-gradient(135deg, rgba(234, 244, 240, 0.7), rgba(250, 250, 247, 0));
+  filter: blur(2px);
+}
+
+.homepage-story-redesign::after {
+  inset: 0 0 auto;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(7, 63, 59, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 63, 59, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0.7) 42%, transparent 92%);
 }
 
 .homepage-story-redesign *,
@@ -27843,9 +27872,11 @@ button.stitch-nav-join {
   min-height: clamp(520px, 58vw, 720px);
   overflow: hidden;
   border: 1px solid var(--story-line);
+  border-radius: 0 44px 0 44px;
   background:
     radial-gradient(circle at 88% 16%, rgba(255, 255, 255, 0.92), transparent 24%),
     linear-gradient(115deg, #ffffff 0%, #f5fbf8 38%, #e8f5f1 100%);
+  box-shadow: 0 34px 80px rgba(7, 63, 59, 0.09);
 }
 
 .homepage-story-redesign__hero::before {
@@ -27857,6 +27888,19 @@ button.stitch-nav-join {
     linear-gradient(90deg, rgba(7, 63, 59, 0.045) 1px, transparent 1px);
   background-size: 54px 54px;
   mask-image: linear-gradient(120deg, transparent 0%, black 24%, black 82%, transparent 100%);
+  pointer-events: none;
+}
+
+.homepage-story-redesign__hero::after {
+  content: "01";
+  position: absolute;
+  right: clamp(22px, 3vw, 48px);
+  bottom: clamp(20px, 3vw, 44px);
+  color: rgba(7, 63, 59, 0.07);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(6rem, 14vw, 14rem);
+  font-weight: 700;
+  line-height: 0.8;
   pointer-events: none;
 }
 
@@ -28012,8 +28056,9 @@ button.stitch-nav-join {
   margin: -38px auto clamp(36px, 5vw, 70px);
   overflow: hidden;
   background: linear-gradient(135deg, var(--story-primary), var(--story-deep));
-  box-shadow: 0 22px 45px rgba(7, 63, 59, 0.18);
+  box-shadow: 0 24px 54px rgba(7, 63, 59, 0.2);
   color: #ffffff;
+  border-radius: 0 22px 0 22px;
 }
 
 .homepage-story-redesign__signal-strip span {
@@ -28023,7 +28068,9 @@ button.stitch-nav-join {
   padding: 16px;
   border-right: 1px solid rgba(255, 255, 255, 0.16);
   color: rgba(255, 255, 255, 0.92);
+  font-size: 0.92rem;
   font-weight: 900;
+  letter-spacing: 0.02em;
   text-align: center;
 }
 
@@ -28032,13 +28079,31 @@ button.stitch-nav-join {
 }
 
 .homepage-story-redesign__purpose {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(420px, 0.92fr);
   gap: clamp(28px, 4vw, 64px);
   align-items: stretch;
   padding: clamp(20px, 2.4vw, 32px);
   border: 1px solid var(--story-line);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(244, 247, 245, 0.82));
+  border-radius: 38px 0 38px 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(244, 247, 245, 0.84)),
+    radial-gradient(circle at 12% 100%, rgba(22, 133, 123, 0.08), transparent 26%);
+  box-shadow: 0 22px 64px rgba(7, 63, 59, 0.06);
+}
+
+.homepage-story-redesign__purpose::before {
+  content: "02";
+  position: absolute;
+  top: clamp(18px, 2.6vw, 34px);
+  right: clamp(20px, 3vw, 46px);
+  color: rgba(7, 63, 59, 0.08);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
 }
 
 .homepage-story-redesign__purpose-copy {
@@ -28068,10 +28133,20 @@ button.stitch-nav-join {
 }
 
 .homepage-story-redesign__bottle {
+  position: relative;
   min-height: 430px;
   overflow: hidden;
   border: 1px solid var(--story-line);
+  border-radius: 28px 0 28px 0;
   background: var(--story-mint);
+}
+
+.homepage-story-redesign__bottle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(250, 250, 247, 0.18), transparent 42%);
+  pointer-events: none;
 }
 
 .homepage-story-redesign__bottle img {
@@ -28083,17 +28158,31 @@ button.stitch-nav-join {
 }
 
 .homepage-story-redesign__pathways {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border: 1px solid var(--story-line);
-  border-top: 0;
+  gap: 0;
+  border: 1px solid rgba(7, 63, 59, 0.13);
   margin-bottom: clamp(36px, 5vw, 70px);
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 45px rgba(7, 63, 59, 0.06);
+}
+
+.homepage-story-redesign__pathways::before {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(22, 133, 123, 0.3), transparent);
+  pointer-events: none;
 }
 
 .homepage-story-redesign__pathway {
+  position: relative;
   display: grid;
-  grid-template-columns: auto auto 1fr auto;
+  grid-template-columns: auto 1fr auto;
   gap: 13px;
   align-items: center;
   min-height: 94px;
@@ -28102,6 +28191,19 @@ button.stitch-nav-join {
   text-decoration: none;
   border-right: 1px solid var(--story-line);
   transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.homepage-story-redesign__pathway::before {
+  content: "";
+  position: absolute;
+  left: clamp(13px, 1.45vw, 20px);
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--story-gold);
+  box-shadow: 0 0 0 7px rgba(184, 138, 44, 0.12);
+  transform: translateY(-50%);
 }
 
 .homepage-story-redesign__pathway:last-child {
@@ -28114,15 +28216,18 @@ button.stitch-nav-join {
 }
 
 .homepage-story-redesign__pathway-number {
-  color: rgba(7, 63, 59, 0.42);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.78rem;
+  margin-left: 22px;
+  color: var(--story-primary);
+  font-family: inherit;
+  font-size: 0.66rem;
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   line-height: 1;
+  text-transform: uppercase;
 }
 
 .homepage-story-redesign__pathway-icon {
+  display: none;
   color: var(--story-primary);
 }
 
@@ -28152,18 +28257,35 @@ button.stitch-nav-join {
   gap: clamp(24px, 4vw, 62px);
   align-items: center;
   padding: clamp(24px, 4vw, 56px);
-  border-top: 1px solid var(--story-line);
-  border-bottom: 1px solid var(--story-line);
+  border: 1px solid rgba(7, 63, 59, 0.15);
+  border-radius: 0 36px 0 36px;
   background:
-    linear-gradient(90deg, rgba(250, 250, 247, 0.98), rgba(234, 244, 240, 0.66)),
+    linear-gradient(90deg, rgba(7, 63, 59, 0.08), rgba(250, 250, 247, 0.98) 28%, rgba(234, 244, 240, 0.72)),
     radial-gradient(circle at 90% 0%, rgba(22, 133, 123, 0.12), transparent 34%);
+  box-shadow: 0 24px 70px rgba(7, 63, 59, 0.07);
+}
+
+.homepage-story-redesign__hahnemann::before {
+  content: "03";
+  position: absolute;
+  right: clamp(18px, 3vw, 46px);
+  top: clamp(16px, 2.4vw, 34px);
+  color: rgba(7, 63, 59, 0.08);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 8vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
 }
 
 .homepage-story-redesign__portrait {
   position: relative;
   min-height: 310px;
   overflow: hidden;
+  border: 10px solid rgba(255, 255, 255, 0.78);
+  border-radius: 24px 0 24px 0;
   background: #ece4d8;
+  box-shadow: 0 22px 44px rgba(7, 63, 59, 0.12);
 }
 
 .homepage-story-redesign__portrait img {
@@ -28226,9 +28348,22 @@ button.stitch-nav-join {
 }
 
 .homepage-story-redesign__archive {
+  position: relative;
   display: grid;
   gap: clamp(20px, 3vw, 34px);
   padding: clamp(36px, 5vw, 64px) 0 0;
+}
+
+.homepage-story-redesign__archive::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: clamp(120px, 14vw, 190px);
+  bottom: 10px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(7, 93, 86, 0.18), transparent);
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .homepage-story-redesign__archive-heading {
@@ -28244,6 +28379,7 @@ button.stitch-nav-join {
 }
 
 .homepage-story-redesign__archive-grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(14px, 1.6vw, 22px);
@@ -28256,14 +28392,26 @@ button.stitch-nav-join {
   grid-template-rows: auto 1fr;
   overflow: hidden;
   border: 1px solid var(--story-line);
-  background: rgba(255, 255, 255, 0.86);
+  border-radius: 24px 0 24px 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 250, 247, 0.88)),
+    radial-gradient(circle at 12% 100%, rgba(22, 133, 123, 0.08), transparent 32%);
+  box-shadow: 0 12px 34px rgba(7, 63, 59, 0.055);
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.homepage-story-redesign__archive-panel:nth-child(2) {
+  transform: translateY(22px);
 }
 
 .homepage-story-redesign__archive-panel:hover {
   border-color: rgba(7, 93, 86, 0.28);
   box-shadow: 0 14px 28px rgba(7, 63, 59, 0.07);
   transform: translateY(-2px);
+}
+
+.homepage-story-redesign__archive-panel:nth-child(2):hover {
+  transform: translateY(18px);
 }
 
 .homepage-story-redesign__archive-number {
@@ -28300,7 +28448,7 @@ button.stitch-nav-join {
 
 .homepage-story-redesign__archive-panel div {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  align-content: start;
   gap: 7px;
   padding: clamp(15px, 1.55vw, 21px);
 }
@@ -28393,6 +28541,18 @@ button.stitch-nav-join {
   .homepage-story-redesign__round-link {
     justify-self: start;
   }
+
+  .homepage-story-redesign__archive::before {
+    display: none;
+  }
+
+  .homepage-story-redesign__archive-panel:nth-child(2) {
+    transform: none;
+  }
+
+  .homepage-story-redesign__archive-panel:nth-child(2):hover {
+    transform: translateY(-2px);
+  }
 }
 
 @media (max-width: 720px) {
@@ -28455,6 +28615,16 @@ button.stitch-nav-join {
 
   .homepage-story-redesign__pathway:first-child {
     border-top: 0;
+  }
+
+  .homepage-story-redesign__pathways::before,
+  .homepage-story-redesign__archive::before {
+    display: none;
+  }
+
+  .homepage-story-redesign__archive-panel:nth-child(2),
+  .homepage-story-redesign__archive-panel:nth-child(2):hover {
+    transform: none;
   }
 
   .homepage-story-redesign__hahnemann {
