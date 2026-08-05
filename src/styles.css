@@ -28489,6 +28489,127 @@ button.stitch-nav-join {
   text-decoration: none;
 }
 
+/* Integrated editorial treatment: content belongs to the page, not boxed cards */
+.homepage-story-redesign__hero {
+  border: 0;
+  border-top: 1px solid rgba(7, 63, 59, 0.12);
+  border-bottom: 1px solid rgba(7, 63, 59, 0.12);
+  border-radius: 0;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 251, 248, 0.9) 38%, rgba(234, 244, 240, 0.74) 100%),
+    radial-gradient(circle at 92% 18%, rgba(22, 133, 123, 0.13), transparent 30%);
+  box-shadow: none;
+}
+
+.homepage-story-redesign__hero::after,
+.homepage-story-redesign__purpose::before,
+.homepage-story-redesign__hahnemann::before {
+  color: rgba(7, 63, 59, 0.045);
+}
+
+.homepage-story-redesign__signal-strip {
+  width: 100%;
+  margin: 0 0 clamp(34px, 5vw, 68px);
+  border-top: 1px solid rgba(7, 63, 59, 0.14);
+  border-bottom: 1px solid rgba(7, 63, 59, 0.14);
+  border-radius: 0;
+  background: rgba(250, 250, 247, 0.54);
+  box-shadow: none;
+  color: var(--story-text);
+}
+
+.homepage-story-redesign__signal-strip span {
+  min-height: 68px;
+  color: var(--story-primary);
+  border-right: 1px solid rgba(7, 63, 59, 0.12);
+}
+
+.homepage-story-redesign__purpose {
+  border: 0;
+  border-top: 1px solid rgba(7, 63, 59, 0.12);
+  border-bottom: 1px solid rgba(7, 63, 59, 0.12);
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, rgba(250, 250, 247, 0.96), rgba(234, 244, 240, 0.4)),
+    radial-gradient(circle at 88% 0%, rgba(22, 133, 123, 0.09), transparent 36%);
+  box-shadow: none;
+}
+
+.homepage-story-redesign__bottle {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.homepage-story-redesign__bottle img {
+  border-radius: 0;
+}
+
+.homepage-story-redesign__pathways {
+  border: 0;
+  border-top: 1px solid rgba(7, 63, 59, 0.12);
+  border-bottom: 1px solid rgba(7, 63, 59, 0.12);
+  background: transparent;
+  box-shadow: none;
+}
+
+.homepage-story-redesign__hahnemann {
+  border: 0;
+  border-top: 1px solid rgba(7, 63, 59, 0.12);
+  border-bottom: 1px solid rgba(7, 63, 59, 0.12);
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, rgba(234, 244, 240, 0.54), rgba(250, 250, 247, 0.98) 30%, rgba(234, 244, 240, 0.54)),
+    radial-gradient(circle at 86% 8%, rgba(184, 138, 44, 0.08), transparent 34%);
+  box-shadow: none;
+}
+
+.homepage-story-redesign__portrait {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.homepage-story-redesign__archive::before {
+  background: linear-gradient(180deg, rgba(7, 93, 86, 0.2), rgba(184, 138, 44, 0.14), transparent);
+}
+
+.homepage-story-redesign__archive-panel {
+  overflow: visible;
+  border: 0;
+  border-top: 1px solid rgba(7, 63, 59, 0.14);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.homepage-story-redesign__archive-panel:hover {
+  border-color: rgba(7, 93, 86, 0.34);
+  box-shadow: none;
+}
+
+.homepage-story-redesign__archive-number {
+  top: -15px;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 0 12px 0 0;
+  border: 0;
+  background: var(--story-ivory);
+  color: var(--story-primary);
+  backdrop-filter: none;
+}
+
+.homepage-story-redesign__archive-panel img {
+  border-radius: 0;
+}
+
+.homepage-story-redesign__archive-panel div {
+  padding-right: 0;
+  padding-left: 0;
+}
+
 @keyframes homepageStoryFadeUp {
   from {
     opacity: 0;
