@@ -28061,8 +28061,7 @@ button.stitch-nav-join {
 }
 
 .homepage-story-redesign__paragraphs p,
-.homepage-story-redesign__hahnemann-copy > p,
-.homepage-story-redesign__archive-panel span {
+.homepage-story-redesign__hahnemann-copy > p {
   color: var(--story-muted);
   font-size: 1rem;
   line-height: 1.7;
@@ -28095,10 +28094,10 @@ button.stitch-nav-join {
 .homepage-story-redesign__pathway {
   display: grid;
   grid-template-columns: auto auto 1fr auto;
-  gap: 12px;
+  gap: 13px;
   align-items: center;
   min-height: 94px;
-  padding: clamp(14px, 1.6vw, 22px);
+  padding: clamp(13px, 1.45vw, 20px);
   color: var(--story-text);
   text-decoration: none;
   border-right: 1px solid var(--story-line);
@@ -28117,28 +28116,33 @@ button.stitch-nav-join {
 .homepage-story-redesign__pathway-number {
   color: rgba(7, 63, 59, 0.42);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 0.86rem;
+  font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.08em;
+  line-height: 1;
 }
 
 .homepage-story-redesign__pathway-icon {
   color: var(--story-primary);
 }
 
-.homepage-story-redesign__pathway span {
+.homepage-story-redesign__pathway-copy {
   display: grid;
-  gap: 6px;
+  gap: 4px;
+  min-width: 0;
 }
 
 .homepage-story-redesign__pathway strong {
-  font-size: 0.98rem;
+  color: var(--story-text);
+  font-size: clamp(0.92rem, 0.92vw, 1.02rem);
+  font-weight: 900;
+  line-height: 1.18;
 }
 
 .homepage-story-redesign__pathway small {
   color: var(--story-muted);
-  font-size: 0.84rem;
-  line-height: 1.45;
+  font-size: clamp(0.76rem, 0.78vw, 0.86rem);
+  line-height: 1.38;
 }
 
 .homepage-story-redesign__hahnemann {
@@ -28248,6 +28252,8 @@ button.stitch-nav-join {
 
 .homepage-story-redesign__archive-panel {
   position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
   overflow: hidden;
   border: 1px solid var(--story-line);
   background: rgba(255, 255, 255, 0.86);
@@ -28276,6 +28282,7 @@ button.stitch-nav-join {
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0.08em;
+  line-height: 1;
   backdrop-filter: blur(10px);
 }
 
@@ -28293,22 +28300,32 @@ button.stitch-nav-join {
 
 .homepage-story-redesign__archive-panel div {
   display: grid;
-  gap: 8px;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 7px;
   padding: clamp(15px, 1.55vw, 21px);
 }
 
 .homepage-story-redesign__archive-panel p {
   color: var(--story-primary);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
 .homepage-story-redesign__archive-panel h4 {
   color: var(--story-text);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.18rem, 1.28vw, 1.55rem);
-  line-height: 1.1;
+  font-family: inherit;
+  font-size: clamp(1rem, 1.05vw, 1.16rem);
+  font-weight: 900;
+  line-height: 1.22;
+}
+
+.homepage-story-redesign__archive-text {
+  color: var(--story-muted);
+  font-size: clamp(0.82rem, 0.84vw, 0.92rem);
+  line-height: 1.52;
 }
 
 .homepage-story-redesign__archive-panel a {
@@ -28318,8 +28335,9 @@ button.stitch-nav-join {
   width: max-content;
   margin-top: 4px;
   color: var(--story-primary);
-  font-size: 0.84rem;
+  font-size: 0.78rem;
   font-weight: 900;
+  line-height: 1.2;
   text-decoration: none;
 }
 

@@ -331,7 +331,7 @@ function HomePage() {
               <Link className="homepage-story-redesign__pathway" to={item.path} key={item.title}>
                 <span className="homepage-story-redesign__pathway-number">{String(index + 1).padStart(2, "0")}</span>
                 <Icon className="homepage-story-redesign__pathway-icon" size={22} aria-hidden="true" />
-                <span>
+                <span className="homepage-story-redesign__pathway-copy">
                   <strong>{item.title}</strong>
                   <small>{item.text}</small>
                 </span>
@@ -390,7 +390,7 @@ function HomePage() {
                 <div>
                   <p>{panel.eyebrow}</p>
                   <h4>{panel.title}</h4>
-                  <span>{panel.text}</span>
+                  <span className="homepage-story-redesign__archive-text">{panel.text}</span>
                   <a href={panel.source} target="_blank" rel="noreferrer">
                     Read original source <ArrowUpRight size={14} />
                   </a>
