@@ -4,6 +4,7 @@ import {
   ArrowRight,
   BookOpen,
   Brain,
+  Building2,
   CalendarDays,
   CheckCircle2,
   ChevronDown,
@@ -54,6 +55,12 @@ const purposePaths = [
     label: "Pioneers & Leaders",
     text: "Historical figures and modern contributors shaping the global discussion.",
     anchor: "#pioneers",
+  },
+  {
+    icon: Building2,
+    label: "Institutions & Colleges",
+    text: "Official education, regulation, research, and international organisation references.",
+    anchor: "#institutions",
   },
   {
     icon: CalendarDays,
@@ -114,6 +121,139 @@ const pioneers = [
   "J. C. Burnett",
   "J. H. Clarke",
   "Adolph Lippe",
+];
+
+const historySections = [
+  {
+    id: "world-history",
+    label: "World history",
+    title: "From Hahnemann's Europe to a worldwide professional conversation.",
+    text:
+      "World homeopathy history begins with Samuel Hahnemann's medical work in Germany in the late eighteenth century and continues through publications, education, professional societies, congresses, and research discussion across continents.",
+    milestones: [
+      {
+        year: "1790s",
+        title: "Origins in Europe",
+        text: "Hahnemann's writings and experiments became the historical foundation for the discipline.",
+        source: "https://pmc.ncbi.nlm.nih.gov/articles/PMC1676328/",
+      },
+      {
+        year: "1844",
+        title: "Early professional organisation",
+        text: "The Faculty of Homeopathy traces its London history to 1844, showing early organised professional activity.",
+        source: "https://www.facultyofhomeopathy.org/pages/history",
+      },
+      {
+        year: "1925",
+        title: "International federation",
+        text: "LMHI was established in Rotterdam in 1925 and remains a major international homeopathic medical reference.",
+        source: "https://lmhi.org/",
+      },
+    ],
+  },
+  {
+    id: "india-history",
+    label: "Indian history",
+    title: "A major national chapter shaped by education, practice, and public institutions.",
+    text:
+      "In India, homoeopathy developed from early adoption into a large education, regulation, public research, and practice ecosystem. This route helps visitors understand India's role separately from the wider world timeline.",
+    milestones: [
+      {
+        year: "1800s",
+        title: "Early Indian adoption",
+        text: "Public institutional histories describe homoeopathy's nineteenth-century growth in India, including strong roots in Bengal and later regional spread.",
+        source: "https://homeopathy.delhi.gov.in/homeopathy/origin-and-growth-homeopathy-india",
+      },
+      {
+        year: "1975",
+        title: "National Institute of Homoeopathy",
+        text: "NIH Kolkata was established on 10 December 1975 and functions under the Ministry of Ayush ecosystem.",
+        source: "https://nih.ayush.gov.in/",
+      },
+      {
+        year: "Research era",
+        title: "Central research coordination",
+        text: "CCRH works as India's apex research organisation for homoeopathy under the Ministry of AYUSH.",
+        source: "https://ccrhindia.ayush.gov.in/",
+      },
+    ],
+  },
+];
+
+const institutionGroups = [
+  {
+    title: "India: education, regulation, and public research",
+    text: "Official references for homoeopathy education standards, national institutes, research, and public institutional context.",
+    items: [
+      {
+        name: "National Commission for Homoeopathy",
+        meta: "Regulatory and education reference",
+        href: "https://nch.org.in/",
+      },
+      {
+        name: "Central Council for Research in Homoeopathy",
+        meta: "Government research council",
+        href: "https://ccrhindia.ayush.gov.in/",
+      },
+      {
+        name: "National Institute of Homoeopathy, Kolkata",
+        meta: "National teaching institute",
+        href: "https://nih.ayush.gov.in/",
+      },
+      {
+        name: "North Eastern Institute of Ayurveda & Homoeopathy",
+        meta: "Public institute in Shillong",
+        href: "https://neiah.nic.in/",
+      },
+    ],
+  },
+  {
+    title: "International organisations and research networks",
+    text: "Global bodies visitors can use for professional membership, congresses, research references, and wider institutional context.",
+    items: [
+      {
+        name: "Liga Medicorum Homoeopathica Internationalis",
+        meta: "International homeopathic medical society",
+        href: "https://lmhi.org/",
+      },
+      {
+        name: "Faculty of Homeopathy",
+        meta: "UK professional, education, and research organisation",
+        href: "https://www.facultyofhomeopathy.org/",
+      },
+      {
+        name: "Homeopathy Research Institute",
+        meta: "International research charity",
+        href: "https://www.hri-research.org/",
+      },
+      {
+        name: "European Committee for Homeopathy",
+        meta: "European professional organisation",
+        href: "https://homeopathyeurope.org/",
+      },
+    ],
+  },
+  {
+    title: "Further learning and community references",
+    text: "Additional public learning and professional references for visitors who want to continue beyond the foundation pages.",
+    items: [
+      {
+        name: "National Center for Homeopathy",
+        meta: "Public education and event references",
+        href: "https://homeopathycenter.org/",
+      },
+      {
+        name: "American Institute of Homeopathy",
+        meta: "Historic professional organisation",
+        href: "https://homeopathyusa.org/",
+      },
+      {
+        name: "CEDH",
+        meta: "International homeopathy education network",
+        href: "https://www.cedh.org/",
+      },
+    ],
+  },
 ];
 
 const interactiveTools = [
@@ -237,7 +377,7 @@ function ExplorePage() {
         <div className="explore-edu-hero-panel" aria-label="Explore by purpose">
           <div className="explore-edu-panel-header">
             <span>Choose your path</span>
-            <strong>Six doors into one knowledge system</strong>
+            <strong>Seven routes into one knowledge system</strong>
           </div>
           <div className="explore-edu-purpose-grid">
             {purposePaths.map((item) => {
@@ -271,6 +411,42 @@ function ExplorePage() {
               {items.map((item) => (
                 <span key={item}>{item}</span>
               ))}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="explore-edu-history" id="history" aria-labelledby="history-title">
+        <div className="explore-edu-section-head explore-edu-history-head">
+          <p className="explore-edu-kicker">History Routes</p>
+          <h2 id="history-title">Separate the world timeline from the Indian chapter.</h2>
+          <p>
+            The homepage can introduce history briefly. Explore should hold the deeper reading path,
+            with clear routes for global origins and India's institutional journey.
+          </p>
+        </div>
+        <div className="explore-edu-history-grid">
+          {historySections.map((section) => (
+            <article className="explore-edu-history-panel" id={section.id} key={section.id}>
+              <div className="explore-edu-history-intro">
+                <span>{section.label}</span>
+                <h3>{section.title}</h3>
+                <p>{section.text}</p>
+              </div>
+              <ol>
+                {section.milestones.map((milestone) => (
+                  <li key={`${section.id}-${milestone.year}`}>
+                    <time>{milestone.year}</time>
+                    <div>
+                      <h4>{milestone.title}</h4>
+                      <p>{milestone.text}</p>
+                      <a href={milestone.source} target="_blank" rel="noreferrer">
+                        Open source <ArrowRight size={14} />
+                      </a>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </article>
           ))}
         </div>
@@ -331,6 +507,39 @@ function ExplorePage() {
               </article>
             );
           })}
+        </div>
+      </section>
+
+      <section className="explore-edu-institutions" id="institutions" aria-labelledby="institutions-title">
+        <div className="explore-edu-institutions-copy">
+          <p className="explore-edu-kicker">Institutions & Colleges</p>
+          <h2 id="institutions-title">Official places to continue learning beyond this website.</h2>
+          <p>
+            This directory keeps institutions separate from marketing content. It helps students,
+            practitioners, researchers, and media teams move from introductory reading to official
+            education, regulation, research, and international organisation references.
+          </p>
+        </div>
+        <div className="explore-edu-institution-directory">
+          {institutionGroups.map((group) => (
+            <article className="explore-edu-institution-group" key={group.title}>
+              <div>
+                <h3>{group.title}</h3>
+                <p>{group.text}</p>
+              </div>
+              <ul>
+                {group.items.map((item) => (
+                  <li key={item.name}>
+                    <a href={item.href} target="_blank" rel="noreferrer">
+                      <strong>{item.name}</strong>
+                      <span>{item.meta}</span>
+                      <ArrowRight size={14} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </section>
 

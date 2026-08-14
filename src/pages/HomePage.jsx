@@ -3,9 +3,11 @@ import {
   ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
+  BookOpen,
   CalendarDays,
   Clock3,
   Landmark,
+  Library,
   Microscope,
   Play,
   Quote,
@@ -164,6 +166,29 @@ const archivePanels = [
     title: "Places that shaped homeopathy",
     text: "From Koethen to around the world, follow places linked with homeopathy's historical memory.",
     source: "https://www.koethen-anhalt.de/de/samuel-hahnemann.html",
+  },
+];
+
+const historyGateways = [
+  {
+    image: "/images/homepage/hahnemann-statue.jpg",
+    eyebrow: "World history",
+    title: "From Hahnemann's Europe to a worldwide movement.",
+    text:
+      "Follow the global timeline from Samuel Hahnemann's late eighteenth-century work through professional societies, international congresses, research bodies, and modern education networks.",
+    href: "/explore#world-history",
+    points: ["Origins and early texts", "International societies", "Research and congress culture"],
+    icon: Library,
+  },
+  {
+    image: "/images/homepage/academic-recognition.jpg",
+    eyebrow: "Indian history",
+    title: "India's role in education, public institutions, and practice.",
+    text:
+      "Explore how homoeopathy entered India, grew through Bengal and other regions, and became connected with national education, regulatory, and research institutions.",
+    href: "/explore#india-history",
+    points: ["Early Indian adoption", "Colleges and public bodies", "Research and national institutions"],
+    icon: BookOpen,
   },
 ];
 
@@ -368,6 +393,42 @@ function HomePage() {
             <ArrowUpRight size={18} />
           </Link>
         </article>
+        <section className="homepage-history-gateway" aria-labelledby="homepage-history-gateway-title">
+          <div className="homepage-history-gateway__heading">
+            <p className="homepage-story-redesign__eyebrow">History pathways</p>
+            <h3 id="homepage-history-gateway-title">Two histories, one global learning route.</h3>
+            <p>
+              The homepage introduces the story. The Explore page will hold the deeper archive, separated clearly into
+              world history and Indian history so visitors can choose the context they need.
+            </p>
+          </div>
+          <div className="homepage-history-gateway__grid">
+            {historyGateways.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article className="homepage-history-gateway__item" key={item.title}>
+                  <figure>
+                    <img src={item.image} alt={item.title} width="960" height="640" loading="lazy" />
+                  </figure>
+                  <div>
+                    <span className="homepage-history-gateway__icon"><Icon size={20} aria-hidden="true" /></span>
+                    <p>{item.eyebrow}</p>
+                    <h4>{item.title}</h4>
+                    <span>{item.text}</span>
+                    <ul>
+                      {item.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                    <Link to={item.href}>
+                      Read this history <ArrowRight size={15} />
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
         <section className="homepage-story-redesign__archive" aria-labelledby="archive-heading">
           <div className="homepage-story-redesign__archive-heading">
             <p className="homepage-story-redesign__eyebrow">From the historical archive</p>

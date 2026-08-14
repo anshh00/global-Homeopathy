@@ -28947,3 +28947,462 @@ button.stitch-nav-join {
     transition: none;
   }
 }
+
+/* Homepage history gateway: scoped bridge from the homepage story to Explore history. */
+.homepage-history-gateway {
+  display: grid;
+  gap: clamp(26px, 3vw, 42px);
+  padding: clamp(46px, 6vw, 80px) 0;
+  border-top: 1px solid var(--story-line);
+  border-bottom: 1px solid var(--story-line);
+}
+
+.homepage-history-gateway__heading {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+  text-align: center;
+}
+
+.homepage-history-gateway__heading h3 {
+  color: var(--story-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 3.2vw, 4.1rem);
+  line-height: 1.02;
+  font-weight: 700;
+}
+
+.homepage-history-gateway__heading p:last-child {
+  color: var(--story-muted);
+  font-size: clamp(1rem, 1.08vw, 1.16rem);
+  line-height: 1.72;
+}
+
+.homepage-history-gateway__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2vw, 28px);
+}
+
+.homepage-history-gateway__item {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.72fr) minmax(0, 1fr);
+  gap: clamp(18px, 2vw, 28px);
+  align-items: stretch;
+  padding: clamp(14px, 1.5vw, 22px) 0;
+  border-top: 1px solid rgba(7, 63, 59, 0.14);
+  background:
+    linear-gradient(90deg, rgba(250, 250, 247, 0.92), rgba(234, 244, 240, 0.45)),
+    radial-gradient(circle at 80% 12%, rgba(184, 138, 44, 0.08), transparent 30%);
+}
+
+.homepage-history-gateway__item figure {
+  margin: 0;
+  min-height: 100%;
+  overflow: hidden;
+  background: rgba(7, 63, 59, 0.06);
+}
+
+.homepage-history-gateway__item img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.98) contrast(1.05);
+  transition: transform 480ms ease;
+}
+
+.homepage-history-gateway__item:hover img {
+  transform: scale(1.035);
+}
+
+.homepage-history-gateway__item > div {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 8px clamp(12px, 1vw, 18px) 8px 0;
+}
+
+.homepage-history-gateway__icon {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(7, 93, 86, 0.18);
+  background: rgba(234, 244, 240, 0.78);
+  color: var(--story-primary);
+}
+
+.homepage-history-gateway__item p {
+  color: var(--story-primary);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.homepage-history-gateway__item h4 {
+  color: var(--story-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 1.7vw, 2.1rem);
+  line-height: 1.08;
+}
+
+.homepage-history-gateway__item span:not(.homepage-history-gateway__icon) {
+  color: var(--story-muted);
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+.homepage-history-gateway__item ul {
+  display: grid;
+  gap: 8px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.homepage-history-gateway__item li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--story-text);
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.homepage-history-gateway__item li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--story-gold);
+}
+
+.homepage-history-gateway__item a {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  color: var(--story-primary);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.homepage-history-gateway__item a svg {
+  transition: transform 180ms ease;
+}
+
+.homepage-history-gateway__item a:hover svg {
+  transform: translateX(4px);
+}
+
+/* Explore additions: history and institutions are page-integrated, source-led sections. */
+.explore-edu-history,
+.explore-edu-institutions {
+  width: min(1680px, 94vw);
+  margin: 0 auto;
+  position: relative;
+  padding: clamp(58px, 7vw, 94px) 0;
+  border-top: 1px solid var(--explore-line);
+}
+
+.explore-edu-history::before,
+.explore-edu-institutions::before {
+  content: "";
+  position: absolute;
+  inset: 24px -3vw auto auto;
+  width: min(44vw, 620px);
+  height: min(44vw, 620px);
+  border: 1px solid rgba(8, 120, 86, 0.11);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(10, 139, 131, 0.08), transparent 62%);
+  pointer-events: none;
+}
+
+.explore-edu-history-head {
+  max-width: 1120px;
+}
+
+.explore-edu-history-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 42px);
+}
+
+.explore-edu-history-panel {
+  position: relative;
+  display: grid;
+  gap: clamp(22px, 2.4vw, 34px);
+  padding-top: clamp(18px, 2vw, 28px);
+  border-top: 3px solid var(--explore-green);
+}
+
+.explore-edu-history-panel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 42%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--explore-gold), transparent);
+}
+
+.explore-edu-history-intro {
+  display: grid;
+  gap: 12px;
+}
+
+.explore-edu-history-intro span {
+  color: var(--explore-green);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.explore-edu-history-intro h3,
+.explore-edu-institutions-copy h2 {
+  max-width: 760px;
+  color: var(--explore-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 2.7vw, 3.5rem);
+  line-height: 1.04;
+  font-weight: 700;
+}
+
+.explore-edu-history-intro p,
+.explore-edu-institutions-copy p,
+.explore-edu-institution-group > div p {
+  color: #53687b;
+  font-size: clamp(0.98rem, 1.05vw, 1.12rem);
+  line-height: 1.72;
+}
+
+.explore-edu-history-panel ol {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--explore-line);
+}
+
+.explore-edu-history-panel li {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--explore-line);
+}
+
+.explore-edu-history-panel time {
+  color: var(--explore-gold);
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.explore-edu-history-panel li div {
+  display: grid;
+  gap: 8px;
+}
+
+.explore-edu-history-panel h4 {
+  color: var(--explore-ink);
+  font-size: clamp(1.1rem, 1.25vw, 1.32rem);
+  line-height: 1.2;
+}
+
+.explore-edu-history-panel li p {
+  color: #53687b;
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+.explore-edu-history-panel a {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--explore-green);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.explore-edu-institutions {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.72fr) minmax(560px, 1.28fr);
+  gap: clamp(30px, 5vw, 84px);
+  align-items: start;
+}
+
+.explore-edu-institutions-copy {
+  position: sticky;
+  top: 126px;
+  display: grid;
+  gap: 14px;
+}
+
+.explore-edu-institution-directory {
+  display: grid;
+  border-top: 1px solid var(--explore-line);
+}
+
+.explore-edu-institution-group {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.52fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 42px);
+  padding: clamp(24px, 3vw, 38px) 0;
+  border-bottom: 1px solid var(--explore-line);
+}
+
+.explore-edu-institution-group h3 {
+  color: var(--explore-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 1.65vw, 2rem);
+  line-height: 1.08;
+}
+
+.explore-edu-institution-group > div {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.explore-edu-institution-group ul {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 1px solid var(--explore-line);
+}
+
+.explore-edu-institution-group li + li {
+  border-top: 1px solid var(--explore-line);
+}
+
+.explore-edu-institution-group a {
+  min-height: 72px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 16px;
+  align-items: center;
+  padding: 14px 0 14px clamp(18px, 2vw, 30px);
+  color: var(--explore-ink);
+  text-decoration: none;
+  transition: background 180ms ease, color 180ms ease, padding-left 180ms ease;
+}
+
+.explore-edu-institution-group a strong {
+  font-size: 1rem;
+}
+
+.explore-edu-institution-group a span {
+  color: #53687b;
+  font-size: 0.9rem;
+}
+
+.explore-edu-institution-group a svg {
+  grid-row: 1 / span 2;
+  color: var(--explore-green);
+  transition: transform 180ms ease;
+}
+
+.explore-edu-institution-group a:hover {
+  padding-left: clamp(24px, 2.6vw, 40px);
+  background: rgba(233, 246, 241, 0.62);
+}
+
+.explore-edu-institution-group a:hover svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1120px) {
+  .homepage-history-gateway__grid,
+  .explore-edu-history-grid,
+  .explore-edu-institutions,
+  .explore-edu-institution-group {
+    grid-template-columns: 1fr;
+  }
+
+  .homepage-history-gateway__item {
+    grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1fr);
+  }
+
+  .explore-edu-institutions-copy {
+    position: relative;
+    top: auto;
+  }
+
+  .explore-edu-institution-group ul {
+    border-left: 0;
+    border-top: 1px solid var(--explore-line);
+  }
+
+  .explore-edu-institution-group a {
+    padding-left: 0;
+  }
+
+  .explore-edu-institution-group a:hover {
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .homepage-history-gateway {
+    padding: 36px 0;
+  }
+
+  .homepage-history-gateway__item {
+    grid-template-columns: 1fr;
+  }
+
+  .homepage-history-gateway__item figure,
+  .homepage-history-gateway__item img {
+    min-height: 220px;
+  }
+
+  .homepage-history-gateway__item > div {
+    padding: 0;
+  }
+
+  .explore-edu-history,
+  .explore-edu-institutions {
+    width: min(100% - 28px, 1680px);
+    padding: 44px 0;
+  }
+
+  .explore-edu-history::before,
+  .explore-edu-institutions::before {
+    display: none;
+  }
+
+  .explore-edu-history-panel li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .explore-edu-institution-group a {
+    grid-template-columns: 1fr auto;
+    padding: 14px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .homepage-history-gateway__item img,
+  .homepage-history-gateway__item a svg,
+  .explore-edu-history-panel a svg,
+  .explore-edu-institution-group a,
+  .explore-edu-institution-group a svg {
+    transition: none;
+  }
+}
