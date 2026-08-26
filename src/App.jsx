@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Layout from "./components/Layout.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import ExplorePage from "./pages/ExplorePage.jsx";
 import HomePage from "./pages/HomePage.jsx";
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/summit" element={<SummitPage />} />
           <Route path="/research" element={<ResearchPage />} />

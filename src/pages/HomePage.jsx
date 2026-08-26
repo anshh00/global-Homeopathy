@@ -245,9 +245,9 @@ function HomePage() {
             <h1>{slide.title}</h1>
             <p className="original-home-hero-text">{slide.text}</p>
             <div className="original-home-actions">
-              <a className="original-button original-button-light" href="#about">
+              <Link className="original-button original-button-light" to="/about">
                 About Us <ArrowRight size={16} />
-              </a>
+              </Link>
               <Link className="original-button original-button-outline" to="/contact">
                 Join us <Users size={16} />
               </Link>
