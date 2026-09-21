@@ -416,7 +416,7 @@ function MediaPage() {
       <section className="media-coverage-shell media-section" id="recent-media">
         <div className="media-section-intro media-section-wide">
           <span className="media-coverage-kicker">Recent and Active Coverage</span>
-          <h2>Media stories that show the global conversation around homeopathy.</h2>
+          <h1>Media stories that show the global conversation around homeopathy.</h1>
           <p>
             This page intentionally combines supportive coverage, public references, policy debate, and research sources
             so visitors can see the subject in a credible global context.
