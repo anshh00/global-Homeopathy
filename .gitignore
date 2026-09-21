@@ -13,3 +13,7 @@ domdump.html
 .env
 .env.*
 !.env.example
+
+# Local Claude Code / debug artifacts
+.claude/settings.local.json
+git-check.log
