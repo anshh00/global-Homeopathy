@@ -15,11 +15,11 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import MedicalMotionBackground from "../components/MedicalMotionBackground.jsx";
-import globalNetworkGlobe from "../assets/homepage-redesign/global-network-globe.png";
-import historicalArchiveBuilding from "../assets/homepage-redesign/historical-archive-building.png";
-import historicalBooksManuscripts from "../assets/homepage-redesign/historical-books-manuscripts.png";
-import homeopathyBottleFlower from "../assets/homepage-redesign/homeopathy-bottle-flower.png";
-import samuelHahnemann from "../assets/homepage-redesign/samuel-hahnemann.png";
+import globalNetworkGlobe from "../assets/homepage-redesign/global-network-globe.webp";
+import historicalArchiveBuilding from "../assets/homepage-redesign/historical-archive-building.webp";
+import historicalBooksManuscripts from "../assets/homepage-redesign/historical-books-manuscripts.webp";
+import homeopathyBottleFlower from "../assets/homepage-redesign/homeopathy-bottle-flower.webp";
+import samuelHahnemann from "../assets/homepage-redesign/samuel-hahnemann.webp";
 
 const heroSlides = [
   {
