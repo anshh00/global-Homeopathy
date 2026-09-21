@@ -18542,7 +18542,7 @@ body:has(.leaders-portal-page) .nav-search {
   background:
     radial-gradient(circle at 28% 10%, rgba(84, 208, 197, 0.17), transparent 22rem),
     linear-gradient(90deg, rgba(7, 61, 53, 0.97), rgba(7, 61, 53, 0.86)),
-    url("/images/summit-world-map-hero-4k.jpg") center / cover;
+    url("/images/summit-world-map-hero-4k.webp") center / cover;
 }
 
 .leaders-portal-hero::before {
@@ -19283,7 +19283,7 @@ body:has(.leaders-portal-page) .stitch-nav-donate {
   border-bottom: 1px solid rgba(0, 127, 95, 0.14);
   background:
     linear-gradient(110deg, rgba(251, 250, 247, 0.98) 0%, rgba(251, 250, 247, 0.92) 48%, rgba(234, 248, 245, 0.76) 100%),
-    url("/images/summit-world-map-hero-4k.jpg") center right / cover;
+    url("/images/summit-world-map-hero-4k.webp") center right / cover;
 }
 
 .leaders-portal-hero::before {
@@ -19967,7 +19967,7 @@ body:has(.leaders-portal-page) .stitch-layout-footer {
   border-bottom: 1px solid var(--summit-line-soft);
   background:
     linear-gradient(90deg, rgba(251, 251, 246, 0.98) 0%, rgba(251, 251, 246, 0.9) 36%, rgba(6, 42, 77, 0.1) 100%),
-    url("/images/summit-world-map-hero-4k.jpg") center right / cover no-repeat;
+    url("/images/summit-world-map-hero-4k.webp") center right / cover no-repeat;
 }
 
 .summit-archive-hero::before {
@@ -20528,7 +20528,7 @@ body:has(.leaders-portal-page) .stitch-layout-footer {
 .leaders-portal-hero::before {
   background:
     linear-gradient(90deg, rgba(251, 250, 247, 0.94), rgba(251, 250, 247, 0.22)),
-    url("/images/summit-world-map-hero-4k.jpg") center right / cover;
+    url("/images/summit-world-map-hero-4k.webp") center right / cover;
   opacity: 0.16;
 }
 
@@ -20948,7 +20948,7 @@ body:has(.leaders-portal-page) .stitch-nav-donate {
   border-bottom: 0;
   background:
     linear-gradient(90deg, rgba(6, 63, 53, 0.98), rgba(6, 63, 53, 0.92)),
-    url("/images/summit-world-map-hero-4k.jpg") center / cover;
+    url("/images/summit-world-map-hero-4k.webp") center / cover;
 }
 
 .leaders-portal-hero::before {
@@ -21427,7 +21427,7 @@ body:has(.leaders-council-page) .nav-search {
   content: "";
   background:
     radial-gradient(circle at 73% 42%, rgba(14, 107, 80, 0.16), transparent 20rem),
-    url("/images/summit-world-map-hero-4k.jpg") center right / cover;
+    url("/images/summit-world-map-hero-4k.webp") center right / cover;
   opacity: 0.22;
   mix-blend-mode: multiply;
 }
@@ -24087,7 +24087,7 @@ body:has(.leaders-council-page) .stitch-layout-footer p {
   padding: clamp(42px, 5vw, 74px) clamp(24px, 4vw, 64px);
   background:
     linear-gradient(90deg, rgba(5, 28, 48, 0.95) 0%, rgba(5, 28, 48, 0.78) 42%, rgba(5, 28, 48, 0.24) 68%, rgba(250, 252, 249, 0.18) 100%),
-    url("/images/homeopathy-global-collage-hero.png") center / cover no-repeat;
+    url("/images/homeopathy-global-collage-hero.webp") center / cover no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow: 0 28px 90px rgba(6, 42, 77, 0.16);
 }
@@ -24147,7 +24147,7 @@ body:has(.leaders-council-page) .stitch-layout-footer p {
   .stitch-home .stitch-hero {
     background:
       linear-gradient(180deg, rgba(5, 28, 48, 0.94) 0%, rgba(5, 28, 48, 0.78) 46%, rgba(5, 28, 48, 0.32) 100%),
-      url("/images/homeopathy-global-collage-hero.png") 58% center / cover no-repeat;
+      url("/images/homeopathy-global-collage-hero.webp") 58% center / cover no-repeat;
   }
 }
 
@@ -24158,7 +24158,7 @@ body:has(.leaders-council-page) .stitch-layout-footer p {
     padding: 30px 18px;
     background:
       linear-gradient(180deg, rgba(5, 28, 48, 0.97) 0%, rgba(5, 28, 48, 0.84) 56%, rgba(5, 28, 48, 0.55) 100%),
-      url("/images/homeopathy-global-collage-hero.png") 62% center / cover no-repeat;
+      url("/images/homeopathy-global-collage-hero.webp") 62% center / cover no-repeat;
   }
 }
 
@@ -27476,7 +27476,7 @@ button.stitch-nav-join {
   height: 68%;
   background:
     linear-gradient(135deg, rgba(8, 120, 86, 0.06), rgba(200, 166, 77, 0.08)),
-    url("/images/explore-remedy-clean.png") center / cover no-repeat;
+    url("/images/explore-remedy-clean.webp") center / cover no-repeat;
   opacity: 0.24;
   filter: saturate(0.8) blur(1px);
   border-radius: 0 0 0 80px;

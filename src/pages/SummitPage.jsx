@@ -170,7 +170,7 @@ function EventCard({ event, featured = false }) {
           alt={`${event.title} coverage visual`}
           loading={featured ? "eager" : "lazy"}
           onError={(error) => {
-            error.currentTarget.src = "/images/homeopathy-global-collage-hero.png";
+            error.currentTarget.src = "/images/homeopathy-global-collage-hero.webp";
           }}
         />
       </a>
